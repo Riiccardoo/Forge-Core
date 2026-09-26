@@ -1,0 +1,12 @@
+{
+  "title": "EXAMPLE — safe batch transformation",
+  "summary": "Demonstration payload only; not an observed technical fact.",
+  "problem_class": "batch data transformation",
+  "problem_description": "Transform items while preserving restartability.",
+  "capabilities_required": ["data_transformation", "error_recovery"],
+  "constraints": ["example-only data"],
+  "confidence": 0.1,
+  "validation_status": "observation",
+  "tags": ["example", "batch"]
+}
+

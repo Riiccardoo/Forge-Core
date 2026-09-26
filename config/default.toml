@@ -1,0 +1,28 @@
+[paths]
+memory_path = "memory"
+index_path = ".forge/index.sqlite3"
+
+[similarity_weights]
+text = 0.18
+problem_class = 0.12
+domains = 0.10
+capabilities_required = 0.25
+inputs = 0.06
+outputs = 0.06
+constraints = 0.08
+technologies = 0.04
+tools = 0.03
+tags = 0.08
+
+[novelty]
+threshold = 0.56
+strong_match_threshold = 0.76
+
+[context]
+result_limit = 5
+token_budget = 1800
+
+[runtime]
+read_only = false
+logging = "INFO"
+
