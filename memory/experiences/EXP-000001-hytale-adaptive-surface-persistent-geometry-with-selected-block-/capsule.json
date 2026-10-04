@@ -1,0 +1,249 @@
+{
+  "id": "EXP-000001",
+  "title": "Hytale Adaptive Surface: persistent geometry with selected-block materials",
+  "summary": "A single creative block stores smoothing geometry and a copied material in native BlockType states. Its broad texture catalogue stays outside active asset paths; a per-world pack activates only saved-world materials before clients join. Placement selects the clicked block from Hytale interaction data.",
+  "status": "active",
+  "created_at": "2026-10-04T14:08:44.323296Z",
+  "updated_at": "2026-10-04T14:10:29.081524Z",
+  "domains": [
+    "game modding",
+    "voxel rendering",
+    "asset loading"
+  ],
+  "technologies": [
+    "Hytale 0.6.8",
+    "Hytale server asset packs",
+    "BlockType.State.Definitions",
+    "Blockbench blockymodel"
+  ],
+  "engines": [
+    "Hytale"
+  ],
+  "languages": [
+    "Java 25",
+    "Python",
+    "PowerShell"
+  ],
+  "tools": [
+    "Gradle 9.4.0",
+    "Pillow",
+    "HytaleServer.jar"
+  ],
+  "problem_class": "adaptive block geometry and selective material texture loading",
+  "problem_description": "One smoothing block must form slopes/corners, retain its shape/material across world saves, and copy the exact block a player right-clicked without rebuilding a large client atlas during play or preventing world startup.",
+  "context": "Zytale Adaptive Surface 0.9.3 on Hytale 0.6.8. The sole inventory item is Adaptive Surface (Blocks → Soils). Java plugin and generated asset pack run in tandem. Earlier broad HD asset loading caused client texture failures; the later world ZIP was initially disabled by save config. Legacy atlas resizing also produced diagonal alpha artifacts. The final click-selection implementation was positively reported by the user but not instrumented with client click traces.",
+  "capabilities_required": [
+    "persistent native block states",
+    "topology-driven geometry",
+    "static material catalogue",
+    "saved-world material discovery",
+    "pre-start pack generation",
+    "interaction-context target resolution"
+  ],
+  "inputs": [
+    "saved chunk palettes",
+    "native cube textures and material variants",
+    "player block placement interaction",
+    "surrounding terrain topology"
+  ],
+  "outputs": [
+    "persistent slope/corner BlockType state",
+    "selected material texture",
+    "ZAS_ActivePack.zip",
+    "updated collision shape"
+  ],
+  "constraints": [
+    "client assets must be registered before join",
+    "no runtime asset registrations during placement",
+    "one visible creative item and no command",
+    "preserve old block IDs",
+    "new learned textures become available after restart",
+    "no client renderer patch"
+  ],
+  "known_attempts": [
+    "legacy full-size per-shape atlas",
+    "quarter-scale alpha atlas",
+    "full HD catalogue active at startup",
+    "per-world selective HD pack",
+    "current-view raycast for clicked material",
+    "placement interaction sync data for clicked material"
+  ],
+  "known_failures": [
+    "FAIL-000001",
+    "FAIL-000002",
+    "FAIL-000003",
+    "FAIL-000004"
+  ],
+  "current_solution": "SOL-000001:v003",
+  "solution_versions": [
+    {
+      "id": "SOL-000001",
+      "version": 1,
+      "description": "Use native BlockType.State.Definitions to persist each material/geometry combination behind one Adaptive Surface item; generate Blockbench-compatible masked-quad models and collision boxes.",
+      "changes": [
+        "Assign stable state IDs for material, orientation and topology",
+        "Keep the source item linked to every state",
+        "Refresh local topology after placement or break events"
+      ],
+      "advantages": [
+        "Persistent shapes without separate block entities",
+        "One creative item",
+        "Native save and item behavior"
+      ],
+      "disadvantages": [
+        "Large number of possible states",
+        "Original material and UV atlas strategy required further work"
+      ],
+      "test_results": [
+        "Earlier server fixture loaded 448 legacy states",
+        "Saved states were checked across restart",
+        "Client visual validation remained separate"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": "Hytale 0.6.8"
+      },
+      "created_at": "2026-10-04T14:09:37.206912Z",
+      "supersedes": null,
+      "status": "working"
+    },
+    {
+      "id": "SOL-000001",
+      "version": 2,
+      "description": "0.8.0 activated the complete baked native-density material catalogue at startup, with 256x256 shared atlases and 32 source texels per block.",
+      "changes": [
+        "Prebake 2,744 source IDs to 614 appearances and 695 variant PNGs",
+        "Use native-resolution shared UV layouts"
+      ],
+      "advantages": [
+        "Native-density samples",
+        "No runtime registration during placement"
+      ],
+      "disadvantages": [
+        "Client log recorded 3,176 failed block textures, including Unknown.png; world did not open",
+        "The exact engine atlas limit was not established"
+      ],
+      "test_results": [
+        "6,964 of 6,964 coordinate remaps matched source",
+        "34,300 geometry samples passed",
+        "Full client startup failed"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": "45,547,520 baked PNG pixels active",
+        "compatibility": "Hytale 0.6.8"
+      },
+      "created_at": "2026-10-04T14:09:37.611714Z",
+      "supersedes": "SOL-000001:v001",
+      "status": "deprecated"
+    },
+    {
+      "id": "SOL-000001",
+      "version": 3,
+      "description": "0.9.3 keeps the full baked catalogue dormant in the JAR and builds a small active pack from each saved world. It enables the pack in save config, keeps fallback UVs native, and selects the clicked material from placement interaction data.",
+      "changes": [
+        "Scan saved chunk palettes and write ZAS_ActivePack.zip before world startup",
+        "Enable ZytaleGenerated:AdaptiveSurfaceWorld explicitly",
+        "Move 0.9.1 fallback states onto native atlas and model geometry",
+        "Use matching interaction destination plus clicked target or block face to select the material",
+        "Retain material while local topology changes shape",
+        "Use current-view raycast only when no client interaction context exists"
+      ],
+      "advantages": [
+        "World loads with 56 active appearances in observed save",
+        "No texture rebuild or asset registration on placement",
+        "Existing saved block IDs remain valid",
+        "Unknown materials can be prepared for a future restart",
+        "User reported result near-perfect after 0.9.3"
+      ],
+      "disadvantages": [
+        "A material first encountered during play may use stone until a later restart",
+        "Budget of 10 million HD pixels per world is a project guard, not a proven engine limit",
+        "Final click behavior lacks automated client trace",
+        "Full dedicated-server test was limited by native QUIC and shutdown errors"
+      ],
+      "test_results": [
+        "0.9.1 pack load: 921 aliases, 56 appearances, zero runtime registrations",
+        "0.9.3 Gradle offline build passed with 12,124 assertions",
+        "Asset validation passed 34,300 geometry samples, 498 face mappings per atlas, 12,114 states and one creative item",
+        "Installed 0.9.3 JAR SHA-256 03b54b95b53c204f11df6eb3de3f79d894a347109e5b9197737d8b560b0a81fa matched distribution"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": "User feedback positive; final click path not instrumented in client",
+        "maintainability": null,
+        "performance": "4,784,128 active HD pixels for observed save; 56 appearances and 73 PNGs",
+        "compatibility": "Hytale 0.6.8; Java 25 build; Gradle 9.4.0"
+      },
+      "created_at": "2026-10-04T14:09:38.009738Z",
+      "supersedes": "SOL-000001:v002",
+      "status": "preferred"
+    }
+  ],
+  "patterns": [],
+  "related_experiences": [],
+  "transferability": "Transfer static-versus-active asset separation, validation of save-level pack enablement, and event-target versus clicked-target distinction only after checking the target engine API. Hytale-specific model/state IDs remain project knowledge.",
+  "confidence": 0.78,
+  "validation_status": "experimental",
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": "World joined with selective pack; final click behavior reported near-perfect by user, without automated client trace",
+    "maintainability": null,
+    "performance": "56 active appearances and 4,784,128 HD pixels in tested save versus 614 appearances and 45,547,520 pixels in full catalogue",
+    "compatibility": "Hytale 0.6.8"
+  },
+  "tags": [
+    "hytale",
+    "adaptive-surface",
+    "texture-atlas",
+    "asset-pack",
+    "block-state",
+    "interaction-context"
+  ],
+  "project_refs": [
+    "Zytale"
+  ],
+  "source_refs": [
+    {
+      "kind": "code",
+      "reference": "ZytaleAdaptiveSurface/src/main/java/com/zytale/adaptivesurface/AdaptiveSurfacePlugin.java",
+      "description": "Topology refresh, native state writing, and clicked-block selection",
+      "verified": true
+    },
+    {
+      "kind": "code",
+      "reference": "ZytaleAdaptiveSurface/src/main/java/com/zytale/adaptivesurface/WorldPatch.java",
+      "description": "Selective per-world asset ZIP generation",
+      "verified": true
+    },
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.9.3.md",
+      "description": "Final version checks and explicit client-validation limit",
+      "verified": true
+    },
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/docs/FORGE_MEMORY_UPDATE_PROPOSAL.md",
+      "description": "Detailed chronology, failures, and evidence assessment",
+      "verified": true
+    }
+  ]
+}

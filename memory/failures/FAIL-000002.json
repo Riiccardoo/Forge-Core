@@ -1,0 +1,29 @@
+{
+  "id": "FAIL-000002",
+  "experience_id": "EXP-000001",
+  "attempt": "Put the generated ZAS_ActivePack.zip in the world's mods directory without explicitly enabling its pack ID in save config.",
+  "reason_failed": "Hytale skipped the present ZIP because config.json stored ZytaleGenerated:AdaptiveSurfaceWorld with Enabled=false. Plugin consequently loaded zero baked block sources and appearances, so placement retained fallback stone.",
+  "environment": "Hytale 0.6.8 singleplayer; Adaptive Surface 0.9.0",
+  "error_signature": "Skipped disabled pack: ZytaleGenerated:AdaptiveSurfaceWorld; [ZAS] Loaded 0 baked block sources and 0 baked appearances",
+  "conditions": [
+    "Generated pack ZIP exists",
+    "Save config Mods entry has Enabled=false"
+  ],
+  "workaround": "Installer stages the ZIP, backs up config.json and sets the exact generated pack ID Enabled=true before next world start.",
+  "resolved_by": "SOL-000001:v003",
+  "date": "2026-10-04T14:10:28.254400Z",
+  "source_refs": [
+    {
+      "kind": "log",
+      "reference": "Hytale UserData/Logs/2026-10-04_15-10-01_client.log",
+      "description": "Skip and zero-loaded startup lines",
+      "verified": true
+    },
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.9.1.md",
+      "description": "Config check and activation fix",
+      "verified": true
+    }
+  ]
+}

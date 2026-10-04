@@ -1,0 +1,24 @@
+{
+  "id": "FAIL-000001",
+  "experience_id": "EXP-000001",
+  "attempt": "Activate all 695 native-resolution appearance atlases from the full 0.8.0 catalogue in the initial client asset pack.",
+  "reason_failed": "The observed client startup reported 3,176 failed block textures and the world did not open. The total active texture load is implicated, but no exact renderer threshold was measured.",
+  "environment": "Hytale 0.6.8 client; Adaptive Surface 0.8.0",
+  "error_signature": "Failed to load block texture (3,176 occurrences, including Unknown.png)",
+  "conditions": [
+    "614 distinct appearances",
+    "695 PNG variants",
+    "45,547,520 baked HD pixels active before world join"
+  ],
+  "workaround": "Keep full catalogue under dormant JAR paths; generate and activate only saved-world materials before client admission.",
+  "resolved_by": "SOL-000001:v003",
+  "date": "2026-10-04T14:10:27.827485Z",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.9.0.md",
+      "description": "Recorded 0.8.0 client failure and selective-pack evidence",
+      "verified": true
+    }
+  ]
+}

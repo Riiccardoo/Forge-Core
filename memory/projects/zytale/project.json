@@ -1,0 +1,68 @@
+{
+  "id": "zytale",
+  "name": "Zytale",
+  "summary": "Adaptive Surface 0.9.3 for Hytale 0.6.8: one creative smoothing block copies the clicked block's preloaded material, persists native shape/material states, and loads a selective per-world HD texture pack. User reported the result near-perfect. Full automated client visual and click tracing were not performed.",
+  "technologies": [
+    "Hytale 0.6.8",
+    "Java 25",
+    "Gradle 9.4.0",
+    "Python/Pillow asset generation",
+    "Hytale .blockymodel and asset packs"
+  ],
+  "constraints": [
+    "Do not use the Computer Use skill for this project; user explicitly prohibited it",
+    "Do not mutate saved chunks while preparing textures",
+    "No runtime asset registration or world refresh for material changes",
+    "Only one item in creative inventory; no command",
+    "Unknown material becomes active at a subsequent restart",
+    "Compatibility with future Hytale versions requires validation",
+    "10 million active HD pixels is a project safety budget, not an established Hytale limit"
+  ],
+  "decisions": [
+    "Keep full material catalogue dormant inside JAR; WorldMaterialScanner selects saved-world block IDs, WorldPatch writes ZAS_ActivePack.zip",
+    "Installer enables generated pack ID ZytaleGenerated:AdaptiveSurfaceWorld in save config and backs up prior config/JAR/ZIP",
+    "Use native-density atlas for fallback legacy block IDs; preserve their save compatibility",
+    "Resolve clicked donor from matching placement interaction sync data before falling back to current-view raycast",
+    "Persist material while topology refresh changes only shape",
+    "Retain failure and solution-version lineage in EXP-000001"
+  ],
+  "experience_refs": [
+    "EXP-000001"
+  ],
+  "updated_at": "2026-10-04T14:11:17.319741Z",
+  "implementation": {
+    "plugin": "ZytaleAdaptiveSurface-0.9.3.jar",
+    "source_root": "ZytaleAdaptiveSurface/",
+    "world_pack": "mods/ZAS_ActivePack.zip",
+    "generated_pack_id": "ZytaleGenerated:AdaptiveSurfaceWorld",
+    "installer": "ZytaleAdaptiveSurface/install.ps1",
+    "release_sha256": "03b54b95b53c204f11df6eb3de3f79d894a347109e5b9197737d8b560b0a81fa"
+  },
+  "observed_metrics": {
+    "catalogue_sources": 2744,
+    "catalogue_appearances": 614,
+    "catalogue_pngs": 695,
+    "saved_world_regions": 12,
+    "saved_world_chunks": 5180,
+    "saved_world_sections": 51800,
+    "active_appearances": 56,
+    "active_pngs": 73,
+    "active_hd_pixels": 4784128,
+    "loaded_aliases_in_pack_test": 921,
+    "final_topology_assertions": 12124
+  },
+  "validation_notes": [
+    "0.9.3 offline Gradle build and asset validation passed",
+    "Previous client log verified selective pack active, with 56 appearances and 921 aliases",
+    "Final 0.9.3 click behavior is user feedback, without instrumented client trace",
+    "Dedicated-server full-world tests were hindered by unrelated native QUIC and shutdown failures"
+  ],
+  "references": [
+    "ZytaleAdaptiveSurface/README.md",
+    "ZytaleAdaptiveSurface/docs/VALIDATION-0.9.0.md",
+    "ZytaleAdaptiveSurface/docs/VALIDATION-0.9.1.md",
+    "ZytaleAdaptiveSurface/docs/VALIDATION-0.9.2.md",
+    "ZytaleAdaptiveSurface/docs/VALIDATION-0.9.3.md",
+    "ZytaleAdaptiveSurface/docs/FORGE_MEMORY_UPDATE_PROPOSAL.md"
+  ]
+}

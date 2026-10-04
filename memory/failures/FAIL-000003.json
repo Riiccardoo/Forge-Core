@@ -1,0 +1,24 @@
+{
+  "id": "FAIL-000003",
+  "experience_id": "EXP-000001",
+  "attempt": "Resize the legacy masked-quad RGBA atlas to quarter scale separately from the individual face patches and UV coordinates.",
+  "reason_failed": "Independent rounding at the reduced scale misaligned transparency masks with some face patches, producing enlarged/disconnected visual fragments on diagonals in user screenshots.",
+  "environment": "Hytale 0.6.8 client; Adaptive Surface legacy fallback through 0.9.0",
+  "error_signature": "Visible diagonal seams and exposed triangular fragments in fallback stone surfaces",
+  "conditions": [
+    "Triangle geometry represented by alpha-masked quads",
+    "Per-face UV rectangles scaled to 1/4",
+    "Atlas itself independently resized"
+  ],
+  "workaround": "Use full native-resolution PreloadedHD models and byte-identical native RGBA textures for fallback states while retaining saved block IDs.",
+  "resolved_by": "SOL-000001:v003",
+  "date": "2026-10-04T14:10:28.662838Z",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.9.1.md",
+      "description": "Fallback texture replacement and byte comparison",
+      "verified": true
+    }
+  ]
+}

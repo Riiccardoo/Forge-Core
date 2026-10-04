@@ -1,0 +1,37 @@
+{
+  "id": "SOL-000001",
+  "version": 1,
+  "description": "Use native BlockType.State.Definitions to persist each material/geometry combination behind one Adaptive Surface item; generate Blockbench-compatible masked-quad models and collision boxes.",
+  "changes": [
+    "Assign stable state IDs for material, orientation and topology",
+    "Keep the source item linked to every state",
+    "Refresh local topology after placement or break events"
+  ],
+  "advantages": [
+    "Persistent shapes without separate block entities",
+    "One creative item",
+    "Native save and item behavior"
+  ],
+  "disadvantages": [
+    "Large number of possible states",
+    "Original material and UV atlas strategy required further work"
+  ],
+  "test_results": [
+    "Earlier server fixture loaded 448 legacy states",
+    "Saved states were checked across restart",
+    "Client visual validation remained separate"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": "Hytale 0.6.8"
+  },
+  "created_at": "2026-10-04T14:09:37.206912Z",
+  "supersedes": null,
+  "status": "working"
+}

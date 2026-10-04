@@ -1,0 +1,35 @@
+{
+  "id": "SOL-000001",
+  "version": 2,
+  "description": "0.8.0 activated the complete baked native-density material catalogue at startup, with 256x256 shared atlases and 32 source texels per block.",
+  "changes": [
+    "Prebake 2,744 source IDs to 614 appearances and 695 variant PNGs",
+    "Use native-resolution shared UV layouts"
+  ],
+  "advantages": [
+    "Native-density samples",
+    "No runtime registration during placement"
+  ],
+  "disadvantages": [
+    "Client log recorded 3,176 failed block textures, including Unknown.png; world did not open",
+    "The exact engine atlas limit was not established"
+  ],
+  "test_results": [
+    "6,964 of 6,964 coordinate remaps matched source",
+    "34,300 geometry samples passed",
+    "Full client startup failed"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": "45,547,520 baked PNG pixels active",
+    "compatibility": "Hytale 0.6.8"
+  },
+  "created_at": "2026-10-04T14:09:37.611714Z",
+  "supersedes": "SOL-000001:v001",
+  "status": "deprecated"
+}

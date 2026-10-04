@@ -1,0 +1,45 @@
+{
+  "id": "SOL-000001",
+  "version": 3,
+  "description": "0.9.3 keeps the full baked catalogue dormant in the JAR and builds a small active pack from each saved world. It enables the pack in save config, keeps fallback UVs native, and selects the clicked material from placement interaction data.",
+  "changes": [
+    "Scan saved chunk palettes and write ZAS_ActivePack.zip before world startup",
+    "Enable ZytaleGenerated:AdaptiveSurfaceWorld explicitly",
+    "Move 0.9.1 fallback states onto native atlas and model geometry",
+    "Use matching interaction destination plus clicked target or block face to select the material",
+    "Retain material while local topology changes shape",
+    "Use current-view raycast only when no client interaction context exists"
+  ],
+  "advantages": [
+    "World loads with 56 active appearances in observed save",
+    "No texture rebuild or asset registration on placement",
+    "Existing saved block IDs remain valid",
+    "Unknown materials can be prepared for a future restart",
+    "User reported result near-perfect after 0.9.3"
+  ],
+  "disadvantages": [
+    "A material first encountered during play may use stone until a later restart",
+    "Budget of 10 million HD pixels per world is a project guard, not a proven engine limit",
+    "Final click behavior lacks automated client trace",
+    "Full dedicated-server test was limited by native QUIC and shutdown errors"
+  ],
+  "test_results": [
+    "0.9.1 pack load: 921 aliases, 56 appearances, zero runtime registrations",
+    "0.9.3 Gradle offline build passed with 12,124 assertions",
+    "Asset validation passed 34,300 geometry samples, 498 face mappings per atlas, 12,114 states and one creative item",
+    "Installed 0.9.3 JAR SHA-256 03b54b95b53c204f11df6eb3de3f79d894a347109e5b9197737d8b560b0a81fa matched distribution"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": "User feedback positive; final click path not instrumented in client",
+    "maintainability": null,
+    "performance": "4,784,128 active HD pixels for observed save; 56 appearances and 73 PNGs",
+    "compatibility": "Hytale 0.6.8; Java 25 build; Gradle 9.4.0"
+  },
+  "created_at": "2026-10-04T14:09:38.009738Z",
+  "supersedes": "SOL-000001:v002",
+  "status": "preferred"
+}
