@@ -1,0 +1,86 @@
+{
+  "id": "EXP-000006",
+  "title": "Hytale client rejects generated Atmosphere volume animations",
+  "summary": "After Atmosphere Tool 1.3.2 successfully entered the affected world, the Hytale 0.7.0 client logged repeated NullReferenceException warnings and failed to parse generated VFX/Atmosphere/Volume blockyanim assets. Thirty warnings covered nineteen distinct animation paths. No disconnect occurred; rendering impact was not assessed.",
+  "status": "experimental",
+  "created_at": "2026-10-13T17:38:37.207236Z",
+  "updated_at": "2026-10-13T17:38:59.668631Z",
+  "domains": [
+    "game asset generation",
+    "client animation parsing"
+  ],
+  "technologies": [
+    "Hytale 0.7.0",
+    "Java 25",
+    "Hytale blockyanim"
+  ],
+  "engines": [
+    "Hytale"
+  ],
+  "languages": [
+    "Java"
+  ],
+  "tools": [
+    "Hytale client log"
+  ],
+  "problem_class": "server-valid generated animation rejected by client parser",
+  "problem_description": "Runtime-generated fog blockyanim files pass server parsing and replication tests but trigger client NullReferenceException and parse warnings after world join.",
+  "context": "The error became visible after removing the earlier WorldLoadProgress disconnect. The affected-world log reached InGame and then reported failures under VFX/Atmosphere/Volume.",
+  "capabilities_required": [
+    "client-compatible blockyanim generation",
+    "runtime common-asset delivery"
+  ],
+  "inputs": [
+    "2026-10-13_19-34-10_client.log",
+    "Atmosphere Tool 1.3.2 generated animation assets"
+  ],
+  "outputs": [
+    "documented unresolved client animation failure"
+  ],
+  "constraints": [
+    "No further modification requested",
+    "Do not infer rendering success from server parser tests"
+  ],
+  "known_attempts": [
+    "Server-side BlockyAnimationCache parsing and native replication probe passed, but did not predict client parser behavior"
+  ],
+  "known_failures": [
+    "FAIL-000023"
+  ],
+  "current_solution": null,
+  "solution_versions": [],
+  "patterns": [],
+  "related_experiences": [
+    "EXP-000005"
+  ],
+  "transferability": "Generated Hytale animation assets require a real client parsing gate; server-side parsing and replication alone are insufficient evidence.",
+  "confidence": 0.9,
+  "validation_status": "observation",
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "tags": [
+    "hytale",
+    "blockyanim",
+    "client-parser",
+    "atmosphere-tool"
+  ],
+  "project_refs": [
+    "zytale"
+  ],
+  "source_refs": [
+    {
+      "kind": "client-log",
+      "reference": "C:/Users/User/AppData/Roaming/Hytale/UserData/Logs/2026-10-13_19-34-10_client.log",
+      "description": "Thirty failed animation parsing warnings for nineteen distinct generated Atmosphere volume paths after successful world join.",
+      "verified": true
+    }
+  ]
+}

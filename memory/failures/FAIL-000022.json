@@ -1,0 +1,37 @@
+{
+  "id": "FAIL-000022",
+  "experience_id": "EXP-000005",
+  "attempt": "Call CommonAssetModule.sendAssetsToPlayer for newly generated fog model assets while the client is already Playing.",
+  "reason_failed": "Hytale 0.7.0 sendAssetsToPlayer injects WorldLoadProgress before every asset part; the client accepts that packet only during SettingUp and disconnects after entering the world.",
+  "environment": "Hytale 0.7.0 release, Atmosphere Tool 1.3.1, enabled 30x4x92 miasma area in The Village - Zytale 306 Working Copy",
+  "error_signature": "Exception when handling packet 21 WorldLoadProgress: Received WorldLoadProgress at Playing connection stage but expected it only during SettingUp.",
+  "conditions": [
+    "The world contains an enabled fog volume near the player spawn",
+    "FogVolumeRenderer creates model, animation and texture common assets after player join",
+    "The first runtime asset transfer invokes sendAssetsToPlayer on the playing packet handler",
+    "AdaptiveWindow 0.4.3 removes its own item warnings but does not prevent the disconnect"
+  ],
+  "workaround": "Use Atmosphere Tool 1.3.2 runtime asset sender without WorldLoadProgress; client rejoin test pending.",
+  "resolved_by": "SOL-000006:v001",
+  "date": "2026-10-13T17:33:33.560363Z",
+  "source_refs": [
+    {
+      "kind": "client-log",
+      "reference": "C:/Users/User/AppData/Roaming/Hytale/UserData/Logs/2026-10-13_19-13-38_client.log",
+      "description": "Client enters Playing, joins world, then rejects WorldLoadProgress",
+      "verified": true
+    },
+    {
+      "kind": "client-log",
+      "reference": "C:/Users/User/AppData/Roaming/Hytale/UserData/Logs/2026-10-13_19-19-21_client.log",
+      "description": "Second 1.3.1 run repeats the same disconnect",
+      "verified": true
+    },
+    {
+      "kind": "code",
+      "reference": "Porject-Zytale/tools/AtmosphereTool/src/main/java/atmospheretool/FogVolumeRenderer.java",
+      "description": "1.3.1 runtime sender call identified and replaced",
+      "verified": true
+    }
+  ]
+}

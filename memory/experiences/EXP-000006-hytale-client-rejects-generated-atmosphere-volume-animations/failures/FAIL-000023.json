@@ -1,0 +1,31 @@
+{
+  "id": "FAIL-000023",
+  "experience_id": "EXP-000006",
+  "attempt": "Treat server-side BlockyAnimationCache parsing and native entity replication as sufficient validation for generated fog blockyanim assets.",
+  "reason_failed": "The released Hytale 0.7.0 client emitted NullReferenceException and failed to parse the generated animations even though server tests passed.",
+  "environment": "Hytale 0.7.0 release client, Atmosphere Tool 1.3.2, existing world with enabled 30x4x92 miasma area",
+  "error_signature": "Failed to parse blocky animation: VFX/Atmosphere/Volume/<sha256>.blockyanim. See log for details; accompanied by System.NullReferenceException.",
+  "conditions": [
+    "Client successfully reaches InGame",
+    "Runtime fog assets are delivered without WorldLoadProgress",
+    "Generated model references content-addressed blockyanim assets",
+    "Thirty warnings cover nineteen distinct animation paths"
+  ],
+  "workaround": "None established. Error recorded only at user request; no further modification attempted.",
+  "resolved_by": null,
+  "date": "2026-10-13T17:38:59.665631Z",
+  "source_refs": [
+    {
+      "kind": "client-log",
+      "reference": "C:/Users/User/AppData/Roaming/Hytale/UserData/Logs/2026-10-13_19-34-10_client.log",
+      "description": "Observed animation parse warnings after successful world join.",
+      "verified": true
+    },
+    {
+      "kind": "server-test",
+      "reference": "Porject-Zytale/tools/AtmosphereTool/build/smoke-8f2f2bd5aaf644ba990ec4147797e3d5",
+      "description": "Server parser and replication probe passed, demonstrating the validation gap.",
+      "verified": true
+    }
+  ]
+}

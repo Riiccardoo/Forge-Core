@@ -1,7 +1,7 @@
 {
   "id": "zytale",
   "name": "zytale",
-  "summary": "Zytale technical memory through released Hytale 0.7.0. AdaptiveWindow 0.4.3 is installed with 21 native-glazed architectural models, material-isolated adaptive masonry, stable saved IDs and lightweight schema-valid item representations. A new client run is still required to verify the late WorldLoadProgress race and final visuals.",
+  "summary": "Zytale on Hytale 0.7.0: AdaptiveWindow 0.4.3 is installed and its 21 item texture warnings are absent. Atmosphere Tool 1.3.2 resolved the WorldLoadProgress disconnect in the affected-world client run. The same run exposed a separate unresolved client parser failure for generated fog blockyanim assets.",
   "technologies": [
     "Hytale 0.6.8 and 0.7.0",
     "Java 25",
@@ -37,9 +37,11 @@
     "EXP-000001",
     "EXP-000002",
     "EXP-000003",
-    "EXP-000004"
+    "EXP-000004",
+    "EXP-000005",
+    "EXP-000006"
   ],
-  "updated_at": "2026-10-13T17:14:08.708616Z",
+  "updated_at": "2026-10-13T17:39:00.009603Z",
   "implementation": {
     "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
@@ -3393,7 +3395,7 @@
   "adaptive_window_043": {
     "version": "0.4.3",
     "hytale": "0.7.0 stable",
-    "status": "installed-awaiting-client-retest",
+    "status": "installed-client-item-textures-validated",
     "artifact": "ZytaleAdaptiveWindow/dist/ZytaleAdaptiveWindow-0.4.3.jar",
     "sha256": "948ba39d4553b335da04f4f775ba21519d41c0b2f8b11c0f4f2e03fde2bdb6eb",
     "installedPath": "%APPDATA%/Hytale/UserData/Mods/ZytaleAdaptiveWindow-0.4.3.jar",
@@ -3416,11 +3418,31 @@
       "savedWorldFilesEdited": false
     },
     "limitations": [
-      "A fresh client run is required to determine whether reduced item preparation prevents the late WorldLoadProgress packet race",
-      "The log does not prove AdaptiveWindow directly caused or emitted WorldLoadProgress",
-      "No final client visual or GPU/FPS validation has been performed"
+      "Client logs with 0.4.3 show all 21 window item texture warnings absent",
+      "WorldLoadProgress disconnection persisted with Atmosphere Tool 1.3.1; the fog runtime sender is the identified source",
+      "Final client visual and GPU/FPS validation remain open"
     ],
     "report": "ZytaleAdaptiveWindow/outputs/architecture-0.4.3/REPORT.md",
-    "nextAction": "Restart Hytale, open the target world once, confirm that all 21 texture warnings are absent, then inspect inventory icons and placed windows."
+    "nextAction": "After Atmosphere Tool 1.3.2 client rejoin, inspect inventory icons and placed windows."
+  },
+  "atmosphere_132": {
+    "installedPath": "%APPDATA%/Hytale/UserData/Mods/Atmosphere-Tool-1.3.2.jar",
+    "backup": "backups/atmosphere-worldloadprogress-20261013/Atmosphere-Tool-1.3.1.jar",
+    "worldLoadProgressValidation": {
+      "worldJoined": 1,
+      "log": "2026-10-13_19-34-10_client.log",
+      "disconnects": 0,
+      "errors": 0
+    },
+    "hytale": "0.7.0 stable",
+    "openAnimationError": {
+      "signature": "Failed to parse blocky animation: VFX/Atmosphere/Volume/<sha256>.blockyanim with NullReferenceException",
+      "distinctAnimations": 19,
+      "action": "Recorded only; no further modification requested",
+      "warnings": 30
+    },
+    "version": "1.3.2",
+    "sha256": "938952907A481153167E79288FA68967115818ACAD8D9B59230A82027308A9E4",
+    "status": "installed-worldloadprogress-resolved-animation-parser-error-open"
   }
 }
