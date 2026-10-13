@@ -1,7 +1,7 @@
 {
   "id": "zytale",
   "name": "zytale",
-  "summary": "Zytale technical memory through released Hytale 0.7.0. Adaptive Surface 0.9.4 remains the user-confirmed 0.6.8 material baseline; AdaptiveWindow 0.4.2 is installed for 0.7.0 with 21 native-glazed architectural models, material-isolated adaptive masonry, stable saved IDs and unchanged multipart footprints. Client visual review of 0.4.2 remains pending.",
+  "summary": "Zytale technical memory through released Hytale 0.7.0. AdaptiveWindow 0.4.3 is installed with 21 native-glazed architectural models, material-isolated adaptive masonry, stable saved IDs and lightweight schema-valid item representations. A new client run is still required to verify the late WorldLoadProgress race and final visuals.",
   "technologies": [
     "Hytale 0.6.8 and 0.7.0",
     "Java 25",
@@ -39,7 +39,7 @@
     "EXP-000003",
     "EXP-000004"
   ],
-  "updated_at": "2026-10-13T12:50:03.497290Z",
+  "updated_at": "2026-10-13T17:14:08.708616Z",
   "implementation": {
     "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
@@ -3389,5 +3389,38 @@
     ],
     "report": "ZytaleAdaptiveWindow/outputs/architecture-0.4.2/REPORT.md",
     "nextAction": "Verify transparency, frame/masonry separation, all four orientations and inventory icons in the real Hytale 0.7.0 client before marking visually approved."
+  },
+  "adaptive_window_043": {
+    "version": "0.4.3",
+    "hytale": "0.7.0 stable",
+    "status": "installed-awaiting-client-retest",
+    "artifact": "ZytaleAdaptiveWindow/dist/ZytaleAdaptiveWindow-0.4.3.jar",
+    "sha256": "948ba39d4553b335da04f4f775ba21519d41c0b2f8b11c0f4f2e03fde2bdb6eb",
+    "installedPath": "%APPDATA%/Hytale/UserData/Mods/ZytaleAdaptiveWindow-0.4.3.jar",
+    "backup": "ZytaleAdaptiveWindow/backups/shared-20261013-191305-656",
+    "inventoryFix": {
+      "items": 21,
+      "model": "shared double-sided lightweight quad",
+      "textureRoot": "Items/ZytaleWindowArchitecture/Icons",
+      "iconRoot": "Icons/ItemsGenerated",
+      "placedArchitectureChanged": false
+    },
+    "validation": {
+      "staticChecks": 29200,
+      "createChecks": 7215,
+      "reloadChecks": 13163,
+      "learnChecks": 1,
+      "learnReloadChecks": 6811,
+      "otherSharedModFilesUnchanged": 4,
+      "savedWorldsOpened": false,
+      "savedWorldFilesEdited": false
+    },
+    "limitations": [
+      "A fresh client run is required to determine whether reduced item preparation prevents the late WorldLoadProgress packet race",
+      "The log does not prove AdaptiveWindow directly caused or emitted WorldLoadProgress",
+      "No final client visual or GPU/FPS validation has been performed"
+    ],
+    "report": "ZytaleAdaptiveWindow/outputs/architecture-0.4.3/REPORT.md",
+    "nextAction": "Restart Hytale, open the target world once, confirm that all 21 texture warnings are absent, then inspect inventory icons and placed windows."
   }
 }

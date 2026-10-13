@@ -10,7 +10,7 @@ User screenshots showed particle glazing rotated or displaced from a Gothic bifo
 
 ## Current Solution
 
-AdaptiveWindow 0.4.2 for released Hytale 0.7.0: place glazing as native transparent quads inside each structural model; generate donor-textured masonry as separate model pieces outside the aperture union; keep every architectural frame on fixed UVs and give all 21 items explicit icons and dimension-prefixed English names.
+AdaptiveWindow 0.4.3 keeps the full placed architecture separate from a lightweight item representation: each of the 21 items uses a shared double-sided quad and a 128x128 texture under the schema-approved Items root, while its explicit inventory Icon remains under Icons.
 
 ## Lessons
 
@@ -19,6 +19,7 @@ The isolation of donor-textured wall UVs from fixed frame/glazing UVs applies to
 ## Failures
 
 - FAIL-000020
+- FAIL-000021
 
 ## Transferable Patterns
 

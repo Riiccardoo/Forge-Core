@@ -1,0 +1,44 @@
+{
+  "id": "SOL-000005",
+  "version": 2,
+  "description": "AdaptiveWindow 0.4.3 keeps the full placed architecture separate from a lightweight item representation: each of the 21 items uses a shared double-sided quad and a 128x128 texture under the schema-approved Items root, while its explicit inventory Icon remains under Icons.",
+  "changes": [
+    "Give all 21 item definitions a shared lightweight item model instead of reusing the large placed architectural model",
+    "Copy each generated 128x128 icon to Items/ZytaleWindowArchitecture/Icons for the item Texture while retaining the canonical Icons/ItemsGenerated path for Icon",
+    "Keep BlockType.CustomModel, adaptive masonry, fixed frame UVs, native glazing and every saved state identity unchanged",
+    "Make cache acceptance verify the lightweight item-texture marker so an incomplete same-version cache is regenerated",
+    "Upgrade and install only the shared 0.4.3 JAR, retaining the verified 0.4.2 JAR in a recoverable backup"
+  ],
+  "advantages": [
+    "Removes all 21 client warnings that rejected structural atlases as item textures",
+    "Reduces item preparation to one tiny shared model and one 128x128 texture per item",
+    "Preserves the complete placed model and the strict separation between adaptive masonry and frame",
+    "Preserves item IDs, material state families and multipart footprints"
+  ],
+  "disadvantages": [
+    "The held representation is a flat silhouette rather than the full three-dimensional window",
+    "The client log's late WorldLoadProgress packet is an engine-level protocol failure and is only mitigated, not proven fixed, until a new client run",
+    "Client rendering and GPU performance remain unverified"
+  ],
+  "test_results": [
+    "29200 static checks passed, including schema-approved item texture roots and pixel equality between held textures and inventory icons",
+    "Native Hytale 0.7.0 create: 7215 checks",
+    "Native reload/removal: 13163 checks",
+    "Native learning: 1 check; learned-material restart: 6811 checks",
+    "Shared installation replaced only 0.4.2 with 0.4.3; four other mod files stayed identical and no saved world was opened",
+    "Installed and release JAR SHA-256: 948ba39d4553b335da04f4f775ba21519d41c0b2f8b11c0f4f2e03fde2bdb6eb"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": "Static and four native server modes passed",
+    "maintainability": "One shared item model plus generated per-item icon copies",
+    "performance": "45637632 decoded pack texture pixels; item preparation no longer references structural atlases",
+    "compatibility": "Released Hytale 0.7.0; existing IDs and placed geometry retained"
+  },
+  "created_at": "2026-10-13T17:14:35.179779Z",
+  "supersedes": "SOL-000005:v001",
+  "status": "preferred"
+}

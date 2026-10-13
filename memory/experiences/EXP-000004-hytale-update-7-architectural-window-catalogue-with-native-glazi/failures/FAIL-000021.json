@@ -1,0 +1,31 @@
+{
+  "id": "FAIL-000021",
+  "experience_id": "EXP-000004",
+  "attempt": "Use the full placed window model and its structural atlas as the root Model and Texture of every inventory item while also declaring a separate explicit Icon.",
+  "reason_failed": "The Hytale 0.7.0 client logged Cannot use ... as texture for item for all 21 windows. The structural atlases are designed for placed block UVs and are not suitable item textures. The same session later crashed because WorldLoadProgress arrived after the client entered Playing; the log establishes timing but does not prove AdaptiveWindow emitted or directly caused that packet.",
+  "environment": "Released Hytale 0.7.0 client, AdaptiveWindow 0.4.2, 21 window items, existing Zytale singleplayer save",
+  "error_signature": "Twenty-one Cannot use Blocks/... as texture for item warnings followed by Exception when handling packet 21 WorldLoadProgress: Received WorldLoadProgress at Playing connection stage but expected it only during SettingUp.",
+  "conditions": [
+    "Item Texture points to a large structural atlas used by the placed model",
+    "Item Icon points to a valid generated 128x128 transparent image",
+    "The client validates and prepares Texture even when Icon is present",
+    "Server-side asset validation alone does not reproduce the late client packet ordering failure"
+  ],
+  "workaround": "Use a shared lightweight item model and a 128x128 texture under Items/ for each item; retain the placed architectural model only in BlockType.CustomModel. Re-test the client before asserting that reduced item preparation eliminates the late WorldLoadProgress race.",
+  "resolved_by": "SOL-000005:v002",
+  "date": "2026-10-13T17:14:08.391883Z",
+  "source_refs": [
+    {
+      "kind": "client-log",
+      "reference": "C:/Users/User/AppData/Roaming/Hytale/UserData/Logs/2026-10-13_18-57-19_client.log",
+      "description": "Client warnings for all window item textures and the later packet-stage exception.",
+      "verified": true
+    },
+    {
+      "kind": "release-report",
+      "reference": "ZytaleAdaptiveWindow/outputs/architecture-0.4.3/REPORT.md",
+      "description": "0.4.3 correction, validation and explicit causal limitation.",
+      "verified": true
+    }
+  ]
+}
