@@ -1,0 +1,331 @@
+{
+  "id": "EXP-000003",
+  "title": "Blockbench-authored Hytale stained-glass pilot with native-material and visual acceptance gates",
+  "summary": "Adaptive Window 0.3.2 for released Hytale 0.6.8 uses one fixed BlendLinear surface containing the complete original RGBA stained-glass design, padded without resampling to native-compliant dimensions. Static/native tests pass, saved materials are retained, and the user confirmed transparency plus precise compact design in the main Zytale Working Copy.",
+  "status": "stable",
+  "created_at": "2026-10-09T17:01:36.430892Z",
+  "updated_at": "2026-10-10T02:21:34.337342Z",
+  "domains": [
+    "game asset authoring",
+    "architectural glazing",
+    "safe saved-world editing"
+  ],
+  "technologies": [
+    "Hytale 0.6.8",
+    "Blockbench 5.2.2",
+    "Hytale plugin 0.10.0",
+    "Blockbench MCP 1.7.0"
+  ],
+  "engines": [
+    "Hytale"
+  ],
+  "languages": [
+    "JavaScript",
+    "Java",
+    "Python"
+  ],
+  "tools": [
+    "Blockbench MCP"
+  ],
+  "problem_class": "game-model authoring and scoped pilot integration",
+  "problem_description": "Replace an oversized incomplete lancet with a real editable Hytale model and test one instance before mass placement.",
+  "context": "Only Zytale Working Copy root 236,130,224; actual user screenshots expose previous incomplete glazing. No Computer Use, no mass replacement.",
+  "capabilities_required": [
+    "native plugin export",
+    "UV and alpha validation",
+    "native material inspection",
+    "multipart root lifecycle",
+    "isolated server save-restart verification",
+    "user visual acceptance"
+  ],
+  "inputs": [],
+  "outputs": [],
+  "constraints": [
+    "No client visual claim from editor or server validation",
+    "No colored-light projection claim from emission or PhysicalMaterial alone",
+    "No replacement of other windows until pilot accepted",
+    "One uniform color per diamond; four-color regular alternation",
+    "Glazing mask and stone arch must share the same profile"
+  ],
+  "known_attempts": [],
+  "known_failures": [
+    "FAIL-000009",
+    "FAIL-000010",
+    "FAIL-000011",
+    "FAIL-000012",
+    "FAIL-000013",
+    "FAIL-000014",
+    "FAIL-000015",
+    "FAIL-000016"
+  ],
+  "current_solution": "SOL-000004:v002",
+  "solution_versions": [
+    {
+      "id": "SOL-000003",
+      "version": 1,
+      "description": "Author in real Blockbench Hytale format, export through codec, preserve editable source, compare installed native window data, and integrate one bounded pilot before any family expansion.",
+      "changes": [
+        "78 nodes and 384x256 atlas at 32px/block; plugin limit 255 respected",
+        "Glass alpha quad double-sided and behind tracery; frame and lead opaque; no Light/fullbright",
+        "One partition function drives both per-diamond color and lead; 4-color alternation along both axes",
+        "Correct glazing cutout to use the same dimensions as the modeled outer arch, overlapping below stone",
+        "Inspect actual native Glass/Window properties and assert runtime packet",
+        "Preview and replace one root; native engine maintains 20 fillers; verify 6553600 cells and fluids",
+        "Merge only 2 chunk records, restoring source entity sections; verify untouched files before and after install"
+      ],
+      "advantages": [
+        "Source remains editable in Blockbench",
+        "Pilot keeps failures local and reversible",
+        "Separates data/geometry compliance from graphical approval"
+      ],
+      "disadvantages": [
+        "Single composite object has no independently breakable pane/frame",
+        "Native Glass material is not evidence of colored optical projection",
+        "Engine/client visual acceptance still requires real screenshots or player review"
+      ],
+      "test_results": [
+        "78 nodes, zero plugin issues and UV bounds errors",
+        "53 diamond cells, 6272 sampled pixels: uniform cell colors and no equal adjacent colors",
+        "13182 clear-aperture pixels: zero transparent gaps after user correction",
+        "Native save/restart and merged-file restart: exactly 21 changed cells, no unexpected changes",
+        "1022 unrelated region records and 5551 other live files identical",
+        "0.1.1 only changes PNG and manifest; model and definitions byte-identical",
+        "Client visual, optical/light transmission and player collision tests remain UNVERIFIED"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null
+      },
+      "created_at": "2026-10-09T17:02:09.557087Z",
+      "supersedes": null,
+      "status": "experimental"
+    },
+    {
+      "id": "SOL-000003",
+      "version": 2,
+      "description": "Revision 0.2.0 of the existing Blockbench stained-glass pilot: one complete 3x7x1 placeable assembly with native donor-textured masonry, using Adaptive Surface sampling and static material states. No wall excavation or restoration.",
+      "changes": [
+        "Real Blockbench/Hytale export revised to 163 nodes, 32px/block, 384x256 atlas; masonry closes jambs, spandrels and header",
+        "Glass alpha reduced to 90/255; ordered alternating diamonds preserved",
+        "Six reserved atlas slots receive donor-face textures; glass and carved frame are unchanged across all variants",
+        "Reuse TextureSampler and WorldMaterialScanner from Adaptive Surface; aliases resolve native cube/stair sources; no changes to the original Adaptive Surface mod",
+        "Use matching per-click interaction sync data; fallback ray explicitly traverses air (id == 0) for installed 0.6.8",
+        "Preload 59 states and 76 textures with 899 donor aliases, no runtime asset registration",
+        "Pending generated ZIP promoted at next plugin construction, before asset ZIPs are opened",
+        "Update only packs/config in live Working Copy; no region or player data writes"
+      ],
+      "advantages": [
+        "One inventory item, ordinary native multipart placement and removal",
+        "Only wall surround changes material; full assembly fits one 21-cell opening",
+        "No destructive donor cutting or stored reconstruction journal"
+      ],
+      "disadvantages": [
+        "Requires a prepared 3x7x1 opening; not a one-unit cube",
+        "Cannot promise arbitrary mod materials; new compatible materials may need restart and must fit 8-million-pixel pack budget",
+        "Individual donor rotation/random texture choice not reproduced exactly",
+        "Single composite physical/opacity properties; no independent stone/glass break behavior or proven colored light projection",
+        "Client alpha rendering, physical player collision, performance and aesthetics remain unverified"
+      ],
+      "test_results": [
+        "Blockbench Hytale validator: 163/255 nodes, valid, zero issues",
+        "6272 diamond samples, 53 cells: uniform/alternating; 13182 aperture pixels without gaps; 50044 front/back wall section samples without exterior gaps",
+        "All 76 generated atlases preserve glass/frame pixels exactly and use opaque masonry pixels",
+        "Native create test: 265 checks, 8 placements, 7 donor materials, 4 yaw rotations, one item consumed, donor unchanged, no runtime asset registration",
+        "Native reload test: 24 checks for state/filler persistence, ordinary multipart removal and untouched donors",
+        "Full isolated map stage starts with existing mods, loads 899 aliases and shuts down normally; supplemental bridge RPC blocked by network sandbox and not counted as passed",
+        "Live installation changed only config and prior model ZIP, added two packs, retained 5559 other existing files byte-identical",
+        "Complete real-client new-material learning lifecycle and visual fidelity still pending user review"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null
+      },
+      "created_at": "2026-10-09T18:10:14.092767Z",
+      "supersedes": "SOL-000003:v001",
+      "status": "experimental"
+    },
+    {
+      "id": "SOL-000003",
+      "version": 3,
+      "description": "0.3.0 standalone Adaptive Window corrects native glazing-face transparency and oversized held representation while preserving saved window IDs and donor materials.",
+      "changes": [
+        "Enable transparent=true on the actual glazing CubeFace in Blockbench; export with the installed Hytale codec",
+        "Explicit Item.Model/Texture and Item.Scale=0.12; placed CustomModelScale=1 on base and every material state",
+        "Rename en-US/it-IT inventory label to exactly 3x7x1_window; retain internal ID and 59 original variant IDs",
+        "One distributable JAR embeds complete asset ZIP, expands/enables one authoritative cache before asset loading; no dependency on Adaptive Surface or MonasticAssets",
+        "Migrate prior cache by merging additional states/textures, keeping current geometry/name/held settings; preserve previous cache backup",
+        "Installer scopes one save, validates old package identities, backs up removed packages/config/cache, checks game both before backup and before mutation"
+      ],
+      "advantages": [
+        "Fixes two independently identified data defects without changing window design",
+        "Standalone download with automatic cache provisioning and next-start material learning",
+        "Existing inventory/window IDs and map files preserved"
+      ],
+      "disadvantages": [
+        "Client visual acceptance still pending; server flags do not prove final rendering or first-person framing",
+        "Automatic cache file remains a saved-world dependency after placing windows",
+        "One combined physical material; no independent stone/glass breaking or proven colored light projection",
+        "Future game versions require native schema/rendering revalidation"
+      ],
+      "test_results": [
+        "User video inspected: 2.57s, oversized held object obscures view; no new client recording produced",
+        "Actual Blockbench inspection found south glass face transparent=false; real codec exports front.transparent=true after fix",
+        "149 release checks: only one glazing face flagged, semantic model unchanged otherwise, 76 atlas byte-identical, 59 variant IDs preserved, exact name and scales",
+        "270 native create checks, 24 reload/removal checks, new-material request and 901 next-start retention/activation checks on final JAR",
+        "Full isolated map migrated and booted; bridge confirms native Glass, transparent opacity/blending, world scale=1, no emission",
+        "Live install preserved 5564 other files; old model pack and 0.2 plugin recoverably moved into backup; no world data edits",
+        "Hytale client transparency, held-item field of view and aesthetics still require user confirmation"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null
+      },
+      "created_at": "2026-10-10T00:36:48.076797Z",
+      "supersedes": "SOL-000003:v002",
+      "status": "experimental",
+      "source_refs": []
+    },
+    {
+      "id": "SOL-000004",
+      "version": 1,
+      "description": "Stable-only single-surface stained-glass compatibility renderer for Hytale 0.6.8, Adaptive Window 0.3.2. Keep the approved complete RGBA artwork, including opaque lead, on one fixed BlendLinear particle. Remove the duplicate glazing quad only from the placed structural model.",
+      "changes": [
+        "80x208 source crop copied pixel-exact into 96x224 canvas with eight transparent pixels on each side; no resizing",
+        "Unchanged alpha, palette, world center and artwork dimensions; all 162 remaining geometry nodes and adaptive masonry retained",
+        "Preserve learned stable-atlas files during cache migration and version backup names",
+        "Preview-only installation, exact whole-save file checksum allowlist, reversible backup"
+      ],
+      "advantages": [
+        "Actual see-through particle rendering confirmed by user for the predecessor 0.3.1 on stable 0.6.8",
+        "Same surface for lead and glass eliminates interpass mask mismatch as a failure mode",
+        "Texture dimensions now satisfy the client warning; no prerelease or client patch needed"
+      ],
+      "disadvantages": [
+        "0.3.2 compactness/alignment and both-side rendering require user client verification",
+        "Particle-system workaround has client lifetime/culling/performance considerations not established by server tests",
+        "Does not simulate physical stained-glass colored light projection"
+      ],
+      "test_results": [
+        "215 static checks: 12283 original translucent texels and 2967 opaque lead texels preserved exactly; frame/masonry/hitbox unchanged",
+        "Native 0.6.8 create 682, reload 24, learn 1 and learnreload 902 checks passed",
+        "Migration retains all 60 pre-existing state IDs/aliases and atlas references",
+        "Installed only in Zytale - Glass 0.6.8 Test; 52 other save files unchanged; main Working Copy untouched"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null
+      },
+      "created_at": "2026-10-10T02:06:28.686872Z",
+      "supersedes": null,
+      "status": "experimental"
+    },
+    {
+      "id": "SOL-000004",
+      "version": 2,
+      "description": "Validated 0.3.2 stable-only stained-glass renderer: keep the complete approved RGBA artwork, including opaque lead, on one fixed BlendLinear surface; remove only the duplicate glazing quad from the placed model; use symmetric transparent padding required by the Hytale 0.6.8 client.",
+      "changes": [
+        "Promote the exact tested 0.3.2 artifact from preview candidate to the user-approved main-map release",
+        "Keep the 80x208 artwork pixel-exact inside a 96x224 transparent-padded texture without resampling",
+        "Retain the 162 structural geometry nodes, adaptive masonry, collision, item identity and saved material states",
+        "Record main Working Copy artifact and generated cache checksums without modifying the map again"
+      ],
+      "advantages": [
+        "User confirms actual see-through glass and precise compact design in the main Hytale map",
+        "Works on released Hytale 0.6.8 without prerelease features or client patching",
+        "Automated placement, reload, removal and material-learning coverage complements real client acceptance"
+      ],
+      "disadvantages": [
+        "User acceptance is direct observational evidence, not automated image comparison or performance telemetry",
+        "Fixed particle lifetime and behavior beyond the observed play session remain implementation constraints",
+        "Does not simulate physically projected colored light and retains composite-object break behavior"
+      ],
+      "test_results": [
+        "User tested 0.3.2 in The Village - Zytale 306 Working Copy and reported complete success on 2026-10-10",
+        "Installed main-map JAR SHA-256 exactly matches the validated release: 4ff793535958621122641e24d671dacbe33d9eaf4b18f79c508713eca6ae6771",
+        "Installed generated cache reports 0.3.2; SHA-256 730d4ed7cf8ac8a1250ef466085564c79e2aebbeff59870bc7e13d0dc0d712e1",
+        "215 static checks passed: 12283 translucent texels and 2967 opaque lead texels preserved exactly",
+        "Native Hytale 0.6.8 tests passed: create 682, reload 24, learn 1, learnreload 902; 60 prior states retained"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null
+      },
+      "created_at": "2026-10-10T02:21:00.402505Z",
+      "supersedes": "SOL-000004:v001",
+      "status": "preferred"
+    }
+  ],
+  "patterns": [],
+  "related_experiences": [
+    "EXP-000001",
+    "EXP-000002"
+  ],
+  "transferability": "",
+  "confidence": 0.95,
+  "validation_status": "validated",
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "tags": [
+    "stained-glass",
+    "blockbench",
+    "hytale",
+    "pilot",
+    "visual-gate",
+    "alpha-blending"
+  ],
+  "project_refs": [
+    "zytale"
+  ],
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/ZYTALE_MONASTIC_ASSET_VALIDATION.json",
+      "description": "Measured export, alpha, native registration, placement, preservation and deployment evidence; explicitly incomplete client tests",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-assets-pilot/source/ZMA_Window_B_Pilot.bbmodel",
+      "description": "Real editable Blockbench export",
+      "verified": true
+    }
+  ]
+}

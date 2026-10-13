@@ -1,0 +1,38 @@
+{
+  "id": "FAIL-000007",
+  "experience_id": "EXP-000002",
+  "attempt": "Clone RawBsonDocument before editing nested chunk components for entity-preserving region merge.",
+  "reason_failed": "Nested RawBsonDocument values remained immutable and rejected put().",
+  "environment": "Hytale 0.6.8, isolated monastic build copy",
+  "error_signature": "UnsupportedOperationException: RawBsonDocument instances are immutable",
+  "conditions": [],
+  "workaround": "Decode into mutable BsonDocument using BsonDocumentCodec before merging original entity records, then re-encode with the native codec.",
+  "resolved_by": "SOL-000002:v001",
+  "date": "2026-10-04T20:00:51.785708Z",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "C:/Users/User/Desktop/Zytale/ZYTALE_MONASTIC_COMPLEX_REPORT.md",
+      "description": "Deployed architecture, limitations and user-review boundary",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-complex/verification-restart.json",
+      "description": "Post-restart scoped diff and native blocks",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-complex/region-merge-proof.json",
+      "description": "Native region-record merge preserves 1006 unrelated records and 13 original block entities",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-complex/deployment-proof.json",
+      "description": "Live save installation checksum and 5547 other unchanged save files",
+      "verified": true
+    }
+  ]
+}

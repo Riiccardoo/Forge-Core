@@ -1,0 +1,38 @@
+{
+  "id": "FAIL-000005",
+  "experience_id": "EXP-000002",
+  "attempt": "Skip unchanged furniture root IDs when the rebuild clears their neighbouring filler cells.",
+  "reason_failed": "Native multipart removal through a changed filler also removes the unchanged root. One sacristy table and one gravestone disappeared despite the filtered root diff looking correct.",
+  "environment": "Hytale 0.6.8, isolated monastic build copy",
+  "error_signature": "2 missing roots and 4 filler mismatches after apply",
+  "conditions": [],
+  "workaround": "Force every planned new furniture root into the native placement phase and verify the entire occupied footprint after save/restart.",
+  "resolved_by": "SOL-000002:v001",
+  "date": "2026-10-04T20:00:50.957641Z",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "C:/Users/User/Desktop/Zytale/ZYTALE_MONASTIC_COMPLEX_REPORT.md",
+      "description": "Deployed architecture, limitations and user-review boundary",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-complex/verification-restart.json",
+      "description": "Post-restart scoped diff and native blocks",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-complex/region-merge-proof.json",
+      "description": "Native region-record merge preserves 1006 unrelated records and 13 original block entities",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-complex/deployment-proof.json",
+      "description": "Live save installation checksum and 5547 other unchanged save files",
+      "verified": true
+    }
+  ]
+}

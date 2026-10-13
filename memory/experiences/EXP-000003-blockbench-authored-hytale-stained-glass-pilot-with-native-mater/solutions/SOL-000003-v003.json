@@ -1,0 +1,47 @@
+{
+  "id": "SOL-000003",
+  "version": 3,
+  "description": "0.3.0 standalone Adaptive Window corrects native glazing-face transparency and oversized held representation while preserving saved window IDs and donor materials.",
+  "changes": [
+    "Enable transparent=true on the actual glazing CubeFace in Blockbench; export with the installed Hytale codec",
+    "Explicit Item.Model/Texture and Item.Scale=0.12; placed CustomModelScale=1 on base and every material state",
+    "Rename en-US/it-IT inventory label to exactly 3x7x1_window; retain internal ID and 59 original variant IDs",
+    "One distributable JAR embeds complete asset ZIP, expands/enables one authoritative cache before asset loading; no dependency on Adaptive Surface or MonasticAssets",
+    "Migrate prior cache by merging additional states/textures, keeping current geometry/name/held settings; preserve previous cache backup",
+    "Installer scopes one save, validates old package identities, backs up removed packages/config/cache, checks game both before backup and before mutation"
+  ],
+  "advantages": [
+    "Fixes two independently identified data defects without changing window design",
+    "Standalone download with automatic cache provisioning and next-start material learning",
+    "Existing inventory/window IDs and map files preserved"
+  ],
+  "disadvantages": [
+    "Client visual acceptance still pending; server flags do not prove final rendering or first-person framing",
+    "Automatic cache file remains a saved-world dependency after placing windows",
+    "One combined physical material; no independent stone/glass breaking or proven colored light projection",
+    "Future game versions require native schema/rendering revalidation"
+  ],
+  "test_results": [
+    "User video inspected: 2.57s, oversized held object obscures view; no new client recording produced",
+    "Actual Blockbench inspection found south glass face transparent=false; real codec exports front.transparent=true after fix",
+    "149 release checks: only one glazing face flagged, semantic model unchanged otherwise, 76 atlas byte-identical, 59 variant IDs preserved, exact name and scales",
+    "270 native create checks, 24 reload/removal checks, new-material request and 901 next-start retention/activation checks on final JAR",
+    "Full isolated map migrated and booted; bridge confirms native Glass, transparent opacity/blending, world scale=1, no emission",
+    "Live install preserved 5564 other files; old model pack and 0.2 plugin recoverably moved into backup; no world data edits",
+    "Hytale client transparency, held-item field of view and aesthetics still require user confirmation"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-10T00:36:48.076797Z",
+  "supersedes": "SOL-000003:v002",
+  "status": "experimental",
+  "source_refs": []
+}

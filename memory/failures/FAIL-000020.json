@@ -1,0 +1,37 @@
+{
+  "id": "FAIL-000020",
+  "experience_id": "EXP-000004",
+  "attempt": "Use one long-lived fixed BlendLinear particle per glazing panel for the 20 generated architectural variants on Hytale 0.7.0, while adding only a narrow adaptive reveal around each aperture.",
+  "reason_failed": "User client screenshots show glazing rotated or displaced from a Gothic bifora, extending below and beside the frame. The generator independently transformed each particle panel and did not generate the wall complement around the overall opening, so missing masonry is directly explained. The screenshots do not isolate whether Update 7 changed particle-transform behavior, so that causal claim remains unproven.",
+  "environment": "Released Hytale 0.7.0, AdaptiveWindow 0.4.1, generated multi-panel Gothic bifora",
+  "error_signature": "Visible particle pane orientation/position differs from the placed frame; rectangular pane regions protrude outside the apertures; wall is absent around and between frame profiles.",
+  "conditions": [
+    "Placed models contain structural boxes but glazing is represented only by separately transformed particle systems",
+    "Multi-panel variants attach two to four independent spawners with local offsets",
+    "The generator creates a thin adaptive_reveal stroke but no block-aligned wall complement",
+    "Server placement and asset parsing can pass while the client rendering is visibly wrong"
+  ],
+  "workaround": "On released Hytale 0.7.0, use native transparent quads inside the same model transform as the frame. Generate donor-textured masonry from the complement of all apertures, and keep its UV region disjoint from the fixed frame and shared glazing regions.",
+  "resolved_by": "SOL-000005:v001",
+  "date": "2026-10-13T12:49:23.721568Z",
+  "source_refs": [
+    {
+      "kind": "user-screenshot",
+      "reference": "C:/Users/User/AppData/Local/Temp/codex-clipboard-43290890-2e14-4c62-a5b0-5c4a64caa79c.png",
+      "description": "Gothic bifora with both pane surfaces rotated/displaced outside the frame.",
+      "verified": true
+    },
+    {
+      "kind": "user-screenshot",
+      "reference": "C:/Users/User/AppData/Local/Temp/codex-clipboard-b98aa3ca-bd8c-45aa-96c8-cb7a1c133eb8.png",
+      "description": "Alternate view showing pane misalignment and absent surrounding masonry.",
+      "verified": true
+    },
+    {
+      "kind": "source",
+      "reference": "ZytaleAdaptiveWindow/backups/before-render-fix-042/generate-architecture.py",
+      "description": "0.4.1 implementation with particle attachments and adaptive_reveal only.",
+      "verified": true
+    }
+  ]
+}

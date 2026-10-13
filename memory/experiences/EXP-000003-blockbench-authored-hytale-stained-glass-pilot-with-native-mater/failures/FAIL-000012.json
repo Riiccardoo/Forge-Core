@@ -1,0 +1,35 @@
+{
+  "id": "FAIL-000012",
+  "experience_id": "EXP-000003",
+  "attempt": "Rely on PNG alpha and BlockType.RequiresAlphaBlending without marking the model's glazing face transparent",
+  "reason_failed": "User reported opaque glass in the Hytale client although Blockbench looked transparent. Direct inspection found CubeFace.transparent=false; the exported face lacked the new native transparent flag.",
+  "environment": "Hytale 0.6.8, Blockbench 5.2.2, Hytale plugin 0.10.0, pilot 0.2.0",
+  "error_signature": "Glass texture alpha=90/255, block blending=true, but glazing textureLayout.front.transparent absent",
+  "conditions": [
+    "Editor preview honors alpha differently from the game's per-face rendering pass",
+    "Composite model requires only the pane, not opaque masonry, to participate in transparent-face rendering"
+  ],
+  "workaround": "Set transparent on the actual glazing face through Blockbench and verify the native codec exports textureLayout.front.transparent=true. Retain block alpha blending and PNG alpha. Native data tests passed after change; corrected client output still awaiting user review.",
+  "resolved_by": "SOL-000003:v003",
+  "date": "2026-10-10T00:36:48.682458Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-assets-pilot/revision-v03/before/ZMA_Window_B_Pilot.blockymodel",
+      "description": "Previous exported pane lacked the face flag",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-assets-pilot/revision-v03/ZMA_Window_B_Pilot.blockymodel",
+      "description": "Re-export from actual Blockbench includes flag only for pane",
+      "verified": true
+    },
+    {
+      "kind": "url",
+      "reference": "https://hytale.com/news/2026/9/pre-release-patch-notes-update-7",
+      "description": "Primary Hytale notes introduce model face transparency and per-block alpha blending",
+      "verified": true
+    }
+  ]
+}

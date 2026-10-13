@@ -1,0 +1,38 @@
+{
+  "id": "FAIL-000006",
+  "experience_id": "EXP-000002",
+  "attempt": "Validate roof/lighting details before later stair and cemetery clearing phases.",
+  "reason_failed": "Later geometry opened roof edges and removed lantern brackets. Planned roots survived but some supports and roof envelope columns did not.",
+  "environment": "Hytale 0.6.8, isolated monastic build copy",
+  "error_signature": "42 uncovered declared roof columns in first audit; 5 unsupported new light roots during detailed audit",
+  "conditions": [],
+  "workaround": "Finish joined roofs after connectivity cuts; cover wallwalk stair shafts; recheck lantern support against final geometry, move lights off stair routes.",
+  "resolved_by": "SOL-000002:v001",
+  "date": "2026-10-04T20:00:51.372112Z",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "C:/Users/User/Desktop/Zytale/ZYTALE_MONASTIC_COMPLEX_REPORT.md",
+      "description": "Deployed architecture, limitations and user-review boundary",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-complex/verification-restart.json",
+      "description": "Post-restart scoped diff and native blocks",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-complex/region-merge-proof.json",
+      "description": "Native region-record merge preserves 1006 unrelated records and 13 original block entities",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-complex/deployment-proof.json",
+      "description": "Live save installation checksum and 5547 other unchanged save files",
+      "verified": true
+    }
+  ]
+}

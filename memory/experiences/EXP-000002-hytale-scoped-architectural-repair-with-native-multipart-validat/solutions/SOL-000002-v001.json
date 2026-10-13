@@ -1,0 +1,43 @@
+{
+  "id": "SOL-000002",
+  "version": 1,
+  "description": "Build in a frozen full clone with the same enabled mods; verify actual models, fillers and rotations; apply previewed bounded edits; audit geometry and routes; reopen a native-record-merged deployment package before installing one verified region file.",
+  "changes": [
+    "Force all planned furniture roots into the placement list even when their final ID equals the original root",
+    "Clear affected original multipart objects before installing architecture and furniture",
+    "Close wing roof envelopes after stairs and restore supported lantern brackets after later clearing phases",
+    "Use native IndexedStorageFile with ChunkUtil.indexColumn; preserve original non-block entities and original block-component records",
+    "Validate every untouched chunk record byte-for-byte and every other live save file hash"
+  ],
+  "advantages": [
+    "Preserves unrelated world data and installed configuration",
+    "Root/filler failures become observable and repairable",
+    "Technical correctness separated from visual approval"
+  ],
+  "disadvantages": [
+    "Programmatic traversal is not an actual player movement test",
+    "Native palette cannot literally reproduce every reference material",
+    "Current storage implementation and model IDs are version-specific"
+  ],
+  "test_results": [
+    "73422 changed cells, zero outside scope",
+    "32/32 key destinations and 22/22 ground-floor room zones reachable",
+    "Post-restart zero planned block/furniture mismatches, zero declared roof gaps, zero unsupported new light roots",
+    "18 changed chunk records; 1006 other region records identical; 13 original block entity records preserved",
+    "5547 other live save files unchanged; original save and mod configuration untouched",
+    "Visual approval pending user"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": "All recorded programmatic assertions passed; user visual review outstanding",
+    "maintainability": null,
+    "performance": null,
+    "compatibility": "Observed Hytale 0.6.8 only"
+  },
+  "created_at": "2026-10-04T20:00:50.543882Z",
+  "supersedes": null,
+  "status": "working"
+}

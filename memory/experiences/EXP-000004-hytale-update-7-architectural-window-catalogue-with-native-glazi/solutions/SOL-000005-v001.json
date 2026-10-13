@@ -1,0 +1,52 @@
+{
+  "id": "SOL-000005",
+  "version": 1,
+  "description": "AdaptiveWindow 0.4.2 for released Hytale 0.7.0: place glazing as native transparent quads inside each structural model; generate donor-textured masonry as separate model pieces outside the aperture union; keep every architectural frame on fixed UVs and give all 21 items explicit icons and dimension-prefixed English names.",
+  "changes": [
+    "Replace every placed particle-pane attachment with a double-sided native quad whose face has transparent=true; set RequiresAlphaBlending=true and remove all legacy particle systems",
+    "Restore the original Pilot model's native glazing face rather than the 0.6.8 particle workaround",
+    "Build wall infill from the complement of the union of aperture polygons inside an odd-width, block-aligned installation envelope",
+    "Map only adaptive_wall nodes to the six donor texture slots; keep frame boxes at the fixed stone UV and glass in four shared palette sheets",
+    "Keep outer frame members deep enough to project from the masonry while inner tracery remains thin",
+    "Derive names from block envelope dimensions and English style names; retain 3x7x1_window for the original",
+    "Generate 21 transparent 128x128 item icons from the actual models and register explicit Icon paths",
+    "Preserve stable IDs, material definitions, learned aliases and all 84 prior multipart footprints",
+    "Install only the shared 0.4.2 JAR, with checksum validation and recoverable backup of 0.4.1"
+  ],
+  "advantages": [
+    "Pane, frame and block orientation use one model transform, eliminating independent particle offsets and rotations",
+    "Selected wall material cannot recolor the frame or glazing because their atlas regions are disjoint and validated across all states",
+    "Curved and circular windows show donor masonry outside their aperture without rectangular glass corners",
+    "No saved-world conversion and no runtime asset registration",
+    "Explicit names and silhouettes make the creative inventory catalogue usable"
+  ],
+  "disadvantages": [
+    "The 0.7.0 pack decodes about 172.78 MiB of RGBA texture pixels; client GPU/FPS impact is unmeasured",
+    "A rectangular installation envelope means the rose is surrounded by adaptive masonry even though its visible frame and opening are circular",
+    "Software inspection and dedicated-server validation do not certify final client transparency, lighting or aesthetics",
+    "The combined block still has one break lifecycle rather than independently breakable wall, frame and panes"
+  ],
+  "test_results": [
+    "29137 static checks passed: models, UVs, references, icons, English names, transparent faces, panel transforms, wall/aperture coverage and frame/wall material isolation",
+    "Native Hytale 0.7.0 create: 7215 checks over 21 models at four yaw rotations",
+    "Native reload/removal: 13163 checks; all 84 placements persisted and removed through multipart filler routing",
+    "Native learned-material restart: 6711 checks; new and previous aliases remained available",
+    "All 84 model/yaw cases retained the 0.4.1 occupied cell sets and filler offsets exactly",
+    "Installer fixture passed, then shared install replaced only 0.4.1 with 0.4.2; four other mod files stayed identical and no saved world was opened",
+    "Installed and release JAR SHA-256: a9c5d9814e5f2a8f30f83fe21409fa9d4fc11ac224fda6f698dcb82f85c0bfe3",
+    "Client visual rendering and performance remain unverified"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": "Static plus native create/reload/learnreload validation passed",
+    "maintainability": "One parametric generator and one shared glazing atlas per donor material",
+    "performance": "45293568 decoded texture pixels; client FPS/GPU unmeasured",
+    "compatibility": "Released Hytale 0.7.0; existing IDs and multipart footprints retained"
+  },
+  "created_at": "2026-10-13T12:49:09.332190Z",
+  "supersedes": null,
+  "status": "preferred"
+}

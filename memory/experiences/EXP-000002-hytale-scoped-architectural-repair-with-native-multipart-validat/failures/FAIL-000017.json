@@ -1,0 +1,35 @@
+{
+  "id": "FAIL-000017",
+  "experience_id": "EXP-000002",
+  "attempt": "Deliver V01 House01 with eleven new custom assets and structural, navigation and persistence validation.",
+  "reason_failed": "The user explicitly rejected the architectural quality as inferior to the approved V15 and required a complete rebuild using that house's method, without new creations.",
+  "environment": "Hytale 0.6.8 stable; Zytale V01 on 2026-10-10",
+  "error_signature": "User: No non è sufficiente, la prima casa era stata costruita molto meglio. Ricostruiscila da zero. Non creare cose nuove, costruisci questa casa proprio come è stato fatto per la prima",
+  "conditions": [
+    "An approved native construction was available for reuse",
+    "Technical success did not establish visual quality"
+  ],
+  "workaround": "Reused the approved native V15 builder and finishing, adapting cellar/workshop functions without new models or mod changes. Exact roof and balcony reuse and native persistence verified; final user visual acceptance pending.",
+  "resolved_by": null,
+  "date": "2026-10-10T09:13:53.724336Z",
+  "source_refs": [
+    {
+      "kind": "user_feedback",
+      "reference": "Current conversation, latest V01 rejection",
+      "description": "Direct instruction to reuse first-house method",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/blackridge-house-01-native-rebuild/approved-construction-comparison.json",
+      "description": "259 roof and 102 front balcony cells match approved V15",
+      "verified": true
+    },
+    {
+      "kind": "report",
+      "reference": "C:/Users/User/Desktop/Zytale/BLACKRIDGE_HOUSE_01_BUILD_REPORT.md",
+      "description": "Installed native rebuild, user review pending",
+      "verified": true
+    }
+  ]
+}

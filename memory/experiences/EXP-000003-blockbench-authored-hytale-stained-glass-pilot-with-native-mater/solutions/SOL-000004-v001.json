@@ -1,0 +1,40 @@
+{
+  "id": "SOL-000004",
+  "version": 1,
+  "description": "Stable-only single-surface stained-glass compatibility renderer for Hytale 0.6.8, Adaptive Window 0.3.2. Keep the approved complete RGBA artwork, including opaque lead, on one fixed BlendLinear particle. Remove the duplicate glazing quad only from the placed structural model.",
+  "changes": [
+    "80x208 source crop copied pixel-exact into 96x224 canvas with eight transparent pixels on each side; no resizing",
+    "Unchanged alpha, palette, world center and artwork dimensions; all 162 remaining geometry nodes and adaptive masonry retained",
+    "Preserve learned stable-atlas files during cache migration and version backup names",
+    "Preview-only installation, exact whole-save file checksum allowlist, reversible backup"
+  ],
+  "advantages": [
+    "Actual see-through particle rendering confirmed by user for the predecessor 0.3.1 on stable 0.6.8",
+    "Same surface for lead and glass eliminates interpass mask mismatch as a failure mode",
+    "Texture dimensions now satisfy the client warning; no prerelease or client patch needed"
+  ],
+  "disadvantages": [
+    "0.3.2 compactness/alignment and both-side rendering require user client verification",
+    "Particle-system workaround has client lifetime/culling/performance considerations not established by server tests",
+    "Does not simulate physical stained-glass colored light projection"
+  ],
+  "test_results": [
+    "215 static checks: 12283 original translucent texels and 2967 opaque lead texels preserved exactly; frame/masonry/hitbox unchanged",
+    "Native 0.6.8 create 682, reload 24, learn 1 and learnreload 902 checks passed",
+    "Migration retains all 60 pre-existing state IDs/aliases and atlas references",
+    "Installed only in Zytale - Glass 0.6.8 Test; 52 other save files unchanged; main Working Copy untouched"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-10T02:06:28.686872Z",
+  "supersedes": null,
+  "status": "experimental"
+}

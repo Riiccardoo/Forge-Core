@@ -1,0 +1,210 @@
+{
+  "id": "EXP-000002",
+  "title": "Hytale scoped architectural repair with native multipart validation and isolated-save deployment",
+  "summary": "Native isolated-save, multipart and selective-record deployment method technically tested for repair and authorised full reconstruction. v001 visual result was rejected by user; v002 reference-led replacement technically passes but still awaits user visual acceptance.",
+  "status": "active",
+  "created_at": "2026-10-04T20:00:50.137288Z",
+  "updated_at": "2026-10-10T10:07:55.079147Z",
+  "domains": [
+    "voxel architecture",
+    "safe saved-world editing"
+  ],
+  "technologies": [
+    "Hytale 0.6.8",
+    "native BlockType and multipart fillers",
+    "Hytale IndexedStorageFile",
+    "BSON",
+    "Node.js"
+  ],
+  "engines": [
+    "Hytale"
+  ],
+  "languages": [
+    "Java",
+    "JavaScript",
+    "PowerShell"
+  ],
+  "tools": [],
+  "problem_class": "scope-preserving architectural reconstruction",
+  "problem_description": "Reconstruct an authorised monastic complex to architectural guides while preserving unrelated world data, original save and existing core mods. New asset pack and its enable are deliberate scoped configuration changes.",
+  "context": "Blackridge reference-led replacement: 15 static custom model types, 60 persisted Adaptive Surface placements, 33 obsolete bed records explicitly removed, 8 new beds persisted. No Computer Use or native client screenshot validation.",
+  "capabilities_required": [
+    "native asset and hitbox inspection",
+    "rotation-aware generation",
+    "multipart lifecycle",
+    "pre-post diff",
+    "save-restart verification",
+    "selective binary record merge"
+  ],
+  "inputs": [],
+  "outputs": [],
+  "constraints": [
+    "Only authorised Working Copy and explicitly approved reconstruction scope",
+    "Preserve village, farmhouse, fields, dry canyon and original save",
+    "No core/gameplay mod changes; new static architectural pack enable is scoped",
+    "Never equate technical checks with visual acceptance"
+  ],
+  "known_attempts": [],
+  "known_failures": [
+    "FAIL-000005",
+    "FAIL-000006",
+    "FAIL-000007",
+    "FAIL-000008",
+    "FAIL-000017",
+    "FAIL-000018"
+  ],
+  "current_solution": "SOL-000002:v001",
+  "solution_versions": [
+    {
+      "id": "SOL-000002",
+      "version": 1,
+      "description": "Build in a frozen full clone with the same enabled mods; verify actual models, fillers and rotations; apply previewed bounded edits; audit geometry and routes; reopen a native-record-merged deployment package before installing one verified region file.",
+      "changes": [
+        "Force all planned furniture roots into the placement list even when their final ID equals the original root",
+        "Clear affected original multipart objects before installing architecture and furniture",
+        "Close wing roof envelopes after stairs and restore supported lantern brackets after later clearing phases",
+        "Use native IndexedStorageFile with ChunkUtil.indexColumn; preserve original non-block entities and original block-component records",
+        "Validate every untouched chunk record byte-for-byte and every other live save file hash"
+      ],
+      "advantages": [
+        "Preserves unrelated world data and installed configuration",
+        "Root/filler failures become observable and repairable",
+        "Technical correctness separated from visual approval"
+      ],
+      "disadvantages": [
+        "Programmatic traversal is not an actual player movement test",
+        "Native palette cannot literally reproduce every reference material",
+        "Current storage implementation and model IDs are version-specific"
+      ],
+      "test_results": [
+        "73422 changed cells, zero outside scope",
+        "32/32 key destinations and 22/22 ground-floor room zones reachable",
+        "Post-restart zero planned block/furniture mismatches, zero declared roof gaps, zero unsupported new light roots",
+        "18 changed chunk records; 1006 other region records identical; 13 original block entity records preserved",
+        "5547 other live save files unchanged; original save and mod configuration untouched",
+        "Visual approval pending user"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": "All recorded programmatic assertions passed; user visual review outstanding",
+        "maintainability": null,
+        "performance": null,
+        "compatibility": "Observed Hytale 0.6.8 only"
+      },
+      "created_at": "2026-10-04T20:00:50.543882Z",
+      "supersedes": null,
+      "status": "working"
+    },
+    {
+      "id": "SOL-000002",
+      "version": 2,
+      "description": "Reference-led authorised full reconstruction in a verified isolated save, retaining the native multipart/persistence/scoped-record deployment method while adding a small static architectural model pack. User visual approval remains pending.",
+      "changes": [
+        "Derive new volumes, foundations and detail geometry from supplied architectural boards instead of keeping the rejected enclosure/building template",
+        "Add 15 native static blockymodel types with a single 256x128 atlas; preflight all custom and Adaptive Surface IDs",
+        "Apply multipart dirty-footprint closure across previous and new objects; reapply intersecting unchanged roots after clearing",
+        "Remove only the explicit 33 obsolete monastic bed component records; preserve other source entity data and persist 8 new beds",
+        "Reopen staging server, verify final geometry/routes, merge 20 exact records while preserving 1004 unrelated records",
+        "Install only merged region, new asset pack and its explicit config enable; verify every other preexisting live file"
+      ],
+      "advantages": [
+        "Separates technical safety from unproven visual acceptance",
+        "Dedicated sub-block architectural geometry without gameplay code",
+        "Explicit entity removal policy supports demolition without resurrecting old objects"
+      ],
+      "disadvantages": [
+        "No native client POV/nightlight/physical collision acceptance yet",
+        "Version-specific Hytale storage and assets",
+        "New static pack must remain enabled for custom details"
+      ],
+      "test_results": [
+        "159682 changed cells; zero outside scope/unplanned/mismatch",
+        "23/23 navigation goals and all free cells in six ground zones reachable",
+        "Final scoped floor/shell/roof/foundation/crypt-boundary probes empty",
+        "60 Adaptive Surface placements and 8 bed entities persisted after restart",
+        "20 changed records, 1004 unrelated records identical; 5546 other existing save files identical",
+        "Live region checksum verified; user visual approval pending"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": "Technical assertions pass; visual requirements are not declared validated",
+        "maintainability": null,
+        "performance": null,
+        "compatibility": "Observed Hytale 0.6.8 and Adaptive Surface 0.9.3 only"
+      },
+      "created_at": "2026-10-04T21:17:42.488139Z",
+      "supersedes": "SOL-000002:v001",
+      "status": "working"
+    }
+  ],
+  "patterns": [],
+  "related_experiences": [],
+  "transferability": "The isolation, native-model inspection and scoped-diff method is reusable. IDs, bounds, rotations and native storage version must be revalidated on another world/build.",
+  "confidence": 0.82,
+  "validation_status": "experimental",
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "tags": [
+    "architecture",
+    "scope",
+    "backup",
+    "multipart",
+    "persistence",
+    "pending-visual-review"
+  ],
+  "project_refs": [
+    "zytale"
+  ],
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "C:/Users/User/Desktop/Zytale/ZYTALE_MONASTIC_COMPLEX_REPORT.md",
+      "description": "New reference-led replacement and explicit pending visual acceptance",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-reference-rebuild/verification-final.json",
+      "description": "Recorded scoped native-data validation; not visual proof",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-reference-rebuild/structural-final.json",
+      "description": "Recorded scoped native-data validation; not visual proof",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-reference-rebuild/navigation-final.json",
+      "description": "Recorded scoped native-data validation; not visual proof",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-reference-rebuild/region-merge-proof.json",
+      "description": "Recorded scoped native-data validation; not visual proof",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-reference-rebuild/deployment-proof.json",
+      "description": "Recorded scoped native-data validation; not visual proof",
+      "verified": true
+    }
+  ]
+}

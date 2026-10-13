@@ -1,0 +1,29 @@
+{
+  "id": "FAIL-000016",
+  "experience_id": "EXP-000003",
+  "attempt": "Adaptive Window 0.3.1 on stable Hytale: split glass into a fixed BlendLinear particle while keeping opaque lead pixels on the original coplanar model quad; use an 80x208 particle texture",
+  "reason_failed": "User confirmed real see-through rendering but rejected fragmented/doubled outlines and loss of the previous compact design. The same client log warns that the particle texture dimensions must be multiples of 32. Separate model/particle rasterization is a plausible contributor; the individual causes have not been visually isolated.",
+  "environment": "Hytale 0.6.8 stable, Adaptive Window 0.3.1, Zytale - Glass 0.6.8 Test",
+  "error_signature": "Texture width/height must be a multiple of 32 and at least 32x32: Particles/Textures/ZytaleWindow/Stable_StainedGlass.png (80x208)",
+  "conditions": [
+    "Server asset parsing and placement tests pass despite client texture warning",
+    "Lead and glass use complementary masks on separate render paths"
+  ],
+  "workaround": "0.3.2 places the entire original RGBA design on one BlendLinear surface and removes the old glazing quad from the placed mesh. Add symmetric transparent padding to 96x224 without resizing. Static and native tests pass; user visual review is still required.",
+  "resolved_by": null,
+  "date": "2026-10-10T02:06:28.090349Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/AppData/Roaming/Hytale/UserData/Logs/2026-10-10_03-49-25_client.log:1190",
+      "description": "Observed native client texture-size warning; log also confirms 0.3.1 in QA world",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/AppData/Local/Temp/codex-clipboard-d8eeb224-2235-41e6-93a0-6402aa252ee4.png",
+      "description": "User reports transparency works but design fidelity is insufficient",
+      "verified": true
+    }
+  ]
+}

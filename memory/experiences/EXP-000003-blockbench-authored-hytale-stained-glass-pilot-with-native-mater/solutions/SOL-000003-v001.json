@@ -1,0 +1,46 @@
+{
+  "id": "SOL-000003",
+  "version": 1,
+  "description": "Author in real Blockbench Hytale format, export through codec, preserve editable source, compare installed native window data, and integrate one bounded pilot before any family expansion.",
+  "changes": [
+    "78 nodes and 384x256 atlas at 32px/block; plugin limit 255 respected",
+    "Glass alpha quad double-sided and behind tracery; frame and lead opaque; no Light/fullbright",
+    "One partition function drives both per-diamond color and lead; 4-color alternation along both axes",
+    "Correct glazing cutout to use the same dimensions as the modeled outer arch, overlapping below stone",
+    "Inspect actual native Glass/Window properties and assert runtime packet",
+    "Preview and replace one root; native engine maintains 20 fillers; verify 6553600 cells and fluids",
+    "Merge only 2 chunk records, restoring source entity sections; verify untouched files before and after install"
+  ],
+  "advantages": [
+    "Source remains editable in Blockbench",
+    "Pilot keeps failures local and reversible",
+    "Separates data/geometry compliance from graphical approval"
+  ],
+  "disadvantages": [
+    "Single composite object has no independently breakable pane/frame",
+    "Native Glass material is not evidence of colored optical projection",
+    "Engine/client visual acceptance still requires real screenshots or player review"
+  ],
+  "test_results": [
+    "78 nodes, zero plugin issues and UV bounds errors",
+    "53 diamond cells, 6272 sampled pixels: uniform cell colors and no equal adjacent colors",
+    "13182 clear-aperture pixels: zero transparent gaps after user correction",
+    "Native save/restart and merged-file restart: exactly 21 changed cells, no unexpected changes",
+    "1022 unrelated region records and 5551 other live files identical",
+    "0.1.1 only changes PNG and manifest; model and definitions byte-identical",
+    "Client visual, optical/light transmission and player collision tests remain UNVERIFIED"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-09T17:02:09.557087Z",
+  "supersedes": null,
+  "status": "experimental"
+}

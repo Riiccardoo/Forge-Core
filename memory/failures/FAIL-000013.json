@@ -1,0 +1,29 @@
+{
+  "id": "FAIL-000013",
+  "experience_id": "EXP-000003",
+  "attempt": "Let a seven-block-tall architectural item use its placed model at default held-item scale",
+  "reason_failed": "User video shows the equipped window covering almost the entire first-person view.",
+  "environment": "Hytale 0.6.8, pilot 0.2.0; user recording from 2026-10-10",
+  "error_signature": "Huge opaque facade follows the player's hand and blocks forward visibility",
+  "conditions": [
+    "Item has no explicit held Model/Texture/Scale",
+    "World model is 3x7x1 blocks"
+  ],
+  "workaround": "Use explicit Item.Model and Texture with Item.Scale=0.12; leave BlockType.CustomModelScale=1 for placed assembly. Server confirms independent scales; final client framing still needs user review.",
+  "resolved_by": "SOL-000003:v003",
+  "date": "2026-10-10T00:36:49.260660Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Hytale 2026-10-10 01-57-59.mp4",
+      "description": "Viewed extracted frames document obstruction in equipped state",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/ZytaleAdaptiveWindow/tests/release-validation.json",
+      "description": "Independent held/place scales in definitive artifact",
+      "verified": true
+    }
+  ]
+}

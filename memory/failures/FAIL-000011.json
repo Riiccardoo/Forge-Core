@@ -1,0 +1,29 @@
+{
+  "id": "FAIL-000011",
+  "experience_id": "EXP-000003",
+  "attempt": "Replace a generated asset ZIP at runtime while Hytale holds its ZIP filesystem open",
+  "reason_failed": "Windows refused the active archive replacement with AccessDeniedException. Regeneration must not overwrite an asset pack already opened by AssetModule.",
+  "environment": "Windows, Hytale 0.6.8, AdaptiveWindow material bake fixture",
+  "error_signature": "java.nio.file.AccessDeniedException replacing mods/ZMA_WindowMaterials.zip",
+  "conditions": [
+    "Active asset pack loaded from ZIP",
+    "Generated materials written during server lifetime"
+  ],
+  "workaround": "Write a complete separate pending ZIP, then atomically promote it during next plugin construction before AssetModule opens packs. Preserve old pack and states. Tested separate bake and next-start activation; complete user-client new-donor lifecycle not yet verified.",
+  "resolved_by": "SOL-000003:v002",
+  "date": "2026-10-09T18:11:08.149290Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-assets-pilot/revision-v02/../adaptive-window/src/zytale/window/WindowMaterialBake.java",
+      "description": "Read previous pack, write separate complete pending ZIP",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-assets-pilot/revision-v02/../adaptive-window/src/zytale/window/AdaptiveWindow.java",
+      "description": "Early next-start promotion and backup of previous ZIP",
+      "verified": true
+    }
+  ]
+}

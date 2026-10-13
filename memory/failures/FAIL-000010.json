@@ -1,0 +1,29 @@
+{
+  "id": "FAIL-000010",
+  "experience_id": "EXP-000003",
+  "attempt": "Use the no-predicate TargetUtil.getTargetBlockOrigin overload as fallback donor raycast",
+  "reason_failed": "Installed Hytale 0.6.8 native fixture returned the first air cell (16,127,32) rather than the solid donor at (16,129,32). Its predicate means continue traversal; the default overload used here continued on nonzero IDs.",
+  "environment": "Hytale 0.6.8, Java 25, AdaptiveWindow 0.2.0 isolated native server fixture",
+  "error_signature": "AssertionError: exact native donor ray 0: (1.600E+1 1.270E+2 3.200E+1)",
+  "conditions": [
+    "No matching native client interaction chain, so fallback ray is used",
+    "Synthetic actor in loaded chunks, verified eye position/direction"
+  ],
+  "workaround": "Use explicit IntPredicate id -> id == 0 to traverse air. Prefer synchronized click data when available. Do not assume this predicate semantics for other versions without a fixture.",
+  "resolved_by": "SOL-000003:v002",
+  "date": "2026-10-09T18:11:07.602858Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-assets-pilot/revision-v02/../adaptive-window/src/zytale/window/AdaptiveWindow.java",
+      "description": "Explicit traversal predicate, matched-click priority",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-assets-pilot/revision-v02/../adaptive-window/test-server/mods/ZytaleArchitecture_AdaptiveWindow/test-create.json",
+      "description": "265 native assertions pass after correction",
+      "verified": true
+    }
+  ]
+}

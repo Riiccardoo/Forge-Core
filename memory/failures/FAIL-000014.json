@@ -1,0 +1,16 @@
+{
+  "id": "FAIL-000014",
+  "experience_id": "EXP-000003",
+  "attempt": "Bundle base asset paths in IncludesAssetPack JAR while an additional learned-material ZIP overrides the same item and index paths",
+  "reason_failed": "The learned pack was loaded, but subsequent base-JAR assets won the duplicate paths. Runtime still exposed 899 old aliases instead of the newly baked 900; learning reload assertion failed.",
+  "environment": "Hytale 0.6.8 isolated standalone plugin fixture",
+  "error_signature": "AssertionError: shutdown learned material active after restart; loaded index aliases=899",
+  "conditions": [
+    "Same Common index and Item JSON in both JAR asset pack and learned ZIP",
+    "Dependency metadata did not provide the override precedence assumed by this packaging"
+  ],
+  "workaround": "Single distributable code JAR with embedded data ZIP; extract/upgrade one authoritative asset cache before loading. No duplicate base assets in JAR. Final native learning-reload test passes 901 retention/activation checks.",
+  "resolved_by": "SOL-000003:v003",
+  "date": "2026-10-10T00:36:49.832904Z",
+  "source_refs": []
+}

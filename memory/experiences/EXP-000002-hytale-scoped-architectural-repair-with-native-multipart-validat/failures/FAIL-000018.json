@@ -1,0 +1,42 @@
+{
+  "id": "FAIL-000018",
+  "experience_id": "EXP-000002",
+  "attempt": "Translate the approved V15 roof, facade and balcony into V01 to meet a request for the same workmanship quality on a different House_1 guide.",
+  "reason_failed": "The user explicitly rejected the result as a copy of the first house. Reusing an approved silhouette did not satisfy the new architectural reference, even when persistence and geometric tests passed.",
+  "environment": "Zytale V01; Hytale 0.6.8 release; 2026-10-10",
+  "error_signature": "User: Non mi serviva creassi una copia della prima casa, ma che creassi questa casa fedelmente e con cura al dettaglio proprio come è stato fatto per la prima. Rifalla bene.",
+  "conditions": [
+    "New House_1 architectural guide controls geometry",
+    "V15 remains a protected approved house",
+    "Same method/quality does not authorize cloning"
+  ],
+  "workaround": "Built an independent House_1-specific V01 with workshop, projecting bay, right staircase, cellar, balcony, awning and rear garden. Native and pre-existing assets only. Added partial-model support checks because cell occupancy alone missed pergola and shelf gaps. Installed after isolated exact-file restart; visual acceptance remains pending.",
+  "resolved_by": null,
+  "date": "2026-10-10T10:07:55.075148Z",
+  "source_refs": [
+    {
+      "kind": "user_feedback",
+      "reference": "Current conversation, House_1 clone rejection and compact architecture request",
+      "description": "Direct user correction of the intended reuse principle",
+      "verified": true
+    },
+    {
+      "kind": "report",
+      "reference": "C:/Users/User/Desktop/Zytale/work/blackridge-house-01-native-rebuild/BUILD_REPORT_REJECTED_CLONE.md",
+      "description": "Archived report of rejected clone, preserving historical evidence",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/blackridge-house-01-reference-rebuild/deployment-proof.json",
+      "description": "Reference-specific rebuild installed; user visual feedback pending",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/blackridge-house-01-reference-rebuild/structural-restart.json",
+      "description": "Envelope and partial-model contacts checked after native restart",
+      "verified": true
+    }
+  ]
+}

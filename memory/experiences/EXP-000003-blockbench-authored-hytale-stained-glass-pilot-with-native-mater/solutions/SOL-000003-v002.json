@@ -1,0 +1,50 @@
+{
+  "id": "SOL-000003",
+  "version": 2,
+  "description": "Revision 0.2.0 of the existing Blockbench stained-glass pilot: one complete 3x7x1 placeable assembly with native donor-textured masonry, using Adaptive Surface sampling and static material states. No wall excavation or restoration.",
+  "changes": [
+    "Real Blockbench/Hytale export revised to 163 nodes, 32px/block, 384x256 atlas; masonry closes jambs, spandrels and header",
+    "Glass alpha reduced to 90/255; ordered alternating diamonds preserved",
+    "Six reserved atlas slots receive donor-face textures; glass and carved frame are unchanged across all variants",
+    "Reuse TextureSampler and WorldMaterialScanner from Adaptive Surface; aliases resolve native cube/stair sources; no changes to the original Adaptive Surface mod",
+    "Use matching per-click interaction sync data; fallback ray explicitly traverses air (id == 0) for installed 0.6.8",
+    "Preload 59 states and 76 textures with 899 donor aliases, no runtime asset registration",
+    "Pending generated ZIP promoted at next plugin construction, before asset ZIPs are opened",
+    "Update only packs/config in live Working Copy; no region or player data writes"
+  ],
+  "advantages": [
+    "One inventory item, ordinary native multipart placement and removal",
+    "Only wall surround changes material; full assembly fits one 21-cell opening",
+    "No destructive donor cutting or stored reconstruction journal"
+  ],
+  "disadvantages": [
+    "Requires a prepared 3x7x1 opening; not a one-unit cube",
+    "Cannot promise arbitrary mod materials; new compatible materials may need restart and must fit 8-million-pixel pack budget",
+    "Individual donor rotation/random texture choice not reproduced exactly",
+    "Single composite physical/opacity properties; no independent stone/glass break behavior or proven colored light projection",
+    "Client alpha rendering, physical player collision, performance and aesthetics remain unverified"
+  ],
+  "test_results": [
+    "Blockbench Hytale validator: 163/255 nodes, valid, zero issues",
+    "6272 diamond samples, 53 cells: uniform/alternating; 13182 aperture pixels without gaps; 50044 front/back wall section samples without exterior gaps",
+    "All 76 generated atlases preserve glass/frame pixels exactly and use opaque masonry pixels",
+    "Native create test: 265 checks, 8 placements, 7 donor materials, 4 yaw rotations, one item consumed, donor unchanged, no runtime asset registration",
+    "Native reload test: 24 checks for state/filler persistence, ordinary multipart removal and untouched donors",
+    "Full isolated map stage starts with existing mods, loads 899 aliases and shuts down normally; supplemental bridge RPC blocked by network sandbox and not counted as passed",
+    "Live installation changed only config and prior model ZIP, added two packs, retained 5559 other existing files byte-identical",
+    "Complete real-client new-material learning lifecycle and visual fidelity still pending user review"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-09T18:10:14.092767Z",
+  "supersedes": "SOL-000003:v001",
+  "status": "experimental"
+}

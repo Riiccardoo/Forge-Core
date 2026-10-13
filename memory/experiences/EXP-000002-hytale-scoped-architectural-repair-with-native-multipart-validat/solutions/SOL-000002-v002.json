@@ -1,0 +1,44 @@
+{
+  "id": "SOL-000002",
+  "version": 2,
+  "description": "Reference-led authorised full reconstruction in a verified isolated save, retaining the native multipart/persistence/scoped-record deployment method while adding a small static architectural model pack. User visual approval remains pending.",
+  "changes": [
+    "Derive new volumes, foundations and detail geometry from supplied architectural boards instead of keeping the rejected enclosure/building template",
+    "Add 15 native static blockymodel types with a single 256x128 atlas; preflight all custom and Adaptive Surface IDs",
+    "Apply multipart dirty-footprint closure across previous and new objects; reapply intersecting unchanged roots after clearing",
+    "Remove only the explicit 33 obsolete monastic bed component records; preserve other source entity data and persist 8 new beds",
+    "Reopen staging server, verify final geometry/routes, merge 20 exact records while preserving 1004 unrelated records",
+    "Install only merged region, new asset pack and its explicit config enable; verify every other preexisting live file"
+  ],
+  "advantages": [
+    "Separates technical safety from unproven visual acceptance",
+    "Dedicated sub-block architectural geometry without gameplay code",
+    "Explicit entity removal policy supports demolition without resurrecting old objects"
+  ],
+  "disadvantages": [
+    "No native client POV/nightlight/physical collision acceptance yet",
+    "Version-specific Hytale storage and assets",
+    "New static pack must remain enabled for custom details"
+  ],
+  "test_results": [
+    "159682 changed cells; zero outside scope/unplanned/mismatch",
+    "23/23 navigation goals and all free cells in six ground zones reachable",
+    "Final scoped floor/shell/roof/foundation/crypt-boundary probes empty",
+    "60 Adaptive Surface placements and 8 bed entities persisted after restart",
+    "20 changed records, 1004 unrelated records identical; 5546 other existing save files identical",
+    "Live region checksum verified; user visual approval pending"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": "Technical assertions pass; visual requirements are not declared validated",
+    "maintainability": null,
+    "performance": null,
+    "compatibility": "Observed Hytale 0.6.8 and Adaptive Surface 0.9.3 only"
+  },
+  "created_at": "2026-10-04T21:17:42.488139Z",
+  "supersedes": "SOL-000002:v001",
+  "status": "working"
+}

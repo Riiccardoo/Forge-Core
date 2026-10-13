@@ -1,0 +1,56 @@
+{
+  "id": "FAIL-000008",
+  "experience_id": "EXP-000002",
+  "attempt": "Treat a scoped repair retaining the existing monastery envelope and generic native details as sufficient fidelity to detailed architectural guides.",
+  "reason_failed": "User explicitly rejected the prior technically validated delivery as insufficient and authorised complete reconstruction, larger footprint and changed foundations. Geometry/navigation success did not establish guide fidelity.",
+  "environment": "Zytale Blackridge monastic complex, SOL-000002:v001 delivery of 2026-10-04",
+  "error_signature": "User: Non è sufficiente ... puoi ricostruirla da zero ... Devi ottenere il livello di dettaglio e architettura visibile nelle guide",
+  "conditions": [],
+  "workaround": "Reference-derived full replacement, dedicated architectural geometry, isolated native validation, and stop for user visual feedback. This workaround is technically tested but not yet visually accepted.",
+  "resolved_by": null,
+  "date": "2026-10-04T21:17:42.899114Z",
+  "source_refs": [
+    {
+      "kind": "user_feedback",
+      "reference": "Current project conversation, user rejection of previous monastic delivery",
+      "description": "Direct user rejection and permission to rebuild",
+      "verified": true
+    },
+    {
+      "kind": "report",
+      "reference": "C:/Users/User/Desktop/Zytale/ZYTALE_MONASTIC_COMPLEX_REPORT.md",
+      "description": "New reference-led replacement and explicit pending visual acceptance",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-reference-rebuild/verification-final.json",
+      "description": "Recorded scoped native-data validation; not visual proof",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-reference-rebuild/structural-final.json",
+      "description": "Recorded scoped native-data validation; not visual proof",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-reference-rebuild/navigation-final.json",
+      "description": "Recorded scoped native-data validation; not visual proof",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-reference-rebuild/region-merge-proof.json",
+      "description": "Recorded scoped native-data validation; not visual proof",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-reference-rebuild/deployment-proof.json",
+      "description": "Recorded scoped native-data validation; not visual proof",
+      "verified": true
+    }
+  ]
+}

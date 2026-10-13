@@ -1,0 +1,43 @@
+{
+  "id": "SOL-000001",
+  "version": 4,
+  "description": "Adaptive Surface 0.9.4 keeps one searchable item, loads selected baked and newly learned HD materials through one enabled per-world ZIP, and publishes staged changes only after the Hytale server exits on Windows.",
+  "changes": [
+    "Mark material helper items with custom ItemQuality ZAS_Internal (HideFromSearch=true) and Variant=true; preserve state IDs and leave the main Adaptive Surface item searchable.",
+    "Persist material requests, merge baked P and learned Q entries into the selected world pack, and disable the obsolete separate learned pack.",
+    "Prepare next-start.zip outside active asset paths during play; launch a small bundled javaw companion at shutdown to atomically replace the ZIP after server exit releases its file lock.",
+    "Cancel placement and notify the player when the clicked block has a copyable material that is not yet preloaded, rather than saving a stone fallback.",
+    "Keep selected-block interaction resolution and topology/material persistence from 0.9.3."
+  ],
+  "advantages": [
+    "User confirmed creative inventory and new-material issues resolved in the installed 0.9.4 release",
+    "No live atlas rebuild or runtime asset registration",
+    "One active world pack; helper items excluded from ordinary creative search",
+    "Future material requests survive to later starts"
+  ],
+  "disadvantages": [
+    "New material first encountered while playing still requires leaving and reopening the world",
+    "Forced termination can delay pack publication; persisted requests allow recovery",
+    "Final client behavior was user-reported, not captured by instrumented client tests"
+  ],
+  "test_results": [
+    "Offline Gradle build and 12,137 assertions passed; asset and shared-atlas validators passed",
+    "Installed user save: 63 active HD materials and 5,308,416 texture pixels; Rock_Calcite_Brick present; 63 helpers use hidden quality",
+    "Three isolated full QUICHE server boots/shutdowns exited 0: 63, 64, then 65 active appearances; native asset check found exactly one main item and hidden helpers",
+    "External cube fixture learned a Q token and loaded its texture from the same active world ZIP on the next start; publisher output hash matched staged ZIP",
+    "User confirmed both reported issues resolved after testing the installed release"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": "User-confirmed visual result plus three successful isolated full-server startup/shutdown cycles",
+    "maintainability": null,
+    "performance": "63 active HD materials, 5,308,416 texture pixels in installed save",
+    "compatibility": "Hytale 0.6.8; Java 25; Windows"
+  },
+  "created_at": "2026-10-11T19:54:55.653640Z",
+  "supersedes": "SOL-000001:v003",
+  "status": "preferred"
+}

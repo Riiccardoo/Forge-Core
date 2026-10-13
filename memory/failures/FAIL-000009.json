@@ -1,0 +1,23 @@
+{
+  "id": "FAIL-000009",
+  "experience_id": "EXP-000003",
+  "attempt": "Use different profiles for the glazing alpha mask and the modeled pointed stone arch",
+  "reason_failed": "The glass mask ended below the stone arch, leaving a visible sky gap. User identified the defect in the preview.",
+  "environment": "Blockbench 5.2.2 / Hytale plugin 0.10.0 / pilot 0.1.0",
+  "error_signature": "Transparent opening between the upper stained-glass pane and the stone arch",
+  "conditions": [
+    "Separately hardcoded glass curve and frame curve",
+    "Model and UV validation can pass despite a geometric/alpha coverage gap"
+  ],
+  "workaround": "Derive the glazing mask from the same span/rise/spring as the outer stone arch and overlap beneath the opaque frame; inspect the actual preview and assert no transparent pixels in the clear aperture.",
+  "resolved_by": null,
+  "date": "2026-10-09T17:02:10.227233Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/work/monastic-assets-pilot/evidence/texture-validation.json",
+      "description": "13182 aperture samples with zero gaps after correction; client test remains pending",
+      "verified": true
+    }
+  ]
+}

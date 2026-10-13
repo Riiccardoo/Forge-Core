@@ -6,11 +6,11 @@ One smoothing block must form slopes/corners, retain its shape/material across w
 
 ## Context
 
-Zytale Adaptive Surface 0.9.3 on Hytale 0.6.8. The sole inventory item is Adaptive Surface (Blocks → Soils). Java plugin and generated asset pack run in tandem. Earlier broad HD asset loading caused client texture failures; the later world ZIP was initially disabled by save config. Legacy atlas resizing also produced diagonal alpha artifacts. The final click-selection implementation was positively reported by the user but not instrumented with client click traces.
+User-confirmed 0.9.4 on Hytale 0.6.8. Initial 0.9.3 creative search exposed internal helpers and new donor material Rock_Calcite_Brick was absent from the active pack. Runtime pack replacement was blocked by the Windows ZIP lock. 0.9.4 corrected both and retains clicked-target behavior.
 
 ## Current Solution
 
-0.9.3 keeps the full baked catalogue dormant in the JAR and builds a small active pack from each saved world. It enables the pack in save config, keeps fallback UVs native, and selects the clicked material from placement interaction data.
+Adaptive Surface 0.9.4 keeps one searchable item, loads selected baked and newly learned HD materials through one enabled per-world ZIP, and publishes staged changes only after the Hytale server exits on Windows.
 
 ## Lessons
 
@@ -22,6 +22,7 @@ Transfer static-versus-active asset separation, validation of save-level pack en
 - FAIL-000002
 - FAIL-000003
 - FAIL-000004
+- FAIL-000019
 
 ## Transferable Patterns
 

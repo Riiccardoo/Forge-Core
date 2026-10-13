@@ -1,9 +1,9 @@
 {
   "id": "zytale",
-  "name": "Zytale",
-  "summary": "Adaptive Surface 0.9.3 for Hytale 0.6.8: one creative smoothing block copies the clicked block's preloaded material, persists native shape/material states, and loads a selective per-world HD texture pack. User reported the result near-perfect. Full automated client visual and click tracing were not performed.",
+  "name": "zytale",
+  "summary": "Zytale technical memory through released Hytale 0.7.0. Adaptive Surface 0.9.4 remains the user-confirmed 0.6.8 material baseline; AdaptiveWindow 0.4.2 is installed for 0.7.0 with 21 native-glazed architectural models, material-isolated adaptive masonry, stable saved IDs and unchanged multipart footprints. Client visual review of 0.4.2 remains pending.",
   "technologies": [
-    "Hytale 0.6.8",
+    "Hytale 0.6.8 and 0.7.0",
     "Java 25",
     "Gradle 9.4.0",
     "Python/Pillow asset generation",
@@ -24,19 +24,29 @@
     "Use native-density atlas for fallback legacy block IDs; preserve their save compatibility",
     "Resolve clicked donor from matching placement interaction sync data before falling back to current-view raycast",
     "Persist material while topology refresh changes only shape",
-    "Retain failure and solution-version lineage in EXP-000001"
+    "Retain failure and solution-version lineage in EXP-000001",
+    "Hide internal material helpers with ItemQuality.HideFromSearch; no Categories alone does not hide creative search results",
+    "Persist newly requested materials and combine baked P plus learned Q textures in the enabled world ZIP",
+    "Publish prepared next-start ZIP via bundled javaw helper after server process exit releases Windows file lock",
+    "Cancel placement on a copyable but not-yet-preloaded donor and show a reopen-world message",
+    "For AdaptiveWindow 0.4.2 on released Hytale 0.7.0, keep glazing inside each model as native transparent quads rather than separately transformed particles",
+    "Generate donor-textured masonry from the complement of all apertures while keeping frame and glazing UV regions independent",
+    "Preserve every window item ID, material-state family and multipart footprint; require client review before marking the 0.4.2 visuals approved"
   ],
   "experience_refs": [
-    "EXP-000001"
+    "EXP-000001",
+    "EXP-000002",
+    "EXP-000003",
+    "EXP-000004"
   ],
-  "updated_at": "2026-10-04T14:11:17.319741Z",
+  "updated_at": "2026-10-13T12:50:03.497290Z",
   "implementation": {
-    "plugin": "ZytaleAdaptiveSurface-0.9.3.jar",
+    "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
     "world_pack": "mods/ZAS_ActivePack.zip",
     "generated_pack_id": "ZytaleGenerated:AdaptiveSurfaceWorld",
     "installer": "ZytaleAdaptiveSurface/install.ps1",
-    "release_sha256": "03b54b95b53c204f11df6eb3de3f79d894a347109e5b9197737d8b560b0a81fa"
+    "release_sha256": "be805b45bbe4118b739892b6783a23a18edc233c19e0e15cf3a77858120ebd23"
   },
   "observed_metrics": {
     "catalogue_sources": 2744,
@@ -45,17 +55,22 @@
     "saved_world_regions": 12,
     "saved_world_chunks": 5180,
     "saved_world_sections": 51800,
-    "active_appearances": 56,
+    "active_appearances": 63,
     "active_pngs": 73,
-    "active_hd_pixels": 4784128,
+    "active_hd_pixels": 5308416,
     "loaded_aliases_in_pack_test": 921,
-    "final_topology_assertions": 12124
+    "final_topology_assertions": 12137,
+    "hidden_helpers_in_installed_pack": 63
   },
   "validation_notes": [
     "0.9.3 offline Gradle build and asset validation passed",
     "Previous client log verified selective pack active, with 56 appearances and 921 aliases",
     "Final 0.9.3 click behavior is user feedback, without instrumented client trace",
-    "Dedicated-server full-world tests were hindered by unrelated native QUIC and shutdown failures"
+    "Dedicated-server full-world tests were hindered by unrelated native QUIC and shutdown failures",
+    "0.9.4 offline build, 12,137 assertions and asset/atlas validators passed",
+    "Three full isolated QUICHE server boots/shutdowns loaded 63, then 64, then 65 appearances including a newly learned external Q texture",
+    "Installed pack contains Rock_Calcite_Brick and 63 hidden helpers; user confirmed reported creative-search and new-material problems resolved",
+    "Instrumented client rendering or interaction message trace not performed"
   ],
   "references": [
     "ZytaleAdaptiveSurface/README.md",
@@ -63,6 +78,3316 @@
     "ZytaleAdaptiveSurface/docs/VALIDATION-0.9.1.md",
     "ZytaleAdaptiveSurface/docs/VALIDATION-0.9.2.md",
     "ZytaleAdaptiveSurface/docs/VALIDATION-0.9.3.md",
-    "ZytaleAdaptiveSurface/docs/FORGE_MEMORY_UPDATE_PROPOSAL.md"
-  ]
+    "ZytaleAdaptiveSurface/docs/FORGE_MEMORY_UPDATE_PROPOSAL.md",
+    "ZytaleAdaptiveSurface/docs/VALIDATION-0.9.4.md",
+    "ZytaleAdaptiveSurface/docs/release-checksums.txt",
+    "ZytaleAdaptiveWindow/outputs/architecture-0.4.2/REPORT.md",
+    "ZytaleAdaptiveWindow/outputs/architecture-0.4.2/asset-validation.json",
+    "https://hytale.com/news/2026/10/modder-facing-patch-notes-update-7"
+  ],
+  "monastic_complex": {
+    "status": "reference-rebuild-deployed-awaiting-user-visual-feedback",
+    "world": "The Village - Zytale 306 Working Copy",
+    "bounds": [
+      157,
+      90,
+      164,
+      284,
+      205,
+      284
+    ],
+    "report": "C:/Users/User/Desktop/Zytale/ZYTALE_MONASTIC_COMPLEX_REPORT.md",
+    "validation": "C:/Users/User/Desktop/Zytale/ZYTALE_MONASTIC_COMPLEX_VALIDATION.json",
+    "backup": "C:/Users/User/Desktop/Zytale/work/monastic-reference-rebuild/backup-before",
+    "entry": [
+      220,
+      125,
+      176
+    ],
+    "church": [
+      220,
+      128,
+      213
+    ],
+    "crypt": [
+      220,
+      103,
+      219
+    ],
+    "changes": 159682,
+    "unrelatedChangedBlocks": 0,
+    "visualApproved": false,
+    "priorDeliveryRejected": true,
+    "addedAssetPack": "ZytaleArchitecture:BlackridgeMonasticDetails",
+    "adaptiveSurfacePlacements": 60,
+    "coreModsChanged": false,
+    "limitations": [
+      "Final visual fidelity and atmosphere pending user review",
+      "Voxel traversal is not actual player traversal",
+      "Static bronze bell, no audio/animation",
+      "Colored modeled panes do not imply physical stained-glass light simulation",
+      "Final merged live region verified by checksum; isolated stage reopened before merge, live client not opened"
+    ]
+  },
+  "monastic_asset_pilot": {
+    "version": "0.3.2",
+    "status": "installed-and-user-approved-in-main-map",
+    "world": "The Village - Zytale 306 Working Copy",
+    "artifact": "C:/Users/User/Desktop/Zytale/ZytaleAdaptiveWindow/dist/ZytaleAdaptiveWindow-0.3.2.jar",
+    "sha256": "4ff793535958621122641e24d671dacbe33d9eaf4b18f79c508713eca6ae6771",
+    "clientTransparency": "approved",
+    "clientDesignPrecision": "approved",
+    "clientCompactness": "approved",
+    "approvalDate": "2026-10-10",
+    "approvalEvidence": "Direct user report after testing in the main map",
+    "worldDataEditedByThisRecording": false
+  },
+  "stable_release_policy": {
+    "open_issues": [
+      "Atmosphere QA variant not separately boot-tested"
+    ],
+    "resolved_issues": [
+      "Adaptive Window transparency and compact design validated by user in the main map with 0.3.2 on stable Hytale 0.6.8",
+      "Adaptive Surface 0.9.4 material pack ZIP lock resolved by staging during play and publishing from bundled companion after server exit; verified in isolated full server and user reported inventory/material issues resolved"
+    ]
+  },
+  "window_stable_glass_preview": {
+    "status": "superseded-by-main-map-approved-release",
+    "visualReview": "passed"
+  },
+  "window_stable_glass_release": {
+    "version": "0.3.2",
+    "hytale": "0.6.8 stable",
+    "world": "The Village - Zytale 306 Working Copy",
+    "status": "validated-user-approved",
+    "result": "Full success: transparent glass and precise compact design",
+    "artifactSHA256": "4ff793535958621122641e24d671dacbe33d9eaf4b18f79c508713eca6ae6771",
+    "cacheSHA256": "730d4ed7cf8ac8a1250ef466085564c79e2aebbeff59870bc7e13d0dc0d712e1",
+    "evidenceType": "user client verification plus static and native automated tests",
+    "automatedValidation": "215 static; native create 682, reload 24, learn 1, learnreload 902",
+    "limitations": [
+      "No physical colored-light projection claim",
+      "No instrumented long-duration performance test",
+      "Future released Hytale versions require revalidation"
+    ]
+  },
+  "blackridge_house_01": {
+    "date": "2026-10-10",
+    "status": "rebuilt-user-approved",
+    "world": "The Village - Zytale 306 Working Copy",
+    "building": "V01",
+    "entry": [
+      82,
+      92,
+      -3
+    ],
+    "scope": [
+      74,
+      83,
+      -20,
+      94,
+      118,
+      3
+    ],
+    "floorY": {
+      "basement": 85,
+      "workshop": 91,
+      "residence": 96
+    },
+    "noHabitableAttic": true,
+    "customAssets": 0,
+    "changedBlocks": 4833,
+    "backup": "C:/Users/User/Desktop/Zytale/work/blackridge-house-01-reference-rebuild/backup-before",
+    "report": "C:/Users/User/Desktop/Zytale/BLACKRIDGE_HOUSE_01_BUILD_REPORT.md",
+    "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-house-01-reference-rebuild/deployment-proof.json",
+    "nativeChecks": "Exact merged-file restart: zero mismatches or outside-scope edits; seven destinations reachable; independent envelope, stair clearance and 192 partial-block contacts checked. Pergola joints and shelf wall attachment checked.",
+    "limitations": [
+      "Geometry traversal is not player walkthrough",
+      "Textured diagnostic renders approximate UV, lighting and transparency"
+    ],
+    "originalV01ChestContentsPreserved": true,
+    "V15ExcludedAndUnchanged": true,
+    "priorDeliveryRejected": true,
+    "constructionSource": "Independent House_1 guide interpretation. Approved V15 is workmanship/process precedent, never geometry to clone. No new models, textures or mod changes.",
+    "chestContentsPreserved": 4,
+    "visualApproved": true,
+    "previousDelivery": {
+      "date": "2026-10-10",
+      "status": "rejected-by-user",
+      "world": "The Village - Zytale 306 Working Copy",
+      "building": "V01",
+      "entry": [
+        86,
+        93,
+        -5
+      ],
+      "scope": [
+        74,
+        83,
+        -20,
+        94,
+        118,
+        3
+      ],
+      "floorY": {
+        "basement": 87,
+        "workshop": 92,
+        "residence": 97
+      },
+      "noHabitableAttic": true,
+      "customAssets": 0,
+      "changedBlocks": 7211,
+      "backup": "C:/Users/User/Desktop/Zytale/work/blackridge-house-01-native-rebuild/backup-before",
+      "report": "C:/Users/User/Desktop/Zytale/BLACKRIDGE_HOUSE_01_BUILD_REPORT.md",
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-house-01-native-rebuild/deployment-proof.json",
+      "nativeChecks": "Exact merged-file restart: 0 differences, 0 changes outside scope; eight reachable destinations; roof/floor/wall/stair checks pass",
+      "limitations": [
+        "Final client visual acceptance pending",
+        "Voxel navigation is not a player walkthrough"
+      ],
+      "originalV01ChestContentsPreserved": true,
+      "V15ExcludedAndUnchanged": true,
+      "priorDeliveryRejected": true,
+      "constructionSource": "Approved V15 native design.mjs and final finishing; no newly created models or mod changes",
+      "chestContentsPreserved": 4,
+      "visualApproved": false,
+      "previousDelivery": {
+        "date": "2026-10-10",
+        "status": "rejected-by-user",
+        "world": "The Village - Zytale 306 Working Copy",
+        "building": "V01",
+        "entry": [
+          81,
+          91,
+          2
+        ],
+        "scope": [
+          74,
+          83,
+          -20,
+          94,
+          116,
+          3
+        ],
+        "floorY": {
+          "basement": 84,
+          "workshop": 90,
+          "residence": 96
+        },
+        "noHabitableAttic": true,
+        "customAssets": 11,
+        "changedBlocks": 4535,
+        "backup": "C:/Users/User/Desktop/Zytale/work/blackridge-house-01/backup-before",
+        "report": "C:/Users/User/Desktop/Zytale/BLACKRIDGE_HOUSE_01_BUILD_REPORT.md",
+        "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-house-01/deployment-proof.json",
+        "nativeChecks": "0 mismatches, 0 outside-scope changes; 9 navigation destinations reachable; floor/wall/roof/stair checks pass after exact merged-file restart",
+        "limitations": [
+          "No final client visual approval yet",
+          "Voxel navigation is not a player walkthrough",
+          "No simulated colored lighting or invented crafting behavior"
+        ],
+        "originalV01ChestContentsPreserved": true,
+        "V15ExcludedAndUnchanged": true,
+        "reason": "Inferior to approved first house; user required rebuilding from scratch with V15 method"
+      },
+      "reason": "User requested the new House_1 faithfully, not a translated copy of approved V15."
+    },
+    "reusedExistingCustomRoots": 32,
+    "nextAction": "Preserve approved V01. Exclude it from future reconstruction selection unless explicitly requested.",
+    "approvalDate": "2026-10-10",
+    "approvalEvidence": "User: Sono soddisfatto del risultato. Tieni fanne un’altra, with new House_2 guide.",
+    "currentLocation": {
+      "date": "2026-10-11",
+      "id": "V01 Workshop",
+      "bounds": [
+        45,
+        83,
+        -49,
+        65,
+        118,
+        -26
+      ],
+      "from": [
+        74,
+        83,
+        -20,
+        94,
+        118,
+        3
+      ],
+      "delta": [
+        -29,
+        0,
+        -29
+      ],
+      "entry": [
+        53,
+        92,
+        -32
+      ],
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+      "geometryPreservation": "Current pre-task blocks, rotations and multipart filler offsets preserved exactly under translation. Existing user rotations retained; no additional rotation applied."
+    },
+    "positionCaution": "Original installation fields are historical; currentLocation is authoritative after the market/village relocation."
+  },
+  "blackridge_rebuilt_house_registry": {
+    "selectionRule": "Exclude previously rebuilt houses from future reconstruction selection unless the user explicitly targets them again.",
+    "V15": {
+      "status": "rebuilt-user-approved",
+      "bounds": [
+        -24,
+        86,
+        11,
+        -2,
+        119,
+        31
+      ],
+      "reference": "Guida architettonica di una casa medievale.png",
+      "evidence": "C:/Users/User/Documents/Codex/2026-09-24/ex/outputs/ZYTALE_V15_CASA_TIPO_A.md",
+      "previousRecordedBounds": [
+        43,
+        85,
+        -8,
+        63,
+        118,
+        14
+      ],
+      "entry": [
+        -10,
+        90,
+        19
+      ],
+      "currentLocation": {
+        "date": "2026-10-11",
+        "id": "V15 Type A",
+        "bounds": [
+          -24,
+          86,
+          11,
+          -2,
+          119,
+          31
+        ],
+        "from": [
+          -23,
+          86,
+          17,
+          -1,
+          119,
+          37
+        ],
+        "delta": [
+          -1,
+          0,
+          -6
+        ],
+        "entry": [
+          -10,
+          90,
+          19
+        ],
+        "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+        "geometryPreservation": "Current pre-task blocks, rotations and multipart filler offsets preserved exactly under translation. Existing user rotations retained; no additional rotation applied."
+      },
+      "positionCaution": "These are the 2026-10-11 reorganized-village coordinates. Earlier build reports describe historical positions; never reinstall their old placement."
+    },
+    "V01": {
+      "status": "rebuilt-user-approved",
+      "bounds": [
+        45,
+        83,
+        -49,
+        65,
+        118,
+        -26
+      ],
+      "reference": "C:/Users/User/Desktop/Zytale houses/House_1.png",
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-house-01-reference-rebuild/deployment-proof.json",
+      "approvalDate": "2026-10-10",
+      "approvalEvidence": "User: Sono soddisfatto del risultato. Tieni fanne un’altra, with new House_2 guide.",
+      "previousRecordedBounds": [
+        74,
+        83,
+        -20,
+        94,
+        118,
+        3
+      ],
+      "entry": [
+        53,
+        92,
+        -32
+      ],
+      "currentLocation": {
+        "date": "2026-10-11",
+        "id": "V01 Workshop",
+        "bounds": [
+          45,
+          83,
+          -49,
+          65,
+          118,
+          -26
+        ],
+        "from": [
+          74,
+          83,
+          -20,
+          94,
+          118,
+          3
+        ],
+        "delta": [
+          -29,
+          0,
+          -29
+        ],
+        "entry": [
+          53,
+          92,
+          -32
+        ],
+        "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+        "geometryPreservation": "Current pre-task blocks, rotations and multipart filler offsets preserved exactly under translation. Existing user rotations retained; no additional rotation applied."
+      },
+      "positionCaution": "These are the 2026-10-11 reorganized-village coordinates. Earlier build reports describe historical positions; never reinstall their old placement."
+    },
+    "V02": {
+      "status": "rebuilt-user-approved",
+      "bounds": [
+        75,
+        82,
+        -49,
+        97,
+        119,
+        -27
+      ],
+      "reference": "C:/Users/User/Desktop/Zytale houses/House_2.png",
+      "guideTitle": "Blackridge House 05 — House with Shop",
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-house-02/deployment-proof.json",
+      "approvalDate": "2026-10-10",
+      "approvalEvidence": "User: Sono soddisfatto del risultato. Tieni fai il municipio, with Town Hall guide.",
+      "previousRecordedBounds": [
+        99,
+        82,
+        -19,
+        121,
+        119,
+        3
+      ],
+      "entry": [
+        88,
+        91,
+        -33
+      ],
+      "currentLocation": {
+        "date": "2026-10-11",
+        "id": "V02 Shop",
+        "bounds": [
+          75,
+          82,
+          -49,
+          97,
+          119,
+          -27
+        ],
+        "from": [
+          99,
+          82,
+          -19,
+          121,
+          119,
+          3
+        ],
+        "delta": [
+          -24,
+          0,
+          -30
+        ],
+        "entry": [
+          88,
+          91,
+          -33
+        ],
+        "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+        "geometryPreservation": "Current pre-task blocks, rotations and multipart filler offsets preserved exactly under translation. Existing user rotations retained; no additional rotation applied."
+      },
+      "positionCaution": "These are the 2026-10-11 reorganized-village coordinates. Earlier build reports describe historical positions; never reinstall their old placement."
+    },
+    "V04": {
+      "status": "rebuilt-user-approved",
+      "bounds": [
+        138,
+        82,
+        -27,
+        161,
+        120,
+        -5
+      ],
+      "reference": "C:/Users/User/Desktop/Zytale houses/House_3.png",
+      "guideTitle": "Blackridge House 03 — Residential House Type C",
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-house-03/deployment-proof.json",
+      "approvalDate": "2026-10-11",
+      "approvalEvidence": "User: Sono soddisfatto del risultato, tieni fanne un’altra, with the new House_4.png guide.",
+      "previousRecordedBounds": [
+        135,
+        82,
+        -3,
+        158,
+        120,
+        19
+      ],
+      "entry": [
+        149,
+        90,
+        -12
+      ],
+      "currentLocation": {
+        "date": "2026-10-11",
+        "id": "V04 Type C",
+        "bounds": [
+          138,
+          82,
+          -27,
+          161,
+          120,
+          -5
+        ],
+        "from": [
+          135,
+          82,
+          -3,
+          158,
+          120,
+          19
+        ],
+        "delta": [
+          3,
+          0,
+          -24
+        ],
+        "entry": [
+          149,
+          90,
+          -12
+        ],
+        "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+        "geometryPreservation": "Current pre-task blocks, rotations and multipart filler offsets preserved exactly under translation. Existing user rotations retained; no additional rotation applied."
+      },
+      "positionCaution": "These are the 2026-10-11 reorganized-village coordinates. Earlier build reports describe historical positions; never reinstall their old placement."
+    },
+    "V12": {
+      "status": "rebuilt-user-approved",
+      "bounds": [
+        -24,
+        82,
+        -16,
+        -4,
+        120,
+        4
+      ],
+      "protectedMargin": "X61..63/Z35..36 excluded; adjoining property retained. Z15 buffer separates approved V15.",
+      "reference": "C:/Users/User/Desktop/Zytale houses/House_4.png",
+      "guideTitle": "Blackridge House 04 — Residential House Type D",
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-house-04/deployment-proof.json",
+      "approvalDate": "2026-10-11",
+      "approvalEvidence": "User: Sono soddisfatto del risultato, tieni fanne un’altra, with the new Casa del Carrettiere.png guide.",
+      "previousRecordedBounds": [
+        43,
+        81,
+        16,
+        63,
+        119,
+        36
+      ],
+      "entry": [
+        -11,
+        92,
+        -5
+      ],
+      "currentLocation": {
+        "date": "2026-10-11",
+        "id": "V12 Type D",
+        "bounds": [
+          -24,
+          82,
+          -16,
+          -4,
+          120,
+          4
+        ],
+        "from": [
+          1,
+          82,
+          17,
+          21,
+          120,
+          37
+        ],
+        "delta": [
+          -25,
+          0,
+          -33
+        ],
+        "entry": [
+          -11,
+          92,
+          -5
+        ],
+        "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+        "geometryPreservation": "Current pre-task blocks, rotations and multipart filler offsets preserved exactly under translation. Existing user rotations retained; no additional rotation applied."
+      },
+      "positionCaution": "These are the 2026-10-11 reorganized-village coordinates. Earlier build reports describe historical positions; never reinstall their old placement."
+    },
+    "V10": {
+      "status": "rebuilt-user-approved",
+      "bounds": [
+        -25,
+        78,
+        -51,
+        0,
+        118,
+        -18
+      ],
+      "reference": "C:/Users/User/Desktop/More Zytale houses/Casa del Carrettiere.png",
+      "guideTitle": "Blackridge Carter's House",
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-carters-house/deployment-proof.json",
+      "approvalDate": "2026-10-11",
+      "approvalEvidence": "User: Sono soddisfatto del risultato, tieni fanne un’altra, accompanied by the Erboristeria.png guide.",
+      "positionCaution": "These are the 2026-10-11 reorganized-village coordinates. Earlier build reports describe historical positions; never reinstall their old placement.",
+      "previousRecordedBounds": [
+        23,
+        78,
+        43,
+        56,
+        118,
+        68
+      ],
+      "entry": [
+        -7,
+        84,
+        -30
+      ],
+      "currentLocation": {
+        "date": "2026-10-11",
+        "id": "V10 Carter",
+        "bounds": [
+          -25,
+          78,
+          -51,
+          0,
+          118,
+          -18
+        ],
+        "from": [
+          -29,
+          78,
+          -42,
+          -4,
+          118,
+          -9
+        ],
+        "delta": [
+          4,
+          0,
+          -9
+        ],
+        "entry": [
+          -7,
+          84,
+          -30
+        ],
+        "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+        "geometryPreservation": "Current pre-task blocks, rotations and multipart filler offsets preserved exactly under translation. Existing user rotations retained; no additional rotation applied."
+      }
+    },
+    "positionWarning": {
+      "date": "2026-10-11",
+      "status": "native-resurveyed-and-reorganized",
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+      "baseline": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/backup-proof.json",
+      "currentSurvey": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/restart",
+      "scope": [
+        -55,
+        60,
+        -68,
+        179,
+        220,
+        72
+      ],
+      "rule": "Preserve all approved architecture. This location registry supersedes older placements. Resurvey actual live save before further changes.",
+      "fieldRule": "No work at any height at Z >= 73; wheat begins Z75.",
+      "canonicalBuildings": [
+        {
+          "id": "V10 Carter",
+          "bounds": [
+            -25,
+            78,
+            -51,
+            0,
+            118,
+            -18
+          ],
+          "from": [
+            -29,
+            78,
+            -42,
+            -4,
+            118,
+            -9
+          ],
+          "delta": [
+            4,
+            0,
+            -9
+          ],
+          "entry": [
+            -7,
+            84,
+            -30
+          ]
+        },
+        {
+          "id": "V15 Type A",
+          "bounds": [
+            -24,
+            86,
+            11,
+            -2,
+            119,
+            31
+          ],
+          "from": [
+            -23,
+            86,
+            17,
+            -1,
+            119,
+            37
+          ],
+          "delta": [
+            -1,
+            0,
+            -6
+          ],
+          "entry": [
+            -10,
+            90,
+            19
+          ]
+        },
+        {
+          "id": "V12 Type D",
+          "bounds": [
+            -24,
+            82,
+            -16,
+            -4,
+            120,
+            4
+          ],
+          "from": [
+            1,
+            82,
+            17,
+            21,
+            120,
+            37
+          ],
+          "delta": [
+            -25,
+            0,
+            -33
+          ],
+          "entry": [
+            -11,
+            92,
+            -5
+          ]
+        },
+        {
+          "id": "Apothecary",
+          "bounds": [
+            26,
+            76,
+            -23,
+            49,
+            120,
+            4
+          ],
+          "from": [
+            24,
+            76,
+            6,
+            47,
+            120,
+            33
+          ],
+          "delta": [
+            2,
+            0,
+            -29
+          ],
+          "entry": [
+            36,
+            86,
+            -3
+          ]
+        },
+        {
+          "id": "V14 Town Hall",
+          "bounds": [
+            26,
+            77,
+            8,
+            54,
+            140,
+            40
+          ],
+          "from": [
+            22,
+            77,
+            35,
+            50,
+            140,
+            67
+          ],
+          "delta": [
+            4,
+            0,
+            -27
+          ],
+          "entry": [
+            46,
+            89,
+            24
+          ]
+        },
+        {
+          "id": "V01 Workshop",
+          "bounds": [
+            45,
+            83,
+            -49,
+            65,
+            118,
+            -26
+          ],
+          "from": [
+            74,
+            83,
+            -20,
+            94,
+            118,
+            3
+          ],
+          "delta": [
+            -29,
+            0,
+            -29
+          ],
+          "entry": [
+            53,
+            92,
+            -32
+          ]
+        },
+        {
+          "id": "V02 Shop",
+          "bounds": [
+            75,
+            82,
+            -49,
+            97,
+            119,
+            -27
+          ],
+          "from": [
+            99,
+            82,
+            -19,
+            121,
+            119,
+            3
+          ],
+          "delta": [
+            -24,
+            0,
+            -30
+          ],
+          "entry": [
+            88,
+            91,
+            -33
+          ]
+        },
+        {
+          "id": "V04 Type C",
+          "bounds": [
+            138,
+            82,
+            -27,
+            161,
+            120,
+            -5
+          ],
+          "from": [
+            135,
+            82,
+            -3,
+            158,
+            120,
+            19
+          ],
+          "delta": [
+            3,
+            0,
+            -24
+          ],
+          "entry": [
+            149,
+            90,
+            -12
+          ]
+        },
+        {
+          "id": "V03 Church",
+          "bounds": [
+            109,
+            87,
+            -47,
+            123,
+            126,
+            -19
+          ],
+          "from": [
+            121,
+            87,
+            -23,
+            135,
+            126,
+            5
+          ],
+          "delta": [
+            -12,
+            0,
+            -24
+          ],
+          "entry": [
+            116,
+            91,
+            -22
+          ]
+        },
+        {
+          "id": "V05 Inn",
+          "bounds": [
+            136,
+            83,
+            2,
+            157,
+            116,
+            25
+          ],
+          "from": [
+            119,
+            83,
+            13,
+            140,
+            116,
+            36
+          ],
+          "delta": [
+            17,
+            0,
+            -11
+          ],
+          "entry": [
+            145,
+            86,
+            18
+          ]
+        },
+        {
+          "id": "V06 Workshop",
+          "bounds": [
+            147,
+            82,
+            38,
+            170,
+            116,
+            61
+          ],
+          "from": [
+            140,
+            82,
+            20,
+            163,
+            116,
+            43
+          ],
+          "delta": [
+            7,
+            0,
+            18
+          ],
+          "entry": [
+            161,
+            86,
+            54
+          ]
+        },
+        {
+          "id": "V07 Merchant",
+          "bounds": [
+            122,
+            80,
+            48,
+            145,
+            116,
+            68
+          ],
+          "from": [
+            127,
+            80,
+            34,
+            150,
+            116,
+            54
+          ],
+          "delta": [
+            -5,
+            0,
+            14
+          ],
+          "entry": [
+            134,
+            83,
+            63
+          ]
+        },
+        {
+          "id": "V08 Market house",
+          "bounds": [
+            60,
+            83,
+            53,
+            81,
+            116,
+            68
+          ],
+          "from": [
+            108,
+            83,
+            37,
+            129,
+            116,
+            52
+          ],
+          "delta": [
+            -48,
+            0,
+            16
+          ],
+          "entry": [
+            68,
+            86,
+            65
+          ]
+        },
+        {
+          "id": "V09 Residence",
+          "bounds": [
+            91,
+            80,
+            53,
+            113,
+            112,
+            71
+          ],
+          "from": [
+            112,
+            80,
+            53,
+            134,
+            112,
+            71
+          ],
+          "delta": [
+            -21,
+            0,
+            0
+          ],
+          "entry": [
+            103,
+            83,
+            67
+          ]
+        },
+        {
+          "id": "V11 Residence",
+          "bounds": [
+            -20,
+            81,
+            43,
+            1,
+            114,
+            65
+          ],
+          "from": [
+            15,
+            81,
+            -14,
+            36,
+            114,
+            8
+          ],
+          "delta": [
+            -35,
+            0,
+            57
+          ],
+          "entry": [
+            -6,
+            84,
+            58
+          ]
+        },
+        {
+          "id": "V13 Workshop",
+          "bounds": [
+            14,
+            81,
+            -45,
+            34,
+            114,
+            -27
+          ],
+          "from": [
+            26,
+            81,
+            -31,
+            46,
+            114,
+            -13
+          ],
+          "delta": [
+            -12,
+            0,
+            -14
+          ],
+          "entry": [
+            23,
+            84,
+            -31
+          ]
+        },
+        {
+          "id": "V16 Residence",
+          "bounds": [
+            3,
+            83,
+            50,
+            21,
+            114,
+            68
+          ],
+          "from": [
+            -6,
+            83,
+            42,
+            12,
+            114,
+            60
+          ],
+          "delta": [
+            9,
+            0,
+            8
+          ],
+          "entry": [
+            18,
+            87,
+            58
+          ]
+        }
+      ],
+      "idCaution": "APOTHECARY and V16 Residence are two separate current structures; do not identify buildings solely by obsolete site labels."
+    },
+    "V16": {
+      "status": "rebuilt-user-approved",
+      "bounds": [
+        26,
+        76,
+        -23,
+        49,
+        120,
+        4
+      ],
+      "reference": "C:/Users/User/Desktop/More Zytale houses/Erboristeria.png",
+      "guideTitle": "Blackridge Apothecary",
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-apothecary/deployment-proof.json",
+      "siteCondition": "Vacant former V16 area; no existing house demolished. Offset six blocks east to preserve the current western house and boundary wall.",
+      "previousRecordedBounds": [
+        24,
+        76,
+        6,
+        47,
+        120,
+        33
+      ],
+      "entry": [
+        36,
+        86,
+        -3
+      ],
+      "currentLocation": {
+        "date": "2026-10-11",
+        "id": "Apothecary",
+        "bounds": [
+          26,
+          76,
+          -23,
+          49,
+          120,
+          4
+        ],
+        "from": [
+          24,
+          76,
+          6,
+          47,
+          120,
+          33
+        ],
+        "delta": [
+          2,
+          0,
+          -29
+        ],
+        "entry": [
+          36,
+          86,
+          -3
+        ],
+        "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+        "geometryPreservation": "Current pre-task blocks, rotations and multipart filler offsets preserved exactly under translation. Existing user rotations retained; no additional rotation applied."
+      },
+      "positionCaution": "These are the 2026-10-11 reorganized-village coordinates. Earlier build reports describe historical positions; never reinstall their old placement.",
+      "approvalDate": "2026-10-11",
+      "approvalEvidence": "User: Sono soddisfatto del risultato, tieni fanne un’altra, with Market.png and request to reorganize the village.",
+      "canonicalId": "APOTHECARY",
+      "aliasNote": "V16 here is the historical apothecary-site label, not the separately relocated unrebuilt V16 Residence."
+    }
+  },
+  "unified_buildings_furnishment_library": {
+    "name": "ZytaleBuldingsAndFurnishment",
+    "artifact": "ZytaleBuldingsAndFurnishment.zip",
+    "version": "1.1.0",
+    "compatibleReleasedGame": "0.6.8",
+    "internalId": "ZytaleArchitecture:BlackridgeMonasticDetails",
+    "legacyResourceFilesByteIdentical": 46,
+    "newHouse01Models": 11,
+    "source": "C:/Users/User/Desktop/Zytale/ZytaleBuldingsAndFurnishment",
+    "rule": "Extend this shared library for future Zytale architectural assets, preserving existing identifiers. No separate mod per house."
+  },
+  "blackridge_house_02": {
+    "date": "2026-10-10",
+    "status": "rebuilt-user-approved",
+    "world": "The Village - Zytale 306 Working Copy",
+    "building": "V02",
+    "guideTitle": "Blackridge House 05 — House with Shop",
+    "reference": "C:/Users/User/Desktop/Zytale houses/House_2.png",
+    "entry": [
+      112,
+      91,
+      -3
+    ],
+    "viewpoint": [
+      112,
+      90,
+      3
+    ],
+    "scope": [
+      99,
+      82,
+      -19,
+      121,
+      119,
+      3
+    ],
+    "floorY": {
+      "basement": 84,
+      "shop": 90,
+      "residence": 96
+    },
+    "noHabitableAttic": true,
+    "customAssets": 0,
+    "reusedExistingCustomRoots": 22,
+    "changedBlocks": 7551,
+    "backup": "C:/Users/User/Desktop/Zytale/work/blackridge-house-02/backup-before",
+    "report": "C:/Users/User/Desktop/Zytale/BLACKRIDGE_HOUSE_02_BUILD_REPORT.md",
+    "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-house-02/deployment-proof.json",
+    "constructionSource": "Independent House_2 guide interpretation: shop left/entry right, red/ivory native cloth awning, two gables and chimneys, wrap balcony, cellar, residence and rear courtyard. Reused construction workflow, never V01/V15 geometry. No new asset/mod changes.",
+    "nativeChecks": "Exact merged-file restart: no unplanned or outside-scope edits, no block/rotation mismatches; seven navigation goals reachable; independent enclosure and 188 partial-block contacts checked; one original chest inventory relocated and bed persists.",
+    "otherSaveFilesByteIdentical": 5582,
+    "originalV02ChestContentsPreserved": true,
+    "chestContentsPreserved": 1,
+    "V01ExcludedAndUnchanged": true,
+    "V15ExcludedAndUnchanged": true,
+    "visualApproved": true,
+    "limitations": [
+      "Geometry traversal is not player walkthrough; residence 93/98 free positions connected, all seven goals reachable",
+      "Textured diagnostic renders approximate UV, lighting and transparency",
+      "No engineering stability simulation"
+    ],
+    "nextAction": "Preserve approved V02 architecture. User allows village relocation when needed for Town Hall, but V02 was not moved or modified.",
+    "approvalDate": "2026-10-10",
+    "approvalEvidence": "User: Sono soddisfatto del risultato. Tieni fai il municipio, with Town Hall guide.",
+    "currentLocation": {
+      "date": "2026-10-11",
+      "id": "V02 Shop",
+      "bounds": [
+        75,
+        82,
+        -49,
+        97,
+        119,
+        -27
+      ],
+      "from": [
+        99,
+        82,
+        -19,
+        121,
+        119,
+        3
+      ],
+      "delta": [
+        -24,
+        0,
+        -30
+      ],
+      "entry": [
+        88,
+        91,
+        -33
+      ],
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+      "geometryPreservation": "Current pre-task blocks, rotations and multipart filler offsets preserved exactly under translation. Existing user rotations retained; no additional rotation applied."
+    },
+    "positionCaution": "Original installation fields are historical; currentLocation is authoritative after the market/village relocation."
+  },
+  "blackridge_town_hall": {
+    "date": "2026-10-10",
+    "status": "rebuilt-user-approved",
+    "world": "The Village - Zytale 306 Working Copy",
+    "building": "V14",
+    "reference": "C:/Users/User/Desktop/Tavola progettuale del Municipio Blackridge.png",
+    "entry": [
+      103,
+      92,
+      24
+    ],
+    "viewpoint": [
+      103,
+      87,
+      32
+    ],
+    "scope": [
+      87,
+      80,
+      4,
+      119,
+      143,
+      32
+    ],
+    "floorY": {
+      "archive": 85,
+      "civicHall": 91,
+      "council": 99,
+      "officesLibrary": 105,
+      "attic": 111,
+      "towerLandings": [
+        117,
+        123
+      ]
+    },
+    "constructionSource": "Independent Blackridge Town Hall: archive, civic hall, council, offices/library, attic and clock tower",
+    "customAssets": 0,
+    "reusedExistingCustomRoots": 30,
+    "props": 419,
+    "changedBlocks": 16169,
+    "backup": "C:/Users/User/Desktop/Zytale/work/blackridge-town-hall/backup-before",
+    "report": "C:/Users/User/Desktop/Zytale/BLACKRIDGE_TOWN_HALL_BUILD_REPORT.md",
+    "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-town-hall/deployment-proof.json",
+    "nativeChecks": "Exact merged-file restart: no outside/unplanned edits, no block/rotation mismatches; 11 navigation goals reachable; all sampled free room positions connected; enclosure and 448 partial-block contacts checked.",
+    "preservation": "V01/V02 geometry and original entity records preserved within selected chunks; V15 unselected chunks byte-identical; 1020 other chunk records and 5585 other save files byte-identical; all mods unchanged.",
+    "chestContentsRelocated": {
+      "from": [
+        105,
+        89,
+        10
+      ],
+      "to": [
+        106,
+        86,
+        10
+      ]
+    },
+    "relocations": [
+      "Plaza statue 105,90,29 to 113,88,30"
+    ],
+    "clockBehavior": "Static architectural dial, no real-time clock mod",
+    "visualApproved": true,
+    "limitations": [
+      "Geometric traversal is not a player walkthrough",
+      "Diagnostic renders approximate UV, lighting and transparency; no pixel-perfect visual claim",
+      "Static clock; no engineering stability simulation"
+    ],
+    "nextAction": "Preserve approved V14 architecture; this House_3 intervention did not alter it.",
+    "approvalDate": "2026-10-10",
+    "approvalEvidence": "User: Sono soddisfatto del risultato, Tieni fanne un’altra, with new House_3 guide.",
+    "currentLocation": {
+      "date": "2026-10-11",
+      "id": "V14 Town Hall",
+      "bounds": [
+        26,
+        77,
+        8,
+        54,
+        140,
+        40
+      ],
+      "from": [
+        22,
+        77,
+        35,
+        50,
+        140,
+        67
+      ],
+      "delta": [
+        4,
+        0,
+        -27
+      ],
+      "entry": [
+        46,
+        89,
+        24
+      ],
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+      "geometryPreservation": "Current pre-task blocks, rotations and multipart filler offsets preserved exactly under translation. Existing user rotations retained; no additional rotation applied."
+    },
+    "positionCaution": "Original installation fields are historical; currentLocation is authoritative after the market/village relocation."
+  },
+  "blackridge_rebuilt_building_registry": {
+    "V14": {
+      "type": "Town Hall",
+      "status": "rebuilt-user-approved",
+      "bounds": [
+        26,
+        77,
+        8,
+        54,
+        140,
+        40
+      ],
+      "reference": "C:/Users/User/Desktop/Tavola progettuale del Municipio Blackridge.png",
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-town-hall/deployment-proof.json",
+      "approvalDate": "2026-10-10",
+      "approvalEvidence": "User: Sono soddisfatto del risultato, Tieni fanne un’altra, with new House_3 guide.",
+      "previousRecordedBounds": [
+        87,
+        80,
+        4,
+        119,
+        143,
+        32
+      ],
+      "entry": [
+        46,
+        89,
+        24
+      ],
+      "currentLocation": {
+        "date": "2026-10-11",
+        "id": "V14 Town Hall",
+        "bounds": [
+          26,
+          77,
+          8,
+          54,
+          140,
+          40
+        ],
+        "from": [
+          22,
+          77,
+          35,
+          50,
+          140,
+          67
+        ],
+        "delta": [
+          4,
+          0,
+          -27
+        ],
+        "entry": [
+          46,
+          89,
+          24
+        ],
+        "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+        "geometryPreservation": "Current pre-task blocks, rotations and multipart filler offsets preserved exactly under translation. Existing user rotations retained; no additional rotation applied."
+      }
+    },
+    "MarketHall": {
+      "status": "installed-awaiting-user-visual-feedback",
+      "bounds": [
+        60,
+        78,
+        -16,
+        112,
+        135,
+        29
+      ],
+      "entry": [
+        86,
+        88,
+        20
+      ],
+      "reference": "C:/Users/User/Desktop/More Zytale houses/Market.png",
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+      "visualApproved": false
+    }
+  },
+  "blackridge_village_reorganization_authorization": {
+    "date": "2026-10-10",
+    "userStatement": "Puoi riorganizzare la planimetria e la posizione di tutti gli edifici e costruzioni nel villaggio se ti serve spazio",
+    "purpose": "Space for the requested guide-based Town Hall",
+    "approvedHouseArchitecture": "Preserve V01, V02 and V15 when relocating; permission to reposition is not permission to discard their approved designs",
+    "applied": "Only V14 footprint/forecourt rebuilt and nearby statue moved; no other building moved",
+    "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-town-hall/deployment-proof.json"
+  },
+  "blackridge_house_03": {
+    "date": "2026-10-10",
+    "status": "rebuilt-user-approved",
+    "world": "The Village - Zytale 306 Working Copy",
+    "building": "V04",
+    "guideTitle": "Blackridge House 03 — Residential House Type C",
+    "reference": "C:/Users/User/Desktop/Zytale houses/House_3.png",
+    "entry": [
+      146,
+      90,
+      12
+    ],
+    "viewpoint": [
+      146,
+      87,
+      19
+    ],
+    "scope": [
+      135,
+      82,
+      -3,
+      158,
+      120,
+      19
+    ],
+    "protectedMargin": "X135..137/Z17..19 excluded; adjoining V05 retained",
+    "floorY": {
+      "ground": 89,
+      "residence": 96,
+      "attic": 102
+    },
+    "noBasement": true,
+    "noShop": true,
+    "customAssets": 0,
+    "reusedExistingCustomRoots": 24,
+    "modelRoots": 266,
+    "shallowRoofRoots": 42,
+    "changedBlocks": 7079,
+    "backup": "C:/Users/User/Desktop/Zytale/work/blackridge-house-03/backup-before",
+    "report": "C:/Users/User/Desktop/Zytale/BLACKRIDGE_HOUSE_03_BUILD_REPORT.md",
+    "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-house-03/deployment-proof.json",
+    "constructionSource": "Independent House_3 broad residence with twin front gables, deep ground porch, low terrace, planted garden, residence and storage attic",
+    "nativeChecks": "Exact merged-file restart: zero outside/unplanned/mismatched blocks; 8 navigation goals and all sampled room positions connected; 254 partial-block contacts checked; wall anchoring of lamp shelves checked.",
+    "otherSaveFilesByteIdentical": 5586,
+    "otherRegionRecordsByteIdentical": 2039,
+    "approvedBuildingsUnchanged": [
+      "V01",
+      "V02",
+      "V14",
+      "V15"
+    ],
+    "chestContentsRelocated": {
+      "from": [
+        143,
+        89,
+        5
+      ],
+      "to": [
+        147,
+        90,
+        3
+      ]
+    },
+    "newBedPersistent": [
+      141,
+      97,
+      1
+    ],
+    "visualApproved": true,
+    "limitations": [
+      "Voxel navigation is not player walkthrough",
+      "Diagnostic renders approximate lighting, UV and transparency; no pixel-perfect claim",
+      "No engineering stability simulation"
+    ],
+    "nextAction": "Preserve approved V04 architecture. Exclude it from future reconstruction selection unless explicitly requested.",
+    "approvalDate": "2026-10-11",
+    "approvalEvidence": "User: Sono soddisfatto del risultato, tieni fanne un’altra, with the new House_4.png guide.",
+    "currentLocation": {
+      "date": "2026-10-11",
+      "id": "V04 Type C",
+      "bounds": [
+        138,
+        82,
+        -27,
+        161,
+        120,
+        -5
+      ],
+      "from": [
+        135,
+        82,
+        -3,
+        158,
+        120,
+        19
+      ],
+      "delta": [
+        3,
+        0,
+        -24
+      ],
+      "entry": [
+        149,
+        90,
+        -12
+      ],
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+      "geometryPreservation": "Current pre-task blocks, rotations and multipart filler offsets preserved exactly under translation. Existing user rotations retained; no additional rotation applied."
+    },
+    "positionCaution": "Original installation fields are historical; currentLocation is authoritative after the market/village relocation."
+  },
+  "blackridge_direct_map_authorization": {
+    "date": "2026-10-10",
+    "userStatement": "Da ora in poi puoi lavorare direttamente sulla mappa",
+    "target": "The Village - Zytale 306 Working Copy",
+    "safety": "Permission to edit the working map directly does not remove full-backup, bounded edits, approved-building preservation or no-concurrent-writer safeguards.",
+    "originalWorldProtected": true
+  },
+  "blackridge_native_shallow_roof_note": {
+    "game": "Hytale 0.6.8 release",
+    "asset": "Rock_Slate_Brick_Roof_Shallow",
+    "observedFootprint": "Rotation 0 occupies root Z and Z-1 at the same Y. Reserve both cells and space roots by two, do not tile per single voxel.",
+    "resolution": "Native filler collisions found during staging; corrected spacing and multipart expected occupancy passed save/restart checks.",
+    "relatedExperience": "EXP-000002",
+    "relatedFailure": "FAIL-000005",
+    "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-house-03/verification-restart.json",
+    "assetEvidence": "C:/Users/User/Desktop/Zytale/work/blackridge-house-03/assets.json"
+  },
+  "blackridge_house_04": {
+    "date": "2026-10-11",
+    "status": "rebuilt-user-approved",
+    "world": "The Village - Zytale 306 Working Copy",
+    "building": "V12",
+    "guideTitle": "Blackridge House 04 — Residential House Type D",
+    "reference": "C:/Users/User/Desktop/Zytale houses/House_4.png",
+    "entry": [
+      52,
+      91,
+      29
+    ],
+    "viewpoint": [
+      52,
+      87,
+      36
+    ],
+    "scope": [
+      43,
+      81,
+      16,
+      63,
+      119,
+      36
+    ],
+    "protectedMargin": "X61..63/Z35..36 excluded; adjoining property retained. Z15 buffer separates approved V15.",
+    "floorY": {
+      "living": 90,
+      "bedroom": 96,
+      "readingAttic": 102
+    },
+    "noBasement": true,
+    "noShop": true,
+    "customAssets": 0,
+    "reusedExistingCustomRoots": 15,
+    "modelRoots": 216,
+    "shallowRoofRoots": 16,
+    "changedBlocks": 5627,
+    "backup": "C:/Users/User/Desktop/Zytale/work/blackridge-house-04/backup-before",
+    "report": "C:/Users/User/Desktop/Zytale/BLACKRIDGE_HOUSE_04_BUILD_REPORT.md",
+    "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-house-04/deployment-proof.json",
+    "constructionSource": "Independent House_4 raised merchant residence, central stone stair, side balconies, front and cross gables, living floor, bedroom and attic reading room",
+    "nativeChecks": "Exact merged-file restart: zero outside/unplanned/mismatched blocks; all 9 navigation goals and all sampled room positions connected (74,100,106); 204 partial-block contacts; continuous chimney and wall anchoring of lamp shelves checked.",
+    "otherSaveFilesByteIdentical": 5592,
+    "otherRegionRecordsByteIdentical": 1022,
+    "approvedBuildingsUnchanged": [
+      "V01",
+      "V02",
+      "V04",
+      "V15",
+      "V14"
+    ],
+    "sharedChunkPreservation": "V15 shares selected chunk 1,0: geometry checked unchanged; original block entities restored. V01/V02/V04/V14 chunk records are unselected and byte-identical.",
+    "chestContentsRelocated": {
+      "from": [
+        54,
+        86,
+        25
+      ],
+      "to": [
+        55,
+        91,
+        20
+      ]
+    },
+    "newBedPersistent": [
+      50,
+      97,
+      20
+    ],
+    "visualApproved": true,
+    "limitations": [
+      "Voxel navigation is not player walkthrough",
+      "Diagnostic renders approximate lighting, UV and transparency; no pixel-perfect claim",
+      "No engineering stability simulation"
+    ],
+    "nextAction": "Preserve approved V12 architecture. Exclude it from future reconstruction selection unless explicitly requested.",
+    "approvalDate": "2026-10-11",
+    "approvalEvidence": "User: Sono soddisfatto del risultato, tieni fanne un’altra, with the new Casa del Carrettiere.png guide.",
+    "currentLocation": {
+      "date": "2026-10-11",
+      "id": "V12 Type D",
+      "bounds": [
+        -24,
+        82,
+        -16,
+        -4,
+        120,
+        4
+      ],
+      "from": [
+        1,
+        82,
+        17,
+        21,
+        120,
+        37
+      ],
+      "delta": [
+        -25,
+        0,
+        -33
+      ],
+      "entry": [
+        -11,
+        92,
+        -5
+      ],
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+      "geometryPreservation": "Current pre-task blocks, rotations and multipart filler offsets preserved exactly under translation. Existing user rotations retained; no additional rotation applied."
+    },
+    "positionCaution": "Original installation fields are historical; currentLocation is authoritative after the market/village relocation."
+  },
+  "blackridge_carters_house": {
+    "date": "2026-10-11",
+    "status": "rebuilt-user-approved",
+    "world": "The Village - Zytale 306 Working Copy",
+    "building": "V10",
+    "guideTitle": "Blackridge Carter's House",
+    "reference": "C:/Users/User/Desktop/More Zytale houses/Casa del Carrettiere.png",
+    "entry": [
+      35,
+      84,
+      61
+    ],
+    "viewpoint": [
+      35,
+      83,
+      68
+    ],
+    "scope": [
+      23,
+      78,
+      43,
+      56,
+      118,
+      68
+    ],
+    "floorY": {
+      "workshopStable": 83,
+      "living": 90,
+      "storageAttic": 96
+    },
+    "customAssets": 0,
+    "reusedExistingCustomRoots": 25,
+    "modelRoots": 239,
+    "changedBlocks": 7916,
+    "backup": "C:/Users/User/Desktop/Zytale/work/blackridge-carters-house/backup-before",
+    "report": "C:/Users/User/Desktop/Zytale/BLACKRIDGE_CARTERS_HOUSE_BUILD_REPORT.md",
+    "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-carters-house/deployment-proof.json",
+    "constructionSource": "Independent cartwright workshop, covered stable and wagon shelter, external stair, planted front balcony, living floor and storage attic",
+    "nativeChecks": "Exact merged-file restart: zero outside/unplanned/mismatched blocks; all 9 navigation goals and sampled room positions connected (145,153,183); 407 partial-block contacts; continuous chimney and wall-anchored lamp shelves checked.",
+    "otherSaveFilesByteIdentical": 5587,
+    "otherRegionRecordsByteIdentical": 1020,
+    "protectedBlockEntitiesRestored": 837,
+    "approvedBuildingsUnchanged": [
+      "V01",
+      "V02",
+      "V04",
+      "V12",
+      "V15",
+      "V14"
+    ],
+    "sharedChunkPreservation": "V12 shares selected chunk 1,1: geometry checked unchanged and original block entities restored. V01/V02/V04/V15/V14 chunk records are unselected and byte-identical.",
+    "originalFarmhouseUntouched": true,
+    "removedOriginalBed": [
+      40,
+      83,
+      53
+    ],
+    "chestContentsRelocated": 0,
+    "newBedPersistent": [
+      30,
+      91,
+      47
+    ],
+    "nativeBenchesPersistent": [
+      [
+        32,
+        84,
+        49
+      ],
+      [
+        49,
+        84,
+        49
+      ]
+    ],
+    "visualApproved": true,
+    "limitations": [
+      "Voxel navigation is not player walkthrough",
+      "Diagnostic renders approximate lighting, UV and transparency; no pixel-perfect claim",
+      "No engineering stability simulation",
+      "Existing artisan sign rather than new wheel sign; native stationary wagons; no horse NPC added"
+    ],
+    "nextAction": "Preserve the approved Carters House wherever currently placed; exclude it from reconstruction selection.",
+    "approvalDate": "2026-10-11",
+    "approvalEvidence": "User: Sono soddisfatto del risultato, tieni fanne un’altra, accompanied by the Erboristeria.png guide.",
+    "positionCaution": "Original installation fields are historical; currentLocation is authoritative after the market/village relocation.",
+    "currentLocation": {
+      "date": "2026-10-11",
+      "id": "V10 Carter",
+      "bounds": [
+        -25,
+        78,
+        -51,
+        0,
+        118,
+        -18
+      ],
+      "from": [
+        -29,
+        78,
+        -42,
+        -4,
+        118,
+        -9
+      ],
+      "delta": [
+        4,
+        0,
+        -9
+      ],
+      "entry": [
+        -7,
+        84,
+        -30
+      ],
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+      "geometryPreservation": "Current pre-task blocks, rotations and multipart filler offsets preserved exactly under translation. Existing user rotations retained; no additional rotation applied."
+    }
+  },
+  "blackridge_apothecary": {
+    "date": "2026-10-11",
+    "status": "rebuilt-user-approved",
+    "world": "The Village - Zytale 306 Working Copy",
+    "building": "V16-site Apothecary",
+    "siteCondition": "Vacant former V16 area; no existing house demolished. Offset six blocks east to preserve the current western house and boundary wall.",
+    "guideTitle": "Blackridge Apothecary",
+    "reference": "C:/Users/User/Desktop/More Zytale houses/Erboristeria.png",
+    "entry": [
+      34,
+      86,
+      26
+    ],
+    "viewpoint": [
+      47,
+      82,
+      33
+    ],
+    "scope": [
+      24,
+      76,
+      6,
+      47,
+      120,
+      33
+    ],
+    "floorY": {
+      "cellar": 78,
+      "shopLaboratory": 85,
+      "livingStudy": 92,
+      "loftStorage": 98
+    },
+    "customAssets": 0,
+    "reusedExistingCustomRoots": 23,
+    "modelRoots": 326,
+    "changedBlocks": 7952,
+    "backup": "C:/Users/User/Desktop/Zytale/work/blackridge-apothecary/backup-before",
+    "report": "C:/Users/User/Desktop/Zytale/BLACKRIDGE_APOTHECARY_BUILD_REPORT.md",
+    "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-apothecary/deployment-proof.json",
+    "constructionSource": "Independent herbal shop and laboratory with cellar, rear herb garden, wrapped flowered balcony, intersecting steep roofs, living study and separate bedroom",
+    "nativeChecks": "Exact merged-file restart: zero outside/unplanned/mismatched blocks; 9 navigation goals; all sampled room positions connected (102,133,150,162); 291 partial-block contacts; roofs, stairs, chimney and lamp anchoring checked.",
+    "outsideCellsByteGeometryCompared": 6523360,
+    "otherSaveFilesByteIdentical": 5587,
+    "otherRegionRecordsByteIdentical": 1021,
+    "protectedOriginalBlockEntitiesRestored": 2,
+    "preexistingSurveyedBlockEntitiesRetained": 1222,
+    "preservationBasis": "Fresh baseline of current world, not stale historical building positions. All selected-chunk out-of-scope cells unchanged; unselected region records byte-identical.",
+    "originalFarmhouseUntouched": true,
+    "originalEntitiesRemoved": 0,
+    "chestContentsRelocated": 0,
+    "newBedPersistent": [
+      29,
+      93,
+      13
+    ],
+    "nativeAlchemyBenchPersistent": [
+      37,
+      86,
+      16
+    ],
+    "newChestPersistent": [
+      36,
+      79,
+      15
+    ],
+    "visualApproved": true,
+    "limitations": [
+      "Voxel navigation is not player walkthrough",
+      "Native bench component persistence verified; interactions not manually exercised",
+      "Diagnostic renders approximate UV, lighting and transparency; not client screenshots or pixel-perfect proof",
+      "No engineering stability simulation",
+      "Existing herbs/bottles/sign adapted; no bespoke potion-sign asset, medicinal species or drying simulation"
+    ],
+    "nextAction": "Preserve approved Apothecary architecture; resurvey before selecting another site.",
+    "approvalDate": "2026-10-11",
+    "approvalEvidence": "User: Sono soddisfatto del risultato, tieni fanne un’altra, with Market.png and request to reorganize the village.",
+    "currentLocation": {
+      "date": "2026-10-11",
+      "id": "Apothecary",
+      "bounds": [
+        26,
+        76,
+        -23,
+        49,
+        120,
+        4
+      ],
+      "from": [
+        24,
+        76,
+        6,
+        47,
+        120,
+        33
+      ],
+      "delta": [
+        2,
+        0,
+        -29
+      ],
+      "entry": [
+        36,
+        86,
+        -3
+      ],
+      "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+      "geometryPreservation": "Current pre-task blocks, rotations and multipart filler offsets preserved exactly under translation. Existing user rotations retained; no additional rotation applied."
+    }
+  },
+  "blackridge_village_position_audit": {
+    "date": "2026-10-11",
+    "status": "native-resurveyed-and-reorganized",
+    "evidence": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/deployment-proof.json",
+    "baseline": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/backup-proof.json",
+    "currentSurvey": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/restart",
+    "scope": [
+      -55,
+      60,
+      -68,
+      179,
+      220,
+      72
+    ],
+    "rule": "Preserve all approved architecture. This location registry supersedes older placements. Resurvey actual live save before further changes.",
+    "fieldRule": "No work at any height at Z >= 73; wheat begins Z75.",
+    "canonicalBuildings": [
+      {
+        "id": "V10 Carter",
+        "bounds": [
+          -25,
+          78,
+          -51,
+          0,
+          118,
+          -18
+        ],
+        "from": [
+          -29,
+          78,
+          -42,
+          -4,
+          118,
+          -9
+        ],
+        "delta": [
+          4,
+          0,
+          -9
+        ],
+        "entry": [
+          -7,
+          84,
+          -30
+        ]
+      },
+      {
+        "id": "V15 Type A",
+        "bounds": [
+          -24,
+          86,
+          11,
+          -2,
+          119,
+          31
+        ],
+        "from": [
+          -23,
+          86,
+          17,
+          -1,
+          119,
+          37
+        ],
+        "delta": [
+          -1,
+          0,
+          -6
+        ],
+        "entry": [
+          -10,
+          90,
+          19
+        ]
+      },
+      {
+        "id": "V12 Type D",
+        "bounds": [
+          -24,
+          82,
+          -16,
+          -4,
+          120,
+          4
+        ],
+        "from": [
+          1,
+          82,
+          17,
+          21,
+          120,
+          37
+        ],
+        "delta": [
+          -25,
+          0,
+          -33
+        ],
+        "entry": [
+          -11,
+          92,
+          -5
+        ]
+      },
+      {
+        "id": "Apothecary",
+        "bounds": [
+          26,
+          76,
+          -23,
+          49,
+          120,
+          4
+        ],
+        "from": [
+          24,
+          76,
+          6,
+          47,
+          120,
+          33
+        ],
+        "delta": [
+          2,
+          0,
+          -29
+        ],
+        "entry": [
+          36,
+          86,
+          -3
+        ]
+      },
+      {
+        "id": "V14 Town Hall",
+        "bounds": [
+          26,
+          77,
+          8,
+          54,
+          140,
+          40
+        ],
+        "from": [
+          22,
+          77,
+          35,
+          50,
+          140,
+          67
+        ],
+        "delta": [
+          4,
+          0,
+          -27
+        ],
+        "entry": [
+          46,
+          89,
+          24
+        ]
+      },
+      {
+        "id": "V01 Workshop",
+        "bounds": [
+          45,
+          83,
+          -49,
+          65,
+          118,
+          -26
+        ],
+        "from": [
+          74,
+          83,
+          -20,
+          94,
+          118,
+          3
+        ],
+        "delta": [
+          -29,
+          0,
+          -29
+        ],
+        "entry": [
+          53,
+          92,
+          -32
+        ]
+      },
+      {
+        "id": "V02 Shop",
+        "bounds": [
+          75,
+          82,
+          -49,
+          97,
+          119,
+          -27
+        ],
+        "from": [
+          99,
+          82,
+          -19,
+          121,
+          119,
+          3
+        ],
+        "delta": [
+          -24,
+          0,
+          -30
+        ],
+        "entry": [
+          88,
+          91,
+          -33
+        ]
+      },
+      {
+        "id": "V04 Type C",
+        "bounds": [
+          138,
+          82,
+          -27,
+          161,
+          120,
+          -5
+        ],
+        "from": [
+          135,
+          82,
+          -3,
+          158,
+          120,
+          19
+        ],
+        "delta": [
+          3,
+          0,
+          -24
+        ],
+        "entry": [
+          149,
+          90,
+          -12
+        ]
+      },
+      {
+        "id": "V03 Church",
+        "bounds": [
+          109,
+          87,
+          -47,
+          123,
+          126,
+          -19
+        ],
+        "from": [
+          121,
+          87,
+          -23,
+          135,
+          126,
+          5
+        ],
+        "delta": [
+          -12,
+          0,
+          -24
+        ],
+        "entry": [
+          116,
+          91,
+          -22
+        ]
+      },
+      {
+        "id": "V05 Inn",
+        "bounds": [
+          136,
+          83,
+          2,
+          157,
+          116,
+          25
+        ],
+        "from": [
+          119,
+          83,
+          13,
+          140,
+          116,
+          36
+        ],
+        "delta": [
+          17,
+          0,
+          -11
+        ],
+        "entry": [
+          145,
+          86,
+          18
+        ]
+      },
+      {
+        "id": "V06 Workshop",
+        "bounds": [
+          147,
+          82,
+          38,
+          170,
+          116,
+          61
+        ],
+        "from": [
+          140,
+          82,
+          20,
+          163,
+          116,
+          43
+        ],
+        "delta": [
+          7,
+          0,
+          18
+        ],
+        "entry": [
+          161,
+          86,
+          54
+        ]
+      },
+      {
+        "id": "V07 Merchant",
+        "bounds": [
+          122,
+          80,
+          48,
+          145,
+          116,
+          68
+        ],
+        "from": [
+          127,
+          80,
+          34,
+          150,
+          116,
+          54
+        ],
+        "delta": [
+          -5,
+          0,
+          14
+        ],
+        "entry": [
+          134,
+          83,
+          63
+        ]
+      },
+      {
+        "id": "V08 Market house",
+        "bounds": [
+          60,
+          83,
+          53,
+          81,
+          116,
+          68
+        ],
+        "from": [
+          108,
+          83,
+          37,
+          129,
+          116,
+          52
+        ],
+        "delta": [
+          -48,
+          0,
+          16
+        ],
+        "entry": [
+          68,
+          86,
+          65
+        ]
+      },
+      {
+        "id": "V09 Residence",
+        "bounds": [
+          91,
+          80,
+          53,
+          113,
+          112,
+          71
+        ],
+        "from": [
+          112,
+          80,
+          53,
+          134,
+          112,
+          71
+        ],
+        "delta": [
+          -21,
+          0,
+          0
+        ],
+        "entry": [
+          103,
+          83,
+          67
+        ]
+      },
+      {
+        "id": "V11 Residence",
+        "bounds": [
+          -20,
+          81,
+          43,
+          1,
+          114,
+          65
+        ],
+        "from": [
+          15,
+          81,
+          -14,
+          36,
+          114,
+          8
+        ],
+        "delta": [
+          -35,
+          0,
+          57
+        ],
+        "entry": [
+          -6,
+          84,
+          58
+        ]
+      },
+      {
+        "id": "V13 Workshop",
+        "bounds": [
+          14,
+          81,
+          -45,
+          34,
+          114,
+          -27
+        ],
+        "from": [
+          26,
+          81,
+          -31,
+          46,
+          114,
+          -13
+        ],
+        "delta": [
+          -12,
+          0,
+          -14
+        ],
+        "entry": [
+          23,
+          84,
+          -31
+        ]
+      },
+      {
+        "id": "V16 Residence",
+        "bounds": [
+          3,
+          83,
+          50,
+          21,
+          114,
+          68
+        ],
+        "from": [
+          -6,
+          83,
+          42,
+          12,
+          114,
+          60
+        ],
+        "delta": [
+          9,
+          0,
+          8
+        ],
+        "entry": [
+          18,
+          87,
+          58
+        ]
+      }
+    ],
+    "idCaution": "APOTHECARY and V16 Residence are two separate current structures; do not identify buildings solely by obsolete site labels."
+  },
+  "blackridge_market_village": {
+    "deployed": true,
+    "date": "2026-10-11T14:09:49.320Z",
+    "world": "C:/Users/User/AppData/Roaming/Hytale/UserData/Saves/The Village - Zytale 306 Working Copy",
+    "worldUuid": "47e0eb88-cba8-4c24-8b4d-822e99e86b60",
+    "reference": "C:/Users/User/Desktop/More Zytale houses/Market.png",
+    "marketEntry": [
+      86,
+      88,
+      20
+    ],
+    "viewpoint": [
+      86,
+      84,
+      40
+    ],
+    "townHallEntry": [
+      46,
+      89,
+      24
+    ],
+    "backup": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/backup-before",
+    "scope": [
+      -55,
+      60,
+      -68,
+      179,
+      220,
+      72
+    ],
+    "changedBlocks": 352639,
+    "changedChunks": 41,
+    "changedRegionFiles": [
+      {
+        "region": "-1.-1.region.bin",
+        "selectedChunkIndices": [
+          958,
+          990,
+          991,
+          1022,
+          1023
+        ],
+        "sourceSha256": "f1f8ce4e4f1e2834d7c6682337de590f786bc0353ac603f3caa85cbd4e70a4c7",
+        "outputSha256": "a1809b386af469b7124c80050ba7f9bfb1037ec5bde212346bc68640bc6ebbb6",
+        "otherExistingChunkRecordsByteIdentical": 903,
+        "totalOriginalChunks": 908
+      },
+      {
+        "region": "-1.0.region.bin",
+        "selectedChunkIndices": [
+          30,
+          31,
+          62,
+          63,
+          94,
+          95
+        ],
+        "sourceSha256": "2610713802cfa9d307d80951d98f2f50f0bba4073033386731a22f132f6d8a08",
+        "outputSha256": "195eaba8b5c62cc06875201b35f915ae79765ecfdcedfe80052ee9651cb1551a",
+        "otherExistingChunkRecordsByteIdentical": 1001,
+        "totalOriginalChunks": 1007
+      },
+      {
+        "region": "0.-1.region.bin",
+        "selectedChunkIndices": [
+          960,
+          961,
+          962,
+          963,
+          964,
+          965,
+          992,
+          993,
+          994,
+          995,
+          996,
+          997
+        ],
+        "sourceSha256": "8574a8dd36ad16b39fa525f62458ed0c173b91ec198c6124cbd495b1b924cd22",
+        "outputSha256": "cb35b9737db4c7b82d4bb8725d2f488cf995e3780445cd0a3c2956eaa12605ea",
+        "otherExistingChunkRecordsByteIdentical": 1005,
+        "totalOriginalChunks": 1017
+      },
+      {
+        "region": "0.0.region.bin",
+        "selectedChunkIndices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69
+        ],
+        "sourceSha256": "9ab68c1e7e27487b7317f8124da24d1085f0a8d8a7e9720d6f7f82df1d012cb3",
+        "outputSha256": "d7644b84677c6e75233574a163473a36a3fc18e9dee9cd10ffadc6ecb3ef8092",
+        "otherExistingChunkRecordsByteIdentical": 1006,
+        "totalOriginalChunks": 1024
+      }
+    ],
+    "otherSaveFilesByteIdentical": 5578,
+    "protectedFieldChecked": 5068800,
+    "protectedFieldDifferences": 0,
+    "fieldProtection": "No edits at any height at Z >= 73; wheat starts Z75",
+    "copiedVoxelCount": 356438,
+    "copiedNonempty": 83546,
+    "existingBuildingsTranslated": 17,
+    "existingSecondaryStructuresRetained": 4,
+    "currentLots": [
+      {
+        "id": "V10 Carter",
+        "bounds": [
+          -25,
+          78,
+          -51,
+          0,
+          118,
+          -18
+        ],
+        "from": [
+          -29,
+          78,
+          -42,
+          -4,
+          118,
+          -9
+        ],
+        "delta": [
+          4,
+          0,
+          -9
+        ],
+        "entry": [
+          -7,
+          84,
+          -30
+        ]
+      },
+      {
+        "id": "V15 Type A",
+        "bounds": [
+          -24,
+          86,
+          11,
+          -2,
+          119,
+          31
+        ],
+        "from": [
+          -23,
+          86,
+          17,
+          -1,
+          119,
+          37
+        ],
+        "delta": [
+          -1,
+          0,
+          -6
+        ],
+        "entry": [
+          -10,
+          90,
+          19
+        ]
+      },
+      {
+        "id": "V12 Type D",
+        "bounds": [
+          -24,
+          82,
+          -16,
+          -4,
+          120,
+          4
+        ],
+        "from": [
+          1,
+          82,
+          17,
+          21,
+          120,
+          37
+        ],
+        "delta": [
+          -25,
+          0,
+          -33
+        ],
+        "entry": [
+          -11,
+          92,
+          -5
+        ]
+      },
+      {
+        "id": "Apothecary",
+        "bounds": [
+          26,
+          76,
+          -23,
+          49,
+          120,
+          4
+        ],
+        "from": [
+          24,
+          76,
+          6,
+          47,
+          120,
+          33
+        ],
+        "delta": [
+          2,
+          0,
+          -29
+        ],
+        "entry": [
+          36,
+          86,
+          -3
+        ]
+      },
+      {
+        "id": "V14 Town Hall",
+        "bounds": [
+          26,
+          77,
+          8,
+          54,
+          140,
+          40
+        ],
+        "from": [
+          22,
+          77,
+          35,
+          50,
+          140,
+          67
+        ],
+        "delta": [
+          4,
+          0,
+          -27
+        ],
+        "entry": [
+          46,
+          89,
+          24
+        ]
+      },
+      {
+        "id": "V01 Workshop",
+        "bounds": [
+          45,
+          83,
+          -49,
+          65,
+          118,
+          -26
+        ],
+        "from": [
+          74,
+          83,
+          -20,
+          94,
+          118,
+          3
+        ],
+        "delta": [
+          -29,
+          0,
+          -29
+        ],
+        "entry": [
+          53,
+          92,
+          -32
+        ]
+      },
+      {
+        "id": "V02 Shop",
+        "bounds": [
+          75,
+          82,
+          -49,
+          97,
+          119,
+          -27
+        ],
+        "from": [
+          99,
+          82,
+          -19,
+          121,
+          119,
+          3
+        ],
+        "delta": [
+          -24,
+          0,
+          -30
+        ],
+        "entry": [
+          88,
+          91,
+          -33
+        ]
+      },
+      {
+        "id": "V04 Type C",
+        "bounds": [
+          138,
+          82,
+          -27,
+          161,
+          120,
+          -5
+        ],
+        "from": [
+          135,
+          82,
+          -3,
+          158,
+          120,
+          19
+        ],
+        "delta": [
+          3,
+          0,
+          -24
+        ],
+        "entry": [
+          149,
+          90,
+          -12
+        ]
+      },
+      {
+        "id": "V03 Church",
+        "bounds": [
+          109,
+          87,
+          -47,
+          123,
+          126,
+          -19
+        ],
+        "from": [
+          121,
+          87,
+          -23,
+          135,
+          126,
+          5
+        ],
+        "delta": [
+          -12,
+          0,
+          -24
+        ],
+        "entry": [
+          116,
+          91,
+          -22
+        ]
+      },
+      {
+        "id": "V05 Inn",
+        "bounds": [
+          136,
+          83,
+          2,
+          157,
+          116,
+          25
+        ],
+        "from": [
+          119,
+          83,
+          13,
+          140,
+          116,
+          36
+        ],
+        "delta": [
+          17,
+          0,
+          -11
+        ],
+        "entry": [
+          145,
+          86,
+          18
+        ]
+      },
+      {
+        "id": "V06 Workshop",
+        "bounds": [
+          147,
+          82,
+          38,
+          170,
+          116,
+          61
+        ],
+        "from": [
+          140,
+          82,
+          20,
+          163,
+          116,
+          43
+        ],
+        "delta": [
+          7,
+          0,
+          18
+        ],
+        "entry": [
+          161,
+          86,
+          54
+        ]
+      },
+      {
+        "id": "V07 Merchant",
+        "bounds": [
+          122,
+          80,
+          48,
+          145,
+          116,
+          68
+        ],
+        "from": [
+          127,
+          80,
+          34,
+          150,
+          116,
+          54
+        ],
+        "delta": [
+          -5,
+          0,
+          14
+        ],
+        "entry": [
+          134,
+          83,
+          63
+        ]
+      },
+      {
+        "id": "V08 Market house",
+        "bounds": [
+          60,
+          83,
+          53,
+          81,
+          116,
+          68
+        ],
+        "from": [
+          108,
+          83,
+          37,
+          129,
+          116,
+          52
+        ],
+        "delta": [
+          -48,
+          0,
+          16
+        ],
+        "entry": [
+          68,
+          86,
+          65
+        ]
+      },
+      {
+        "id": "V09 Residence",
+        "bounds": [
+          91,
+          80,
+          53,
+          113,
+          112,
+          71
+        ],
+        "from": [
+          112,
+          80,
+          53,
+          134,
+          112,
+          71
+        ],
+        "delta": [
+          -21,
+          0,
+          0
+        ],
+        "entry": [
+          103,
+          83,
+          67
+        ]
+      },
+      {
+        "id": "V11 Residence",
+        "bounds": [
+          -20,
+          81,
+          43,
+          1,
+          114,
+          65
+        ],
+        "from": [
+          15,
+          81,
+          -14,
+          36,
+          114,
+          8
+        ],
+        "delta": [
+          -35,
+          0,
+          57
+        ],
+        "entry": [
+          -6,
+          84,
+          58
+        ]
+      },
+      {
+        "id": "V13 Workshop",
+        "bounds": [
+          14,
+          81,
+          -45,
+          34,
+          114,
+          -27
+        ],
+        "from": [
+          26,
+          81,
+          -31,
+          46,
+          114,
+          -13
+        ],
+        "delta": [
+          -12,
+          0,
+          -14
+        ],
+        "entry": [
+          23,
+          84,
+          -31
+        ]
+      },
+      {
+        "id": "V16 Residence",
+        "bounds": [
+          3,
+          83,
+          50,
+          21,
+          114,
+          68
+        ],
+        "from": [
+          -6,
+          83,
+          42,
+          12,
+          114,
+          60
+        ],
+        "delta": [
+          9,
+          0,
+          8
+        ],
+        "entry": [
+          18,
+          87,
+          58
+        ]
+      },
+      {
+        "id": "Public well",
+        "bounds": [
+          8,
+          80,
+          34,
+          14,
+          106,
+          40
+        ],
+        "from": [
+          37,
+          80,
+          -13,
+          43,
+          106,
+          -7
+        ],
+        "delta": [
+          -29,
+          0,
+          47
+        ],
+        "entry": null
+      },
+      {
+        "id": "Existing stall A",
+        "bounds": [
+          57,
+          83,
+          43,
+          63,
+          106,
+          49
+        ],
+        "from": [
+          86,
+          83,
+          36,
+          92,
+          106,
+          42
+        ],
+        "delta": [
+          -29,
+          0,
+          7
+        ],
+        "entry": null
+      },
+      {
+        "id": "Existing stall B",
+        "bounds": [
+          111,
+          83,
+          43,
+          117,
+          106,
+          49
+        ],
+        "from": [
+          92,
+          83,
+          40,
+          98,
+          106,
+          46
+        ],
+        "delta": [
+          19,
+          0,
+          3
+        ],
+        "entry": null
+      },
+      {
+        "id": "Agricultural approach",
+        "bounds": [
+          80,
+          77,
+          68,
+          89,
+          106,
+          72
+        ],
+        "from": [
+          80,
+          77,
+          68,
+          89,
+          106,
+          72
+        ],
+        "delta": [
+          0,
+          0,
+          0
+        ],
+        "entry": null
+      }
+    ],
+    "entityRelocations": 42,
+    "otherOriginalBlockComponentsPreserved": 5945,
+    "nonBlockEntitySectionsPreserved": 54180,
+    "newMerchantChests": [
+      "72,98,-11",
+      "80,98,-11",
+      "92,98,-11"
+    ],
+    "allModsUnchanged": true,
+    "allConfigAndPlayerFilesUnchanged": true,
+    "originalFarmhouseAndMonasteryUntouched": true,
+    "fluidsUnchanged": true,
+    "newCustomAssets": 0,
+    "newProps": 416,
+    "navigationGoals": 28,
+    "marketFloorSamples": [
+      {
+        "name": "Main trading hall",
+        "total": 1245,
+        "connected": 1245
+      },
+      {
+        "name": "Ring gallery and offices",
+        "total": 537,
+        "connected": 537
+      }
+    ],
+    "designSha256": "c5be2149d32157e1ba93f2a08ba7cdefdc0a5d34e2eead1d3a100048a7ea5f9b",
+    "visualAcceptance": "awaiting user review",
+    "limitations": [
+      "No client walkthrough",
+      "Diagnostic images approximate UV/lighting; not in-game screenshots",
+      "Native assets adapt the visual reference; not a pixel-perfect replica",
+      "Building translation and saved component contents verified, interactions not manually exercised"
+    ],
+    "status": "installed-awaiting-user-visual-feedback",
+    "visualApproved": false,
+    "report": "C:/Users/User/Desktop/Zytale/BLACKRIDGE_MARKET_VILLAGE_BUILD_REPORT.md",
+    "nativeValidation": {
+      "restart": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/verification-restart.json",
+      "structure": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/structural-restart.json",
+      "navigation": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/navigation-restart.json",
+      "savedEntities": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/entity-verification-restart.json",
+      "merge": "C:/Users/User/Desktop/Zytale/work/blackridge-market-village/region-merge-proof.json"
+    },
+    "designBasis": "Reference-specific arcaded market hall: broad plinth, seven front arch bays, four side bays, ring gallery, three offices, storage, slate gables, cupola, service hearths, native trading furniture and planting. Existing village buildings translated from fresh current survey, not historical templates.",
+    "nativeChandelierNote": "In this Hytale 0.6.8 test, the multipart occupancy of Furniture_Tavern_Chandelier followed the union bounding box. Three saved chandeliers validated against native fillers. Treat this as a verified project-specific observation.",
+    "nextAction": "Stop for user visual inspection. Do not treat the Market Hall or new village layout as user-approved yet."
+  },
+  "blackridge_market_village_post_install_session": {
+    "date": "2026-10-11",
+    "timezone": "Europe/Rome",
+    "installationCompleted": "16:09:49",
+    "clientReopened": "16:10:53",
+    "gameServerStarted": "16:10:59",
+    "evidence": "Read-only elevated process check: HytaleClient PID 21920, Java PID 5848. Region mtimes advanced after completed deployment.",
+    "meaning": "Installed files were verified before Hytale reopened. Later normal game saves change region hashes; do not overwrite these with old candidate files.",
+    "furtherLiveWritesPerformed": false,
+    "visualApproval": "Still pending explicit user feedback"
+  },
+  "adaptive_surface_094": {
+    "version": "0.9.4",
+    "status": "installed-user-confirmed",
+    "world": "The Village - Zytale 306 Working Copy",
+    "releaseSHA256": "be805b45bbe4118b739892b6783a23a18edc233c19e0e15cf3a77858120ebd23",
+    "backup": "ZytaleAdaptiveSurface/backups/mod-20261011-214635",
+    "activeMaterials": 63,
+    "activeHdPixels": 5308416,
+    "fixes": [
+      "one creative search item",
+      "new block textures including Rock_Calcite_Brick",
+      "persistent learned-material activation after ZIP unlock"
+    ],
+    "evidence": "ZytaleAdaptiveSurface/docs/VALIDATION-0.9.4.md",
+    "limitations": [
+      "First use of unpreloaded material requires world restart",
+      "Already saved stone fallback blocks require repacing to capture donor",
+      "No instrumented client trace"
+    ]
+  },
+  "adaptive_window_042": {
+    "version": "0.4.2",
+    "hytale": "0.7.0 stable",
+    "status": "installed-awaiting-client-visual-review",
+    "artifact": "ZytaleAdaptiveWindow/outputs/architecture-0.4.2/ZytaleAdaptiveWindow-0.4.2.jar",
+    "sha256": "a9c5d9814e5f2a8f30f83fe21409fa9d4fc11ac224fda6f698dcb82f85c0bfe3",
+    "installedPath": "%APPDATA%/Hytale/UserData/Mods/ZytaleAdaptiveWindow-0.4.2.jar",
+    "backup": "ZytaleAdaptiveWindow/backups/shared-20261013-143408-343",
+    "catalogue": {
+      "totalItems": 21,
+      "newArchitecturalVariants": 20,
+      "explicitIcons": 21,
+      "nameFormat": "widthxheightxdepth_English_Name",
+      "originalName": "3x7x1_window"
+    },
+    "rendering": {
+      "glazing": "native double-sided transparent model quads",
+      "particles": "removed",
+      "frame": "fixed stone UV and independent relief",
+      "masonry": "selected donor texture only on adaptive_wall pieces outside aperture union",
+      "sharedPalettes": 4
+    },
+    "validation": {
+      "staticChecks": 29137,
+      "createChecks": 7215,
+      "reloadChecks": 13163,
+      "learnReloadChecks": 6711,
+      "placementCases": 84,
+      "legacyFootprintsExact": true,
+      "otherSharedModFilesUnchanged": 4,
+      "savedWorldsOpened": false,
+      "savedWorldFilesEdited": false
+    },
+    "limitations": [
+      "No client visual test after 0.4.2 installation",
+      "No GPU/FPS measurement",
+      "Software renders are diagnostic and are not Hytale screenshots",
+      "The observed 0.4.1 particle misalignment does not prove that Update 7 itself caused the transform change"
+    ],
+    "report": "ZytaleAdaptiveWindow/outputs/architecture-0.4.2/REPORT.md",
+    "nextAction": "Verify transparency, frame/masonry separation, all four orientations and inventory icons in the real Hytale 0.7.0 client before marking visually approved."
+  }
 }

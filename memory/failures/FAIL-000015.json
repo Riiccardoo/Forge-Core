@@ -1,0 +1,23 @@
+{
+  "id": "FAIL-000015",
+  "experience_id": "EXP-000003",
+  "attempt": "Use Update 7 prerelease per-face transparent export flag as a transparency fix for an installed Hytale release 0.6.8 client",
+  "reason_failed": "User reports and screenshots show 0.3.0 remains opaque in game. Live material cache and client cached model contain the corrected flag and expected alpha; raw asset/server checks did not verify client rendering. Official per-face feature documentation is for Update 7 prerelease. Installed model-serialization strings and native assets do not expose the newer face property, supporting a version mismatch rather than stale assets.",
+  "environment": "Hytale release 0.6.8, AdaptiveWindow 0.3.0, Blockbench Hytale exporter 0.10.0",
+  "error_signature": "Opaque placed glass despite alpha90/255, RequiresAlphaBlending=true and textureLayout.front.transparent=true; cached model SHA matches live archive",
+  "conditions": [
+    "Client and export capabilities were not version-matched",
+    "Native test asserted raw model JSON flags, not actual client renderer behavior"
+  ],
+  "workaround": "No verified fix yet. Preserve installed mod and geometry. A separate Update 7 rendering test needs user authorization; do not update the game or substitute cutout/dithered glass silently. Do not infer all alpha blending is absent: requiresAlphaBlending already exists in the 0.6.8 protocol.",
+  "resolved_by": null,
+  "date": "2026-10-10T00:52:56.929327Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/ZytaleAdaptiveWindow/tests/TRANSPARENCY-INVESTIGATION-2026-10-10.md",
+      "description": "Read-only live/cache/source checks and explicit validation limits",
+      "verified": true
+    }
+  ]
+}

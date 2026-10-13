@@ -1,0 +1,23 @@
+{
+  "id": "FAIL-000019",
+  "experience_id": "EXP-000001",
+  "attempt": "Omit Categories from each internal material helper item and assume creative search will show only the main Adaptive Surface item",
+  "reason_failed": "The Hytale creative search still indexed uncategorized material helper items, so searching Adaptive Surface returned dozens of blocks.",
+  "environment": "Hytale 0.6.8 client, Adaptive Surface 0.9.3, world-selective helper item assets",
+  "error_signature": "",
+  "conditions": [
+    "Helper items shared the main item translation key and icon",
+    "No Categories property on helpers"
+  ],
+  "workaround": "Use a dedicated ItemQuality with HideFromSearch=true on every helper, including learned and migrated helpers; Variant=true adds default variant filtering. Keep the main item in Blocks.Soils.",
+  "resolved_by": "SOL-000001:v004",
+  "date": "2026-10-11T19:54:56.402469Z",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.9.4.md",
+      "description": "0.9.4 creative-search symptom, fix, native checks and user confirmation",
+      "verified": true
+    }
+  ]
+}
