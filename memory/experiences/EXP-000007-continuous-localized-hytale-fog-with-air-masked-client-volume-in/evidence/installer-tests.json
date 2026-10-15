@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "tests": [
+    "PowerShell 5 parsing",
+    "fresh install and restore",
+    "repeat install",
+    "upgrade and restore",
+    "copy failure rollback",
+    "foreign loader rejection",
+    "corrupt payload rejection",
+    "wrong game rejection",
+    "running game rejection",
+    "saved data unchanged"
+  ]
+}

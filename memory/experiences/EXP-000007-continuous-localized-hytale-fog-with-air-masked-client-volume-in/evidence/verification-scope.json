@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-15",
+  "nativeWorldProbe": "PASS",
+  "productionBoot": "PASS Hytale 0.7.2 / Java 25",
+  "gameVisualApproval": "User approved preview.2 before this release; GLSL unchanged byte for byte.",
+  "releaseUiVisualApproval": "Not yet tested by user in game.",
+  "weakHardware": "Not physically benchmarked; automatic GPU budget and bounded CPU work tested.",
+  "listing": "Not submitted; full browser installation unsupported.",
+  "sourceFiles": [
+    "FogClientVolumeBridge.java",
+    "AtmosphereMenuPage.java",
+    "AtmosphereToolPage.ui",
+    "client/hook.c",
+    "client/fog-volume.glsl",
+    "client/fog-post.glsl",
+    "packaging/Install.ps1",
+    "packaging/Restore.ps1"
+  ],
+  "localSourceModule": "Porject-Zytale/tools/AtmosphereTool",
+  "binaryArtifactsPublishedToForge": false
+}

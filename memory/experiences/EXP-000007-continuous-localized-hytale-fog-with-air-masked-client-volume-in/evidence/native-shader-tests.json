@@ -1,0 +1,44 @@
+[
+  {
+    "linear": 0,
+    "bloom": 0,
+    "fxaa": 0,
+    "dof": 0,
+    "compiled": true
+  },
+  {
+    "linear": 0,
+    "bloom": 1,
+    "fxaa": 1,
+    "dof": 0,
+    "compiled": true
+  },
+  {
+    "linear": 0,
+    "bloom": 1,
+    "fxaa": 1,
+    "dof": 1,
+    "compiled": true
+  },
+  {
+    "linear": 1,
+    "bloom": 0,
+    "fxaa": 0,
+    "dof": 0,
+    "compiled": true
+  },
+  {
+    "linear": 1,
+    "bloom": 1,
+    "fxaa": 1,
+    "dof": 0,
+    "compiled": true
+  },
+  {
+    "linear": 1,
+    "bloom": 1,
+    "fxaa": 1,
+    "dof": 1,
+    "compiled": true
+  }
+]

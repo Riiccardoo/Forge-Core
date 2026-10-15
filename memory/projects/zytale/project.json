@@ -1,13 +1,16 @@
 {
   "id": "zytale",
   "name": "zytale",
-  "summary": "Zytale on Hytale 0.7.0: AdaptiveWindow 0.4.3 is installed and its 21 item texture warnings are absent. Atmosphere Tool 1.3.2 resolved the WorldLoadProgress disconnect in the affected-world client run. The same run exposed a separate unresolved client parser failure for generated fog blockyanim assets.",
+  "summary": "Zytale: AdaptiveWindow 0.4.3 and AdaptiveSurface history retained. AtmosphereTool 2.0.0 is now installed on validated Windows Hytale 0.7.2: user-approved continuous client volume rendering, English UI, independent transparency slider and verified manual ZIP. Browser-only client-component installation and remote multiplayer are unsupported. Earlier asset lifecycle/parser failures remain historical evidence, not current renderer dependencies.",
   "technologies": [
     "Hytale 0.6.8 and 0.7.0",
     "Java 25",
     "Gradle 9.4.0",
     "Python/Pillow asset generation",
-    "Hytale .blockymodel and asset packs"
+    "Hytale .blockymodel and asset packs",
+    "Hytale 0.7.2",
+    "OpenGL 4.1 native client volume component",
+    "Windows PowerShell transactional installation"
   ],
   "constraints": [
     "Do not use the Computer Use skill for this project; user explicitly prohibited it",
@@ -31,7 +34,9 @@
     "Cancel placement on a copyable but not-yet-preloaded donor and show a reopen-world message",
     "For AdaptiveWindow 0.4.2 on released Hytale 0.7.0, keep glazing inside each model as native transparent quads rather than separately transformed particles",
     "Generate donor-textured masonry from the complement of all apertures while keeping frame and glazing UV regions independent",
-    "Preserve every window item ID, material-state family and multipart footprint; require client review before marking the 0.4.2 visuals approved"
+    "Preserve every window item ID, material-state family and multipart footprint; require client review before marking the 0.4.2 visuals approved",
+    "AtmosphereTool 2.0.0 preserves the visually approved preview.2 shaders and adds only the requested transparency slider; quality remains automatic.",
+    "Distribute Atmosphere_Tool_Client_Component separately inside a manual ZIP; never claim the in-game mod browser installs this native component."
   ],
   "experience_refs": [
     "EXP-000001",
@@ -39,9 +44,10 @@
     "EXP-000003",
     "EXP-000004",
     "EXP-000005",
-    "EXP-000006"
+    "EXP-000006",
+    "EXP-000007"
   ],
-  "updated_at": "2026-10-13T17:39:00.009603Z",
+  "updated_at": "2026-10-15T00:05:29.596319Z",
   "implementation": {
     "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
@@ -3444,5 +3450,39 @@
     "version": "1.3.2",
     "sha256": "938952907A481153167E79288FA68967115818ACAD8D9B59230A82027308A9E4",
     "status": "installed-worldloadprogress-resolved-animation-parser-error-open"
+  },
+  "atmosphere_tool_2_0_0": {
+    "date": "2026-10-15",
+    "experience": "EXP-000007",
+    "solution": "SOL-000007:v001",
+    "installed": true,
+    "saved_json_files_verified_unchanged": 8,
+    "release": {
+      "zip": "Atmosphere_Tool-2.0.0-Windows.zip",
+      "sha256": "333733665222aed07acf0d8b8655b2fe4149034553d0652b921ba2efeee826d4",
+      "bytes": 283183,
+      "jarBytes": 197050,
+      "files": 10,
+      "componentFolder": "Atmosphere_Tool_Client_Component",
+      "obsoleteParticleAssetsIncluded": false,
+      "modBrowserCompleteInstall": false
+    },
+    "installed_payload_sha256": {
+      "Atmosphere-Tool-2.0.0.jar": "A8134B331BD018DFC60CD5CB253ACCEAA060331F5B78581D01A7A2A7478E79C8",
+      "fog-volume.glsl": "946408D9C64253E613E5AFE7BC627E06E9BB02B034F492E1B4534047B8746463",
+      "opengl32.dll": "22A3FADBEC881A91A668F669437DDD21A229EBEE4300AAF2A78CFF2FC9FE2C1C",
+      "fog-post.glsl": "E2552492EC247B14920E118619588E4CE8DF9B162961C7650256417B90537B7C"
+    },
+    "visual_approval": "preview.2 approved by user; release shaders unchanged; new slider not yet visually verified in game",
+    "component_folder": "Atmosphere_Tool_Client_Component",
+    "menu": "English; Transparency slider immediately below Density, 0-100%; no quality controls",
+    "texture": "one shared 32^3 R16F noise texture, 64 KiB GPU, initialized once",
+    "browser_complete_install": false,
+    "marketplace_listing": "not submitted",
+    "transport": "local singleplayer only",
+    "scope": "Native client build fingerprint checked; weak-hardware FPS not certified",
+    "artifact_local_relative": "Porject-Zytale/tools/AtmosphereTool/dist/Atmosphere_Tool-2.0.0-Windows.zip",
+    "backup_location": "%APPDATA%/Hytale/UserData/AtmosphereToolBackups; receipt in AtmosphereClient/installation.json",
+    "evidence": "memory/experiences/EXP-000007-continuous-localized-hytale-fog-with-air-masked-client-volume-in/evidence"
   }
 }

@@ -1,0 +1,49 @@
+{
+  "id": "SOL-000007",
+  "version": 1,
+  "description": "AtmosphereTool 2.0.0: integrate continuous style-specific density along scene rays in an authored OpenGL client component, clipped to selected bounds, air clearance and scene depth; publish local occupancy atomically from a bounded server worker and update material parameters without rebuilding/uploading unchanged masks.",
+  "changes": [
+    "Retain preview.2 material GLSL and one shared 32-cubed R16F noise texture initialized once.",
+    "Add saved per-area Transparency slider below Density, preserving density semantics and old zero-transparency defaults.",
+    "Keep the active lease and cached mask on material edits; coalesce edits at 500 ms and discard stale worker revisions. The full packet is still written, but unchanged masks are not uploaded to GPU.",
+    "Package JAR and Atmosphere_Tool_Client_Component with hash/build checks, recognized-version backups, rollback on failed install and explicit restore.",
+    "Remove obsolete particle assets from JAR; preserve server API dependencies and active UI/item resources."
+  ],
+  "advantages": [
+    "User-approved continuous appearance without moving cubes or asset reloads",
+    "64 KiB shared GPU noise texture; no animation atlas",
+    "GPU budget adapts asynchronously; CPU terrain work yields",
+    "Independent density and transparency",
+    "Installer and actual local update preserve saved data"
+  ],
+  "disadvantages": [
+    "Native client modification is unsupported by official mod loading; manual client installation required",
+    "Exact Windows client fingerprint; future game updates require validation",
+    "No remote multiplayer transport",
+    "Dense combined grid limited to 16 areas and 4,194,304 cells; sparse distant selections can exceed limits",
+    "Extreme overlap and high resolution remain expensive even at minimum sample budget",
+    "Cached packet adds up to 16 MiB Java memory; maximum concurrent main arrays approximately 56 MiB"
+  ],
+  "test_results": [
+    "Java regression and Hytale native temporary-world lifecycle probe passed, including rapid transparency edits retaining lease and identical mask body.",
+    "Production JAR boots with one registration and shuts down on Hytale 0.7.2 / Java 25.",
+    "14-style appearance/animation comparisons, transparency checks, reduced-budget comparisons and 32 GPU timing cases passed on RTX 5060.",
+    "Six native post-shader variants compile; DLL integration reports zero GL errors and no new mask upload on transparency change.",
+    "Windows PowerShell 5 fixtures pass fresh/repeated/upgrade/restore, injected copy rollback and validation rejection scenarios.",
+    "ZIP inventory/CRC/payload hashes pass. Actual local installation checked four payload hashes and eight unchanged saved JSON files.",
+    "User approved preview.2 appearance; 2.0.0 shaders are identical. New slider presentation awaits ordinary in-game use."
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": "JAR 197050 bytes versus 831096; complete ZIP 283183 bytes; noise 64 KiB GPU; mask up to 8 MiB GPU.",
+    "execution_time": null,
+    "reliability": "Atomic publication with epoch cancellation and lease lifecycle; transactional installation and validated rollback fixture.",
+    "maintainability": null,
+    "performance": "GPU samples 32-128, resolution cap, 1.4-2.4 ms timing hysteresis target (not guarantee); terrain pass target 2 ms or 32768 cells every 500 ms. No weaker GPU certification.",
+    "compatibility": "Windows x64, exact tested Hytale 0.7.2 client, local singleplayer. Mod-browser complete install false."
+  },
+  "created_at": "2026-10-15T00:05:28.686642Z",
+  "supersedes": null,
+  "status": "preferred"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "FAIL-000024",
+  "experience_id": "EXP-000007",
+  "attempt": "Use discrete fog particles or animated cubic/planar supports, including preloaded textures, as a substitute for continuous localized volume rendering.",
+  "reason_failed": "Repeated user screenshots and videos showed isolated patches, cubed or fragmented structure and synchronized support movement. Asset preloading can remove lifecycle churn but does not remove the visible carrier geometry or guarantee continuous air-space coverage.",
+  "environment": {
+    "game": "Hytale",
+    "project": "AtmosphereTool",
+    "evidence": "User visual feedback across the 1.3.x iterations; not a newly reproduced benchmark"
+  },
+  "error_signature": "Visible cubes/fragments or separated patches instead of coherent fog, despite fluent motion.",
+  "conditions": [
+    "Goal requires compact fog visible both inside and at distance",
+    "Selection must stay fixed and exclude solid blocks"
+  ],
+  "workaround": "Use the user-approved continuous volume integration with stationary bounds and air mask; retain explicit native client compatibility limits.",
+  "resolved_by": "SOL-000007:v001",
+  "date": "2026-10-15T00:05:29.139554Z",
+  "source_refs": [
+    {
+      "kind": "conversation",
+      "reference": "AtmosphereTool user feedback, 2026-10-15",
+      "description": "User explicitly approved preview.2 as excellent and requested ZIP, named client folder and transparency slider. Release UI has not yet been visually approved.",
+      "verified": true
+    }
+  ]
+}

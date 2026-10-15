@@ -1,0 +1,13 @@
+{
+  "hookCompiledNativeShader": true,
+  "disabledStartupIsUnchanged": true,
+  "rayReconstructionAndVolume": true,
+  "sceneDepthOcclusion": true,
+  "expiredSessionDisablesEffect": true,
+  "respectsExistingTimerQuery": true,
+  "sliderUpdatesWithoutMaskUpload": true,
+  "adaptiveStepBudget": 112,
+  "glErrors": 0,
+  "renderer": "NVIDIA GeForce RTX 5060/PCIe/SSE2",
+  "scope": "Isolated WGL integration, not a Hytale session"
+}

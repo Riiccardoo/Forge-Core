@@ -1,0 +1,333 @@
+{
+  "renderer": "NVIDIA GeForce RTX 5060/PCIe/SSE2",
+  "scope": "Isolated GPU shader, not game FPS or weak-hardware certification",
+  "transparencyHalfMaximumError": 3.427267074584961e-06,
+  "closestStyles": [
+    [
+      "Cold",
+      "Mist",
+      0.010958914645016193
+    ],
+    [
+      "Arcane",
+      "Mist",
+      0.01207107212394476
+    ],
+    [
+      "Uniform",
+      "Natural",
+      0.013225214555859566
+    ],
+    [
+      "Deep",
+      "Mist",
+      0.013337977230548859
+    ],
+    [
+      "Arcane",
+      "Cold",
+      0.013728884980082512
+    ]
+  ],
+  "qualityRMSE": {
+    "((48, 30, 65), 32)": 0.0036316884215921164,
+    "((48, 30, 65), 48)": 0.0011772607685998082,
+    "((48, 30, 65), 96)": 0.00022627752332482487,
+    "((0, 8, 21), 32)": 0.004128369968384504,
+    "((0, 8, 21), 48)": 0.0018653104780241847,
+    "((0, 8, 21), 96)": 0.00036291941069066525,
+    "((100, 60, 140), 32)": 0.0017213993705809116,
+    "((100, 60, 140), 48)": 0.0005815089680254459,
+    "((100, 60, 140), 96)": 9.746826981427148e-05
+  },
+  "benchmarks": [
+    {
+      "width": 1280,
+      "height": 720,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 32,
+      "gpuMs": 0.30221333333333333
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 48,
+      "gpuMs": 0.4345813333333333
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 96,
+      "gpuMs": 0.8241386666666667
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 160,
+      "gpuMs": 1.1061386666666666
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 32,
+      "gpuMs": 4.126597333333334
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 48,
+      "gpuMs": 6.0398613333333335
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 96,
+      "gpuMs": 11.865770666666666
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 160,
+      "gpuMs": 16.420170666666667
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 32,
+      "gpuMs": 0.67296
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 48,
+      "gpuMs": 1.0531413333333333
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 96,
+      "gpuMs": 1.8460053333333333
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 160,
+      "gpuMs": 2.559776
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 32,
+      "gpuMs": 9.325285333333333
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 48,
+      "gpuMs": 13.632229333333333
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 96,
+      "gpuMs": 27.546858666666665
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 160,
+      "gpuMs": 37.627141333333334
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 32,
+      "gpuMs": 1.1968053333333333
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 48,
+      "gpuMs": 1.7856213333333333
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 96,
+      "gpuMs": 3.336752
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 160,
+      "gpuMs": 4.521130666666667
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 32,
+      "gpuMs": 16.835733333333334
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 48,
+      "gpuMs": 25.529466666666668
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 96,
+      "gpuMs": 48.90500266666667
+    },
+    {
+      "width": 2560,
+      "height": 1440,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 160,
+      "gpuMs": 67.40200533333334
+    },
+    {
+      "width": 3840,
+      "height": 2160,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 32,
+      "gpuMs": 2.62688
+    },
+    {
+      "width": 3840,
+      "height": 2160,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 48,
+      "gpuMs": 3.8723573333333334
+    },
+    {
+      "width": 3840,
+      "height": 2160,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 96,
+      "gpuMs": 7.479370666666667
+    },
+    {
+      "width": 3840,
+      "height": 2160,
+      "areas": 1,
+      "opacity": 1,
+      "style": 1,
+      "steps": 160,
+      "gpuMs": 10.031221333333333
+    },
+    {
+      "width": 3840,
+      "height": 2160,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 32,
+      "gpuMs": 37.722709333333334
+    },
+    {
+      "width": 3840,
+      "height": 2160,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 48,
+      "gpuMs": 55.381904
+    },
+    {
+      "width": 3840,
+      "height": 2160,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 96,
+      "gpuMs": 109.27160533333333
+    },
+    {
+      "width": 3840,
+      "height": 2160,
+      "areas": 16,
+      "opacity": 0.1,
+      "style": 10,
+      "steps": 160,
+      "gpuMs": 152.812208
+    }
+  ]
+}

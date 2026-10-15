@@ -1,0 +1,10 @@
+{
+  "zip": "Atmosphere_Tool-2.0.0-Windows.zip",
+  "sha256": "333733665222aed07acf0d8b8655b2fe4149034553d0652b921ba2efeee826d4",
+  "bytes": 283183,
+  "jarBytes": 197050,
+  "files": 10,
+  "componentFolder": "Atmosphere_Tool_Client_Component",
+  "obsoleteParticleAssetsIncluded": false,
+  "modBrowserCompleteInstall": false
+}

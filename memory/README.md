@@ -12,6 +12,9 @@ derivano da osservazioni, verifiche e risultati registrati tramite CLI o MCP; co
 | `EXP-000002` | Riparazione architettonica circoscritta e validazione multipart |
 | `EXP-000003` | Vetrata pilota Blockbench, materiali nativi e accettazione visiva |
 | `EXP-000004` | Catalogo AdaptiveWindow per Update 7, vetro nativo e muratura separata dalla cornice |
+| `EXP-000005` | Disconnect da Common asset runtime e pacchetti di progresso dopo lo stato Playing |
+| `EXP-000006` | Rifiuto nel client delle animazioni Atmosphere generate e limiti dei test sul server |
+| `EXP-000007` | Nebbia volumetrica continua AtmosphereTool, trasparenza indipendente, installazione client e limiti del browser mod |
 
 La memoria di progetto consolidata è in `projects/zytale/project.json`. Le cartelle
 `experiences/` e `failures/` conservano rispettivamente soluzioni versionate e casi di
