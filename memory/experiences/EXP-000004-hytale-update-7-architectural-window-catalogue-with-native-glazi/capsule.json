@@ -4,7 +4,7 @@
   "summary": "AdaptiveWindow 0.4.2 migrates 21 architectural windows from independent particle panes to native transparent model faces on released Hytale 0.7.0. Generated masonry closes each rectangular installation envelope using the selected donor material while frames and glazing remain visually independent. Existing item/state identities and multipart footprints are retained; explicit icons and dimension-prefixed English names improve creative inventory use.",
   "status": "experimental",
   "created_at": "2026-10-13T12:49:02.391625Z",
-  "updated_at": "2026-10-13T17:14:51.556928Z",
+  "updated_at": "2026-10-15T09:27:27.456037Z",
   "domains": [
     "game asset generation",
     "architectural glazing",
@@ -63,7 +63,8 @@
   ],
   "known_failures": [
     "FAIL-000020",
-    "FAIL-000021"
+    "FAIL-000021",
+    "FAIL-000025"
   ],
   "current_solution": "SOL-000005:v002",
   "solution_versions": [
@@ -162,6 +163,46 @@
       "created_at": "2026-10-13T17:14:35.179779Z",
       "supersedes": "SOL-000005:v001",
       "status": "preferred"
+    },
+    {
+      "id": "SOL-000005",
+      "version": 3,
+      "description": "AdaptiveWindow 0.4.4 separates native-sized inventory icons (64x64 RGBA) from the unchanged held-model textures (128x128), reusing all 21 existing previews. Built and installed against Hytale 0.7.2.",
+      "changes": [
+        "Resize only Icons/ItemsGenerated PNGs to 64x64; preserve Items textures and UVs",
+        "Bump plugin and generated cache to 0.4.4 so next startup refreshes existing saves with backup",
+        "Retarget manifest and compile against installed Hytale 0.7.2",
+        "Assert 64px inventory dimensions separately from 128px held dimensions"
+      ],
+      "advantages": [
+        "Minimal asset-only display correction with no new illustration cost",
+        "All 245 non-icon/non-manifest pack entries byte-identical to 0.4.3",
+        "All 21 distinct window silhouettes retained including original and rose"
+      ],
+      "disadvantages": [
+        "Final visual confirmation in the user client is pending; native server checks do not prove GPU rendering"
+      ],
+      "test_results": [
+        "All 4533 native ItemsGenerated PNGs in installed Assets.zip are 64x64; previous 21 window icons were 128x128",
+        "29221 static checks passed",
+        "Native Hytale 0.7.2 isolated create test: 7315 checks passed",
+        "Cache migrated from 0.4.3 to 0.4.4; all 21 icon PNGs verified 64x64 after native startup",
+        "Preview sheet inspected visually",
+        "Installed shared JAR SHA256 cda9140c3f906a922404af3b697ad9949f230d6c4e677936b7fdab6a91232ea6; four other mods unchanged; no user world opened"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null
+      },
+      "created_at": "2026-10-15T09:27:01.492941Z",
+      "supersedes": "SOL-000005:v002",
+      "status": "experimental"
     }
   ],
   "patterns": [],

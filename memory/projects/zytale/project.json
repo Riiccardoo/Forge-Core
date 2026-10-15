@@ -47,7 +47,7 @@
     "EXP-000006",
     "EXP-000007"
   ],
-  "updated_at": "2026-10-15T00:05:29.596319Z",
+  "updated_at": "2026-10-15T09:27:27.961214Z",
   "implementation": {
     "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
@@ -3484,5 +3484,17 @@
     "artifact_local_relative": "Porject-Zytale/tools/AtmosphereTool/dist/Atmosphere_Tool-2.0.0-Windows.zip",
     "backup_location": "%APPDATA%/Hytale/UserData/AtmosphereToolBackups; receipt in AtmosphereClient/installation.json",
     "evidence": "memory/experiences/EXP-000007-continuous-localized-hytale-fog-with-air-masked-client-volume-in/evidence"
+  },
+  "adaptive_window_044": {
+    "client_visual": "Pending user observation at next normal start",
+    "sha256": "cda9140c3f906a922404af3b697ad9949f230d6c4e677936b7fdab6a91232ea6",
+    "native_create_checks": 7315,
+    "summary": "21 inventory icons resized to native 64x64; held textures remain 128x128. Existing geometry and material IDs unchanged.",
+    "version": "0.4.4",
+    "static_checks": 29221,
+    "report": "ZytaleAdaptiveWindow/outputs/architecture-0.4.4/icon-regression.json",
+    "installed": true,
+    "backup": "ZytaleAdaptiveWindow/backups/shared-20261015-112637-813",
+    "hytale": "0.7.2"
   }
 }

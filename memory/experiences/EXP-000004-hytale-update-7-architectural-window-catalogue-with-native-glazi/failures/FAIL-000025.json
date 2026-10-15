@@ -1,0 +1,29 @@
+{
+  "id": "FAIL-000025",
+  "experience_id": "EXP-000004",
+  "attempt": "Reuse the same 128x128 preview PNG for inventory Icon and held Texture in AdaptiveWindow 0.4.3",
+  "reason_failed": "User screenshot shows clipped horizontal-strip window icons. The installed pack contains valid 128x128 PNGs, whereas all 4533 native Hytale 0.7.2 inventory PNGs are 64x64. Exact client stride behavior is inferred, not directly traced. Earlier tests incorrectly asserted pixel equality and 128px size for both independent consumers.",
+  "environment": "Hytale 0.7.2; AdaptiveWindow 0.4.3; Windows; all 21 windows",
+  "error_signature": "Inventory window thumbnails display as horizontal strips and partial silhouettes",
+  "conditions": [
+    "Valid preview files do not establish correct runtime inventory dimensions",
+    "Inventory Icon and held Texture are separate consumers"
+  ],
+  "workaround": "0.4.4 emits 64x64 inventory icons and retains 128x128 held textures. Static and native migration checks passed; client visual verification remains pending.",
+  "resolved_by": null,
+  "date": "2026-10-15T09:27:27.454035Z",
+  "source_refs": [
+    {
+      "kind": "user-screenshot",
+      "reference": "C:/Users/User/AppData/Local/Temp/codex-clipboard-81717478-f16b-492b-b961-7e32639f29ab.png",
+      "description": "User-provided malformed inventory icons",
+      "verified": true
+    },
+    {
+      "kind": "release-audit",
+      "reference": "ZytaleAdaptiveWindow/outputs/architecture-0.4.4/icon-regression.json",
+      "description": "Exact previous-release comparison and native icon dimensions",
+      "verified": true
+    }
+  ]
+}
