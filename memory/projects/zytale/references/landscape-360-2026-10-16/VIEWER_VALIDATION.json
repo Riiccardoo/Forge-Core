@@ -1,0 +1,57 @@
+{
+  "created": "2026-10-16",
+  "filename": "ZYTALE_TERRITORIO_INTEGRATO_360_VIEWER.html",
+  "pointCount": 3,
+  "embeddedImages": 6,
+  "width": 4096,
+  "height": 2048,
+  "syntaxValid": true,
+  "uniqueUiIds": true,
+  "embeddedHashesMatch": true,
+  "renderAndTextureFunctionsUnchanged": true,
+  "pointerKeyboardControlsUnchanged": true,
+  "defaultView": {
+    "point": "FATTORIA",
+    "heading": 55,
+    "pitch": 3,
+    "fov": 75
+  },
+  "newControls": [
+    "Three location choices with individual starting views",
+    "Display-only brightness toggle 1.65"
+  ],
+  "freshBrowserInteractiveTest": false,
+  "interactiveTestNote": "Rendering and input code inherited from the original viewer with 23 prior successful checks. Current artifact checked by source validation, embedded data hashes and rectilinear image projections; no fresh browser run.",
+  "panoramas": [
+    {
+      "point": 1,
+      "name": "MONASTERO",
+      "finalSha256": "cd155bc3168ec3bd70814c2e0a84a4ebc186916a353a378a0aef8a0eb9401d05",
+      "nativeSha256": "3c94baac4eddbe71e6fbb13e4a94429b19a6e8bc32817d9acadf80310cc19319"
+    },
+    {
+      "point": 2,
+      "name": "VILLAGGIO",
+      "finalSha256": "fba7f1a799979fa0769b6f8cb5c351eefacb32db09ac9aad574de99af6207a85",
+      "nativeSha256": "069e5956382a7ef66938c157710eca1817063795bec77115517ac9fb5600ff02"
+    },
+    {
+      "point": 3,
+      "name": "FATTORIA",
+      "finalSha256": "e57ab5ac720ccd19b2a2aafc1e2834c3325b0f6087e61c1b3113d6b1a67a6c57",
+      "nativeSha256": "82b29372dd81b07b8c274258f9bf68d98137889f61301b3b528167574bd46acb"
+    }
+  ],
+  "visualReview": {
+    "rectilinearViews": 12,
+    "baseComparisons": 6,
+    "reviewed": true,
+    "regions": [
+      "farm and wheat margins",
+      "village margins",
+      "forest facing monastery",
+      "outer monastery slopes"
+    ],
+    "comparisonFile": "ZYTALE_CONFRONTO_TRE_POV.png"
+  }
+}

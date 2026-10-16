@@ -1,0 +1,38 @@
+{
+  "id": "SOL-000009",
+  "version": 1,
+  "description": "Project actual native captures onto a calibrated sphere, preserve map foreground and composite a common distant environmental image, then expose three viewpoints and original-image comparison in a standalone WebGL viewer.",
+  "changes": [
+    "Verify north=-Z, east=+X and heading=-yaw modulo 360 against native compass and installed Transform.getDirection",
+    "Use eight horizontal captures plus up/down at observed vertical FOV 90; exclude window borders",
+    "Use one shared coordinate-based distant backdrop instead of independently inventing three horizons",
+    "Keep original source panoramas for comparison and scene protection"
+  ],
+  "advantages": [
+    "Preserves actual map composition and direction",
+    "Supports 360x180 exploration with no external runtime assets",
+    "Shared backdrop preserves the broad orientation of distant features"
+  ],
+  "disadvantages": [
+    "Raster backgrounds cannot establish actual terrain depth or engine feasibility",
+    "Landmark positions and 1.7-block optical offset are approximate"
+  ],
+  "test_results": [
+    "Original viewer: 23 functional checks passed in headless Edge 155.0.4283.45 with software WebGL",
+    "Three base 4096x2048 panoramas: protectedPixelsModified=0",
+    "Reported frame timing from software WebGL is not a Hytale performance benchmark"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-16T12:00:58.738855Z",
+  "supersedes": null,
+  "status": "working"
+}

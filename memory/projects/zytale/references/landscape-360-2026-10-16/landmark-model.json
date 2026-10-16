@@ -1,0 +1,411 @@
+{
+  "landmarks": {
+    "monastery": {
+      "name": "Monastero",
+      "xyz": [
+        220,
+        149,
+        213
+      ]
+    },
+    "church": {
+      "name": "Chiesa del monastero",
+      "xyz": [
+        220,
+        158,
+        219
+      ]
+    },
+    "cemetery": {
+      "name": "Cimitero nel chiostro",
+      "xyz": [
+        187,
+        126,
+        228
+      ]
+    },
+    "cloister": {
+      "name": "Chiostro",
+      "xyz": [
+        190,
+        128,
+        225
+      ]
+    },
+    "town": {
+      "name": "Blackridge",
+      "xyz": [
+        86,
+        103,
+        40
+      ]
+    },
+    "hall": {
+      "name": "Municipio",
+      "xyz": [
+        37,
+        135,
+        6
+      ]
+    },
+    "market": {
+      "name": "Mercato",
+      "xyz": [
+        86,
+        105,
+        20
+      ]
+    },
+    "farm": {
+      "name": "Casa colonica",
+      "xyz": [
+        -80,
+        99,
+        227
+      ]
+    },
+    "wheat": {
+      "name": "Campi di grano",
+      "xyz": [
+        5,
+        89,
+        140
+      ]
+    },
+    "garden": {
+      "name": "Orti della fattoria",
+      "xyz": [
+        -79,
+        87,
+        268
+      ]
+    },
+    "bridge": {
+      "name": "Ponte sul canyon",
+      "xyz": [
+        184,
+        96,
+        41
+      ]
+    },
+    "canyon": {
+      "name": "Canyon asciutto",
+      "xyz": [
+        182,
+        85,
+        70
+      ]
+    }
+  },
+  "points": [
+    {
+      "coords": [
+        201,
+        190,
+        203
+      ],
+      "title": "Sopra la chiesa del monastero",
+      "note": "X 201 · Y 190 · Z 203 — Punto in aria. Chiesa, chiostro e cimitero si trovano sotto la camera.",
+      "markers": [
+        {
+          "name": "Blackridge",
+          "heading": 324.7962099174745,
+          "pitch": -23.972152834582257,
+          "distance": 199,
+          "position": [
+            86,
+            103,
+            40
+          ],
+          "key": "town"
+        },
+        {
+          "name": "Municipio",
+          "heading": 320.2230481758407,
+          "pitch": -12.472947380521166,
+          "distance": 256,
+          "position": [
+            37,
+            135,
+            6
+          ],
+          "key": "hall"
+        },
+        {
+          "name": "Mercato",
+          "heading": 327.8541173689889,
+          "pitch": -21.857676988166652,
+          "distance": 216,
+          "position": [
+            86,
+            105,
+            20
+          ],
+          "key": "market"
+        },
+        {
+          "name": "Casa colonica",
+          "heading": 265.1182576353699,
+          "pitch": -18.195515277374675,
+          "distance": 282,
+          "position": [
+            -80,
+            99,
+            227
+          ],
+          "key": "farm"
+        },
+        {
+          "name": "Campi di grano",
+          "heading": 287.8188889145228,
+          "pitch": -26.512018298868444,
+          "distance": 206,
+          "position": [
+            5,
+            89,
+            140
+          ],
+          "key": "wheat"
+        },
+        {
+          "name": "Chiesa del monastero",
+          "heading": 130.10090754621223,
+          "pitch": -53.60693776357558,
+          "distance": 25,
+          "position": [
+            220,
+            158,
+            219
+          ],
+          "key": "church"
+        },
+        {
+          "name": "Cimitero nel chiostro",
+          "heading": 209.24882633654695,
+          "pitch": -66.43701136880907,
+          "distance": 29,
+          "position": [
+            187,
+            126,
+            228
+          ],
+          "key": "cemetery"
+        },
+        {
+          "name": "Chiostro",
+          "heading": 206.56505117707798,
+          "pitch": -68.88672061928203,
+          "distance": 25,
+          "position": [
+            190,
+            128,
+            225
+          ],
+          "key": "cloister"
+        },
+        {
+          "name": "Ponte sul canyon",
+          "heading": 354.0094052820752,
+          "pitch": -30.434863142658642,
+          "distance": 163,
+          "position": [
+            184,
+            96,
+            41
+          ],
+          "key": "bridge"
+        },
+        {
+          "name": "Canyon asciutto",
+          "heading": 351.86989764584405,
+          "pitch": -38.4563414939674,
+          "distance": 134,
+          "position": [
+            182,
+            85,
+            70
+          ],
+          "key": "canyon"
+        }
+      ]
+    },
+    {
+      "coords": [
+        37,
+        148,
+        6
+      ],
+      "title": "Sopra il tetto del municipio",
+      "note": "X 37 · Y 148 · Z 6 — Tetto in ardesia del municipio sotto la camera. Monastero verso sud-est.",
+      "markers": [
+        {
+          "name": "Monastero",
+          "heading": 138.52145337692224,
+          "pitch": -0.14516080048016586,
+          "distance": 276,
+          "position": [
+            220,
+            149,
+            213
+          ],
+          "key": "monastery"
+        },
+        {
+          "name": "Chiesa del monastero",
+          "heading": 139.33231398318856,
+          "pitch": 1.6929784406089288,
+          "distance": 281,
+          "position": [
+            220,
+            158,
+            219
+          ],
+          "key": "church"
+        },
+        {
+          "name": "Mercato",
+          "heading": 105.94539590092285,
+          "pitch": -41.25546820048994,
+          "distance": 51,
+          "position": [
+            86,
+            105,
+            20
+          ],
+          "key": "market"
+        },
+        {
+          "name": "Casa colonica",
+          "heading": 207.89727103094762,
+          "pitch": -11.461429353405373,
+          "distance": 250,
+          "position": [
+            -80,
+            99,
+            227
+          ],
+          "key": "farm"
+        },
+        {
+          "name": "Campi di grano",
+          "heading": 193.43102887068164,
+          "pitch": -23.778099494464687,
+          "distance": 138,
+          "position": [
+            5,
+            89,
+            140
+          ],
+          "key": "wheat"
+        },
+        {
+          "name": "Ponte sul canyon",
+          "heading": 103.39249775375112,
+          "pitch": -19.563792031380054,
+          "distance": 151,
+          "position": [
+            184,
+            96,
+            41
+          ],
+          "key": "bridge"
+        },
+        {
+          "name": "Canyon asciutto",
+          "heading": 113.81567115495392,
+          "pitch": -22.205874409501323,
+          "distance": 158,
+          "position": [
+            182,
+            85,
+            70
+          ],
+          "key": "canyon"
+        }
+      ]
+    },
+    {
+      "coords": [
+        -49,
+        98.25,
+        224
+      ],
+      "title": "Sul tetto del complesso agricolo",
+      "note": "X −49 · Y 98,25 · Z 224 — Il gioco ha corretto Y di +0,25 sul colmo del tetto. Casa colonica a ovest.",
+      "markers": [
+        {
+          "name": "Monastero",
+          "heading": 87.65835453780085,
+          "pitch": 10.325452864056203,
+          "distance": 269,
+          "position": [
+            220,
+            149,
+            213
+          ],
+          "key": "monastery"
+        },
+        {
+          "name": "Municipio",
+          "heading": 21.52900688183911,
+          "pitch": 8.506249540650419,
+          "distance": 234,
+          "position": [
+            37,
+            135,
+            6
+          ],
+          "key": "hall"
+        },
+        {
+          "name": "Mercato",
+          "heading": 33.495184673741164,
+          "pitch": 1.182640932002078,
+          "distance": 245,
+          "position": [
+            86,
+            105,
+            20
+          ],
+          "key": "market"
+        },
+        {
+          "name": "Casa colonica",
+          "heading": 264.4724598483438,
+          "pitch": -1.7471320629315275,
+          "distance": 31,
+          "position": [
+            -80,
+            99,
+            227
+          ],
+          "key": "farm"
+        },
+        {
+          "name": "Campi di grano",
+          "heading": 32.73522627210758,
+          "pitch": -6.257689058952123,
+          "distance": 100,
+          "position": [
+            5,
+            89,
+            140
+          ],
+          "key": "wheat"
+        },
+        {
+          "name": "Orti della fattoria",
+          "heading": 214.28687697720895,
+          "pitch": -13.667546707349969,
+          "distance": 53,
+          "position": [
+            -79,
+            87,
+            268
+          ],
+          "key": "garden"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "point": 1,
+    "protectedPixels": 7375019,
+    "rawGeneratedPixelsDifferentOutsideMaskAfterResize": 7338667,
+    "finalCompositedPixelsDifferentOutsideMask": 0,
+    "note": "Raw generator output is resized for coordinate registration; comparison includes global exposure/resampling changes, not only object changes."
+  },
+  {
+    "point": 2,
+    "protectedPixels": 7834940,
+    "rawGeneratedPixelsDifferentOutsideMaskAfterResize": 7757059,
+    "finalCompositedPixelsDifferentOutsideMask": 0,
+    "note": "Raw generator output is resized for coordinate registration; comparison includes global exposure/resampling changes, not only object changes."
+  },
+  {
+    "point": 3,
+    "protectedPixels": 7870095,
+    "rawGeneratedPixelsDifferentOutsideMaskAfterResize": 7823114,
+    "finalCompositedPixelsDifferentOutsideMask": 0,
+    "note": "Raw generator output is resized for coordinate registration; comparison includes global exposure/resampling changes, not only object changes."
+  }
+]

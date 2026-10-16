@@ -1,0 +1,35 @@
+[
+  {
+    "point": 1,
+    "name": "MONASTERO",
+    "width": 4096,
+    "height": 2048,
+    "generatedExposureGain": 0.55,
+    "changedPixels": 955199,
+    "pixelsChangedOutsideAllowedTerrain": 0,
+    "seamMeanChannelDifference": 0.43603515625,
+    "seamMaxChannelDifference": 25
+  },
+  {
+    "point": 2,
+    "name": "VILLAGGIO",
+    "width": 4096,
+    "height": 2048,
+    "generatedExposureGain": 0.6461142179776157,
+    "changedPixels": 511328,
+    "pixelsChangedOutsideAllowedTerrain": 0,
+    "seamMeanChannelDifference": 0.5236002604166666,
+    "seamMaxChannelDifference": 26
+  },
+  {
+    "point": 3,
+    "name": "FATTORIA",
+    "width": 4096,
+    "height": 2048,
+    "generatedExposureGain": 0.6004962564648713,
+    "changedPixels": 483812,
+    "pixelsChangedOutsideAllowedTerrain": 0,
+    "seamMeanChannelDifference": 0.3873697916666667,
+    "seamMaxChannelDifference": 6
+  }
+]
