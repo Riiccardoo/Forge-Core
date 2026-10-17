@@ -1,0 +1,47 @@
+{
+  "id": "SOL-000010",
+  "version": 1,
+  "description": "Add one 0..100 Creative Fullbright slider and use the existing native Creative minimum-light setter through a fingerprinted leaf dispatch at managed world-update call sites; retain original fog rendering.",
+  "changes": [
+    "Interpolate the native minimum from 0.05 to 0.5; the native routine retains its sixteen-level power curve.",
+    "Publish one 20-byte atomic local request and debounce 500 ms of slider inactivity before a native chunk rebuild.",
+    "Keep the original managed return address and receiver; do not retain managed pointers or call managed functions from the worker/GL thread.",
+    "Observe native toggle changes and restore only a still-owned override on lease release; store the requested slider value per world.",
+    "Preserve both fog shader hashes and deliver a transactionally installed 2.0.1 ZIP."
+  ],
+  "advantages": [
+    "Uses the Creative routine rather than server lighting or screen brightness",
+    "No continuous chunk rebuilding or extra per-pixel effect",
+    "Unknown client builds refused",
+    "Known previous installation backed up"
+  ],
+  "disadvantages": [
+    "Live NativeAOT runtime, GC and visual behavior have not yet been verified",
+    "Exact-build in-memory native call-site redirection; not an official plugin API",
+    "Applying a new value still triggers the native chunk rebuild",
+    "Local singleplayer and manual Windows installation only"
+  ],
+  "test_results": [
+    "Java bridge/persistence/range/lifecycle regression passed",
+    "Executed x64 fixture passed 101 levels and 10000 unchanged frames without rebuild",
+    "Native file debounce and lease expiry passed",
+    "Six native fog shader variants and isolated WGL integration passed with zero GL errors",
+    "Hytale 0.7.2 / Java 25 isolated production JAR boot and shutdown passed",
+    "Installer fresh/repeat/upgrade/restore/rejection/rollback fixtures passed",
+    "Local installation checked four hashes and eleven unchanged saved JSON files",
+    "Live in-game Creative behavior and visual review pending"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": "20-byte requests; 500 ms quiet period; no new per-pixel pass",
+    "execution_time": null,
+    "reliability": "Isolated automated checks passed; not yet verified inside the real client",
+    "maintainability": null,
+    "performance": null,
+    "compatibility": "Exact client SHA-256 0406a4c3cfef099ef2dff318cb889726d9c9883a0c12007fdda0563e93a0f80e, Windows x64, local singleplayer"
+  },
+  "created_at": "2026-10-17T02:47:04.412433Z",
+  "supersedes": null,
+  "status": "experimental"
+}

@@ -1,0 +1,169 @@
+{
+  "id": "EXP-000010",
+  "title": "Hytale Creative Fullbright control through fingerprinted NativeAOT tail dispatch",
+  "summary": "AtmosphereTool 2.0.1 adds only a Creative Fullbright slider, 0..100, using the native minimum-light setter. Isolated dispatch, bridge, fog regressions, packaging and installation passed. The component is installed, but live NativeAOT/GC behavior and visual verification remain pending; this is experimental, not a validated general hooking technique.",
+  "status": "experimental",
+  "created_at": "2026-10-17T02:46:20.032346Z",
+  "updated_at": "2026-10-17T02:47:05.036617Z",
+  "domains": [
+    "game modding",
+    "native interoperability",
+    "lighting"
+  ],
+  "technologies": [
+    "Hytale 0.7.2",
+    "NativeAOT",
+    "Windows x64",
+    "Java 25",
+    "OpenGL 4.1"
+  ],
+  "engines": [
+    "Hytale"
+  ],
+  "languages": [
+    "C",
+    "Java",
+    "x64 machine code",
+    "PowerShell"
+  ],
+  "tools": [],
+  "problem_class": "A gradual tool control must reuse a native client-only setting with no supported server API",
+  "problem_description": "User requested Global Fullbright based on the Creative tools feature and explicitly canceled a separate server lighting-command slider. Screen brightness or weather changes would not implement the requested function.",
+  "context": "Zytale / AtmosphereTool. User authorized the existing client component and automatic game-folder updates after closing Hytale. Fog rendering was already approved and must be preserved.",
+  "capabilities_required": [
+    "exact-build native inspection",
+    "native Creative minimum-light setter",
+    "managed-call-context preservation",
+    "coalesced local publication",
+    "owned-state restoration"
+  ],
+  "inputs": [
+    "0..100 slider",
+    "local session lease",
+    "native lighting minimum"
+  ],
+  "outputs": [
+    "same native Creative lighting operation with intermediate minimum values",
+    "versioned install bundle and rollback backup"
+  ],
+  "constraints": [
+    "Only the Creative Fullbright slider; no server fullbright-command UI or lighting changes",
+    "No arbitrary brightness approximation",
+    "Preserve approved fog shaders",
+    "No native game code redistribution or on-disk HytaleClient.exe edits",
+    "Exact Windows executable fingerprint; local singleplayer only",
+    "Do not treat isolated native fixtures as live runtime or visual validation"
+  ],
+  "known_attempts": [
+    "Arbitrary fragment-light mixing was rejected before delivery because it did not reproduce the native Creative feature.",
+    "A server lighting-command bar was prepared but canceled by explicit user steering and removed from active sources and distribution.",
+    "Direct calls into managed NativeAOT routines from a file or GL thread were rejected. The authored leaf dispatcher retains the original managed caller and tail-jumps to existing native code.",
+    "The initial C fixture failed because an essential VirtualProtect call was inside an assertion disabled by compiler configuration. Explicitly enabling assertions made the complete fixture execute and pass."
+  ],
+  "known_failures": [
+    "FAIL-000034"
+  ],
+  "current_solution": "SOL-000010:v001",
+  "solution_versions": [
+    {
+      "id": "SOL-000010",
+      "version": 1,
+      "description": "Add one 0..100 Creative Fullbright slider and use the existing native Creative minimum-light setter through a fingerprinted leaf dispatch at managed world-update call sites; retain original fog rendering.",
+      "changes": [
+        "Interpolate the native minimum from 0.05 to 0.5; the native routine retains its sixteen-level power curve.",
+        "Publish one 20-byte atomic local request and debounce 500 ms of slider inactivity before a native chunk rebuild.",
+        "Keep the original managed return address and receiver; do not retain managed pointers or call managed functions from the worker/GL thread.",
+        "Observe native toggle changes and restore only a still-owned override on lease release; store the requested slider value per world.",
+        "Preserve both fog shader hashes and deliver a transactionally installed 2.0.1 ZIP."
+      ],
+      "advantages": [
+        "Uses the Creative routine rather than server lighting or screen brightness",
+        "No continuous chunk rebuilding or extra per-pixel effect",
+        "Unknown client builds refused",
+        "Known previous installation backed up"
+      ],
+      "disadvantages": [
+        "Live NativeAOT runtime, GC and visual behavior have not yet been verified",
+        "Exact-build in-memory native call-site redirection; not an official plugin API",
+        "Applying a new value still triggers the native chunk rebuild",
+        "Local singleplayer and manual Windows installation only"
+      ],
+      "test_results": [
+        "Java bridge/persistence/range/lifecycle regression passed",
+        "Executed x64 fixture passed 101 levels and 10000 unchanged frames without rebuild",
+        "Native file debounce and lease expiry passed",
+        "Six native fog shader variants and isolated WGL integration passed with zero GL errors",
+        "Hytale 0.7.2 / Java 25 isolated production JAR boot and shutdown passed",
+        "Installer fresh/repeat/upgrade/restore/rejection/rollback fixtures passed",
+        "Local installation checked four hashes and eleven unchanged saved JSON files",
+        "Live in-game Creative behavior and visual review pending"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": "20-byte requests; 500 ms quiet period; no new per-pixel pass",
+        "execution_time": null,
+        "reliability": "Isolated automated checks passed; not yet verified inside the real client",
+        "maintainability": null,
+        "performance": null,
+        "compatibility": "Exact client SHA-256 0406a4c3cfef099ef2dff318cb889726d9c9883a0c12007fdda0563e93a0f80e, Windows x64, local singleplayer"
+      },
+      "created_at": "2026-10-17T02:47:04.412433Z",
+      "supersedes": null,
+      "status": "experimental"
+    }
+  ],
+  "patterns": [],
+  "related_experiences": [
+    "EXP-000007"
+  ],
+  "transferability": "The separation of native feature semantics, exact build checks, coalesced expensive operations and owned restoration is reusable. The dispatch mechanism is experimental and requires independent ABI/GC/live-runtime validation on every target; offsets and compatibility cannot be generalized.",
+  "confidence": 0.6,
+  "validation_status": "experimental",
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "tags": [
+    "creative-fullbright",
+    "nativeaot",
+    "local-client",
+    "debounce",
+    "pending-live-validation"
+  ],
+  "project_refs": [
+    "zytale"
+  ],
+  "source_refs": [
+    {
+      "kind": "source",
+      "reference": "Porject-Zytale/tools/AtmosphereTool/client/creative_fullbright.h",
+      "description": "Authored exact-build leaf dispatch and file bridge; no game function called from a native worker thread",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "Porject-Zytale/tools/AtmosphereTool/client/tools/creative_fullbright_test.c",
+      "description": "Executed all 101 values, ordinary update, unchanged frames, checkbox precedence, restoration, debounce and expiry in isolated C fixtures",
+      "verified": true
+    },
+    {
+      "kind": "release",
+      "reference": "Porject-Zytale/tools/AtmosphereTool/docs/RELEASE-2.0.1.md",
+      "description": "Implementation, checks, installed hashes, rollback and explicit pending live-client validation",
+      "verified": true
+    },
+    {
+      "kind": "installation",
+      "reference": "Porject-Zytale/tools/AtmosphereTool/build/local-install-validation.json",
+      "description": "2.0.1 installed; four payload hashes verified; eleven saved JSON files unchanged",
+      "verified": true
+    }
+  ]
+}

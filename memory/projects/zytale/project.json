@@ -1,7 +1,7 @@
 {
   "id": "zytale",
   "name": "zytale",
-  "summary": "Zytale: AdaptiveWindow 0.4.3 and AdaptiveSurface history retained. AtmosphereTool 2.0.0 is now installed on validated Windows Hytale 0.7.2: user-approved continuous client volume rendering, English UI, independent transparency slider and verified manual ZIP. Browser-only client-component installation and remote multiplayer are unsupported. Earlier asset lifecycle/parser failures remain historical evidence, not current renderer dependencies.",
+  "summary": "Zytale: AdaptiveWindow and AdaptiveSurface history retained. AtmosphereTool 2.0.1 is installed with the requested Creative Fullbright slider and unchanged approved fog shaders. Automated isolated checks and installation verification passed; live Creative client behavior remains pending. Native component requires manual installation, exact Windows Hytale 0.7.2 and local singleplayer.",
   "technologies": [
     "Hytale 0.6.8 and 0.7.0",
     "Java 25",
@@ -45,9 +45,10 @@
     "EXP-000004",
     "EXP-000005",
     "EXP-000006",
-    "EXP-000007"
+    "EXP-000007",
+    "EXP-000010"
   ],
-  "updated_at": "2026-10-15T09:27:27.961214Z",
+  "updated_at": "2026-10-17T02:47:56.098354Z",
   "implementation": {
     "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
@@ -3496,5 +3497,36 @@
     "installed": true,
     "backup": "ZytaleAdaptiveWindow/backups/shared-20261015-112637-813",
     "hytale": "0.7.2"
+  },
+  "atmosphere_tool_2_0_1": {
+    "date": "2026-10-17",
+    "experience": "EXP-000010",
+    "solution": "SOL-000010:v001",
+    "installed": true,
+    "saved_json_files_verified_unchanged": 11,
+    "release": {
+      "zip": "Atmosphere_Tool-2.0.1-Windows.zip",
+      "sha256": "26039ffbd688c5d45884677994ad9829a1bbcc8cbdf4282c8fefc498e2c82c99",
+      "bytes": 289878,
+      "jarBytes": 201333,
+      "files": 10,
+      "componentFolder": "Atmosphere_Tool_Client_Component",
+      "obsoleteParticleAssetsIncluded": false,
+      "modBrowserCompleteInstall": false
+    },
+    "installed_payload_sha256": {
+      "fog-volume.glsl": "946408D9C64253E613E5AFE7BC627E06E9BB02B034F492E1B4534047B8746463",
+      "opengl32.dll": "92AFC0DB9B719D1A1258DBF81E10301203752C23E2FFC4A80F41C54188CA71EF",
+      "fog-post.glsl": "E2552492EC247B14920E118619588E4CE8DF9B162961C7650256417B90537B7C",
+      "Atmosphere-Tool-2.0.1.jar": "ECFC9400319B597D47AFAF2B21848685BCD889A19D8654145AA9BA7D6A385BE4"
+    },
+    "menu": "English; one Global Fullbright (Creative) slider above Night lighting, 0..100; no server lighting-command control",
+    "native_operation": "Creative minimum-light setter, minimum .05.. .5, native 16-level power curve",
+    "publication": "20-byte atomic request; 500 ms quiet period; native owned-state restoration",
+    "fog_shaders": "byte-identical to 2.0.0",
+    "validation": "isolated Java, x64 native dispatcher, fog GPU, JAR boot and installation passed; live native/GC/visual validation pending",
+    "compatibility": "exact Windows Hytale 0.7.2 fingerprint, local singleplayer, manual installer",
+    "artifact_local_relative": "Porject-Zytale/tools/AtmosphereTool/dist/Atmosphere_Tool-2.0.1-Windows.zip",
+    "backup_directory": "20261017-024408-3209ef685ad849f490c42532f9ee74ff"
   }
 }

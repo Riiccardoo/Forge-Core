@@ -1,0 +1,27 @@
+{
+  "id": "FAIL-000034",
+  "experience_id": "EXP-000010",
+  "attempt": "Put the executable-page VirtualProtect call inside assert(...) in an optimized native dispatch test fixture.",
+  "reason_failed": "Assertions were disabled by the effective compiler configuration, so the side-effecting protection change did not execute. Calling the generated dispatcher from a non-executable page caused access violation before the dispatcher behavior was tested.",
+  "environment": {
+    "compiler": "Zig 0.15.2 cc -O2",
+    "platform": "Windows x64",
+    "scope": "Isolated C fixture, not Hytale"
+  },
+  "error_signature": "Exit -1073741819 (access violation) at first generated-code invocation; same test passed with assertions explicitly enabled.",
+  "conditions": [
+    "Required setup is embedded in an assertion",
+    "Optimized test compilation may disable assertions"
+  ],
+  "workaround": "Explicitly undefine NDEBUG before including assert.h in this fixture; never assume optimized native test assertions execute. Required production setup is outside assertions.",
+  "resolved_by": null,
+  "date": "2026-10-17T02:47:05.028613Z",
+  "source_refs": [
+    {
+      "kind": "test",
+      "reference": "Porject-Zytale/tools/AtmosphereTool/client/tools/creative_fullbright_test.c",
+      "description": "Fixture now enables assertions explicitly and executes the full native dispatch and lifecycle checks",
+      "verified": true
+    }
+  ]
+}
