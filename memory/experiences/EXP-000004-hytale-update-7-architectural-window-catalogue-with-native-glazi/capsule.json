@@ -4,7 +4,7 @@
   "summary": "AdaptiveWindow 0.4.2 migrates 21 architectural windows from independent particle panes to native transparent model faces on released Hytale 0.7.0. Generated masonry closes each rectangular installation envelope using the selected donor material while frames and glazing remain visually independent. Existing item/state identities and multipart footprints are retained; explicit icons and dimension-prefixed English names improve creative inventory use.",
   "status": "experimental",
   "created_at": "2026-10-13T12:49:02.391625Z",
-  "updated_at": "2026-10-15T09:27:27.456037Z",
+  "updated_at": "2026-10-17T23:22:02.519688Z",
   "domains": [
     "game asset generation",
     "architectural glazing",
@@ -265,5 +265,30 @@
       "description": "All 84 model/yaw cases retained their prior occupied cells and filler offsets.",
       "verified": true
     }
-  ]
+  ],
+  "browser_install_audit_044": {
+    "create_checks": 6815,
+    "publication_performed": false,
+    "sha256": "cda9140c3f906a922404af3b697ad9949f230d6c4e677936b7fdab6a91232ea6",
+    "date": "2026-10-18",
+    "automatic_material_pack_creation": true,
+    "setup": "Fresh isolated world, JAR supplied only through external --mods path, only main plugin enabled. No generated pack supplied. Empty harness output directory created solely for architecture-placed.json.",
+    "result": "Existing release already works as one shared JAR; no product changes necessary",
+    "automatic_material_pack_enable": true,
+    "artifact": "ZytaleAdaptiveWindow/dist/ZytaleAdaptiveWindow-0.4.4.jar",
+    "reload_checks": 12763,
+    "initial_harness_issue": "First run loaded assets and placed windows but failed writing its test report because its output directory was absent. Corrected test setup; original JAR unchanged.",
+    "evidence": [
+      "ZytaleAdaptiveWindow/outputs/browser-install-0.4.4/create-validation.json",
+      "ZytaleAdaptiveWindow/outputs/browser-install-0.4.4/reload-validation.json"
+    ],
+    "hytale": "0.7.2",
+    "actual_browser_download_tested": false,
+    "user_world_opened": false,
+    "shared_folder_unchanged": true,
+    "source_urls": [
+      "https://hytale.com/news/2026/8/update-6-patch-notes",
+      "https://support.curseforge.com/support/solutions/articles/9000273615-install-hytale-mods"
+    ]
+  }
 }
