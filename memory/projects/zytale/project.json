@@ -1,7 +1,7 @@
 {
   "id": "zytale",
   "name": "zytale",
-  "summary": "Zytale: AdaptiveWindow and AdaptiveSurface history retained. AtmosphereTool 2.0.1 is installed with the requested Creative Fullbright slider and unchanged approved fog shaders. Automated isolated checks and installation verification passed; live Creative client behavior remains pending. Native component requires manual installation, exact Windows Hytale 0.7.2 and local singleplayer.",
+  "summary": "Zytale: AdaptiveWindow and AdaptiveSurface history retained. AtmosphereTool 2.0.1 is installed with the Creative Fullbright slider and unchanged approved fog shaders. Automated checks and installation verification passed; the user confirmed its in-game brightness and fluidity as desired. Long-duration native stability and other client builds remain unverified. Manual native-component installation, exact Windows Hytale 0.7.2 and local singleplayer remain the supported scope.",
   "technologies": [
     "Hytale 0.6.8 and 0.7.0",
     "Java 25",
@@ -49,7 +49,7 @@
     "EXP-000009",
     "EXP-000010"
   ],
-  "updated_at": "2026-10-17T02:52:36.168593Z",
+  "updated_at": "2026-10-17T02:57:08.060336Z",
   "implementation": {
     "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
@@ -3625,9 +3625,15 @@
     "native_operation": "Creative minimum-light setter, minimum .05.. .5, native 16-level power curve",
     "publication": "20-byte atomic request; 500 ms quiet period; native owned-state restoration",
     "fog_shaders": "byte-identical to 2.0.0",
-    "validation": "isolated Java, x64 native dispatcher, fog GPU, JAR boot and installation passed; live native/GC/visual validation pending",
+    "validation": "Isolated Java, x64 native dispatcher, fog GPU, JAR boot and installation passed. On 2026-10-17 the user confirmed the in-game Creative Fullbright brightness and fluidity are as desired. Long-duration NativeAOT/GC behavior, FPS measurements and other client builds remain unmeasured.",
     "compatibility": "exact Windows Hytale 0.7.2 fingerprint, local singleplayer, manual installer",
     "artifact_local_relative": "Porject-Zytale/tools/AtmosphereTool/dist/Atmosphere_Tool-2.0.1-Windows.zip",
-    "backup_directory": "20261017-024408-3209ef685ad849f490c42532f9ee74ff"
+    "backup_directory": "20261017-024408-3209ef685ad849f490c42532f9ee74ff",
+    "user_visual_feedback": {
+      "date": "2026-10-17",
+      "result": "brightness and fluidity as desired",
+      "evidence": "Direct user reply in Codex conversation: Lo sono",
+      "scope": "Installed AtmosphereTool 2.0.1 on the user's Hytale client; no instrumented duration or FPS measurements"
+    }
   }
 }
