@@ -46,9 +46,10 @@
     "EXP-000005",
     "EXP-000006",
     "EXP-000007",
+    "EXP-000009",
     "EXP-000010"
   ],
-  "updated_at": "2026-10-17T02:47:56.098354Z",
+  "updated_at": "2026-10-17T02:52:36.168593Z",
   "implementation": {
     "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
@@ -92,7 +93,8 @@
     "ZytaleAdaptiveSurface/docs/release-checksums.txt",
     "ZytaleAdaptiveWindow/outputs/architecture-0.4.2/REPORT.md",
     "ZytaleAdaptiveWindow/outputs/architecture-0.4.2/asset-validation.json",
-    "https://hytale.com/news/2026/10/modder-facing-patch-notes-update-7"
+    "https://hytale.com/news/2026/10/modder-facing-patch-notes-update-7",
+    "memory/projects/zytale/references/landscape-360-2026-10-16.md"
   ],
   "monastic_complex": {
     "status": "reference-rebuild-deployed-awaiting-user-visual-feedback",
@@ -3497,6 +3499,105 @@
     "installed": true,
     "backup": "ZytaleAdaptiveWindow/backups/shared-20261015-112637-813",
     "hytale": "0.7.2"
+  },
+  "landscape_360_20261016": {
+    "date": "2026-10-16",
+    "status": "visual-simulation-user-approved; world-construction-not-started",
+    "experience": "EXP-000009",
+    "solution": "SOL-000009:v002",
+    "failure": "FAIL-000029",
+    "report": "memory/projects/zytale/references/landscape-360-2026-10-16.md",
+    "world": "The Village - Zytale 306 Working Copy",
+    "worldUuid": "47e0eb88-cba8-4c24-8b4d-822e99e86b60",
+    "hytaleVersion": "0.7.2",
+    "hytaleRevision": "d769dc3d57881261a62858e1394f0e4de9a21eca",
+    "userFeedback": "Work very close to excellence; user requested recording on Forge and GitHub.",
+    "points": [
+      {
+        "name": "Monastero",
+        "feet": [
+          201,
+          190,
+          203
+        ]
+      },
+      {
+        "name": "Villaggio",
+        "feet": [
+          37,
+          148,
+          6
+        ]
+      },
+      {
+        "name": "Fattoria",
+        "requested": [
+          -49,
+          98,
+          224
+        ],
+        "feet": [
+          -49,
+          98.25,
+          224
+        ]
+      }
+    ],
+    "designDecision": "Use the first approved distant landscape. Later hidden-summit revision is historical, not the current target.",
+    "currentArtifacts": {
+      "directory": "C:/Users/User/Desktop/Zytale/outputs/zytale-near-landscape-360-2026-10-16",
+      "viewer": "ZYTALE_TERRITORIO_INTEGRATO_360_VIEWER.html",
+      "dimensions": [
+        4096,
+        2048
+      ],
+      "generatedNativeDimensions": [
+        1774,
+        887
+      ],
+      "archive": "ZYTALE_TRE_POV_360_TERRITORIO_INTEGRATO.zip",
+      "archiveBytes": 44628012,
+      "archiveSha256": "cc7d3d926bf84f0a4f86bc797ce807c100f2c55816fc2fdb9cb4fb5d5d03b4a2",
+      "githubImagesDirectory": "memory/projects/zytale/references/landscape-360-2026-10-16"
+    },
+    "validation": {
+      "nearTerrainOutsideMaskChanges": [
+        0,
+        0,
+        0
+      ],
+      "rectilinearFinalViewsReviewed": 12,
+      "baseComparisonsReviewed": 6,
+      "embeddedImageHashesMatched": 6,
+      "archiveFiles": 17,
+      "archiveCrc32AndHashesPassed": true,
+      "originalViewerInteractiveChecks": 23,
+      "currentViewerFreshInteractiveTest": false
+    },
+    "limitations": [
+      "Image masks are not authoritative gameplay volumes",
+      "New trees and rocks are indicative, not shared 3D geometry",
+      "Generated resolution is lower than final 4K packaging",
+      "Time-resume persistence after original native survey remains unconfirmed; final native check interrupted by user Esc",
+      "Display-only brightness is not engine Fullbright"
+    ],
+    "newMapReference": {
+      "path": "C:/Users/User/AppData/Roaming/Hytale/UserData/Saves/The Village - Zytale 306 Working Copy.zip",
+      "bytes": 307794515,
+      "sha256": "722afab63b514f7cde1953fe42205c75d40f1977ea5dfa572235a15f668f420a",
+      "lastWriteUtc": "2026-10-16T11:45:13Z",
+      "zipEntries": 10850,
+      "regionFiles": 15,
+      "inspection": "Read-only central-directory/config inspection and whole-file SHA-256; no extraction, world rebuild or full ZIP CRC pass"
+    },
+    "nextUserBrief": {
+      "status": "understanding-confirmed-to-user; execution-prompt-not-yet-written",
+      "deliverable": "Codex prompt to build the approved landscape in the actual game using the map ZIP as an additional source",
+      "near": "Faithful physical construction near farm, wheat fields, village, forest before monastery and monastery; preserve playable space and accesses",
+      "far": "Build only what is needed to match visible silhouettes, apparent scale and depth from player viewpoints; economical scenography/forced perspective rather than literal full landscape extent",
+      "multiView": "Future validation from three reference points and playable routes, not one fixed camera",
+      "implementationStatus": "Requirement only; no actual forced-perspective build, feasibility proof or performance benchmark"
+    }
   },
   "atmosphere_tool_2_0_1": {
     "date": "2026-10-17",

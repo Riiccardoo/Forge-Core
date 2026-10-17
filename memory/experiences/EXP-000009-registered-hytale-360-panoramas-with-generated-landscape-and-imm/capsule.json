@@ -1,0 +1,205 @@
+{
+  "id": "EXP-000009",
+  "title": "Registered Hytale 360 panoramas with generated landscape and immutable protected pixels",
+  "summary": "Build explorable spherical concepts from calibrated native captures, share a distant environment across viewpoints, and composite generated near terrain only inside explicit image masks. Pixel preservation and viewer validation do not establish a shared 3D scene or a completed game-world build.",
+  "status": "active",
+  "created_at": "2026-10-16T12:00:19.377072Z",
+  "updated_at": "2026-10-16T12:01:19.670754Z",
+  "domains": [
+    "environment art",
+    "image compositing",
+    "spatial visualization"
+  ],
+  "technologies": [
+    "Hytale 0.7.2",
+    "ImageGen",
+    "Node.js sharp",
+    "WebGL 1"
+  ],
+  "engines": [
+    "Hytale"
+  ],
+  "languages": [
+    "JavaScript"
+  ],
+  "tools": [
+    "native camera captures",
+    "ImageGen",
+    "sharp",
+    "standalone HTML viewer"
+  ],
+  "problem_class": "registered spherical environmental simulation with protected source imagery",
+  "problem_description": "Generate coherent 360-degree landscape proposals around an existing playable map while preserving the observed buildings, crops, paths and orientation, and distinguish rendered proposals from actual world geometry.",
+  "context": "Zytale, Windows, Hytale 0.7.2 revision d769dc3d57881261a62858e1394f0e4de9a21eca. Three elevated coordinate viewpoints, night captures plus supplemental fullbright inspection. User approved the first distant landscape and later the three near-terrain simulations.",
+  "capabilities_required": [
+    "camera orientation calibration",
+    "spherical image reprojection",
+    "image mask compositing",
+    "multi-view visual review",
+    "artifact integrity checks"
+  ],
+  "inputs": [
+    "Ten calibrated native captures per viewpoint: eight horizontal headings plus zenith/nadir",
+    "User-approved distant landscape",
+    "Near-terrain allow polygons and protected exclusions",
+    "Shared approximate landmark coordinate model"
+  ],
+  "outputs": [
+    "Three 4096x2048 spherical concepts",
+    "Standalone three-viewpoint HTML with original comparison",
+    "Masks, prompts and scoped validation reports"
+  ],
+  "constraints": [
+    "Keep protected source pixels exact outside the permitted near-terrain mask",
+    "Do not equate raster masks with authoritative playable-volume boundaries",
+    "Do not equate generated new tree/rock positions with shared 3D geometry",
+    "Keep historical and current viewer tests distinct",
+    "Respect a user stop or browser security rejection; do not bypass it"
+  ],
+  "known_attempts": [
+    "Calibrated native projection plus distant-only background",
+    "Prompt-guided near-terrain generation followed by exact masked restoration"
+  ],
+  "known_failures": [
+    "FAIL-000029"
+  ],
+  "current_solution": "SOL-000009:v002",
+  "solution_versions": [
+    {
+      "id": "SOL-000009",
+      "version": 1,
+      "description": "Project actual native captures onto a calibrated sphere, preserve map foreground and composite a common distant environmental image, then expose three viewpoints and original-image comparison in a standalone WebGL viewer.",
+      "changes": [
+        "Verify north=-Z, east=+X and heading=-yaw modulo 360 against native compass and installed Transform.getDirection",
+        "Use eight horizontal captures plus up/down at observed vertical FOV 90; exclude window borders",
+        "Use one shared coordinate-based distant backdrop instead of independently inventing three horizons",
+        "Keep original source panoramas for comparison and scene protection"
+      ],
+      "advantages": [
+        "Preserves actual map composition and direction",
+        "Supports 360x180 exploration with no external runtime assets",
+        "Shared backdrop preserves the broad orientation of distant features"
+      ],
+      "disadvantages": [
+        "Raster backgrounds cannot establish actual terrain depth or engine feasibility",
+        "Landmark positions and 1.7-block optical offset are approximate"
+      ],
+      "test_results": [
+        "Original viewer: 23 functional checks passed in headless Edge 155.0.4283.45 with software WebGL",
+        "Three base 4096x2048 panoramas: protectedPixelsModified=0",
+        "Reported frame timing from software WebGL is not a Hytale performance benchmark"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null
+      },
+      "created_at": "2026-10-16T12:00:58.738855Z",
+      "supersedes": null,
+      "status": "working"
+    },
+    {
+      "id": "SOL-000009",
+      "version": 2,
+      "description": "Extend the registered panoramas into unused near terrain using explicit allow masks, protected holes and inside-only feathering; restore the original base everywhere else. Deliver the three viewpoints with comparison and display-only brightness control.",
+      "changes": [
+        "Use the first approved landscape as the shared distant base; keep the later hidden-summit revision historical",
+        "Give ImageGen the clean panorama, a permission overlay and cross-view references",
+        "Resize generated raster to the source projection, match exposure and feather the edit only inside each allowed mask",
+        "Restore exact base pixels outside the mask, then inspect rectilinear projections and record hashes",
+        "Distinguish three independent visual concepts from a shared exact 3D build"
+      ],
+      "advantages": [
+        "Protects buildings, crops and paths at the pixel level despite global changes in raw generator output",
+        "Allows near-environment integration while retaining original captures and previous versions",
+        "Makes limitations and actual validation explicit"
+      ],
+      "disadvantages": [
+        "Allowed terrain was selected visually in 2D; game-space protection requires an independent 3D audit",
+        "Individual new trees/rocks may differ across viewpoints",
+        "Generated sources are 1774x887, resampled to 4096x2048",
+        "New viewer not freshly tested interactively in browser"
+      ],
+      "test_results": [
+        "Changed pixels inside allowed masks: 955199, 511328, 483812; outside: 0,0,0",
+        "Twelve rectilinear final views and six base comparisons checked visually",
+        "Six embedded 4096x2048 images matched SHA-256; JavaScript syntax and unique control IDs checked",
+        "Rendering/texture logic and pointer/keyboard code matched previous tested viewer after label normalization",
+        "Final 17-file ZIP: 44628012 bytes, CRC32 and every contained SHA-256 checked",
+        "User described result as very close to excellence and requested recording in Forge/GitHub"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": "Exact protected-image comparison passed for all three views",
+        "maintainability": null,
+        "performance": "No actual Hytale landscape performance test; nothing built in the world during this visual phase",
+        "compatibility": "Standalone WebGL viewer; fresh browser interactive verification remains outstanding"
+      },
+      "created_at": "2026-10-16T12:01:19.161972Z",
+      "supersedes": "SOL-000009:v001",
+      "status": "preferred"
+    }
+  ],
+  "patterns": [],
+  "related_experiences": [
+    "EXP-000002"
+  ],
+  "transferability": "Direct reuse of ray projection, inside-only feathered masks, lossless source preservation and evidence separation for similar panoramas. Analogy to multi-view concept validation in other engines; native camera conventions, world APIs and playable bounds require fresh verification.",
+  "confidence": 0.9,
+  "validation_status": "validated",
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": "Zero pixels changed outside allowed near-terrain masks in all three final PNGs; validated only for this raster artifact workflow.",
+    "maintainability": null,
+    "performance": null,
+    "compatibility": "Observed Hytale 0.7.2; no implied compatibility of world editing APIs."
+  },
+  "tags": [
+    "360",
+    "panorama",
+    "equirectangular",
+    "protected-pixels",
+    "near-terrain",
+    "visual-concept"
+  ],
+  "project_refs": [
+    "zytale"
+  ],
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "memory/projects/zytale/references/landscape-360-2026-10-16.md",
+      "description": "Dated survey, artistic decisions, artifact chain, limits and future brief",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "memory/projects/zytale/references/landscape-360-2026-10-16/near-validation.json",
+      "description": "Three protected-pixel and seam checks",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "memory/projects/zytale/references/landscape-360-2026-10-16/VIEWER_VALIDATION.json",
+      "description": "New viewer static/data validation and explicit lack of fresh interactive test",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "memory/projects/zytale/references/landscape-360-2026-10-16/RAW_MASK_COMPARISON.json",
+      "description": "Raw generation differs outside permission mask; final composite restores protection",
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "checks": [
+    {
+      "name": "Initial north",
+      "passed": true,
+      "detail": {
+        "point": 0,
+        "heading": 0,
+        "pitch": 0,
+        "fov": 70,
+        "source": false,
+        "markersOn": false,
+        "loaded": true,
+        "hidden": false
+      }
+    },
+    {
+      "name": "Coordinate 1",
+      "passed": true,
+      "detail": {
+        "point": 0,
+        "heading": 0,
+        "pitch": 0,
+        "fov": 70,
+        "source": false,
+        "markersOn": false,
+        "loaded": true,
+        "hidden": false
+      }
+    },
+    {
+      "name": "Original image 1",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Coordinate 2",
+      "passed": true,
+      "detail": {
+        "point": 1,
+        "heading": 0,
+        "pitch": 0,
+        "fov": 70,
+        "source": false,
+        "markersOn": false,
+        "loaded": true,
+        "hidden": false
+      }
+    },
+    {
+      "name": "Original image 2",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Coordinate 3",
+      "passed": true,
+      "detail": {
+        "point": 2,
+        "heading": 0,
+        "pitch": 0,
+        "fov": 70,
+        "source": false,
+        "markersOn": false,
+        "loaded": true,
+        "hidden": false
+      }
+    },
+    {
+      "name": "Original image 3",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Horizontal drag",
+      "passed": true,
+      "detail": {
+        "point": 2,
+        "heading": 31.111111111111256,
+        "pitch": 7.777777777777779,
+        "fov": 70,
+        "source": false,
+        "markersOn": false,
+        "loaded": true,
+        "hidden": false
+      }
+    },
+    {
+      "name": "Vertical drag",
+      "passed": true,
+      "detail": {
+        "point": 2,
+        "heading": 31.111111111111256,
+        "pitch": 7.777777777777779,
+        "fov": 70,
+        "source": false,
+        "markersOn": false,
+        "loaded": true,
+        "hidden": false
+      }
+    },
+    {
+      "name": "Wheel zoom",
+      "passed": true,
+      "detail": {
+        "point": 2,
+        "heading": 31.111111111111256,
+        "pitch": 7.777777777777779,
+        "fov": 56.5,
+        "source": false,
+        "markersOn": false,
+        "loaded": true,
+        "hidden": false
+      }
+    },
+    {
+      "name": "North reset",
+      "passed": true,
+      "detail": {
+        "point": 2,
+        "heading": 0,
+        "pitch": 0,
+        "fov": 70,
+        "source": false,
+        "markersOn": false,
+        "loaded": true,
+        "hidden": false
+      }
+    },
+    {
+      "name": "East is right",
+      "passed": true,
+      "detail": {
+        "point": 2,
+        "heading": 5,
+        "pitch": 0,
+        "fov": 70,
+        "source": false,
+        "markersOn": false,
+        "loaded": true,
+        "hidden": false
+      }
+    },
+    {
+      "name": "Landmark toggle",
+      "passed": true,
+      "detail": {
+        "point": 2,
+        "heading": 5,
+        "pitch": 0,
+        "fov": 70,
+        "source": false,
+        "markersOn": true,
+        "loaded": true,
+        "hidden": false
+      }
+    },
+    {
+      "name": "Visible marker count",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "name": "Hide UI",
+      "passed": true,
+      "detail": {
+        "point": 2,
+        "heading": 22,
+        "pitch": -3,
+        "fov": 70,
+        "source": false,
+        "markersOn": true,
+        "loaded": true,
+        "hidden": true
+      }
+    },
+    {
+      "name": "Show UI",
+      "passed": true,
+      "detail": {
+        "point": 2,
+        "heading": 22,
+        "pitch": -3,
+        "fov": 70,
+        "source": false,
+        "markersOn": true,
+        "loaded": true,
+        "hidden": false
+      }
+    },
+    {
+      "name": "Fullscreen enter",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Fullscreen exit",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Help",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "Touch drag",
+      "passed": true,
+      "detail": {
+        "point": 2,
+        "heading": 11.666666666666686,
+        "pitch": 3.888888888888889,
+        "fov": 70,
+        "source": false,
+        "markersOn": true,
+        "loaded": true,
+        "hidden": false
+      }
+    },
+    {
+      "name": "Pinch zoom",
+      "passed": true,
+      "detail": {
+        "point": 2,
+        "heading": 11.666666666666686,
+        "pitch": 3.888888888888889,
+        "fov": 46.666666666666664,
+        "source": false,
+        "markersOn": true,
+        "loaded": true,
+        "hidden": false
+      }
+    },
+    {
+      "name": "Responsive canvas",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "name": "No browser errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "performance": {
+    "meanFrameMs": 16.546666666616996,
+    "maxFrameMs": 19.200000002980232,
+    "renderer": "WebKit WebGL"
+  },
+  "browser": "155.0.4283.45",
+  "mode": "Headless Edge; software WebGL; local file://; no network dependency"
+}

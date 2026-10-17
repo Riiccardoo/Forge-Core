@@ -1,0 +1,30 @@
+{
+  "id": "FAIL-000029",
+  "experience_id": "EXP-000009",
+  "attempt": "Rely on image-generation instructions and a color-coded guide alone to preserve all pixels outside permitted terrain.",
+  "reason_failed": "The raw generated images changed exposure and content outside permitted terrain. Prompt compliance is not a byte-level preservation guarantee; the raw farm image also proposed vegetation in a protected yard during visual review.",
+  "environment": "ImageGen edits of 1774x887 output against 4096x2048 Hytale spherical sources, 2026-10-16",
+  "error_signature": "After alignment/resampling, protected pixels differing from base: 7338667 / 7757059 / 7823114. These counts include exposure/resampling differences, not only object edits.",
+  "conditions": [
+    "Strict source registration and protected playable areas",
+    "Guide includes allowed polygons and exclusion holes",
+    "Generator returns a full-image rewrite"
+  ],
+  "workaround": "Keep original base, apply generated pixels only through the explicit allow mask with inward feathering, restore everything outside exactly, then visually inspect building/field/path boundaries and compare protected pixels.",
+  "resolved_by": "SOL-000009:v002",
+  "date": "2026-10-16T12:01:19.668750Z",
+  "source_refs": [
+    {
+      "kind": "test",
+      "reference": "memory/projects/zytale/references/landscape-360-2026-10-16/RAW_MASK_COMPARISON.json",
+      "description": "Raw versus final protection comparison",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "memory/projects/zytale/references/landscape-360-2026-10-16/near-validation.json",
+      "description": "Final zero outside-mask changes",
+      "verified": true
+    }
+  ]
+}
