@@ -1,0 +1,43 @@
+{
+  "id": "SOL-000008",
+  "version": 2,
+  "description": "Scale native Hytale 0.7.2 terrain editing with per-operation ECS section pins, exact desired-state plans, preloaded surface variants and component-level region preservation. Reopen the preserved save and compare complete block, rotation, filler, entity and fluid snapshots.",
+  "changes": [
+    "Release column and all ten section pins after each bounded operation instead of retaining the full landscape in memory.",
+    "Normalize native palette indices by stable asset names across server restarts.",
+    "Use already loaded Adaptive Surface variants and stock tree prefabs; do not register assets at runtime.",
+    "Generate complete desired block state before native application, pilot representative chunks and compare native readback.",
+    "Retain original root metadata and all section components except Block and BlockPhysics; update HeightmapColumn only.",
+    "When direct editing of the installed map is explicitly authorized, use one writer, fresh backups, zero-player authoring, and remove the temporary bridge after validation."
+  ],
+  "advantages": [
+    "Validated at landscape scale without pinning every surveyed chunk simultaneously.",
+    "All original foreign chunk components and unselected region records retained.",
+    "Native readback catches multipart filler and ordering defects that visual plans cannot detect."
+  ],
+  "disadvantages": [
+    "Only the installed Hytale 0.7.2 revision was validated.",
+    "A geometrically correct distant landscape can still exceed the client view-distance budget; actual screenshots are a separate acceptance step.",
+    "Single screenshots and 60 FPS overlays are not a controlled performance benchmark."
+  ],
+  "test_results": [
+    "Second pass: 107058190 changed cells across 1896 chunks; 621281280 cells compared after save and after reopening, with zero errors.",
+    "14791680 protected cells compared without changes.",
+    "2199 unselected existing chunk records byte-identical; 113760 original foreign section components retained.",
+    "Three scenic villages with 19 houses, native tree prefabs and 102539 terrain Adaptive Surface variants were persisted.",
+    "A two-chunk tall-grass pilot initially failed; replacement with the verified single-cell native lush tall grass passed, followed by full save/reopen validation."
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": "Native complete-state and selective-preservation checks passed; client visual acceptance is tracked separately.",
+    "maintainability": null,
+    "performance": null,
+    "compatibility": "Hytale 0.7.2 d769dc3d57881261a62858e1394f0e4de9a21eca"
+  },
+  "created_at": "2026-10-16T14:27:03.486783Z",
+  "supersedes": "SOL-000008:v001",
+  "status": "working"
+}

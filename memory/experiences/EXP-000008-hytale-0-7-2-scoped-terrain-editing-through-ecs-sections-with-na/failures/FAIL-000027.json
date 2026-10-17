@@ -1,0 +1,41 @@
+{
+  "id": "FAIL-000027",
+  "experience_id": "EXP-000008",
+  "attempt": "Load section references and later inspect a column without retaining every loaded section through the entire inspection lifecycle.",
+  "reason_failed": "An idle loaded section could unload before inspect_volume consumed it, causing a missing-section exception during the final survey.",
+  "environment": "Hytale release 0.7.2 isolated grain-field server",
+  "error_signature": "inspect_volume: java.lang.IllegalStateException: Section missing -64,128,128",
+  "conditions": [
+    "Asynchronous column and section loading",
+    "Multiple 32-cube inspections with idle sections between operations"
+  ],
+  "workaround": "Cache fully loaded CompatChunk columns and hold one keep-loaded reference for all ten sections for the bounded isolated-server lifetime; retain balanced per-operation references. Recompiled and completed 500-tile final and merged-candidate restart surveys successfully.",
+  "resolved_by": "SOL-000008:v001",
+  "date": "2026-10-15T11:23:37.199369Z",
+  "source_refs": [
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields/verification-restart.json",
+      "description": "Zero mismatches/unplanned changes/support errors after restart of merged candidate",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields/entity-verification-restart.json",
+      "description": "Original unrelated components retained after restart",
+      "verified": true
+    },
+    {
+      "kind": "source",
+      "reference": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields/bridge/src/zytale/bridge/AiMapBridge.java",
+      "description": "Version-specific ECS compatibility adapter and scoped test-server section pinning",
+      "verified": true
+    },
+    {
+      "kind": "observed_tool_output",
+      "reference": "Current grain-field task, failed final survey before section-pinning correction",
+      "description": "Missing-section exception observed in RPC response; no live edit had occurred.",
+      "verified": true
+    }
+  ]
+}

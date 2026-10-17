@@ -1,0 +1,36 @@
+{
+  "id": "FAIL-000033",
+  "experience_id": "EXP-000008",
+  "attempt": "Use a fixed minimum editing height of Y81 for every raised landscape column.",
+  "reason_failed": "Columns whose original terrain was below Y80 were raised without filling the lower gap. Independent preflight found 15 unsupported root contacts before native application.",
+  "environment": "Hytale 0.7.2, Blackridge terrain repair, 2026-10-16",
+  "error_signature": "unsupportedRoot at Y80/Y81; native source terrain at Y43–76; three-cell support gap under a legacy Y84 rock.",
+  "conditions": [
+    "Morphological repair raises terrain that starts below the flat-world plateau",
+    "Tree roots are grounded at the new surface",
+    "A fixed Y81 lower bound excludes underlying air gaps"
+  ],
+  "workaround": "Use the original ground elevation per column to fill every newly raised interval; check actual root contacts and complete small legacy support gaps. Apply only after independent support checks pass.",
+  "resolved_by": null,
+  "date": "2026-10-16T18:41:15.686782Z",
+  "source_refs": [
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\landscape-terrain-repair-2026-10-16\\initial-support-findings.json",
+      "description": "Observed failing preflight, retained as an explicit record; no native change was applied with the failing plan.",
+      "verified": true
+    },
+    {
+      "kind": "source",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\landscape-terrain-repair-2026-10-16\\complete-support.py",
+      "description": "Per-column terrain support completion.",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\landscape-terrain-repair-2026-10-16\\support-proof-native.json",
+      "description": "Actual native root and filled terrain support checks passed.",
+      "verified": true
+    }
+  ]
+}

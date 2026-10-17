@@ -1,0 +1,35 @@
+{
+  "id": "FAIL-000030",
+  "experience_id": "EXP-000008",
+  "attempt": "Place Plant_Grass_Sharp_Tall as though it occupied one cell while later desired-state writes also clear its upper cell.",
+  "reason_failed": "The native asset creates a second-cell filler at y+1; clearing that filler can remove its newly placed parent. The pilot had 75 block mismatches and no protected-area changes.",
+  "environment": "Hytale 0.7.2, Blackridge landscape refinement, 2026-10-16",
+  "error_signature": "Pilot native readback: 75 block mismatches; native filler offset 1024 above sharp tall grass.",
+  "conditions": [
+    "Asset has a native multipart footprint.",
+    "Plan assumes a single-cell detail and subsequently clears its filler cell."
+  ],
+  "workaround": "Read native multipart footprints when planning. In this scenery pass, replace 7027 planned instances with verified single-cell Plant_Grass_Lush_Tall. Restore only the two pilot chunk records, verifying 2046 other region slots byte-for-byte, then reapply and validate after restart.",
+  "resolved_by": null,
+  "date": "2026-10-16T14:27:10.717415Z",
+  "source_refs": [
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\landscape-refined-2026-10-16\\pilot-failure.json",
+      "description": "Recorded initial native pilot mismatch",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\landscape-refined-2026-10-16\\pilot-record-restoration-proof.json",
+      "description": "Exact two-record rollback; unrelated records retained",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\landscape-refined-2026-10-16\\verification-reopened.json",
+      "description": "Full native restart verification after correction",
+      "verified": true
+    }
+  ]
+}

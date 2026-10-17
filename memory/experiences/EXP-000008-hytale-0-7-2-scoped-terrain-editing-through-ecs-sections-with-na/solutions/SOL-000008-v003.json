@@ -1,0 +1,41 @@
+{
+  "id": "SOL-000008",
+  "version": 3,
+  "description": "Rebuild a localized Hytale 0.7.2 hill as continuous supported terrain, replant native trees on the final heightfield, remove unsupported natural components, then retrofit the slope with variants resolved by the installed Adaptive Surface Topology while leaving full terrain and trees unchanged.",
+  "changes": [
+    "Scope the deleted hill by comparing the current native blocks to the prior approved save; protect fields, buildings and unrelated landscape.",
+    "Fill each reconstructed terrain column to its existing foundation before placing any vegetation. Remove affected old native tree prefabs first, then place new native tree prefabs at final ground height.",
+    "Detect detached natural blocks with 26-neighbour connectivity anchored to ground, target boundaries and protected construction.",
+    "For the cosmetic pass, use the installed ZytaleAdaptiveSurface 0.9.5 Topology.resolve and registered material variants above full native soil; retain grass clusters and relocate supported single-cell plants.",
+    "Validate explicit before/after block plans against native exports, restart the save, compare every selected cell, and selectively merge only Block, BlockPhysics and HeightmapColumn into original region records."
+  ],
+  "advantages": [
+    "Continuous playable-side climb and an exterior concave face with forested native vegetation.",
+    "No changes to protected crops, architecture, existing trees or full terrain during the Adaptive Surface pass.",
+    "Native restart and support checks detect floating remnants, unsupported roots and mismatched material variants."
+  ],
+  "disadvantages": [
+    "Validated for this installed 0.7.2 map and Adaptive Surface 0.9.5, not other releases.",
+    "Cosmetic slopes displaced some tall grass: local undergrowth count changed from 13,024 to 5,718 despite relocating 643 plants.",
+    "No new client capture or measured FPS benchmark was performed for these two passes."
+  ],
+  "test_results": [
+    "R9 hill: 359,218 changed cells across 40 chunks; 13,107,200 complete cells matched the plan after restart; 16,005 columns supported to foundation, 448 native root contacts supported and zero disconnected components in scope.",
+    "R10 Adaptive Surface: 10,478 changed cells across 34 chunks; 11,141,120 complete cells matched after restart; 9,835 native-Topology-resolved variants supported; 55,706 tree cells and 3,336,433 full terrain cells unchanged.",
+    "After closure, temporary bridge removed and all 6,007 pre-existing nonterrain files byte-identical to the latest user save. Backup and final checkpoint manifests hash-verified.",
+    "User visual feedback after R10: «Il risultato ottenuto davvero buono» and «Ottimo lavoro». This is qualitative feedback, not a performance benchmark."
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": "Native restart comparisons and scoped support checks passed without errors.",
+    "maintainability": "Reusable validation and restoration approach; asset IDs, topology and schema require revalidation for another installation.",
+    "performance": "Not benchmarked.",
+    "compatibility": "Hytale 0.7.2; installed ZytaleAdaptiveSurface 0.9.5; one authorized local save."
+  },
+  "created_at": "2026-10-17T03:14:39.762046Z",
+  "supersedes": "SOL-000008:v002",
+  "status": "working"
+}

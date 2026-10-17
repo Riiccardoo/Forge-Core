@@ -1,0 +1,41 @@
+{
+  "id": "FAIL-000026",
+  "experience_id": "EXP-000008",
+  "attempt": "Compile the earlier scoped bridge against Hytale release 0.7.2 without API migration.",
+  "reason_failed": "The installed server removed legacy World.getChunkAsync and many WorldChunk block/height accessors; the initial compilation produced 63 errors.",
+  "environment": "Windows, installed Hytale release 0.7.2, Java 25, 2026-10-15",
+  "error_signature": "Cannot resolve legacy World/WorldChunk chunk and block access methods",
+  "conditions": [
+    "Earlier editor targeted Hytale 0.6.8",
+    "Current save must be edited with the currently installed release"
+  ],
+  "workaround": "Inspect the installed JAR signatures and adapt reads/writes to ChunkStore references, section components, HeightmapColumn and BlockOperations; compile and test in an isolated clone.",
+  "resolved_by": "SOL-000008:v001",
+  "date": "2026-10-15T11:23:36.672928Z",
+  "source_refs": [
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields/verification-restart.json",
+      "description": "Zero mismatches/unplanned changes/support errors after restart of merged candidate",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields/entity-verification-restart.json",
+      "description": "Original unrelated components retained after restart",
+      "verified": true
+    },
+    {
+      "kind": "source",
+      "reference": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields/bridge/src/zytale/bridge/AiMapBridge.java",
+      "description": "Version-specific ECS compatibility adapter and scoped test-server section pinning",
+      "verified": true
+    },
+    {
+      "kind": "observed_tool_output",
+      "reference": "Current grain-field task, initial bridge compile on 2026-10-15",
+      "description": "63 compilation errors were observed; original compiler output was not separately saved to a file.",
+      "verified": true
+    }
+  ]
+}

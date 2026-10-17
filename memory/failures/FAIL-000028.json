@@ -1,0 +1,41 @@
+{
+  "id": "FAIL-000028",
+  "experience_id": "EXP-000008",
+  "attempt": "Generate raised terrain first, then clear the source positions of vertically moved crop and decoration blocks in the desired-state map.",
+  "reason_failed": "Some old plant positions overlap the new solid-fill interval. Source cleanup overwrote planned soil, producing missing support and non-flat cells in preflight; no native map edit was applied with that failing plan.",
+  "environment": "Hytale 0.7.2 flat grain-field revision, 2026-10-15",
+  "error_signature": "Preflight reported unsupported fence roots, missing soil under wheat, and notFlat columns.",
+  "conditions": [
+    "Field surface raised from lower elevations to a constant Y80",
+    "Source and destination footprints overlap future terrain fill"
+  ],
+  "workaround": "Order desired-state composition as clear old detail sources, restore the complete terrain fill/surface, then place the translated detail destinations. Check every field column and every crop support before native application. Final restart had zero notFlat/support/detail mismatches.",
+  "resolved_by": null,
+  "date": "2026-10-15T11:58:36.314868Z",
+  "source_refs": [
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields-level/preflight.json",
+      "description": "Final preflight after the ordering correction",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields-level/verification-restart.json",
+      "description": "Native final restart confirms no gaps, missing support or displaced detail mismatch",
+      "verified": true
+    },
+    {
+      "kind": "source",
+      "reference": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields-level/build.mjs",
+      "description": "Explicit clear-then-fill-then-place desired-state ordering",
+      "verified": true
+    },
+    {
+      "kind": "observed_tool_output",
+      "reference": "Current grain-field leveling task, initial preflight before correction",
+      "description": "Failure observed in tool output; first failing preflight JSON was subsequently regenerated.",
+      "verified": true
+    }
+  ]
+}

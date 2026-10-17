@@ -1,0 +1,41 @@
+{
+  "id": "FAIL-000032",
+  "experience_id": "EXP-000008",
+  "attempt": "Freeze old tree footprint columns at their existing height while raising or reshaping surrounding landscape.",
+  "reason_failed": "The protected tree columns stayed lower than adjacent new ground, creating deep narrow pits and abrupt vertical cuts. User screenshots directly showed trees at the bottom of these artificial depressions.",
+  "environment": "Hytale 0.7.2, Blackridge landscape revisions R5–R7, 2026-10-16",
+  "error_signature": "Radial holes around retained trees and unnatural slots on the eastern hamlet hills.",
+  "conditions": [
+    "New heightfield raises terrain around existing vegetation",
+    "Canopy and trunk footprints are excluded from height editing"
+  ],
+  "workaround": "Compute a continuous terrain surface first, remove complete displaced native tree prefab sources, fill terrain, then place vegetation on the final surface. Preserve architecture separately. Check remaining root-site depressions, actual root support, native block readback and save/reopen.",
+  "resolved_by": null,
+  "date": "2026-10-16T18:41:15.419836Z",
+  "source_refs": [
+    {
+      "kind": "source",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\landscape-depth-vegetation-2026-10-16\\design.py",
+      "description": "keepTrees exclusion in terrain editing caused the discontinuities.",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\landscape-terrain-repair-2026-10-16\\geometry-proof.json",
+      "description": "Final surface, tree depression, sightline and horizon checks.",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\landscape-terrain-repair-2026-10-16\\support-proof-native.json",
+      "description": "Actual native root contact and filled-terrain checks.",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\landscape-terrain-repair-2026-10-16\\verification-reopened.json",
+      "description": "Exact native block verification after restart.",
+      "verified": true
+    }
+  ]
+}

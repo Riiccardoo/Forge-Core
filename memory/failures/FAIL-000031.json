@@ -1,0 +1,28 @@
+{
+  "id": "FAIL-000031",
+  "experience_id": "EXP-000008",
+  "attempt": "Concatenate NumPy structured terrain plan records and serialize their bytes directly after adding base-surface records.",
+  "reason_failed": "In this runtime np.concatenate normalized the structured integer fields to native little endian. The native Java bridge expected big endian and rejected the first affected chunk during the pre-write validation with Invalid/duplicate cell. Previously tested pilot chunks were not affected because no base repair records had been concatenated there.",
+  "environment": {
+    "project": "Zytale native landscape editing",
+    "runtime": "Windows x64, NumPy, Hytale 0.7.2 / Java 25"
+  },
+  "error_signature": "apply_landscape_chunk: java.lang.IllegalArgumentException: Invalid/duplicate cell",
+  "conditions": [
+    "Cross-language binary wire format with explicit field byte order",
+    "Structured arrays reconstructed through concatenate before serialization"
+  ],
+  "workaround": "Cast the result explicitly back to the declared wire dtype before tobytes. Validate coordinate range, uniqueness, canonical material IDs, rotations, fillers, protected columns and every native before value for all plans before any application.",
+  "resolved_by": null,
+  "date": "2026-10-16T16:07:17.577650Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "work/landscape-scalable-2026-10-16/plan-validation.json",
+      "description": "All 1812 chunk plans / 102827987 initial changed cells validated; 1591 concatenated records converted to explicit big endian.",
+      "verified": true
+    }
+  ],
+  "confidence": 0.95,
+  "validation_status": "validated"
+}

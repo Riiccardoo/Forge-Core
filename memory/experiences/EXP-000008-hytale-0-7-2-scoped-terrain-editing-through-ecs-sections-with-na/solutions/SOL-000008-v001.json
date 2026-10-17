@@ -1,0 +1,45 @@
+{
+  "id": "SOL-000008",
+  "version": 1,
+  "description": "Use a version-checked ECS compatibility adapter for native reads/writes, keep all test-area chunk sections loaded during inspection, then merge only changed native chunk records into original region files and reopen the merged candidates before live installation.",
+  "changes": [
+    "Load ChunkStore references and section references asynchronously; read BlockSection, FluidSection, BlockComponentSection and HeightmapColumn instead of removed WorldChunk methods",
+    "Use native BlockOperations.setBlock and explicitly validate multipart filler offsets, rotations and supported roots",
+    "Retain a bounded cache of loaded columns and their ten sections for the isolated server lifetime, with balanced additional per-operation pins",
+    "Whitelist removal of 5435 obsolete agricultural block components; retain other original block and non-block entities",
+    "Copy original region files, replace only 33 selected records, restore protected entity data, and verify every unselected record byte-for-byte",
+    "Reopen merged candidates under the same mods, inspect 500 section tiles, compare all surveyed cells, then deploy two region files plus one explicit new asset pack and its configuration enable"
+  ],
+  "advantages": [
+    "Does not reinstall stale pre-user-edit map geometry",
+    "Version-specific native validation makes multipart and persistence defects observable",
+    "All unselected chunk records and unrelated live files preserved"
+  ],
+  "disadvantages": [
+    "Test-server lifetime pins consume memory; do not reuse unchanged as an unbounded production service",
+    "No actual client walkthrough or manual harvest/interaction test",
+    "Native serialization and APIs must be checked on each game release"
+  ],
+  "test_results": [
+    "74048 changed block cells across 33 chunks; zero mismatch, unplanned or protected-area differences after final restart",
+    "12514 golden wheat roots and 45 dark wheat roots retained; zero unsupported planned roots; fluids identical",
+    "20/20 field entrances reachable in geometric navigation checks; no path step greater than one block",
+    "496 unrelated block components and 73210 original non-block entity sections identical; only 5435 explicitly obsolete farm components removed",
+    "2009 existing unselected chunk records byte-identical within the two deployment regions",
+    "5921 other preexisting live files byte-identical; no existing shared/world mod changes; world/player config unchanged",
+    "New pack loads and places successfully under native release 0.7.2; user visual approval remains pending"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": "Recorded native save/restart, component and checksum assertions passed; not a client visual certification",
+    "maintainability": null,
+    "performance": null,
+    "compatibility": "Observed release 0.7.2 (revision d769dc3d57881261a62858e1394f0e4de9a21eca) only"
+  },
+  "created_at": "2026-10-15T11:23:36.118183Z",
+  "supersedes": null,
+  "status": "working"
+}

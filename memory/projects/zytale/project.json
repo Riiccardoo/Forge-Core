@@ -47,9 +47,10 @@
     "EXP-000006",
     "EXP-000007",
     "EXP-000009",
-    "EXP-000010"
+    "EXP-000010",
+    "EXP-000008"
   ],
-  "updated_at": "2026-10-17T02:57:08.060336Z",
+  "updated_at": "2026-10-17T03:17:08.624335Z",
   "implementation": {
     "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
@@ -3635,5 +3636,3791 @@
       "evidence": "Direct user reply in Codex conversation: Lo sono",
       "scope": "Installed AtmosphereTool 2.0.1 on the user's Hytale client; no instrumented duration or FPS measurements"
     }
+  },
+  "blackridge_grain_fields": {
+    "deployed": true,
+    "date": "2026-10-15T11:18:21.777Z",
+    "world": "C:/Users/User/AppData/Roaming/Hytale/UserData/Saves/The Village - Zytale 306 Working Copy",
+    "worldUuid": "47e0eb88-cba8-4c24-8b4d-822e99e86b60",
+    "reference": "C:/Users/User/AppData/Local/Temp/codex-clipboard-cd0734e8-fc87-44c9-a22d-4c0c6bd5fcf5.png",
+    "backup": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields/backup-before",
+    "scope": [
+      -165,
+      60,
+      74,
+      88,
+      105,
+      202
+    ],
+    "entry": [
+      84,
+      81,
+      74
+    ],
+    "changedBlocks": 74048,
+    "changedChunks": 33,
+    "regions": [
+      {
+        "region": "-1.0.region.bin",
+        "selectedChunkIndices": [
+          94,
+          95,
+          123,
+          124,
+          125,
+          126,
+          127,
+          155,
+          156,
+          157,
+          158,
+          159,
+          187,
+          188,
+          189,
+          190,
+          191,
+          220,
+          221,
+          222,
+          223
+        ],
+        "sourceSha256": "02d26c0327c12d6d2b0960accc3ffba6208e6e01416a8bceea1a7db90612988c",
+        "outputSha256": "d5421974c99102f85742c8191daa4e471286f4833dc9e0abf3c02a7e16e9190f",
+        "otherExistingChunkRecordsByteIdentical": 997
+      },
+      {
+        "region": "0.0.region.bin",
+        "selectedChunkIndices": [
+          64,
+          65,
+          66,
+          96,
+          97,
+          98,
+          128,
+          129,
+          130,
+          160,
+          161,
+          162
+        ],
+        "sourceSha256": "8f466be9abcbf4f0e737395bf48d1dfe4f75236250f96ddf3b4627b039a51920",
+        "outputSha256": "87c55acb07883914d53938b176952759572c6f5bbd4888fcbe0ed91857d374c1",
+        "otherExistingChunkRecordsByteIdentical": 1012
+      }
+    ],
+    "installedFiles": [
+      {
+        "name": "universe/worlds/default/chunks/-1.0.region.bin",
+        "sha256": "d5421974c99102f85742c8191daa4e471286f4833dc9e0abf3c02a7e16e9190f",
+        "previous": "02d26c0327c12d6d2b0960accc3ffba6208e6e01416a8bceea1a7db90612988c"
+      },
+      {
+        "name": "universe/worlds/default/chunks/0.0.region.bin",
+        "sha256": "87c55acb07883914d53938b176952759572c6f5bbd4888fcbe0ed91857d374c1",
+        "previous": "8f466be9abcbf4f0e737395bf48d1dfe4f75236250f96ddf3b4627b039a51920"
+      },
+      {
+        "name": "config.json",
+        "sha256": "a90a7aaeb91cc36890f2e9e9bd90f7fcc9e0a5a7c0a040642faf81da5e96f07f",
+        "previous": "563cc856e65e3aa98b7c75987c1d1cef40c79cbc775c034314beec3dcc04dd9e"
+      },
+      {
+        "name": "mods/Zytale-Blackridge-Grain-Fields-1.0.0.zip",
+        "sha256": "93d093f01fddc221bf8e771c3d67ed9d1593767f8563518801335cbcbf677ff7",
+        "previous": null
+      }
+    ],
+    "otherSaveFilesByteIdentical": 5921,
+    "plots": 10,
+    "goldenWheat": 12514,
+    "darkWheat": 45,
+    "rareSites": [
+      [
+        -132,
+        75,
+        129
+      ],
+      [
+        -33,
+        79,
+        130
+      ],
+      [
+        -143,
+        74,
+        171
+      ],
+      [
+        -35,
+        79,
+        184
+      ],
+      [
+        50,
+        84,
+        162
+      ]
+    ],
+    "scarecrows": 10,
+    "lanternPosts": 20,
+    "borderTrees": 7,
+    "gateways": 20,
+    "allGatewaysReachable": true,
+    "protectedBlockComponentsIdentical": 496,
+    "removedAgriculturalComponents": 5435,
+    "allOriginalNonBlockEntitySectionsIdentical": 73210,
+    "allUnselectedChunkRecordsByteIdentical": true,
+    "villageFarmhouseMonasteryPreserved": true,
+    "fluidsUnchanged": true,
+    "allPlayerAndWorldConfigFilesUnchanged": true,
+    "existingSharedAndWorldModsUnchanged": true,
+    "onlyServerConfigChange": "ZytaleFields:Blackridge Grain Fields Enabled=true",
+    "newAsset": {
+      "id": "Zytale_DarkWheat",
+      "inventoryName": "Grano nero di Blackridge",
+      "pack": "Zytale-Blackridge-Grain-Fields-1.0.0.zip",
+      "sha256": "93d093f01fddc221bf8e771c3d67ed9d1593767f8563518801335cbcbf677ff7",
+      "geometry": "Same six-quad geometry as Zytale_TallWheat, native dark wheat atlas with equivalent UV scaling",
+      "questOrSpawnLogicAdded": false
+    },
+    "designSha256": "3c34cd6e7a6918295d2e548ba797f13a46da9a0e90b92043f86b926e1c34518d",
+    "visualAcceptance": "awaiting user review",
+    "limitations": [
+      "No client walkthrough; native server validation and saved-geometry previews only",
+      "Diagnostic previews have approximate UV and lighting; not in-game screenshots",
+      "Rare dark tufts are fixed placements; no random spawn or quest system added"
+    ],
+    "status": "leveled-installed-user-approved",
+    "visualApproved": true,
+    "requestDate": "2026-10-15",
+    "designBasis": "Supplied grain-field guide: ten irregular connected plots, winding paths, gentle terrain, wooden fences, twenty open entrances and lamp posts, ten raised scarecrows, harvest staging and rooted border trees; broad west extension surveyed from the current user map.",
+    "nativeValidation": {
+      "restart": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields/verification-restart.json",
+      "entities": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields/entity-verification-restart.json",
+      "merge": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields/region-merge-proof.json",
+      "preflight": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields/preflight.json"
+    },
+    "preservation": "No edits in village Z<=73, farmhouse/farmyard X>=0 and Z>=179, or outside the exact plan. Canyon fluids unchanged. All prior buildings retained.",
+    "nextAction": "Preserve the user-approved flat grain fields at ground Y80 and their existing layout. The subsequent farm rebuild starts at Z209 and did not change the fields.",
+    "layoutApproved": true,
+    "layoutApprovalDate": "2026-10-15",
+    "layoutApprovalEvidence": "User: E un ottimo lavoro ma vorrei aggiustassi una cosa: vorrei che tutto il campo sia alla stesso livello, senza dislivello nella conformazione del terreno.",
+    "levelingVisualApproved": true,
+    "currentGroundLevel": 80,
+    "currentLevelingEvidence": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields-level/deployment-proof.json",
+    "currentNativeValidation": {
+      "restart": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields-level/verification-restart.json",
+      "entities": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields-level/entity-verification-restart.json",
+      "preflight": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields-level/preflight.json",
+      "merge": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields-level/region-merge-proof.json"
+    },
+    "terrainRule": "All 10 field plots and internal paths share ground Y80; preserve this flat layout. Six cells outside the plane connect to the unchanged farm approach. Do not restore the former gently sloping design.",
+    "levelingApprovalDate": "2026-10-15",
+    "levelingApprovalEvidence": "User: Sono soddisfatto del risultato, adesso fai la fattoria."
+  },
+  "blackridge_dark_wheat": {
+    "id": "Zytale_DarkWheat",
+    "inventoryName": "Grano nero di Blackridge",
+    "pack": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields/Zytale-Blackridge-Grain-Fields-1.0.0.zip",
+    "installedPath": "C:/Users/User/AppData/Roaming/Hytale/UserData/Saves/The Village - Zytale 306 Working Copy/mods/Zytale-Blackridge-Grain-Fields-1.0.0.zip",
+    "packKey": "ZytaleFields:Blackridge Grain Fields",
+    "version": "1.0.0",
+    "release": "0.7.2",
+    "existingTallWheatUnchanged": true,
+    "modelSource": "ZytaleTallWheat/src/main/resources/Common/Blocks/Foliage/Zytale/TallWheat.blockymodel",
+    "textureSource": "Native Blocks/Foliage/Plants/Dense_Tall_Textures/Wheat_Burn.png",
+    "implementation": "Original six-quad stalk geometry; equivalent UV rescaling to native 32x64 dark atlas; transparent foliage, wind, soil support and self drop. Asset-only pack, no Java plugin.",
+    "authorization": "User confirmed black wheat may not exist and authorized creating it following the found model.",
+    "runtimeQuestOrSpawnSystem": false,
+    "placedRoots": 45,
+    "visualApproved": false
+  },
+  "blackridge_editor_072": {
+    "experience": "EXP-000008",
+    "source": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields/bridge/src/zytale/bridge/AiMapBridge.java",
+    "temporaryBridgeInstalledLive": false,
+    "scopeRule": "Reuse principles only; revalidate current release, world UUID, user edits and bounds. Do not run a previous build/deploy script on a new request."
+  },
+  "blackridge_grain_fields_leveling": {
+    "deployed": true,
+    "date": "2026-10-15T11:57:30.069Z",
+    "world": "C:/Users/User/AppData/Roaming/Hytale/UserData/Saves/The Village - Zytale 306 Working Copy",
+    "worldUuid": "47e0eb88-cba8-4c24-8b4d-822e99e86b60",
+    "request": "Entire grain field and internal paths at one constant height; preserve current layout and details",
+    "reference": "C:/Users/User/AppData/Local/Temp/codex-clipboard-5d776a33-55a3-411b-ab31-264c1eb14cb8.png",
+    "backup": "C:/Users/User/Desktop/Zytale/work/blackridge-grain-fields-level/backup-before",
+    "scope": [
+      -165,
+      60,
+      74,
+      88,
+      105,
+      202
+    ],
+    "level": 80,
+    "flatColumns": 23044,
+    "externalTransition": {
+      "columns": 6,
+      "description": "X80..82, Z177 ground81 and Z178 ground82; meets untouched farm ground83 at Z179; outside field plane"
+    },
+    "changedBlocks": 107446,
+    "changedChunks": 32,
+    "regions": [
+      {
+        "region": "-1.0.region.bin",
+        "selectedChunkIndices": [
+          94,
+          95,
+          123,
+          124,
+          125,
+          126,
+          127,
+          155,
+          156,
+          157,
+          158,
+          159,
+          187,
+          188,
+          189,
+          190,
+          191,
+          220,
+          221,
+          222,
+          223
+        ],
+        "sourceSha256": "311f14af3756d45d226cbb1d192a0da669d7daedd2e361e927a263f249f0b1a8",
+        "outputSha256": "618457e962a9f98dbd13d299ef36d83a604d9abd23d7799b111ac29b5f0c60b9",
+        "otherExistingChunkRecordsByteIdentical": 997
+      },
+      {
+        "region": "0.0.region.bin",
+        "selectedChunkIndices": [
+          64,
+          65,
+          66,
+          96,
+          97,
+          128,
+          129,
+          130,
+          160,
+          161,
+          162
+        ],
+        "sourceSha256": "87b3e0dbf9e4d29d6decee8a716535073b6db81abda6a764cdf7e75f7de551d3",
+        "outputSha256": "1c7affa6b639a0b0366bff3d1b63c4de1cf3a5cd5cf935e460123934607e90e7",
+        "otherExistingChunkRecordsByteIdentical": 1013
+      }
+    ],
+    "installedFiles": [
+      {
+        "name": "universe/worlds/default/chunks/-1.0.region.bin",
+        "sha256": "618457e962a9f98dbd13d299ef36d83a604d9abd23d7799b111ac29b5f0c60b9",
+        "previous": "311f14af3756d45d226cbb1d192a0da669d7daedd2e361e927a263f249f0b1a8"
+      },
+      {
+        "name": "universe/worlds/default/chunks/0.0.region.bin",
+        "sha256": "1c7affa6b639a0b0366bff3d1b63c4de1cf3a5cd5cf935e460123934607e90e7",
+        "previous": "87b3e0dbf9e4d29d6decee8a716535073b6db81abda6a764cdf7e75f7de551d3"
+      }
+    ],
+    "otherSaveFilesByteIdentical": 5925,
+    "plots": 10,
+    "goldenWheat": 12514,
+    "darkWheat": 45,
+    "rareSites": [
+      [
+        -132,
+        81,
+        129
+      ],
+      [
+        -33,
+        81,
+        130
+      ],
+      [
+        -143,
+        81,
+        171
+      ],
+      [
+        -35,
+        81,
+        184
+      ],
+      [
+        50,
+        81,
+        162
+      ]
+    ],
+    "existingDetailVoxelsPreserved": 28106,
+    "allGatewaysReachable": true,
+    "farmApproachReachable": true,
+    "allOriginalBlockComponentsPreserved": 496,
+    "allOriginalNonBlockEntitySectionsIdentical": 73580,
+    "allUnselectedChunkRecordsByteIdentical": true,
+    "allModsConfigsPlayersUnchanged": true,
+    "villageFarmhouseMonasteryPreserved": true,
+    "fluidsUnchanged": true,
+    "newAssets": 0,
+    "designSha256": "182b31ad7c817387d4d9f95913e77b50e8e454aa736967cf0fbda2c6414ce9cc",
+    "visualAcceptance": "User approved on 2026-10-15 before requesting the farm",
+    "limitations": [
+      "No client walkthrough; exact native saved-state and restart checks",
+      "Geometry preview uses approximate lighting and UV, not an in-game screenshot"
+    ],
+    "status": "installed-user-approved",
+    "technicalReuse": "EXP-000008 / SOL-000008:v001, scoped editing and selective merge. No new capsule warranted for this project-specific elevation correction.",
+    "layoutPreservation": "All 28106 existing detail voxels preserved at identical X/Z, ID, rotation and filler, moved only vertically. Entire native tree crowns and lantern assemblies translated rigidly. 12514 tall wheat and 45 dark wheat roots retained.",
+    "flatFootprint": "23044 worked/interior columns at soil Y80, including 184 prior residual islands inside the field outline. Six external approach columns are the only planned gradient.",
+    "validationBoundary": "Native save/restart and exact geometry/entity/hash checks passed; new leveling visual acceptance awaits user.",
+    "visualApproved": true
+  },
+  "blackridge_farm_01": {
+    "deployed": true,
+    "date": "2026-10-15T16:39:44.236Z",
+    "world": "C:/Users/User/AppData/Roaming/Hytale/UserData/Saves/The Village - Zytale 306 Working Copy",
+    "worldUuid": "47e0eb88-cba8-4c24-8b4d-822e99e86b60",
+    "reference": "C:/Users/User/AppData/Local/Temp/codex-clipboard-82d90b4e-fd84-44ee-8b85-2178af9565a3.png",
+    "backup": "C:/Users/User/Desktop/Zytale/work/blackridge-farm-01/backup-before",
+    "scope": [
+      -116,
+      60,
+      209,
+      -25,
+      135,
+      274
+    ],
+    "protectedHouse": [
+      -89,
+      0,
+      214,
+      -67,
+      319,
+      239
+    ],
+    "houseMoved": false,
+    "houseVoxelDifferences": 0,
+    "changedBlocks": 39439,
+    "changedChunks": 12,
+    "regions": [
+      {
+        "region": "-1.0.region.bin",
+        "selectedChunkIndices": [
+          220,
+          221,
+          222,
+          223,
+          252,
+          253,
+          254,
+          255,
+          284,
+          285,
+          286,
+          287
+        ],
+        "sourceSha256": "85d9b7d361f99161d8312a2a60b4c29c81e524d76ffc438572caa6cbfc1a7e29",
+        "outputSha256": "ba1c9d76a41743b7b690e0a56898d51055d9397c1e60daa25c47413d1fce35c0",
+        "otherExistingChunkRecordsByteIdentical": 1012,
+        "totalOriginalChunks": 1024
+      }
+    ],
+    "installedFiles": [
+      {
+        "name": "universe/worlds/default/chunks/-1.0.region.bin",
+        "sha256": "ba1c9d76a41743b7b690e0a56898d51055d9397c1e60daa25c47413d1fce35c0",
+        "previous": "85d9b7d361f99161d8312a2a60b4c29c81e524d76ffc438572caa6cbfc1a7e29"
+      }
+    ],
+    "otherSaveFilesByteIdentical": 5936,
+    "features": [
+      "Original farmhouse unchanged in current position",
+      "Northwest tool and seed store",
+      "Northeast barn with hay loft and internal staircase",
+      "Eastern covered hay storage",
+      "Western covered animal pens and native troughs",
+      "Six-bed vegetable garden with 84 mature native crops",
+      "Roofed stone well",
+      "Southeast wagon and loading yard",
+      "Four farm shade oaks, flowers, ivy, lanterns and retaining boundary"
+    ],
+    "allEntrancesReachable": true,
+    "existingComponentsRelocatedExactly": 3,
+    "otherOriginalBlockComponentsPreserved": 493,
+    "allOriginalNonBlockEntitySectionsIdentical": 78820,
+    "allUnselectedChunkRecordsByteIdentical": true,
+    "allModsConfigsPlayersUnchanged": true,
+    "approvedGrainFieldsPreserved": true,
+    "villageMonasteryCanyonPreserved": true,
+    "fluidsUnchanged": true,
+    "newAssets": 0,
+    "designSha256": "284075869137ead4f8592653bca1740d9cc67402f1edd46bcb8fa9b1d14c94a3",
+    "visualAcceptance": "awaiting user",
+    "limitations": [
+      "No client walkthrough; exact native saved-state and restart checks",
+      "Diagnostic render uses approximate lighting and UV, not an in-game screenshot",
+      "Existing animals preserved; no new NPCs spawned"
+    ],
+    "status": "installed-awaiting-user-visual-feedback",
+    "technicalReuse": "EXP-000002 and EXP-000008: native scoped editing, immutable protected volume, exact component transfer and selected chunk merge. Novelty detector: PROJECT_ONLY_UPDATE.",
+    "referenceBasis": "BLACKRIDGE FARM 01 â€” Farmstead with Preserved Original House",
+    "protectedOriginalHouse": {
+      "bounds": [
+        -89,
+        0,
+        214,
+        -67,
+        319,
+        239
+      ],
+      "moved": false,
+      "geometry": "Every block, rotation, filler and air cell in the 23x26x320 protection prism unchanged; native writes prohibited inside it.",
+      "components": "All three original farmhouse chest components unchanged including contents."
+    },
+    "layout": {
+      "northwest": "Tool and seed store, with one preserved workbench and a new native storage chest",
+      "northeast": "Barn, ground-floor work area, open wagon entrance, hay loft and internal stairs",
+      "east": "Open-sided covered hay store",
+      "west": "Covered animal stalls and fenced yard, two native troughs",
+      "southwest": "Six vegetable beds, 84 mature native carrot/lettuce/cauliflower/pumpkin/corn/potato crop roots",
+      "southCentre": "Roofed stone well and open southern entrance",
+      "southeast": "Wagon/loading yard with native carts, crates, sacks and repair bench",
+      "landscape": "Four rooted oaks; new-building ivy, flowers, functional native gates, warm lights and retaining boundary"
+    },
+    "currentCoordinates": {
+      "originalHouse": [
+        -89,
+        0,
+        214,
+        -67,
+        319,
+        239
+      ],
+      "barn": [
+        -58,
+        80,
+        209,
+        -40,
+        98,
+        231
+      ],
+      "shed": [
+        -109,
+        80,
+        212,
+        -96,
+        95,
+        225
+      ],
+      "pens": [
+        -111,
+        83,
+        232,
+        -94,
+        91,
+        247
+      ],
+      "hayShelter": [
+        -40,
+        80,
+        234,
+        -28,
+        94,
+        246
+      ],
+      "garden": [
+        -110,
+        83,
+        253,
+        -75,
+        85,
+        264
+      ],
+      "well": [
+        -70,
+        80,
+        253,
+        -62,
+        91,
+        259
+      ],
+      "wagonYard": [
+        -54,
+        83,
+        251,
+        -30,
+        85,
+        263
+      ]
+    },
+    "existingEntityTransfers": [
+      {
+        "from": [
+          -97,
+          84,
+          238
+        ],
+        "to": [
+          -99,
+          84,
+          216
+        ],
+        "block": "Bench_WorkBench"
+      },
+      {
+        "from": [
+          -51,
+          82,
+          234
+        ],
+        "to": [
+          -44,
+          84,
+          211
+        ],
+        "block": "Bench_WorkBench"
+      },
+      {
+        "from": [
+          -63,
+          84,
+          235
+        ],
+        "to": [
+          -102,
+          84,
+          235
+        ],
+        "block": "Bench_Trough"
+      }
+    ],
+    "validation": {
+      "nativeRestart": "C:/Users/User/Desktop/Zytale/work/blackridge-farm-01/verification-restart.json",
+      "structure": "C:/Users/User/Desktop/Zytale/work/blackridge-farm-01/structural-restart.json",
+      "navigation": "C:/Users/User/Desktop/Zytale/work/blackridge-farm-01/navigation-restart.json",
+      "entities": "C:/Users/User/Desktop/Zytale/work/blackridge-farm-01/entity-verification-installed.json",
+      "merge": "C:/Users/User/Desktop/Zytale/work/blackridge-farm-01/region-merge-proof.json",
+      "deployment": "C:/Users/User/Desktop/Zytale/work/blackridge-farm-01/deployment-proof.json",
+      "all11GoalsReachable": true,
+      "houseDifferences": 0,
+      "fieldDifferences": 0,
+      "roofGaps": 0,
+      "unplannedDifferences": 0
+    },
+    "localCorrection": {
+      "observed": "Initial loft stair headroom intersected three roof tiles on the east slope.",
+      "fix": "Moved the two-block-wide stair two blocks toward the ridge; restored the complete roof and retained headroom. Added roof presence to preflight.",
+      "evidence": [
+        "C:/Users/User/Desktop/Zytale/work/blackridge-farm-01/structural-before-roof-finish.json",
+        "C:/Users/User/Desktop/Zytale/work/blackridge-farm-01/roof-repair.json",
+        "C:/Users/User/Desktop/Zytale/work/blackridge-farm-01/structural-restart.json"
+      ]
+    },
+    "nextAction": "Stop for user walkthrough and feedback. Do not modify the original farmhouse or approved grain fields. No new mod or NPC spawn was installed."
+  },
+  "landscape_build_2026_10_16": {
+    "save": "C:/Users/User/AppData/Roaming/Hytale/UserData/Saves/The Village - Zytale 306 Working Copy",
+    "nativeVersion": "0.7.2 d769dc3d57881261a62858e1394f0e4de9a21eca",
+    "viewDistance": 608,
+    "directInstalledSaveAuthorized": true,
+    "farmGroveLocation": "Right of the farm toward the canyon",
+    "nearSceneryAndArchitecturePreserved": true,
+    "scenicVillages": 3,
+    "scenicHouses": 19,
+    "maximumResculptedTerrainHorizontalDistance": 581.5444952881937,
+    "nativeVerification": {
+      "phase": "reopened",
+      "chunks": 1786,
+      "cellsCompared": 585236480,
+      "changedBlocks": 108984239,
+      "plannedChangedBlocks": 108984239,
+      "protectedCellsCompared": 11698560,
+      "errors": [],
+      "clean": true
+    },
+    "foreignPreservation": {
+      "regions": [
+        {
+          "region": "-1.-1.region.bin",
+          "selected": 395,
+          "preMergeSha256": "06b9091d2f9901817e1acb398006a018009fd7de695e7f55affec8c5706dfcb8",
+          "outputSha256": "a93b6693853e6786666e6536912cdefe2f3fe4bf59081bed9489e8dfa764d2e9"
+        },
+        {
+          "region": "-1.0.region.bin",
+          "selected": 441,
+          "preMergeSha256": "5ea411a8f3dc1743170e194a1355d295566c4c0e88b95bb09faf78e12b8835a7",
+          "outputSha256": "fae0426215a52beed2c73e4b7268fb63499ed5b2a773ce85af399ed7d222d0f2"
+        },
+        {
+          "region": "0.-1.region.bin",
+          "selected": 458,
+          "preMergeSha256": "a0e5f3555f305e5565cda9f38035317ff713e3509d7b9ed7ce45e36a00775f7a",
+          "outputSha256": "8367987a5fb3a5ad2438011fcd241453d533910250061907cdf537046f06b69a"
+        },
+        {
+          "region": "0.0.region.bin",
+          "selected": 492,
+          "preMergeSha256": "970dd6fd0788b3f7a38dfb9c165cc02db5f38f86df4e1d4e18ab25d8493260fe",
+          "outputSha256": "71434d05cac472d653a7d7716d1c67464c93e982f410bd317bd60da02d124900"
+        }
+      ],
+      "selectedExistingChunks": 1786,
+      "selectedNewChunks": 0,
+      "untouchedExistingRecordsByteIdentical": 2310,
+      "originalForeignSectionComponentsPreserved": 107160,
+      "allEntityBlockComponentFluidEnvironmentHealthDataPreserved": true,
+      "onlyReplacedComponents": [
+        "Block",
+        "BlockPhysics",
+        "HeightmapColumn"
+      ]
+    },
+    "visualReview": {
+      "status": "pending",
+      "notes": "Acquisizioni nel client a 608 ancora da completare."
+    },
+    "archive": {
+      "archive": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-landscape-built-2026-10-16\\ZYTALE_BLACKRIDGE_PAESAGGIO_608.zip",
+      "sha256": "d829d0a02326790bc1a19d32aada3eb567a1d1e6f6b1d3e828f2cad1fbae9282",
+      "bytes": 318019547,
+      "files": 5789,
+      "everyArchivedFileHashVerified": true,
+      "temporaryBridgeExcludedFromArchive": true,
+      "worldSettingsRestoredFromFreshBackup": true,
+      "snapshotStage": "Native save/reopen verified, before client visual references",
+      "liveBridgeCleanupPending": false,
+      "live608RevisionStillInstalled": false
+    },
+    "sourceOfTruth": "C:\\Users\\User\\Desktop\\Zytale\\work\\landscape-view608-2026-10-16",
+    "artReference": "outputs/zytale-near-landscape-360-2026-10-16 â€” generated simulations, not native proof",
+    "nativeSolution": "SOL-000008:v002",
+    "multipartFailure": "FAIL-000030",
+    "performanceBenchmark": "No matched before/after route benchmark at 608; do not infer one from static FPS overlays.",
+    "status": "608 revision archived; installed landscape restored to pre-608 refinement at user request",
+    "rollback_2026_10_16": {
+      "installed": true,
+      "restoredTo": "Landscape immediately before the 608 adaptation",
+      "restoredChunks": 1786,
+      "nativeSerializedBlocksEqualPre608": true,
+      "unselectedNativeRecordsByteIdentical": 2310,
+      "currentForeignComponentsPreserved": true,
+      "otherCurrentSaveFilesByteIdentical": 5785,
+      "temporaryEditingBridgeRemoved": true,
+      "currentPlayerFilesAndWorldSettingsPreserved": true,
+      "saved608Copy": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-landscape-built-2026-10-16\\ZYTALE_COPIA_608_PRIMA_DEL_RIPRISTINO.zip",
+      "saved608CopySha256": "0ba571583b3693efd30b63549395bfd94eac1dcef7230d2189b3481798d3dfc0"
+    }
+  },
+  "current_landscape_state": {
+    "revision": "R10: native Adaptive Surface smoothing on reconstructed farm hill; existing trees and base terrain preserved",
+    "status": "installed-verified-checkpointed",
+    "save": "C:/Users/User/AppData/Roaming/Hytale/UserData/Saves/The Village - Zytale 306 Working Copy",
+    "sourceOfTruth": "C:\\Users\\User\\Desktop\\Zytale\\work\\farm-hill-adaptive-2026-10-17",
+    "checkpoint": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-adaptive-2026-10-17\\COLLINA_ADAPTIVE_SURFACE_DELTA.zip",
+    "checkpointIsDifferential": true,
+    "checkpointSha256": "c2d8272fc5b48ee0e3754d3d0ffd6a6c2f47b2e786e263a16402be0e18227b2f",
+    "requiredBaseArchive": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-rebuilt-2026-10-17\\ZYTALE_BLACKRIDGE_COLLINA_CAMPO.zip",
+    "backupBeforeTask": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-adaptive-2026-10-17\\BACKUP_PRIMA_ADAPTIVE_SURFACE_DELTA.zip",
+    "verification": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-adaptive-2026-10-17\\VERIFICA_ADAPTIVE_SURFACE.json",
+    "temporaryBridgeRemoved": true,
+    "effectiveMapViewDistanceBlocks": 608,
+    "nativeRestartVerified": true,
+    "allExistingNonTerrainFilesPreserved": true,
+    "newClientScreenshotsTaken": false,
+    "priorHillRevision": "farm_hill_rebuild_20261017",
+    "priorBroaderLandscapeRevision": "landscape_terrain_repair_20261016",
+    "userFeedback": {
+      "quotes": [
+        "Il risultato ottenuto davvero buono",
+        "Ottimo lavoro"
+      ],
+      "context": "Dopo la passata Adaptive Surface sulla collina; apprezzamento visivo espresso dall’utente, senza benchmark del client.",
+      "source": "Conversazione con l’utente del 17 ottobre 2026"
+    }
+  },
+  "landscape_scalable_20261016": {
+    "status": "installed-and-packaged",
+    "date": "2026-10-16T18:36:57.910871+02:00",
+    "save": "C:/Users/User/AppData/Roaming/Hytale/UserData/Saves/The Village - Zytale 306 Working Copy",
+    "backupBeforeTask": {
+      "archive": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-landscape-built-2026-10-16\\ZYTALE_BACKUP_PRIMA_PAESAGGIO_SCALABILE.zip",
+      "files": 5976,
+      "bytes": 323647934,
+      "sha256": "f88a5c42a67bb666b45362427b35cf864e1cf16ed6a68267258eda3c0c5a6c65",
+      "verifiedEveryFileHash": true,
+      "includesAllSaveFiles": true,
+      "capturedAt": "2026-10-16T17:39:54.907252+02:00"
+    },
+    "finalArchive": {
+      "archive": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-landscape-built-2026-10-16\\ZYTALE_BLACKRIDGE_PAESAGGIO_ALLEGGERITO.zip",
+      "files": 5984,
+      "bytes": 323682709,
+      "sha256": "a26002108dd521e503206764f52d8a94b131a7d1fde114e3436c07822d8de9e5",
+      "allFileHashesAndCRCVerified": true,
+      "sourceRemainedUnchangedDuringPackaging": true,
+      "temporaryEditingBridgeExcluded": true,
+      "includesLatestPlayerData": true,
+      "effectiveMapViewDistanceBlocks": 608,
+      "capturedAt": "2026-10-16T18:34:51.355465+02:00"
+    },
+    "metrics": {
+      "leafBlocksRemovedNet": 559204,
+      "adaptiveSurfaceBlocksRemovedNet": 77252,
+      "retainedNearTrees": 516,
+      "newFarTrees": 288,
+      "farmGroveTreesPreserved": 75,
+      "scenicVillages": 3,
+      "scenicHouses": 19,
+      "finalRearSummitMaxY": 240,
+      "mainPassMaximumHorizontalSceneryDistanceFromPlayableHull": 588,
+      "mainPassChangedBlocks": 102827721,
+      "finalLocalPassChangedBlocks": 140288
+    },
+    "mainNativeRestartVerification": {
+      "phase": "reopened",
+      "chunks": 1812,
+      "cellsCompared": 593756160,
+      "changedBlocks": 102827721,
+      "plannedChangedBlocks": 102827721,
+      "protectedCellsCompared": 12516480,
+      "errors": [],
+      "clean": true
+    },
+    "finalLocalNativeRestartVerification": {
+      "phase": "reopened",
+      "chunks": 96,
+      "cellsCompared": 31457280,
+      "changedBlocks": 140288,
+      "plannedChangedBlocks": 140288,
+      "protectedCellsCompared": 3220160,
+      "errors": [],
+      "clean": true
+    },
+    "mainComponentPreservation": {
+      "regions": [
+        {
+          "region": "-1.-1.region.bin",
+          "selected": 397,
+          "preMergeSha256": "5565ee2d913648b4371d4f5b70e24a0f570139806bb24c27ae274aca73a5f4a8",
+          "outputSha256": "44eae453e62461ec77b47bf2a482e10e92eb021a90b904b7f686e2ddd0d62445"
+        },
+        {
+          "region": "-1.0.region.bin",
+          "selected": 449,
+          "preMergeSha256": "2d13b2983f7fe8c4575ceec81a3f92517afb5f2b3041c2c3a5fb9d0d41947211",
+          "outputSha256": "aadccfc7fca5a0a35e387a1ea61ff4cd310b66372e0cce93a2c2301da689f54f"
+        },
+        {
+          "region": "0.-1.region.bin",
+          "selected": 466,
+          "preMergeSha256": "c923d5759a28a4f8945ae31d1a24d3322276fb52fba30d20eae1ad2c50429ae3",
+          "outputSha256": "77f33a8568d47f64ae6684a1266e7e3e33bdb2195859bf91c3235f0c9587c502"
+        },
+        {
+          "region": "0.0.region.bin",
+          "selected": 500,
+          "preMergeSha256": "fb9e45732bfc14ebc5024f436c68a6db98c2a78cb1278329e5107ad59d96904a",
+          "outputSha256": "9d124bdee81c65eb884789f4b6be7d9edba28b74ca315ae4108c0fc2bc519b61"
+        }
+      ],
+      "selectedExistingChunks": 1812,
+      "selectedNewChunks": 0,
+      "untouchedExistingRecordsByteIdentical": 2284,
+      "originalForeignSectionComponentsPreserved": 108720,
+      "allEntityBlockComponentFluidEnvironmentHealthDataPreserved": true,
+      "onlyReplacedComponents": [
+        "Block",
+        "BlockPhysics",
+        "HeightmapColumn"
+      ]
+    },
+    "finalLocalComponentPreservation": {
+      "regions": [
+        {
+          "region": "-1.-1.region.bin",
+          "selected": 8,
+          "preMergeSha256": "1cdd8bee1d609577a9f399cbea76679c28267a3677e37dcba8ddc3740a602958",
+          "outputSha256": "dd4ee08cb5f09d6e6422b68d0fd04e9c9782f47844c02b4cd845bbd97c21adc5"
+        },
+        {
+          "region": "-1.0.region.bin",
+          "selected": 21,
+          "preMergeSha256": "71fee3654f81914e0081b1215387dcd2750170bf6a5aad051be55c25d957b998",
+          "outputSha256": "85f2fc4b0ee4e072190adf99bc4a154b0883430117587f81d72d555dbd48ce08"
+        },
+        {
+          "region": "0.-1.region.bin",
+          "selected": 36,
+          "preMergeSha256": "56f23536dcf006292b33bd2381a7ac1051707c68021fbe8c82ed8f526e4ae8ec",
+          "outputSha256": "7bc1c5169d49e2f6181a67d876f351a6449ac373cf67f8b45623fa978ec282f9"
+        },
+        {
+          "region": "0.0.region.bin",
+          "selected": 31,
+          "preMergeSha256": "3bf18d6c974e1904ebe0826ec1939a78ec826fcdd5c9e47f926b8690ddf88829",
+          "outputSha256": "987c98094bc55bda8ec8b5aaea2b9853195454ba7c6bfe984b1ac3f32cccbe90"
+        }
+      ],
+      "selectedExistingChunks": 96,
+      "selectedNewChunks": 0,
+      "untouchedExistingRecordsByteIdentical": 4000,
+      "originalForeignSectionComponentsPreserved": 5760,
+      "allEntityBlockComponentFluidEnvironmentHealthDataPreserved": true,
+      "onlyReplacedComponents": [
+        "Block",
+        "BlockPhysics",
+        "HeightmapColumn"
+      ]
+    },
+    "finalLocalGeometry": {
+      "newSolidCells": 112718,
+      "connectedComponents": 764,
+      "unsupportedNewSolidCells": 0,
+      "allNewRockConnectedToExistingTerrain": true,
+      "source": "Complete native before plus verified applied plans"
+    },
+    "cleanup": {
+      "temporaryEditingBridgeRemoved": true,
+      "worldSettingsRestoredFromLatestUserSave": true,
+      "allPlayerFilesByteIdentical": true,
+      "playerFilesChecked": 6,
+      "effectiveMapViewDistanceBlocks": 608,
+      "clientPreferencesChanged": false,
+      "semanticallyUnchangedGeneratedAssets": 42,
+      "generatedAssetsRestoredByteExactly": 0,
+      "remainingEquivalentReorderedAssets": 42,
+      "nativeRuntimeClockAdvancedNormally": true,
+      "finalRegionsMatchVerifiedPreservationOutput": true
+    },
+    "visualReview": {
+      "realClientImages": 15,
+      "cardinalViews": 12,
+      "lowerRooftopVillageViews": 3,
+      "points": [
+        "village",
+        "monastery",
+        "farm"
+      ],
+      "effectiveViewDistanceBlocks": 608,
+      "clientRequestedViewDistance": 736,
+      "clientRenderScalePercent": 50,
+      "clientFieldOfView": 90,
+      "scenicVillagesSeenFromLowerVillageRoofs": true,
+      "mainPassPhotosDirectory": "C:\\Users\\User\\Desktop\\Zytale\\work\\landscape-scalable-2026-10-16\\client-after",
+      "panoramas": "SCALABILE_QA_*_360.png",
+      "stage": "Real client captures after main pass, before final local stone-band and rear-crest adjustments",
+      "finalLocalAdjustmentValidation": "Native save/restart comparison, preservation and 3D connectivity audit; not photographed again"
+    },
+    "performance": {
+      "implementation": "Low hills, selective north/northeast mountain silhouettes within the 608 range, reduced distant foliage and modeled terrain, ordinary native loading with a 19-chunk map cap",
+      "matchedBeforeAfterBenchmark": false,
+      "lowerEndHardwareMeasured": false,
+      "observedClientFps": "59–60 with VSync on the current RTX 5060 during captures; not a performance comparison",
+      "allSceneryAtLowerThan608Guaranteed": false
+    },
+    "limitations": [
+      "Final aesthetic approval remains with the user.",
+      "Lower client distances keep native streaming behavior and can hide the farther background.",
+      "No claim of a measured loading-time or FPS improvement on lower-end PCs."
+    ]
+  },
+  "landscape_depth_vegetation_20261016": {
+    "status": "installed-and-packaged",
+    "date": "2026-10-16T19:17:37.639126+02:00",
+    "save": "C:/Users/User/AppData/Roaming/Hytale/UserData/Saves/The Village - Zytale 306 Working Copy",
+    "backup": {
+      "archive": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-landscape-built-2026-10-16\\ZYTALE_BACKUP_PRIMA_BORGHI_VEGETAZIONE.zip",
+      "files": 5986,
+      "bytes": 323750015,
+      "sha256": "b4c7d48c019f26499f171cb860829b615f45c9e124074ea5ba7d3122bf0effc0",
+      "verifiedEveryFileHash": true,
+      "includesAllSaveFiles": true,
+      "capturedAt": "2026-10-16T18:50:35.427222+02:00"
+    },
+    "archive": {
+      "archive": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-landscape-built-2026-10-16\\ZYTALE_BLACKRIDGE_BORGHI_E_VEGETAZIONE.zip",
+      "files": 5990,
+      "bytes": 323811073,
+      "sha256": "1aebedc3babd4a8a3e6635ababa23f2826a148405840677b2a6b7d9c4d20968c",
+      "allFileHashesAndCRCVerified": true,
+      "sourceRemainedUnchangedDuringPackaging": true,
+      "temporaryEditingBridgeExcluded": true,
+      "includesLatestPlayerData": true,
+      "effectiveMapViewDistanceBlocks": 608,
+      "capturedAt": "2026-10-16T19:15:23.917400+02:00"
+    },
+    "changes": {
+      "villagesRebuilt": 2,
+      "housesRebuilt": 12,
+      "newVillageCentres": [
+        [
+          197,
+          136,
+          -181
+        ],
+        [
+          373,
+          128,
+          45
+        ]
+      ],
+      "buildingDimensionScale": 0.58,
+      "approximateApparentHouseScaleFromSuppliedViews": [
+        0.45,
+        0.521,
+        0.518
+      ],
+      "newTrees": 457,
+      "newTreesInUserMarkedHole": 47,
+      "newUndergrowth": 64000,
+      "newUndergrowthInHole": 2742,
+      "tallGrassAdded": 55111,
+      "newLeafBlocks": 118951,
+      "existingLeafBlocksRemoved": 0,
+      "remainingNetLeafReductionFromPreScalablePass": 440253,
+      "holeBoundsXZ": [
+        0,
+        182,
+        87,
+        260
+      ],
+      "maximumEditHorizontalDistanceFromPlayableHull": 598,
+      "effectiveMapViewDistance": 608
+    },
+    "nativeRestartVerification": {
+      "phase": "reopened",
+      "chunks": 381,
+      "cellsCompared": 124846080,
+      "changedBlocks": 1765970,
+      "plannedChangedBlocks": 1765970,
+      "protectedCellsCompared": 14352320,
+      "errors": [],
+      "clean": true
+    },
+    "sightlineVerification": {
+      "nativePlannedVisibility": [
+        {
+          "pov": "User roof north",
+          "village": 1,
+          "visibleHouses": 4,
+          "total": 6,
+          "houses": [
+            {
+              "house": [
+                203,
+                -176
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    195,
+                    141,
+                    -168
+                  ],
+                  "material": "Rock_Slate"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    193,
+                    140,
+                    -169
+                  ],
+                  "material": "Rock_Calcite"
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                192,
+                -172
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                214,
+                -198
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    190,
+                    140,
+                    -171
+                  ],
+                  "material": "Rock_Calcite"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    190,
+                    139,
+                    -173
+                  ],
+                  "material": "Rock_Slate"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    190,
+                    139,
+                    -169
+                  ],
+                  "material": "Wood_Oak_Trunk_Full"
+                }
+              ]
+            },
+            {
+              "house": [
+                201,
+                -164
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                194,
+                -193
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                220,
+                -178
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    199,
+                    142,
+                    -160
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M6"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    199,
+                    140,
+                    -161
+                  ],
+                  "material": "Wood_Oak_Trunk_Full"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    202,
+                    140,
+                    -161
+                  ],
+                  "material": "Rock_Calcite"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pov": "User roof east",
+          "village": 2,
+          "visibleHouses": 4,
+          "total": 6,
+          "houses": [
+            {
+              "house": [
+                374,
+                53
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    360,
+                    134,
+                    49
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M6"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    361,
+                    132,
+                    50
+                  ],
+                  "material": "Rock_Calcite"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    361,
+                    132,
+                    49
+                  ],
+                  "material": "Rock_Calcite"
+                }
+              ]
+            },
+            {
+              "house": [
+                361,
+                36
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                396,
+                42
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    358,
+                    134,
+                    35
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M6"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    359,
+                    132,
+                    35
+                  ],
+                  "material": "Rock_Calcite"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    359,
+                    132,
+                    34
+                  ],
+                  "material": "Rock_Calcite"
+                }
+              ]
+            },
+            {
+              "house": [
+                363,
+                50
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                373,
+                30
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                388,
+                62
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    360,
+                    133,
+                    54
+                  ],
+                  "material": "Rock_Slate"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pov": "User monastery",
+          "village": 2,
+          "visibleHouses": 6,
+          "total": 6,
+          "houses": [
+            {
+              "house": [
+                374,
+                53
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                361,
+                36
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                396,
+                42
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    380,
+                    136,
+                    55
+                  ],
+                  "material": "Wood_Oak_Trunk_Full"
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                363,
+                50
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                373,
+                30
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    363,
+                    135,
+                    40
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M9"
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                388,
+                62
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pov": "Low west roof",
+          "village": 0,
+          "visibleHouses": 3,
+          "total": 7,
+          "houses": [
+            {
+              "house": [
+                -162,
+                -54
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    -154,
+                    134,
+                    -52
+                  ],
+                  "material": "Rock_Stone_Cobble"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -154,
+                    132,
+                    -51
+                  ],
+                  "material": "Rock_Stone_Cobble"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -154,
+                    132,
+                    -52
+                  ],
+                  "material": "Rock_Stone_Cobble"
+                }
+              ]
+            },
+            {
+              "house": [
+                -192,
+                -38
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    -167,
+                    135,
+                    -34
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M9"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -168,
+                    133,
+                    -33
+                  ],
+                  "material": "Wood_Oak_Trunk_Full"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -168,
+                    133,
+                    -34
+                  ],
+                  "material": "Rock_Calcite"
+                }
+              ]
+            },
+            {
+              "house": [
+                -164,
+                -82
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    -138,
+                    134,
+                    -69
+                  ],
+                  "material": "Rock_Slate"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -139,
+                    131,
+                    -68
+                  ],
+                  "material": "Wood_Oak_Trunk_Full"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -139,
+                    131,
+                    -71
+                  ],
+                  "material": "Rock_Calcite"
+                }
+              ]
+            },
+            {
+              "house": [
+                -172,
+                -38
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                -184,
+                -56
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    -157,
+                    133,
+                    -48
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M9"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -161,
+                    131,
+                    -49
+                  ],
+                  "material": "Rock_Calcite"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -155,
+                    131,
+                    -49
+                  ],
+                  "material": "Rock_Stone_Cobble"
+                }
+              ]
+            },
+            {
+              "house": [
+                -144,
+                -74
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                -182,
+                -22
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pov": "Low east roof",
+          "village": 1,
+          "visibleHouses": 2,
+          "total": 6,
+          "houses": [
+            {
+              "house": [
+                203,
+                -176
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    198,
+                    141,
+                    -167
+                  ],
+                  "material": "Rock_Slate"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    168,
+                    134,
+                    -111
+                  ],
+                  "material": "Soil_Grass"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    169,
+                    134,
+                    -109
+                  ],
+                  "material": "Soil_Grass"
+                }
+              ]
+            },
+            {
+              "house": [
+                192,
+                -172
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                214,
+                -198
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    169,
+                    134,
+                    -111
+                  ],
+                  "material": "Soil_Grass"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    146,
+                    129,
+                    -69
+                  ],
+                  "material": "Plant_Leaves_Fir_Tip"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    168,
+                    132,
+                    -107
+                  ],
+                  "material": "Soil_Gravel_Mossy"
+                }
+              ]
+            },
+            {
+              "house": [
+                201,
+                -164
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    172,
+                    135,
+                    -109
+                  ],
+                  "material": "Soil_Grass"
+                }
+              ]
+            },
+            {
+              "house": [
+                194,
+                -193
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    158,
+                    134,
+                    -113
+                  ],
+                  "material": "Soil_Gravel_Mossy"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    157,
+                    133,
+                    -114
+                  ],
+                  "material": "Soil_Dirt"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    159,
+                    133,
+                    -113
+                  ],
+                  "material": "Soil_Dirt"
+                }
+              ]
+            },
+            {
+              "house": [
+                220,
+                -178
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    162,
+                    132,
+                    -80
+                  ],
+                  "material": "Plant_Leaves_Fir_Tip"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    161,
+                    131,
+                    -80
+                  ],
+                  "material": "Plant_Leaves_Fir"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    162,
+                    131,
+                    -79
+                  ],
+                  "material": "Plant_Leaves_Fir"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "perspective": [
+        {
+          "pov": "User roof north",
+          "beforeDistance": 135.9,
+          "afterDistance": 175.2,
+          "approximateAngularHouseScale": 0.45
+        },
+        {
+          "pov": "User roof east",
+          "beforeDistance": 218.3,
+          "afterDistance": 243.0,
+          "approximateAngularHouseScale": 0.521
+        },
+        {
+          "pov": "User monastery",
+          "beforeDistance": 148.4,
+          "afterDistance": 166.0,
+          "approximateAngularHouseScale": 0.518
+        }
+      ],
+      "allSuppliedViewsKeepAtLeastTwoHousesVisible": true,
+      "method": "Ray cast through complete native block volumes with planned edits, ignoring low grass and flowers. This is a geometric check, not a client screenshot.",
+      "source": "Actual native after-edit exports plus unchanged native chunks"
+    },
+    "easternBackgroundProfile": [
+      {
+        "bearing": 40,
+        "groundPlaneOccluded": true,
+        "clearance": 19.1
+      },
+      {
+        "bearing": 50,
+        "groundPlaneOccluded": true,
+        "clearance": 10.0
+      },
+      {
+        "bearing": 60,
+        "groundPlaneOccluded": true,
+        "clearance": 27.5
+      },
+      {
+        "bearing": 70,
+        "groundPlaneOccluded": true,
+        "clearance": 17.8
+      },
+      {
+        "bearing": 80,
+        "groundPlaneOccluded": true,
+        "clearance": 17.7
+      },
+      {
+        "bearing": 90,
+        "groundPlaneOccluded": true,
+        "clearance": 10.7
+      },
+      {
+        "bearing": 100,
+        "groundPlaneOccluded": true,
+        "clearance": 14.0
+      },
+      {
+        "bearing": 110,
+        "groundPlaneOccluded": true,
+        "clearance": 14.3
+      }
+    ],
+    "componentPreservation": {
+      "regions": [
+        {
+          "region": "-1.-1.region.bin",
+          "selected": 39,
+          "preMergeSha256": "34a8beee65f580887c440a26f8428e35439a21ebc0628c27da267b47d290c386",
+          "outputSha256": "1689f71fbcf0f27a0eb3800566730ec902387681ef3b9854c57fc4fdefdb3321"
+        },
+        {
+          "region": "-1.0.region.bin",
+          "selected": 97,
+          "preMergeSha256": "9b297008d0fca572003d9d7063814993babe81e9da13576ae2fa6f55b49a68ff",
+          "outputSha256": "285bf2e92203f86840dcec9ceaf9984806809cdf206d51ee1369ec1d7014fb30"
+        },
+        {
+          "region": "0.-1.region.bin",
+          "selected": 83,
+          "preMergeSha256": "399f356c79ab5e1531dc7fbde34cddfb9527ad2b43a8ec0abe6bb8ac43e8b73a",
+          "outputSha256": "805f8e3efe7fdb5dd421dd1360cd22a69d509364a6d3d21ec0e14fcd6d0cc965"
+        },
+        {
+          "region": "0.0.region.bin",
+          "selected": 162,
+          "preMergeSha256": "cb46cc2fdd9d430b4b9cda57806abacb8daf2869574b7f1497219b9778f33988",
+          "outputSha256": "925773d0bd655db1b19fa2dbab733576293d8d748d29278b6d7473e74ed44a56"
+        }
+      ],
+      "selectedExistingChunks": 381,
+      "selectedNewChunks": 0,
+      "untouchedExistingRecordsByteIdentical": 3715,
+      "originalForeignSectionComponentsPreserved": 22860,
+      "allEntityBlockComponentFluidEnvironmentHealthDataPreserved": true,
+      "onlyReplacedComponents": [
+        "Block",
+        "BlockPhysics",
+        "HeightmapColumn"
+      ]
+    },
+    "cleanup": {
+      "temporaryEditingBridgeRemoved": true,
+      "allExistingNonTerrainFilesByteIdenticalToLatestUserSave": true,
+      "existingNonTerrainFilesChecked": 5982,
+      "nativeRuntimeFilesRestored": [
+        "telemetry/2026-10-09_17-01-05_e1da350f.jsonl.gz",
+        "telemetry/2026-10-09_17-03-14_6d796f4f.jsonl.gz",
+        "telemetry/2026-10-09_17-07-17_0e7b5251.jsonl.gz",
+        "universe/worlds/default/config.json",
+        "universe/worlds/default/config.json.bak",
+        "universe/worlds/default/resources/Time.json",
+        "universe/worlds/default/resources/Time.json.bak"
+      ],
+      "allPlayerFilesByteIdentical": true,
+      "worldSettingsRestoredByteExactly": true,
+      "effectiveMapViewDistanceBlocks": 608,
+      "clientPreferencesChanged": false,
+      "finalRegionsMatchVerifiedPreservationOutput": true
+    },
+    "visualEvidence": {
+      "source": "Four user-provided screenshots; three views with coordinates and one cropped overhead bare-patch reference",
+      "newComputerUsePerformed": false,
+      "newClientScreenshotsTaken": false,
+      "verificationType": "Exact native block readback, save/reopen, and native-volume sightline checks from supplied camera positions"
+    },
+    "performance": "Native assets and the 608 map cap retained. This pass adds vegetation; there is no measured FPS or streaming-time comparison.",
+    "observations": [
+      "The cropped bare patch lies north of the previously preserved farm grove. The explicit user request authorizes planting there while native roads, crops and fences remain unchanged.",
+      "Hytale removed three older telemetry files during its native restart. They were restored byte-for-byte from the fresh pre-pass backup."
+    ]
+  },
+  "landscape_terrain_repair_20261016": {
+    "status": "installed-and-packaged",
+    "date": "2026-10-16T20:41:14.920521+02:00",
+    "save": "C:/Users/User/AppData/Roaming/Hytale/UserData/Saves/The Village - Zytale 306 Working Copy",
+    "backup": {
+      "archive": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-landscape-built-2026-10-16\\ZYTALE_BACKUP_PRIMA_RIPARAZIONE_TERRENO.zip",
+      "files": 5992,
+      "bytes": 323864700,
+      "sha256": "40b02f57015a40320c0db0bcf665b0753f7d34f5b7167d0be116538491580b2e",
+      "verifiedEveryFileHash": true,
+      "includesAllSaveFiles": true,
+      "capturedAt": "2026-10-16T20:00:52.031604+02:00"
+    },
+    "archive": {
+      "archive": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-landscape-built-2026-10-16\\ZYTALE_BLACKRIDGE_TERRENO_E_FORESTE.zip",
+      "files": 5996,
+      "bytes": 323948465,
+      "sha256": "398c25d6967ef5982ee45dc4615cc36a5894878e4e6f207e492acbf7113888b6",
+      "allFileHashesAndCRCVerified": true,
+      "sourceRemainedUnchangedDuringPackaging": true,
+      "temporaryEditingBridgeExcluded": true,
+      "includesLatestPlayerData": true,
+      "effectiveMapViewDistanceBlocks": 608,
+      "capturedAt": "2026-10-16T20:40:32.987410+02:00"
+    },
+    "changes": {
+      "changedBlocks": 5579390,
+      "newTrees": 1302,
+      "oldTreesLiftedOrReplanted": 536,
+      "pitGroupsRepaired": 121,
+      "newUndergrowth": {
+        "landscape": 143473,
+        "userBasin": 6848
+      },
+      "wallBlocksRestored": 8362,
+      "housesRebuilt": 7,
+      "westernApparentScale": 0.56,
+      "maxSceneryHorizontalDistance": 598,
+      "userBasinBounds": [
+        141,
+        -128,
+        262,
+        -41
+      ]
+    },
+    "nativeRestartVerification": {
+      "phase": "reopened",
+      "chunks": 435,
+      "cellsCompared": 142540800,
+      "changedBlocks": 5579390,
+      "plannedChangedBlocks": 5579390,
+      "protectedCellsCompared": 15972160,
+      "errors": [],
+      "clean": true
+    },
+    "sightlines": {
+      "nativePlannedVisibility": [
+        {
+          "pov": "User roof west",
+          "village": 0,
+          "visibleHouses": 3,
+          "total": 7,
+          "houses": [
+            {
+              "house": [
+                -185,
+                -65
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    -180,
+                    130,
+                    -65
+                  ],
+                  "material": "Wood_Oak_Trunk_Full"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -180,
+                    129,
+                    -65
+                  ],
+                  "material": "Rock_Stone_Cobble"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -180,
+                    129,
+                    -65
+                  ],
+                  "material": "Rock_Stone_Cobble"
+                }
+              ]
+            },
+            {
+              "house": [
+                -203,
+                -55
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    -190,
+                    131,
+                    -55
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M9"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -188,
+                    130,
+                    -55
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M9"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -188,
+                    130,
+                    -55
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M9"
+                }
+              ]
+            },
+            {
+              "house": [
+                -186,
+                -82
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    -171,
+                    131,
+                    -80
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M9"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -169,
+                    129,
+                    -79
+                  ],
+                  "material": "Rock_Slate"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -169,
+                    129,
+                    -80
+                  ],
+                  "material": "Rock_Slate"
+                }
+              ]
+            },
+            {
+              "house": [
+                -191,
+                -55
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                -198,
+                -66
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    -180,
+                    131,
+                    -65
+                  ],
+                  "material": "Wood_Oak_Trunk_Full"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -180,
+                    129,
+                    -65
+                  ],
+                  "material": "Rock_Stone_Cobble"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -180,
+                    129,
+                    -65
+                  ],
+                  "material": "Rock_Stone_Cobble"
+                }
+              ]
+            },
+            {
+              "house": [
+                -173,
+                -77
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                -197,
+                -45
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pov": "User roof north",
+          "village": 1,
+          "visibleHouses": 4,
+          "total": 6,
+          "houses": [
+            {
+              "house": [
+                203,
+                -176
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    195,
+                    141,
+                    -168
+                  ],
+                  "material": "Rock_Slate"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    193,
+                    140,
+                    -169
+                  ],
+                  "material": "Rock_Calcite"
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                192,
+                -172
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                214,
+                -198
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    190,
+                    140,
+                    -171
+                  ],
+                  "material": "Rock_Calcite"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    151,
+                    136,
+                    -129
+                  ],
+                  "material": "Soil_Grass"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    154,
+                    136,
+                    -129
+                  ],
+                  "material": "Soil_Grass"
+                }
+              ]
+            },
+            {
+              "house": [
+                201,
+                -164
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                194,
+                -193
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                220,
+                -178
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    199,
+                    142,
+                    -160
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M6"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    199,
+                    140,
+                    -161
+                  ],
+                  "material": "Wood_Oak_Trunk_Full"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    202,
+                    140,
+                    -161
+                  ],
+                  "material": "Rock_Calcite"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pov": "User roof east",
+          "village": 2,
+          "visibleHouses": 4,
+          "total": 6,
+          "houses": [
+            {
+              "house": [
+                374,
+                53
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    360,
+                    134,
+                    49
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M6"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    361,
+                    132,
+                    50
+                  ],
+                  "material": "Rock_Calcite"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    361,
+                    132,
+                    49
+                  ],
+                  "material": "Rock_Calcite"
+                }
+              ]
+            },
+            {
+              "house": [
+                361,
+                36
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                396,
+                42
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    358,
+                    134,
+                    35
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M6"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    359,
+                    132,
+                    35
+                  ],
+                  "material": "Rock_Calcite"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    359,
+                    132,
+                    34
+                  ],
+                  "material": "Rock_Calcite"
+                }
+              ]
+            },
+            {
+              "house": [
+                363,
+                50
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                373,
+                30
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                388,
+                62
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    360,
+                    133,
+                    54
+                  ],
+                  "material": "Rock_Slate"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pov": "User monastery",
+          "village": 2,
+          "visibleHouses": 6,
+          "total": 6,
+          "houses": [
+            {
+              "house": [
+                374,
+                53
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                361,
+                36
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                396,
+                42
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    380,
+                    136,
+                    55
+                  ],
+                  "material": "Wood_Oak_Trunk_Full"
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                363,
+                50
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                373,
+                30
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    363,
+                    135,
+                    40
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M9"
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                388,
+                62
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pov": "Low west roof",
+          "village": 0,
+          "visibleHouses": 3,
+          "total": 7,
+          "houses": [
+            {
+              "house": [
+                -185,
+                -65
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    -180,
+                    130,
+                    -64
+                  ],
+                  "material": "Wood_Oak_Trunk_Full"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -180,
+                    128,
+                    -63
+                  ],
+                  "material": "Rock_Stone_Cobble"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -180,
+                    128,
+                    -64
+                  ],
+                  "material": "Rock_Stone_Cobble"
+                }
+              ]
+            },
+            {
+              "house": [
+                -203,
+                -55
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    -188,
+                    130,
+                    -51
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M9"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -188,
+                    129,
+                    -51
+                  ],
+                  "material": "Rock_Slate"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -188,
+                    129,
+                    -52
+                  ],
+                  "material": "Rock_Slate"
+                }
+              ]
+            },
+            {
+              "house": [
+                -186,
+                -82
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    -169,
+                    130,
+                    -74
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M9"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -170,
+                    128,
+                    -74
+                  ],
+                  "material": "Rock_Calcite"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -170,
+                    128,
+                    -76
+                  ],
+                  "material": "Rock_Calcite"
+                }
+              ]
+            },
+            {
+              "house": [
+                -191,
+                -55
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                -198,
+                -66
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    -184,
+                    130,
+                    -62
+                  ],
+                  "material": "*ZAS_M_P12b341bdc2b4ee52610ac3fd8fdd44bcbfcc109d9fcf184ed28fe077bef790ef_State_Definitions_M9"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -182,
+                    128,
+                    -61
+                  ],
+                  "material": "Rock_Slate"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    -182,
+                    128,
+                    -61
+                  ],
+                  "material": "Rock_Slate"
+                }
+              ]
+            },
+            {
+              "house": [
+                -173,
+                -77
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                -197,
+                -45
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pov": "Low east roof",
+          "village": 1,
+          "visibleHouses": 5,
+          "total": 6,
+          "houses": [
+            {
+              "house": [
+                203,
+                -176
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    198,
+                    141,
+                    -167
+                  ],
+                  "material": "Rock_Slate"
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    199,
+                    139,
+                    -166
+                  ],
+                  "material": "Rock_Calcite"
+                }
+              ]
+            },
+            {
+              "house": [
+                192,
+                -172
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                214,
+                -198
+              ],
+              "visible": false,
+              "rays": [
+                {
+                  "visible": false,
+                  "hit": [
+                    200,
+                    140,
+                    -172
+                  ],
+                  "material": "Rock_Slate"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    146,
+                    129,
+                    -69
+                  ],
+                  "material": "Plant_Leaves_Fir_Tip"
+                },
+                {
+                  "visible": false,
+                  "hit": [
+                    192,
+                    136,
+                    -154
+                  ],
+                  "material": "Plant_Bush_Green"
+                }
+              ]
+            },
+            {
+              "house": [
+                201,
+                -164
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                194,
+                -193
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            },
+            {
+              "house": [
+                220,
+                -178
+              ],
+              "visible": true,
+              "rays": [
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                },
+                {
+                  "visible": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "perspective": [
+        {
+          "pov": "User roof west",
+          "beforeDistance": 160.5,
+          "afterDistance": 178.9,
+          "approximateAngularHouseScale": 0.502
+        }
+      ],
+      "allSuppliedViewsKeepAtLeastTwoHousesVisible": true,
+      "method": "Ray cast through complete native block volumes with planned edits, ignoring low grass and flowers. This is a geometric check, not a client screenshot.",
+      "source": "Actual native after-edit exports plus unchanged native chunks"
+    },
+    "geometry": {
+      "newTreeRootsMatchSurface": true,
+      "newTreesInDeepDepressions": [],
+      "landformProtectedColumnsUnchanged": true,
+      "newTerrainDistanceUnder598": true,
+      "treeCountsByZone": {
+        "repositioned": 345,
+        "userBasin": 67,
+        "westernRear": 80,
+        "easternHamlet": 160,
+        "southernHills": 330,
+        "repairedSlopes": 180,
+        "landscape": 140
+      },
+      "wallCells": 8362,
+      "horizonChecks": [
+        {
+          "view": "southeast",
+          "bearing": 85,
+          "groundOccluded": true,
+          "clearance": 10.0,
+          "atDistance": 129.5
+        },
+        {
+          "view": "southeast",
+          "bearing": 95,
+          "groundOccluded": true,
+          "clearance": 11.1,
+          "atDistance": 123.5
+        },
+        {
+          "view": "southeast",
+          "bearing": 105,
+          "groundOccluded": true,
+          "clearance": 9.4,
+          "atDistance": 119.0
+        },
+        {
+          "view": "southeast",
+          "bearing": 115,
+          "groundOccluded": true,
+          "clearance": 9.5,
+          "atDistance": 119.5
+        },
+        {
+          "view": "southeast",
+          "bearing": 125,
+          "groundOccluded": true,
+          "clearance": 9.3,
+          "atDistance": 124.5
+        },
+        {
+          "view": "southeast",
+          "bearing": 135,
+          "groundOccluded": true,
+          "clearance": 10.3,
+          "atDistance": 124.5
+        },
+        {
+          "view": "southeast",
+          "bearing": 145,
+          "groundOccluded": true,
+          "clearance": 8.0,
+          "atDistance": 123.0
+        },
+        {
+          "view": "southeast",
+          "bearing": 155,
+          "groundOccluded": true,
+          "clearance": 1.4,
+          "atDistance": 132.0
+        },
+        {
+          "view": "southeast",
+          "bearing": 165,
+          "groundOccluded": true,
+          "clearance": 3.5,
+          "atDistance": 139.5
+        },
+        {
+          "view": "southeast",
+          "bearing": 175,
+          "groundOccluded": true,
+          "clearance": 7.9,
+          "atDistance": 149.0
+        },
+        {
+          "view": "southeast",
+          "bearing": 185,
+          "groundOccluded": true,
+          "clearance": 10.3,
+          "atDistance": 165.0
+        },
+        {
+          "view": "south",
+          "bearing": 120,
+          "groundOccluded": true,
+          "clearance": 24.8,
+          "atDistance": 199.0
+        },
+        {
+          "view": "south",
+          "bearing": 130,
+          "groundOccluded": true,
+          "clearance": 14.6,
+          "atDistance": 190.5
+        },
+        {
+          "view": "south",
+          "bearing": 140,
+          "groundOccluded": true,
+          "clearance": 17.8,
+          "atDistance": 184.5
+        },
+        {
+          "view": "south",
+          "bearing": 150,
+          "groundOccluded": true,
+          "clearance": 18.1,
+          "atDistance": 179.5
+        },
+        {
+          "view": "south",
+          "bearing": 160,
+          "groundOccluded": true,
+          "clearance": 16.7,
+          "atDistance": 183.5
+        },
+        {
+          "view": "south",
+          "bearing": 170,
+          "groundOccluded": true,
+          "clearance": 16.0,
+          "atDistance": 186.0
+        },
+        {
+          "view": "south",
+          "bearing": 180,
+          "groundOccluded": true,
+          "clearance": 9.2,
+          "atDistance": 180.5
+        },
+        {
+          "view": "south",
+          "bearing": 190,
+          "groundOccluded": true,
+          "clearance": 11.5,
+          "atDistance": 189.5
+        },
+        {
+          "view": "south",
+          "bearing": 200,
+          "groundOccluded": true,
+          "clearance": 14.9,
+          "atDistance": 214.5
+        },
+        {
+          "view": "south",
+          "bearing": 210,
+          "groundOccluded": true,
+          "clearance": 13.8,
+          "atDistance": 221.0
+        },
+        {
+          "view": "south",
+          "bearing": 220,
+          "groundOccluded": true,
+          "clearance": 12.7,
+          "atDistance": 227.5
+        },
+        {
+          "view": "south",
+          "bearing": 230,
+          "groundOccluded": true,
+          "clearance": 23.3,
+          "atDistance": 304.0
+        },
+        {
+          "view": "south",
+          "bearing": 240,
+          "groundOccluded": true,
+          "clearance": 24.2,
+          "atDistance": 303.5
+        }
+      ],
+      "method": "Geometric terrain and native asset checks; not a new client screenshot."
+    },
+    "support": {
+      "phase": "native",
+      "newTreeRootContactsChecked": 2644,
+      "filledTerrainColumnsChecked": 202764,
+      "monasteryRestorationCellsChecked": 8362,
+      "protectedColumnChangesRestrictedToApprovedWallCells": 8362,
+      "errors": [],
+      "clean": true
+    },
+    "componentPreservation": {
+      "regions": [
+        {
+          "region": "-1.-1.region.bin",
+          "selected": 46,
+          "preMergeSha256": "c21fade7309d8d0d458af58155a3147e76deec111fcbb58203aca52daaddbd2e",
+          "outputSha256": "7479cd5972af6783ee0446510ded4423fae8dd5144a3d25e926a02105c566ad9"
+        },
+        {
+          "region": "-1.0.region.bin",
+          "selected": 114,
+          "preMergeSha256": "43689e714c153f368182394e4a98a3339ab4f34163b7d47712c80e56e71c1fcb",
+          "outputSha256": "cf54d69e3d39764b539ade1d940b9174d526d426851ce5a710576e0435c8c370"
+        },
+        {
+          "region": "0.-1.region.bin",
+          "selected": 92,
+          "preMergeSha256": "9c6518e0dc03a5bcbc02001f584a758b68880b1366e80949838a40e984c66a9c",
+          "outputSha256": "a7bfef5609bebd9e4e4c62d487544afc7c25a99f23e53a5a5c6bbc38c6f062f0"
+        },
+        {
+          "region": "0.0.region.bin",
+          "selected": 183,
+          "preMergeSha256": "b9767b88e06a40dd32f76d785ca8a57031e54ce55b395e30e9433c5f522ad26d",
+          "outputSha256": "b72248230db12b2639eb5c058ebec6ab755dade17e4379f34d84aa4de4a3fd1a"
+        }
+      ],
+      "selectedExistingChunks": 435,
+      "selectedNewChunks": 0,
+      "untouchedExistingRecordsByteIdentical": 3661,
+      "originalForeignSectionComponentsPreserved": 26100,
+      "allEntityBlockComponentFluidEnvironmentHealthDataPreserved": true,
+      "onlyReplacedComponents": [
+        "Block",
+        "BlockPhysics",
+        "HeightmapColumn"
+      ]
+    },
+    "cleanup": {
+      "temporaryEditingBridgeRemoved": true,
+      "allExistingNonTerrainFilesByteIdenticalToLatestUserSave": true,
+      "existingNonTerrainFilesChecked": 5988,
+      "nativeRuntimeFilesRestored": [
+        "config.json",
+        "config.json.bak",
+        "mods/Zytale_AdaptiveSurface/appearances-v4/preload-report.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q005bf79d252709dfae1d65a78238e36c5079ff9efb716203226b2055a96c37d5.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q013897e247aff633896e8f2577cc6bbeb0966c2fab6ddb625603947994c924cf.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q04df49cff6ec34dbc2592acc9d240ff2cb8aba01a9a4b729f2082c79516d8cd1.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q0712cd2f1f8cd0e96d6f39fb92231cad1947cb90841df161ddd9bc54bb52f2e7.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q0d0ef2e5bcd2a8bf703d113a95dbdb7f5e1d773b3a2a148d472374ada0191161.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q0d8f0757e2beeae1d1332f88b3c6bed03a0e4efb939c4fb209a50e0860b9db37.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q117e7276fbb52ff003f1d886d444ed3aa1b3d1ba1b7b811fc2ced66506f6fbfb.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q128fc0fbd47be2249901f2774e52059c3cfea6d94527c022a543b9b812bbb9d2.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q23c6de0fecff61107b4fcc80600e6791dbb6dc929f5a04377dfe7b7078b5afc6.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q2825915f4356ae76756545f0ede20421767c7cb39430d0c8bf0ef31fe651e028.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q2a0db0a26957db380a3a3dce38dcffbcd17e5ac8c96ca0f2a87ed7d74f20ef1a.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q2af19178dc1650449f9ae92f4f52bb75b19c7d6622b1a67200c787cf0caba1ed.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q309b2997cb0818b68a49567963e156fb2fd851f8fbae788a5645e9ae0adcde65.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q39b43f51d5bd4a0b164a8d15edd00e371d0089b6c8ae441083c25586979ba3ff.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q3f0751fdd73871c71c5e357760584aa3c68432d86e05615098b0fef4a7ad70fc.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q42edf4ef3c37c7c5a787074d1d445eebe613488cca958a9ce422485cd5e4e568.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q4374650ae14c9af9ba9c4a0b09eb2ec2526cc2e14b0279f00f18076556493b8c.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q4d843a6149c2e5f0cf6f50128a6f515cc90a5e7101f48e880072a2776b292eeb.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q551bcf0d4af3c541d6e2249ae3dbc71af7223be999f102453b834dad090f61d2.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q561c86fa74300edd819d3d1ea70651725d628d585cd60d1c26fe83409afc4bc1.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q5ebcaa69704f7b1e2e24e12a23130f20a9a8d77c70e87be77751064b486d080d.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q6a170708e839543c1ddbd5f15a5c18b56b2e9b70cab5433ab0664d53b2d7ee49.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q78bcc67549fa154a53f93829ac4016c06a381a273b4116ac66cdd95e4aca4d18.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q7c614b75d07bf2bd42cd13da9fc820ad038c16d0577bae2afb14ef3754b70fcc.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q7fac9712e276157073e762d066854becc91bd13c153ff607d07b6f256fb210ea.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q7fe92b668d78087b6d371469d9943fb720c7c03bee922f745242e95385b3842d.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q8491f6d2799cf60588fe282fa58002ad0a4b0331f79a1039eb5ab5abfe3ff27a.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q8b4dfc9d6c039bbd7f5d34255ee063ca787fa8476973847745c2b2103b4dff7a.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q8d7abea3eb51c169507ff8861fb2241f6b01b3a2a9e1c3fc96d8098155921df0.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q8e9cfc4112e0f8f494c86c921cd1874309a4497bb9719324982c800888fce8f4.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q936c65a48ca1be28fb11c9b2f99837606c63f21eafbbf61e2223c59304700335.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q94248dea846fb04a541418a4cfc5de6f428e6b53c53e2d07a830264f6c902c31.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q98017bc0b971e591cba9294e2c163eba110f7a87e41781f478fdeb752efa5ac2.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qa19da88a67c135f08a9c48bb6b0dbdaebbca9ceac7b7c8cfb38fa1f2fda568e3.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qad3288cb4a48eb88e28278e89921dc794312681b567d3e1254521c958fde3d40.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qbab09ff94de96da5822aaac3c5e36413c22d698e3121970f06aa1cb52c2dc035.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qc64731ffc59d2dff4cc0537437bfa0f6bc1a65555c346279dc86a879db99228d.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qd569b930eb0d13a6bab673e0ee7176d1d84d2edb990c0e3f317fb63915130d05.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qd7bfdb4ecbd61dadb53087c7ebd1f479b650571e6d17dc585f68e7c19eb55c4c.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qe176649e4a298332dacebe0468ed3b34627de7b6857250928138f966fddbda9c.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qe8862a68300cb399ae33947f34604b673d5ee38a7b79019b934b79001429a73d.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qf8990367ff01bfd7049e708125f5f68e3e88bdb2119cba4e1bbd7e7c28f19a74.json",
+        "universe/worlds/default/config.json",
+        "universe/worlds/default/config.json.bak",
+        "universe/worlds/default/resources/Time.json",
+        "universe/worlds/default/resources/Time.json.bak"
+      ],
+      "allPlayerFilesByteIdentical": true,
+      "worldSettingsRestoredByteExactly": true,
+      "effectiveMapViewDistanceBlocks": 608,
+      "clientPreferencesChanged": false,
+      "finalRegionsMatchVerifiedPreservationOutput": true
+    },
+    "evidence": {
+      "source": "Eight user-provided images, current native exports, approved monastery enclosure construction plan",
+      "newComputerUsePerformed": false,
+      "newClientScreenshotsTaken": false,
+      "performanceBenchmarkPerformed": false
+    },
+    "designRules": [
+      "Landform is computed continuously before vegetation; tree source cells are cleared before terrain fill, then roots are placed on final terrain.",
+      "Monastery terrain is protected across the full enclosure; only specifically listed approved curtain-wall cells can change inside the architectural protection mask.",
+      "Native scene geometry and props remain within 598 blocks horizontally from every playable hull vertex, under the existing 608 cap."
+    ]
+  },
+  "farm_hill_rebuild_20261017": {
+    "status": "installed-and-packaged",
+    "date": "2026-10-17T04:33:51.721200+02:00",
+    "save": "C:/Users/User/AppData/Roaming/Hytale/UserData/Saves/The Village - Zytale 306 Working Copy",
+    "backupBeforeTask": {
+      "archive": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-rebuilt-2026-10-17\\ZYTALE_BACKUP_PRIMA_COLLINA_CAMPO_AGGIORNATO.zip",
+      "files": 5999,
+      "bytes": 324123806,
+      "sha256": "b7ca7cc5da438fda0defb35dc73af9d3004953cf3804de5987b62a07dfce93e1",
+      "verifiedEveryFileHash": true,
+      "includesAllSaveFiles": true,
+      "capturedAt": "2026-10-17T04:11:11.465613+02:00"
+    },
+    "finalArchive": {
+      "archive": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-rebuilt-2026-10-17\\ZYTALE_BLACKRIDGE_COLLINA_CAMPO.zip",
+      "files": 6003,
+      "bytes": 324168010,
+      "sha256": "35d757cce722a8e59bf36a817a1135497d1e44026e25bdcb10ce90a573dea2c2",
+      "allFileHashesAndCRCVerified": true,
+      "sourceRemainedUnchangedDuringPackaging": true,
+      "temporaryEditingBridgeExcluded": true,
+      "includesLatestPlayerData": true,
+      "effectiveMapViewDistanceBlocks": 608,
+      "capturedAt": "2026-10-17T04:33:51.721200+02:00"
+    },
+    "request": "Ricostruire la collina cancellata presso il grano: salita verde verso il campo, lato incavato verso esterno, foresta ed erba alta; rimuovere resti sospesi locali.",
+    "workDirectory": "C:\\Users\\User\\Desktop\\Zytale\\work\\farm-hill-rebuild-2026-10-17",
+    "verification": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-rebuilt-2026-10-17\\VERIFICA_COLLINA_CAMPO.json",
+    "geometry": {
+      "deletedTerrainBeforeTask": 181435,
+      "deletedBoundsXZ": [
+        -212,
+        48,
+        -39,
+        254
+      ],
+      "editedColumns": 16005,
+      "hillHeightRange": [
+        78,
+        117
+      ],
+      "fieldFacingRise": [
+        {
+          "z": 120,
+          "fieldSideHeight": 82,
+          "crestHeight": 105,
+          "riseOver30Blocks": 23
+        },
+        {
+          "z": 130,
+          "fieldSideHeight": 81,
+          "crestHeight": 105,
+          "riseOver30Blocks": 24
+        },
+        {
+          "z": 140,
+          "fieldSideHeight": 82,
+          "crestHeight": 105,
+          "riseOver30Blocks": 23
+        },
+        {
+          "z": 150,
+          "fieldSideHeight": 81,
+          "crestHeight": 105,
+          "riseOver30Blocks": 24
+        },
+        {
+          "z": 160,
+          "fieldSideHeight": 81,
+          "crestHeight": 106,
+          "riseOver30Blocks": 25
+        },
+        {
+          "z": 170,
+          "fieldSideHeight": 84,
+          "crestHeight": 108,
+          "riseOver30Blocks": 24
+        }
+      ],
+      "outerConcavity": "Shallow scallop open west, tied to existing ground; grassy inward slope continuous."
+    },
+    "metrics": {
+      "changedBlocks": 359218,
+      "newTrees": 186,
+      "oldTreesRemovedForReplanting": 46,
+      "newUndergrowth": {
+        "Plant_Grass_Lush_Tall": 13921,
+        "Plant_Fern_Forest": 1019,
+        "Plant_Bush_Green": 257
+      },
+      "hillColumns": 16005,
+      "heightRange": [
+        78,
+        117
+      ],
+      "floatingComponentsRemoved": 35,
+      "floatingBlocksRemoved": 814,
+      "floatingGroundCoverRemoved": 1,
+      "floatingComponentsRemaining": 0,
+      "groundedRootContacts": 448,
+      "maxModifiedDistanceFromPlayableHull": 537.5323246094136
+    },
+    "nativeVerification": {
+      "phase": "reopened",
+      "chunks": 40,
+      "cellsCompared": 13107200,
+      "changedBlocks": 359218,
+      "plannedChangedBlocks": 359218,
+      "protectedCellsCompared": 5657280,
+      "errors": [],
+      "clean": true
+    },
+    "nativeSupportAudit": {
+      "phase": "reopened",
+      "reconstructedColumnsSupportedToFoundation": 16005,
+      "unsupportedHillCells": 0,
+      "floatingComponentsInTargetArea": 0,
+      "floatingCellsInTargetArea": 0,
+      "floatingGroundCoverInTargetArea": 0,
+      "nativeRootContactsChecked": 448,
+      "unsupportedRootContacts": [],
+      "fieldFacingSections": [
+        {
+          "z": 120,
+          "fieldSideHeight": 82,
+          "crestHeight": 105,
+          "riseOver30Blocks": 23
+        },
+        {
+          "z": 130,
+          "fieldSideHeight": 81,
+          "crestHeight": 105,
+          "riseOver30Blocks": 24
+        },
+        {
+          "z": 140,
+          "fieldSideHeight": 82,
+          "crestHeight": 105,
+          "riseOver30Blocks": 23
+        },
+        {
+          "z": 150,
+          "fieldSideHeight": 81,
+          "crestHeight": 105,
+          "riseOver30Blocks": 24
+        },
+        {
+          "z": 160,
+          "fieldSideHeight": 81,
+          "crestHeight": 106,
+          "riseOver30Blocks": 25
+        },
+        {
+          "z": 170,
+          "fieldSideHeight": 84,
+          "crestHeight": 108,
+          "riseOver30Blocks": 24
+        }
+      ],
+      "maximumHillHeight": 117,
+      "newTrees": 186,
+      "clean": true
+    },
+    "dataPreservation": {
+      "regions": [
+        {
+          "region": "-1.0.region.bin",
+          "selected": 40,
+          "preMergeSha256": "c64f07fe784f9acee62792a249e536026d15aeeb9cfca0ac5057125707adba75",
+          "outputSha256": "5dc31bea73530f5e0322e1684265a44e31c52baa3670a99fca94545780c2b908"
+        }
+      ],
+      "selectedExistingChunks": 40,
+      "selectedNewChunks": 0,
+      "untouchedExistingRecordsByteIdentical": 984,
+      "originalForeignSectionComponentsPreserved": 2400,
+      "allEntityBlockComponentFluidEnvironmentHealthDataPreserved": true,
+      "onlyReplacedComponents": [
+        "Block",
+        "BlockPhysics",
+        "HeightmapColumn"
+      ]
+    },
+    "cleanup": {
+      "temporaryEditingBridgeRemoved": true,
+      "allExistingNonTerrainFilesByteIdenticalToLatestUserSave": true,
+      "existingNonTerrainFilesChecked": 5998,
+      "allPlayerFilesByteIdentical": true,
+      "worldSettingsRestoredByteExactly": true,
+      "effectiveMapViewDistanceBlocks": 608,
+      "clientPreferencesChanged": false,
+      "finalRegionsMatchVerifiedPreservationOutput": true
+    },
+    "evidence": {
+      "userReference": "codex-clipboard-d2986b40-83a3-4972-a039-5f57472b7b4d.png",
+      "newClientScreenshotsTaken": false,
+      "computerUsePerformed": false,
+      "nativeGeometryAndRestartVerified": true
+    },
+    "localTechniqueObservation": {
+      "status": "validated-in-this-save",
+      "method": "26-neighbor native solid connectivity with terrain at y74, crop boundary and protected construction as anchors; remove detached natural components only within authorized focus. Remove old vegetation before continuous foundation fill; replant native tree prefabs on final ground.",
+      "scope": "Localized hill and existing single-block ground cover in this Hytale save; no general guarantee for other worlds or multipart vegetation."
+    }
+  },
+  "farm_hill_adaptive_20261017": {
+    "status": "installed-verified-checkpointed",
+    "date": "2026-10-17T04:58:24.491763+02:00",
+    "workDirectory": "C:\\Users\\User\\Desktop\\Zytale\\work\\farm-hill-adaptive-2026-10-17",
+    "verification": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-adaptive-2026-10-17\\VERIFICA_ADAPTIVE_SURFACE.json",
+    "metrics": {
+      "changedBlocks": 10478,
+      "adaptiveSurfaces": 9835,
+      "nativeTopologyVariations": {
+        "M3": 2367,
+        "M7": 730,
+        "M2": 171,
+        "M4": 232,
+        "M6": 756,
+        "M14": 288,
+        "M12": 506,
+        "M9": 1521,
+        "M1": 656,
+        "M8": 468,
+        "M13": 931,
+        "M11": 1209
+      },
+      "nativeResolvedDifferencesFromSimpleCorners": 0,
+      "grassRelocated": 643,
+      "grassReplacedByGreenSlope": 7093,
+      "undergrowthWithinHillBefore": 13024,
+      "undergrowthWithinHillAfter": 5718,
+      "existingTreesAndTerrainUnchanged": true,
+      "protectedArchitectureUnchanged": true,
+      "supportedSurfacesVerified": 9835,
+      "onlyExistingMaterialsUsed": true,
+      "effectiveMapViewDistanceBlocks": 608
+    },
+    "nativeVerification": {
+      "phase": "reopened",
+      "chunks": 34,
+      "cellsCompared": 11141120,
+      "changedBlocks": 10478,
+      "plannedChangedBlocks": 10478,
+      "protectedCellsCompared": 3871360,
+      "errors": [],
+      "clean": true
+    },
+    "surfaceAudit": {
+      "phase": "reopened",
+      "nativeAdaptiveSurfacesChecked": 9835,
+      "relocatedPlantsSupportedByFullTerrain": 643,
+      "existingTreeCellsUnchanged": 55706,
+      "existingTerrainCellsUnchanged": 3336433,
+      "nativeTopologySource": "Installed ZytaleAdaptiveSurface-0.9.5.jar / com.zytale.adaptivesurface.Topology",
+      "errors": [],
+      "clean": true
+    },
+    "cleanup": {
+      "temporaryEditingBridgeRemoved": true,
+      "allExistingNonTerrainFilesByteIdenticalToLatestUserSave": true,
+      "existingNonTerrainFilesChecked": 6007,
+      "allPlayerFilesByteIdentical": true,
+      "worldSettingsRestoredByteExactly": true,
+      "effectiveMapViewDistanceBlocks": 608,
+      "clientPreferencesChanged": false,
+      "finalRegionsMatchVerifiedPreservationOutput": true
+    },
+    "checkpoint": {
+      "archive": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-adaptive-2026-10-17\\COLLINA_ADAPTIVE_SURFACE_DELTA.zip",
+      "baseArchive": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-rebuilt-2026-10-17\\ZYTALE_BLACKRIDGE_COLLINA_CAMPO.zip",
+      "baseSha256": "35d757cce722a8e59bf36a817a1135497d1e44026e25bdcb10ce90a573dea2c2",
+      "sha256": "c2d8272fc5b48ee0e3754d3d0ffd6a6c2f47b2e786e263a16402be0e18227b2f",
+      "files": 6012,
+      "changedFiles": [
+        "logs/2026-10-17_04-36-50_server.log",
+        "logs/2026-10-17_04-40-25_server.log",
+        "logs/2026-10-17_04-47-52_server.log",
+        "logs/2026-10-17_04-50-11_server.log",
+        "logs/2026-10-17_04-56-12_server.log",
+        "mods/AtmosphereTool_AtmosphereTool/global-atmosphere.json",
+        "mods/Zytale_AdaptiveSurface/appearances-v4/preload-report.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q005bf79d252709dfae1d65a78238e36c5079ff9efb716203226b2055a96c37d5.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q013897e247aff633896e8f2577cc6bbeb0966c2fab6ddb625603947994c924cf.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q04df49cff6ec34dbc2592acc9d240ff2cb8aba01a9a4b729f2082c79516d8cd1.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q0712cd2f1f8cd0e96d6f39fb92231cad1947cb90841df161ddd9bc54bb52f2e7.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q0d0ef2e5bcd2a8bf703d113a95dbdb7f5e1d773b3a2a148d472374ada0191161.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q0d8f0757e2beeae1d1332f88b3c6bed03a0e4efb939c4fb209a50e0860b9db37.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q117e7276fbb52ff003f1d886d444ed3aa1b3d1ba1b7b811fc2ced66506f6fbfb.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q128fc0fbd47be2249901f2774e52059c3cfea6d94527c022a543b9b812bbb9d2.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q23c6de0fecff61107b4fcc80600e6791dbb6dc929f5a04377dfe7b7078b5afc6.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q2825915f4356ae76756545f0ede20421767c7cb39430d0c8bf0ef31fe651e028.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q2a0db0a26957db380a3a3dce38dcffbcd17e5ac8c96ca0f2a87ed7d74f20ef1a.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q2af19178dc1650449f9ae92f4f52bb75b19c7d6622b1a67200c787cf0caba1ed.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q309b2997cb0818b68a49567963e156fb2fd851f8fbae788a5645e9ae0adcde65.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q39b43f51d5bd4a0b164a8d15edd00e371d0089b6c8ae441083c25586979ba3ff.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q3f0751fdd73871c71c5e357760584aa3c68432d86e05615098b0fef4a7ad70fc.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q42edf4ef3c37c7c5a787074d1d445eebe613488cca958a9ce422485cd5e4e568.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q4374650ae14c9af9ba9c4a0b09eb2ec2526cc2e14b0279f00f18076556493b8c.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q4d843a6149c2e5f0cf6f50128a6f515cc90a5e7101f48e880072a2776b292eeb.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q551bcf0d4af3c541d6e2249ae3dbc71af7223be999f102453b834dad090f61d2.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q561c86fa74300edd819d3d1ea70651725d628d585cd60d1c26fe83409afc4bc1.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q5ebcaa69704f7b1e2e24e12a23130f20a9a8d77c70e87be77751064b486d080d.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q6a170708e839543c1ddbd5f15a5c18b56b2e9b70cab5433ab0664d53b2d7ee49.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q78bcc67549fa154a53f93829ac4016c06a381a273b4116ac66cdd95e4aca4d18.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q7c614b75d07bf2bd42cd13da9fc820ad038c16d0577bae2afb14ef3754b70fcc.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q7fac9712e276157073e762d066854becc91bd13c153ff607d07b6f256fb210ea.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q7fe92b668d78087b6d371469d9943fb720c7c03bee922f745242e95385b3842d.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q8491f6d2799cf60588fe282fa58002ad0a4b0331f79a1039eb5ab5abfe3ff27a.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q8b4dfc9d6c039bbd7f5d34255ee063ca787fa8476973847745c2b2103b4dff7a.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q8d7abea3eb51c169507ff8861fb2241f6b01b3a2a9e1c3fc96d8098155921df0.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q8e9cfc4112e0f8f494c86c921cd1874309a4497bb9719324982c800888fce8f4.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q936c65a48ca1be28fb11c9b2f99837606c63f21eafbbf61e2223c59304700335.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q94248dea846fb04a541418a4cfc5de6f428e6b53c53e2d07a830264f6c902c31.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q98017bc0b971e591cba9294e2c163eba110f7a87e41781f478fdeb752efa5ac2.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qa19da88a67c135f08a9c48bb6b0dbdaebbca9ceac7b7c8cfb38fa1f2fda568e3.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qad3288cb4a48eb88e28278e89921dc794312681b567d3e1254521c958fde3d40.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qbab09ff94de96da5822aaac3c5e36413c22d698e3121970f06aa1cb52c2dc035.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qc64731ffc59d2dff4cc0537437bfa0f6bc1a65555c346279dc86a879db99228d.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qd569b930eb0d13a6bab673e0ee7176d1d84d2edb990c0e3f317fb63915130d05.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qd7bfdb4ecbd61dadb53087c7ebd1f479b650571e6d17dc585f68e7c19eb55c4c.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qe176649e4a298332dacebe0468ed3b34627de7b6857250928138f966fddbda9c.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qe8862a68300cb399ae33947f34604b673d5ee38a7b79019b934b79001429a73d.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qf8990367ff01bfd7049e708125f5f68e3e88bdb2119cba4e1bbd7e7c28f19a74.json",
+        "permissions.json",
+        "permissions.json.bak",
+        "preview.png",
+        "telemetry/2026-10-17_02-36-51_494393b4.jsonl.gz",
+        "telemetry/2026-10-17_02-40-26_d8c248f6.jsonl.gz",
+        "telemetry/2026-10-17_02-47-53_9eb34e6c.jsonl.gz",
+        "telemetry/2026-10-17_02-50-12_9940360b.jsonl.gz",
+        "telemetry/2026-10-17_02-56-13_1e73b556.jsonl.gz",
+        "universe/players/c9d17a8a-ffe0-4ccd-b640-5b0dc96d32c8.json",
+        "universe/players/c9d17a8a-ffe0-4ccd-b640-5b0dc96d32c8.json.bak",
+        "universe/worlds/default/chunks/-1.-1.region.bin",
+        "universe/worlds/default/chunks/-1.0.region.bin",
+        "universe/worlds/default/chunks/0.0.region.bin",
+        "universe/worlds/default/resources/Time.json",
+        "universe/worlds/default/resources/Time.json.bak"
+      ],
+      "deletedSinceBase": [
+        "telemetry/2026-10-10_02-13-27_c5e1acde.jsonl.gz"
+      ],
+      "allCurrentFilesRecoverableFromBaseAndDelta": true,
+      "verifiedEveryFileHash": true,
+      "bytes": 18704318,
+      "capturedAt": "2026-10-17T04:58:24.491763+02:00"
+    },
+    "backupBeforeTask": {
+      "archive": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-adaptive-2026-10-17\\BACKUP_PRIMA_ADAPTIVE_SURFACE_DELTA.zip",
+      "baseArchive": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-rebuilt-2026-10-17\\ZYTALE_BLACKRIDGE_COLLINA_CAMPO.zip",
+      "baseSha256": "35d757cce722a8e59bf36a817a1135497d1e44026e25bdcb10ce90a573dea2c2",
+      "sha256": "98d57abcfdbe2ce2f532fd2b51b6cb110d7147299fb4499c83be32c207c64133",
+      "files": 6008,
+      "changedFiles": [
+        "logs/2026-10-17_04-36-50_server.log",
+        "logs/2026-10-17_04-40-25_server.log",
+        "logs/2026-10-17_04-47-52_server.log",
+        "mods/AtmosphereTool_AtmosphereTool/global-atmosphere.json",
+        "mods/Zytale_AdaptiveSurface/appearances-v4/preload-report.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q005bf79d252709dfae1d65a78238e36c5079ff9efb716203226b2055a96c37d5.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q013897e247aff633896e8f2577cc6bbeb0966c2fab6ddb625603947994c924cf.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q04df49cff6ec34dbc2592acc9d240ff2cb8aba01a9a4b729f2082c79516d8cd1.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q0712cd2f1f8cd0e96d6f39fb92231cad1947cb90841df161ddd9bc54bb52f2e7.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q0d0ef2e5bcd2a8bf703d113a95dbdb7f5e1d773b3a2a148d472374ada0191161.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q0d8f0757e2beeae1d1332f88b3c6bed03a0e4efb939c4fb209a50e0860b9db37.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q117e7276fbb52ff003f1d886d444ed3aa1b3d1ba1b7b811fc2ced66506f6fbfb.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q128fc0fbd47be2249901f2774e52059c3cfea6d94527c022a543b9b812bbb9d2.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q23c6de0fecff61107b4fcc80600e6791dbb6dc929f5a04377dfe7b7078b5afc6.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q2825915f4356ae76756545f0ede20421767c7cb39430d0c8bf0ef31fe651e028.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q2a0db0a26957db380a3a3dce38dcffbcd17e5ac8c96ca0f2a87ed7d74f20ef1a.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q2af19178dc1650449f9ae92f4f52bb75b19c7d6622b1a67200c787cf0caba1ed.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q309b2997cb0818b68a49567963e156fb2fd851f8fbae788a5645e9ae0adcde65.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q39b43f51d5bd4a0b164a8d15edd00e371d0089b6c8ae441083c25586979ba3ff.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q3f0751fdd73871c71c5e357760584aa3c68432d86e05615098b0fef4a7ad70fc.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q42edf4ef3c37c7c5a787074d1d445eebe613488cca958a9ce422485cd5e4e568.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q4374650ae14c9af9ba9c4a0b09eb2ec2526cc2e14b0279f00f18076556493b8c.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q4d843a6149c2e5f0cf6f50128a6f515cc90a5e7101f48e880072a2776b292eeb.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q551bcf0d4af3c541d6e2249ae3dbc71af7223be999f102453b834dad090f61d2.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q561c86fa74300edd819d3d1ea70651725d628d585cd60d1c26fe83409afc4bc1.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q5ebcaa69704f7b1e2e24e12a23130f20a9a8d77c70e87be77751064b486d080d.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q6a170708e839543c1ddbd5f15a5c18b56b2e9b70cab5433ab0664d53b2d7ee49.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q78bcc67549fa154a53f93829ac4016c06a381a273b4116ac66cdd95e4aca4d18.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q7c614b75d07bf2bd42cd13da9fc820ad038c16d0577bae2afb14ef3754b70fcc.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q7fac9712e276157073e762d066854becc91bd13c153ff607d07b6f256fb210ea.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q7fe92b668d78087b6d371469d9943fb720c7c03bee922f745242e95385b3842d.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q8491f6d2799cf60588fe282fa58002ad0a4b0331f79a1039eb5ab5abfe3ff27a.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q8b4dfc9d6c039bbd7f5d34255ee063ca787fa8476973847745c2b2103b4dff7a.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q8d7abea3eb51c169507ff8861fb2241f6b01b3a2a9e1c3fc96d8098155921df0.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q8e9cfc4112e0f8f494c86c921cd1874309a4497bb9719324982c800888fce8f4.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q936c65a48ca1be28fb11c9b2f99837606c63f21eafbbf61e2223c59304700335.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q94248dea846fb04a541418a4cfc5de6f428e6b53c53e2d07a830264f6c902c31.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Q98017bc0b971e591cba9294e2c163eba110f7a87e41781f478fdeb752efa5ac2.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qa19da88a67c135f08a9c48bb6b0dbdaebbca9ceac7b7c8cfb38fa1f2fda568e3.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qad3288cb4a48eb88e28278e89921dc794312681b567d3e1254521c958fde3d40.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qbab09ff94de96da5822aaac3c5e36413c22d698e3121970f06aa1cb52c2dc035.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qc64731ffc59d2dff4cc0537437bfa0f6bc1a65555c346279dc86a879db99228d.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qd569b930eb0d13a6bab673e0ee7176d1d84d2edb990c0e3f317fb63915130d05.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qd7bfdb4ecbd61dadb53087c7ebd1f479b650571e6d17dc585f68e7c19eb55c4c.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qe176649e4a298332dacebe0468ed3b34627de7b6857250928138f966fddbda9c.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qe8862a68300cb399ae33947f34604b673d5ee38a7b79019b934b79001429a73d.json",
+        "mods/Zytale_AdaptiveSurface/Server/Item/Items/ZytaleAdaptiveSurface/Materials/ZAS_M_Qf8990367ff01bfd7049e708125f5f68e3e88bdb2119cba4e1bbd7e7c28f19a74.json",
+        "permissions.json",
+        "permissions.json.bak",
+        "preview.png",
+        "telemetry/2026-10-17_02-36-51_494393b4.jsonl.gz",
+        "telemetry/2026-10-17_02-40-26_d8c248f6.jsonl.gz",
+        "telemetry/2026-10-17_02-47-53_9eb34e6c.jsonl.gz",
+        "universe/players/c9d17a8a-ffe0-4ccd-b640-5b0dc96d32c8.json",
+        "universe/players/c9d17a8a-ffe0-4ccd-b640-5b0dc96d32c8.json.bak",
+        "universe/worlds/default/chunks/-1.-1.region.bin",
+        "universe/worlds/default/chunks/-1.0.region.bin",
+        "universe/worlds/default/chunks/0.0.region.bin",
+        "universe/worlds/default/resources/Time.json",
+        "universe/worlds/default/resources/Time.json.bak"
+      ],
+      "deletedSinceBase": [
+        "telemetry/2026-10-10_02-13-27_c5e1acde.jsonl.gz"
+      ],
+      "allCurrentFilesRecoverableFromBaseAndDelta": true,
+      "verifiedEveryFileHash": true,
+      "bytes": 18678337,
+      "capturedAt": "2026-10-17T04:49:47.215816+02:00"
+    },
+    "evidence": {
+      "reference": "codex-clipboard-451940d8-4deb-4616-adbf-705a4d16ffa5.png",
+      "nativeTopology": "ZytaleAdaptiveSurface-0.9.5.jar",
+      "newComputerUsePerformed": false,
+      "newClientScreenshotsTaken": false,
+      "performanceBenchmarkPerformed": false
+    },
+    "method": "Resolve existing slope cells with the installed native Topology implementation. Keep full terrain and all existing tree cells untouched. Add registered compact material variants above full soil; relocate some single-cell ground cover to nearby full soil and retain irregular grass clusters.",
+    "scope": "Local regenerated farm hill; not a new generalized terrain tool or benchmark.",
+    "userFeedback": {
+      "quotes": [
+        "Il risultato ottenuto davvero buono",
+        "Ottimo lavoro"
+      ],
+      "context": "Dopo la passata Adaptive Surface sulla collina; apprezzamento visivo espresso dall’utente, senza benchmark del client.",
+      "source": "Conversazione con l’utente del 17 ottobre 2026"
+    },
+    "githubReference": "memory/projects/zytale/references/farm-hill-adaptive-2026-10-17.md",
+    "technicalExperience": "SOL-000008:v003"
   }
 }
