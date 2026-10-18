@@ -22,6 +22,13 @@ def detect_novelty(
     scores = {item.id: item.score for item in matches}
     top = matches[0] if matches else None
 
+    if event in {"routine", "no_update", "no_new_learning"}:
+        return NoveltyResult(
+            decision="NO_MEMORY_UPDATE",
+            similar_experiences=identifiers,
+            similarity_scores=scores,
+            reasoning_summary="The input explicitly reports no durable new technical learning; do not create memory merely because work occurred.",
+        )
     if event in {"failure", "failed_attempt", "new_failure"} or spec.failed_attempt:
         if top and top.score >= config.novelty_threshold * 0.7:
             return NoveltyResult(

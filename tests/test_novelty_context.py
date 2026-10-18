@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+
 
 def test_novelty_near_identical_updates_existing(forge_app, world_experience):
     result = forge_app.novelty(
@@ -43,6 +45,11 @@ def test_novelty_solution_preserves_lineage(forge_app, world_experience):
     assert result["decision"] == "NEW_SOLUTION_VERSION"
 
 
+def test_novelty_can_explicitly_skip_routine_work(forge_app, world_experience):
+    result = forge_app.novelty({"text": "Routine rerun with no new findings", "event_type": "no_new_learning"})
+    assert result["decision"] == "NO_MEMORY_UPDATE"
+
+
 def test_context_contains_solution_failure_pattern_and_project(forge_app, world_experience):
     forge_app.add_solution_version(
         world_experience["id"],
@@ -76,3 +83,42 @@ def test_context_respects_small_budget(forge_app, world_experience):
     bundle = forge_app.context_builder.build("programmatic Hytale world modification")
     assert bundle.estimated_tokens <= 80
     assert bundle.truncated is True
+
+
+def test_context_summarizes_large_project_without_eating_budget(forge_app, world_experience):
+    forge_app.update_project(
+        "Demo",
+        {
+            "summary": "Current project status " * 100,
+            "decisions": ["Old detail " * 300 for _ in range(40)],
+            "historical_versions": ["prior release " * 1000 for _ in range(20)],
+        },
+    )
+    forge_app.rebuild_index()
+    bundle = forge_app.context_builder.build("programmatic Hytale world modification", "Demo")
+    assert bundle.estimated_tokens <= forge_app.config.context_token_budget
+    assert len(json.dumps(bundle.model_dump(mode="json"), indent=2, ensure_ascii=False)) <= 4 * forge_app.config.context_token_budget
+    assert len(forge_app.context_builder.to_markdown(bundle)) <= 4 * forge_app.config.context_token_budget
+    assert bundle.project_context["source_path"] == "memory/projects/demo/project.json"
+    assert bundle.project_context["details_omitted"] is True
+    assert "historical_versions" not in bundle.project_context
+    assert bundle.experiences[0]["id"] == world_experience["id"]
+
+
+def test_context_includes_linked_failure_and_latest_version(forge_app, world_experience):
+    preferred = forge_app.add_solution_version(
+        world_experience["id"], {"description": "Validated queue", "status": "preferred"}
+    )
+    forge_app.add_solution_version(
+        world_experience["id"],
+        {"id": preferred["id"], "description": "New unvalidated queue", "status": "experimental"},
+    )
+    failure = forge_app.register_failure(
+        world_experience["id"],
+        {"attempt": "Use a blue button", "reason_failed": "It obscures the result", "workaround": "Use a plain button"},
+    )
+    forge_app.rebuild_index()
+    bundle = forge_app.build_context("programmatic Hytale world modification")
+    assert bundle["experiences"][0]["preferred_solution"]["description"] == "Validated queue"
+    assert bundle["experiences"][0]["latest_solution"]["status"] == "experimental"
+    assert failure["id"] in [item["id"] for item in bundle["failures_to_avoid"]]

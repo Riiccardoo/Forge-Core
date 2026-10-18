@@ -9,6 +9,7 @@ from forge.config import ForgeConfig
 from forge.core.models import ContextBundle
 from forge.core.repository import FileMemoryRepository, RepositoryError
 from forge.core.retrieval import RetrievalEngine
+from forge.core.similarity import tokenize
 
 
 class ContextBuilder:
@@ -24,9 +25,11 @@ class ContextBuilder:
         failure_hits = self.retrieval.search(task, limit=max(3, limit), kinds={"failure"})
 
         experiences: list[dict[str, Any]] = []
+        known_failures_by_experience: dict[str, list[str]] = {}
         analogy_notes: list[str] = []
         for hit in experience_hits:
             value = self.repository.get_experience(hit.id)
+            known_failures_by_experience[value.id] = value.known_failures
             preferred = next(
                 (
                     item
@@ -35,6 +38,7 @@ class ContextBuilder:
                 ),
                 None,
             )
+            latest = max(value.solution_versions, key=lambda item: item.created_at, default=None)
             experiences.append(
                 {
                     "id": value.id,
@@ -42,12 +46,13 @@ class ContextBuilder:
                     "score": hit.score,
                     "problem_class": value.problem_class,
                     "capabilities": value.capabilities_required,
-                    "technologies": [*value.technologies, *value.engines, *value.languages],
-                    "preferred_solution": preferred.model_dump(mode="json") if preferred else None,
-                    "transferability": value.transferability,
+                    "technologies": [*value.technologies, *value.engines, *value.languages][:6],
+                    "preferred_solution": self._solution_summary(preferred),
+                    "latest_solution": self._solution_summary(latest) if latest != preferred else None,
+                    "transferability": self._shorten(value.transferability, 240),
                     "validation_status": value.validation_status,
                     "confidence": value.confidence,
-                    "source_refs": [item.model_dump(mode="json") for item in value.source_refs],
+                    "source_path": str(self.repository.find_experience_path(value.id).relative_to(self.config.root)),
                 }
             )
             if hit.analogy:
@@ -69,27 +74,41 @@ class ContextBuilder:
                 }
             )
 
+        # A relevant experience can carry a crucial failure even when the task
+        # wording does not lexically match that failure's title or description.
+        hit_scores = {hit.id: hit.score for hit in failure_hits}
+        linked_ids = []
+        for item in experiences[:2]:
+            known = known_failures_by_experience[item["id"]]
+            ranked = sorted(
+                enumerate(known),
+                key=lambda pair: (-hit_scores.get(pair[1], 0), -pair[0]),
+            )
+            linked_ids.extend(failure_id for _, failure_id in ranked[:2])
+        ordered_ids = list(dict.fromkeys([*linked_ids, *(hit.id for hit in failure_hits)]))
+        experience_scores = {item["id"]: item["score"] for item in experiences}
         failures = []
-        for hit in failure_hits:
-            value = self.repository.get_failure(hit.id)
+        for failure_id in ordered_ids:
+            value = self.repository.get_failure(failure_id)
             failures.append(
                 {
                     "id": value.id,
                     "experience_id": value.experience_id,
-                    "score": hit.score,
-                    "attempt": value.attempt,
-                    "reason_failed": value.reason_failed,
-                    "error_signature": value.error_signature,
-                    "conditions": value.conditions,
-                    "workaround": value.workaround,
+                    "score": hit_scores.get(failure_id, experience_scores.get(value.experience_id, 0) * 0.85),
+                    "attempt": self._shorten(value.attempt, 180),
+                    "reason_failed": self._shorten(value.reason_failed, 220),
+                    "workaround": self._shorten(value.workaround, 180),
                     "resolved_by": value.resolved_by,
+                    "source_path": f"memory/failures/{value.id}.json",
                 }
             )
 
         project_context = None
         if project:
             try:
-                project_context = self.repository.get_project(project).model_dump(mode="json")
+                project_context = self._project_summary(
+                    self.repository.get_project(project).model_dump(mode="json"), task
+                )
             except RepositoryError:
                 project_context = {"name": project, "status": "No project memory found"}
 
@@ -107,17 +126,91 @@ class ContextBuilder:
 
     def _fit_budget(self, bundle: ContextBundle) -> None:
         budget = self.config.context_token_budget
-        serialized = bundle.model_dump_json(exclude={"estimated_tokens", "truncated"})
-        estimate = max(1, len(serialized) // 4)
-        while estimate > budget and (bundle.failures_to_avoid or bundle.patterns or bundle.experiences):
+        estimate = self._estimate(bundle)
+        while estimate > budget:
             bundle.truncated = True
-            collections = [bundle.experiences, bundle.failures_to_avoid, bundle.patterns]
-            largest = max(collections, key=lambda value: len(json.dumps(value, default=str)))
-            if largest:
-                largest.pop()
-            serialized = bundle.model_dump_json(exclude={"estimated_tokens", "truncated"})
-            estimate = max(1, len(serialized) // 4)
+            if len(bundle.experiences) > 1:
+                removed = bundle.experiences.pop()
+                bundle.analogy_notes = [
+                    note for note in bundle.analogy_notes if not note.startswith(f"{removed['id']}:")
+                ]
+            elif len(bundle.failures_to_avoid) > 2:
+                bundle.failures_to_avoid.pop()
+            elif len(bundle.patterns) > 1:
+                bundle.patterns.pop()
+            elif bundle.project_context and any(
+                bundle.project_context.get(field)
+                for field in ("decisions", "constraints", "technologies", "experience_refs", "summary")
+            ):
+                for field in ("decisions", "constraints", "technologies", "experience_refs", "summary"):
+                    if bundle.project_context.get(field):
+                        bundle.project_context.pop(field)
+                        break
+            elif len(bundle.failures_to_avoid) > 1:
+                bundle.failures_to_avoid.pop()
+            elif bundle.patterns:
+                bundle.patterns.pop()
+            elif bundle.project_context:
+                bundle.project_context = None
+            elif bundle.failures_to_avoid:
+                bundle.failures_to_avoid.pop()
+            elif bundle.experiences:
+                removed = bundle.experiences.pop()
+                bundle.analogy_notes = [
+                    note for note in bundle.analogy_notes if not note.startswith(f"{removed['id']}:")
+                ]
+            elif bundle.analogy_notes:
+                bundle.analogy_notes.pop()
+            elif bundle.task:
+                bundle.task = bundle.task[: max(0, len(bundle.task) - 40)]
+            else:
+                break
+            estimate = self._estimate(bundle)
         bundle.estimated_tokens = estimate
+
+    @staticmethod
+    def _shorten(value: str, limit: int) -> str:
+        return value if len(value) <= limit else value[: limit - 1].rstrip() + "…"
+
+    @classmethod
+    def _solution_summary(cls, solution: Any) -> dict[str, Any] | None:
+        if solution is None:
+            return None
+        return {
+            "id": f"{solution.id}:v{solution.version:03d}",
+            "description": cls._shorten(solution.description, 300),
+            "status": solution.status,
+            "test_results": [cls._shorten(item, 140) for item in solution.test_results[:2]],
+        }
+
+    @classmethod
+    def _project_summary(cls, project: dict[str, Any], task: str) -> dict[str, Any]:
+        task_terms = tokenize(task)
+
+        def relevant(values: list[str], count: int) -> list[str]:
+            ranked = sorted(
+                enumerate(values),
+                key=lambda pair: (-len(task_terms & tokenize(pair[1])), pair[0]),
+            )
+            return [cls._shorten(value, 180) for _, value in ranked[:count]]
+
+        return {
+            "id": project["id"],
+            "name": project["name"],
+            "summary": cls._shorten(project.get("summary", ""), 400),
+            "technologies": relevant(project.get("technologies", []), 3),
+            "constraints": relevant(project.get("constraints", []), 3),
+            "decisions": relevant(project.get("decisions", []), 2),
+            "experience_refs": project.get("experience_refs", [])[:5],
+            "source_path": f"memory/projects/{project['id']}/project.json",
+            "details_omitted": True,
+        }
+
+    @classmethod
+    def _estimate(cls, bundle: ContextBundle) -> int:
+        markdown_size = len(cls.to_markdown(bundle))
+        json_size = len(json.dumps(bundle.model_dump(mode="json"), indent=2, ensure_ascii=False))
+        return max(1, (max(markdown_size, json_size) + 3) // 4)
 
     @staticmethod
     def to_markdown(bundle: ContextBundle) -> str:
@@ -133,9 +226,14 @@ class ContextBuilder:
             lines.append(f"- Technologies: {', '.join(item['technologies']) or 'technology-independent'}")
             lines.append(f"- Validation: {item['validation_status']} (confidence {item['confidence']:.2f})")
             if item["preferred_solution"]:
-                lines.append(f"- Preferred solution: {item['preferred_solution']['description']}")
+                solution = item["preferred_solution"]
+                lines.append(f"- Preferred solution {solution['id']} ({solution['status']}): {solution['description']}")
+            if item["latest_solution"]:
+                solution = item["latest_solution"]
+                lines.append(f"- Latest solution {solution['id']} ({solution['status']}): {solution['description']}")
             if item["transferability"]:
                 lines.append(f"- Transferability: {item['transferability']}")
+            lines.append(f"- Details: {item['source_path']}")
             lines.append("")
         lines.extend(["## Failures to avoid", ""])
         if not bundle.failures_to_avoid:
@@ -144,6 +242,7 @@ class ContextBuilder:
             lines.append(f"- **{item['id']}**: {item['attempt']} — {item['reason_failed']}")
             if item["workaround"]:
                 lines.append(f"  Workaround: {item['workaround']}")
+            lines.append(f"  Details: {item['source_path']}")
         lines.extend(["", "## Transferable patterns", ""])
         if not bundle.patterns:
             lines.append("No pertinent pattern recorded.")
@@ -153,7 +252,7 @@ class ContextBuilder:
             lines.extend(["", "## Cross-technology cautions", ""])
             lines.extend(f"- {note}" for note in bundle.analogy_notes)
         if bundle.project_context:
-            lines.extend(["", "## Project context", "", "```json", json.dumps(bundle.project_context, indent=2), "```"])
+            lines.extend(["", "## Project context (summary; open source only if needed)", "", "```json", json.dumps(bundle.project_context, ensure_ascii=False), "```"])
         lines.extend(["", f"_Estimated tokens: {bundle.estimated_tokens}; truncated: {str(bundle.truncated).lower()}_"])
         return "\n".join(lines) + "\n"
 

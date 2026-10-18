@@ -1,0 +1,55 @@
+{
+  "id": "PAT-000001",
+  "name": "Validate each asset consumer contract separately",
+  "description": "When one authored asset has inventory, held-item and placed-world consumers, validate the size, path, model and rendering contract of each consumer independently before bulk production or release. A server load or a correct PNG does not prove client acceptance.",
+  "problem_classes": [
+    "multi-consumer asset integration",
+    "game client asset validation"
+  ],
+  "applicable_domains": [
+    "game asset authoring",
+    "client/server integration"
+  ],
+  "conditions": [
+    "One source design is exported to more than one runtime consumer",
+    "Consumers have different native schema, size or renderer constraints"
+  ],
+  "tradeoffs": [
+    "Requires a small client-facing pilot in addition to static/server checks",
+    "Exact dimensions and paths remain engine- and version-specific"
+  ],
+  "evidence": [
+    {
+      "kind": "failure",
+      "reference": "memory/failures/FAIL-000021.json",
+      "description": "Placed structural atlas was rejected as an item texture",
+      "verified": true
+    },
+    {
+      "kind": "failure",
+      "reference": "memory/failures/FAIL-000025.json",
+      "description": "Preview-sized inventory icon was clipped",
+      "verified": true
+    },
+    {
+      "kind": "failure",
+      "reference": "memory/failures/FAIL-000041.json",
+      "description": "Vegetation repeated both consumer-contract mistakes",
+      "verified": true
+    }
+  ],
+  "related_experiences": [
+    "EXP-000004",
+    "EXP-000012"
+  ],
+  "confidence": 0.8,
+  "status": "validated",
+  "created_at": "2026-10-18T17:02:35.439639Z",
+  "updated_at": "2026-10-18T17:02:35.439639Z",
+  "tags": [
+    "asset contract",
+    "client validation",
+    "item icon",
+    "placed model"
+  ]
+}

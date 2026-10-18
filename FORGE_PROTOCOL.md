@@ -47,3 +47,9 @@ Usa `forge propose-update --file proposal.json` o `forge_propose_update`. Specif
 ## Evidenza e validazione
 
 Una fonte usa `kind`, `reference`, `description`, `verified`. I riferimenti possono indicare file, commit, issue, URL, test o conversazioni. Le fasi ammesse sono `observation`, `experimental`, `validated`, `stable`, `deprecated`.
+
+## Evitare memoria e costi inutili
+
+Prima di scrivere chiediti se il fatto cambierebbe una decisione futura. Un'attività di routine senza nuova conoscenza non richiede una voce; `forge novelty --event-type no_new_learning` restituisce `NO_MEMORY_UPDATE` se questa valutazione è esplicita. Non usare l'assenza di risultati nella ricerca come prova sufficiente per creare una nuova esperienza.
+
+Mantieni il riepilogo di progetto breve e corrente; sposta storia, report estesi e artefatti in riferimenti specifici, senza perdere la fonte. Per ogni lavoro importante registra, quando disponibili, tempo, chiamate, revisioni, consumo di crediti e versione approvata. Distingui costo dell'agente da costo o prestazioni della soluzione tecnica. Non inventare numeri e non attribuire causalità ai feedback senza verifica. Vedi `docs/WORK_EFFICIENCY.md`.

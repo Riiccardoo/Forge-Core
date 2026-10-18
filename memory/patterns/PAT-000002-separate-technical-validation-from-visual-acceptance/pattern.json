@@ -1,0 +1,64 @@
+{
+  "id": "PAT-000002",
+  "name": "Separate technical validation from visual acceptance",
+  "description": "For visual deliverables, establish technical validity and user-visible quality as distinct gates. Test one representative result in the real renderer or viewer, request feedback before multiplying variants, and preserve the accepted baseline during later changes.",
+  "problem_classes": [
+    "visual asset acceptance",
+    "renderer-dependent design"
+  ],
+  "applicable_domains": [
+    "game visuals",
+    "image generation",
+    "architectural reconstruction"
+  ],
+  "conditions": [
+    "The result is judged by appearance or design fidelity",
+    "Static, structural or server tests cannot reproduce the user's final view"
+  ],
+  "tradeoffs": [
+    "A pilot and feedback step can delay batch production",
+    "User approval applies to the tested version and view, not all future environments"
+  ],
+  "evidence": [
+    {
+      "kind": "failure",
+      "reference": "memory/failures/FAIL-000016.json",
+      "description": "Transparent glass passed technical checks but failed visual acceptance",
+      "verified": true
+    },
+    {
+      "kind": "failure",
+      "reference": "memory/failures/FAIL-000017.json",
+      "description": "Structurally validated house was rejected for design quality",
+      "verified": true
+    },
+    {
+      "kind": "failure",
+      "reference": "memory/failures/FAIL-000024.json",
+      "description": "Discrete fog carriers failed visual continuity despite functional integration",
+      "verified": true
+    },
+    {
+      "kind": "project_reference",
+      "reference": "memory/projects/zytale/references/landscape-360-2026-10-16.md",
+      "description": "Approved baseline and three-view visual acceptance were preserved",
+      "verified": true
+    }
+  ],
+  "related_experiences": [
+    "EXP-000003",
+    "EXP-000007",
+    "EXP-000009",
+    "EXP-000012"
+  ],
+  "confidence": 0.8,
+  "status": "validated",
+  "created_at": "2026-10-18T17:02:36.157971Z",
+  "updated_at": "2026-10-18T17:02:36.157971Z",
+  "tags": [
+    "visual acceptance",
+    "pilot",
+    "preserve baseline",
+    "client review"
+  ]
+}

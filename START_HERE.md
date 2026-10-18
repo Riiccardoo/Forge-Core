@@ -8,9 +8,9 @@ Forge è una memoria tecnica condivisa. La source of truth è sotto `memory/`; `
 2. Esegui `forge doctor`.
 3. Cerca con `forge search "descrizione concreta del task"`.
 4. Costruisci un bundle con `forge context "task" --project <progetto>`.
-5. Apri soltanto le capsule, i pattern e i failure segnalati come pertinenti.
+5. Apri soltanto le capsule, i pattern e i failure segnalati come pertinenti, inclusi i failure collegati alle esperienze principali.
 
-Non caricare l’intera memoria in chat. Parti dal context bundle e approfondisci solo gli ID necessari.
+Non caricare l’intera memoria in chat. Il context bundle contiene una sintesi del progetto e riferimenti ai dettagli: apri il file completo solo quando il task lo richiede. La versione preferita e la versione più recente possono differire; confronta stato ed evidenza prima di scegliere.
 
 ## Come leggere i risultati
 
@@ -29,5 +29,5 @@ Puoi usare `python -m forge.cli ...` dalla root. In ultima istanza cerca in `mem
 
 ## Dopo un lavoro significativo
 
-Registra soltanto conoscenza osservata o verificata. Usa `forge novelty` per scegliere tra nuova esperienza, aggiornamento, nuova versione, failure, pattern o aggiornamento progetto. Non elevare una singola osservazione a `stable`.
+Registra soltanto conoscenza osservata o verificata. Usa `forge novelty` per scegliere tra nuova esperienza, aggiornamento, nuova versione, failure, pattern, aggiornamento progetto o nessun aggiornamento (`--event-type no_new_learning`). Non elevare una singola osservazione a `stable`. Per lavori visivi, distingui i controlli tecnici dall'accettazione dell'utente; per i costi, registra solo misure disponibili e consulta `docs/WORK_EFFICIENCY.md`.
 

@@ -204,6 +204,7 @@ class NoveltyResult(ForgeModel):
         "NEW_FAILURE",
         "NEW_PATTERN",
         "PROJECT_ONLY_UPDATE",
+        "NO_MEMORY_UPDATE",
     ]
     similar_experiences: list[str] = Field(default_factory=list)
     similarity_scores: dict[str, float] = Field(default_factory=dict)

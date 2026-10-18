@@ -13,7 +13,7 @@ La memoria canonica è composta da JSON e Markdown sotto `memory/`. SQLite FTS5 
 - retrieval ibrido FTS5 + matching strutturato;
 - analogie cross-technology guidate soprattutto dalle capacità;
 - Novelty Detector con decisioni verificabili;
-- context bundle concisi in JSON o Markdown, con budget approssimato;
+- context bundle concisi in JSON o Markdown, con riepilogo del progetto e budget applicato anche al contesto di progetto;
 - memoria di progetto separata dalla conoscenza trasferibile;
 - proposte di evoluzione del codice senza auto-modifica;
 - CLI senza servizi cloud e server MCP ufficiale.
@@ -168,7 +168,8 @@ L’interfaccia `SemanticBackend` è disponibile per futuri embeddings, ma Forge
 - `NEW_SOLUTION_VERSION`;
 - `NEW_FAILURE`;
 - `NEW_PATTERN`;
-- `PROJECT_ONLY_UPDATE`.
+- `PROJECT_ONLY_UPDATE`;
+- `NO_MEMORY_UPDATE` quando `event_type` segnala esplicitamente l'assenza di nuovo apprendimento durevole.
 
 La motivazione riporta ID, score e soglia; non contiene ragionamento interno del modello. Per distinguere failure, pattern o conoscenza solo progettuale, usare `event_type` o le opzioni CLI corrispondenti.
 

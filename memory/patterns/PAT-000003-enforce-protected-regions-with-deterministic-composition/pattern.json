@@ -1,0 +1,55 @@
+{
+  "id": "PAT-000003",
+  "name": "Enforce protected regions with deterministic composition",
+  "description": "When generated output may alter areas that must remain unchanged, keep the approved source as the base and merge only explicitly permitted regions or state transitions. Verify protected areas after composition, rather than relying on instructions to the generator alone.",
+  "problem_classes": [
+    "protected-region generation",
+    "scoped state mutation"
+  ],
+  "applicable_domains": [
+    "image editing",
+    "procedural world modification"
+  ],
+  "conditions": [
+    "Some source regions or state must remain unchanged",
+    "A generator or bulk transform can rewrite more than the permitted scope"
+  ],
+  "tradeoffs": [
+    "Requires explicit masks or desired-state rules and comparison checks",
+    "Different media need different composition and boundary validation"
+  ],
+  "evidence": [
+    {
+      "kind": "failure",
+      "reference": "memory/failures/FAIL-000029.json",
+      "description": "Generated panorama changed pixels outside the allowed terrain",
+      "verified": true
+    },
+    {
+      "kind": "failure",
+      "reference": "memory/failures/FAIL-000028.json",
+      "description": "Terrain operation ordering erased newly placed soil",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "memory/projects/zytale/references/landscape-360-2026-10-16/near-validation.json",
+      "description": "Protected pixels verified after final composition",
+      "verified": true
+    }
+  ],
+  "related_experiences": [
+    "EXP-000009",
+    "EXP-000008"
+  ],
+  "confidence": 0.7,
+  "status": "experimental",
+  "created_at": "2026-10-18T17:02:36.895952Z",
+  "updated_at": "2026-10-18T17:02:36.895952Z",
+  "tags": [
+    "protected regions",
+    "composition",
+    "desired state",
+    "regression check"
+  ]
+}
