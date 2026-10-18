@@ -1,0 +1,31 @@
+{
+  "id": "FAIL-000040",
+  "experience_id": "EXP-000012",
+  "attempt": "Represent root buttresses as narrow curved beams with a final tip near the ground, and treat endpoint contact as sufficient grounding.",
+  "reason_failed": "The user screenshot showed open space between root, trunk base and soil. Thin beam centerlines could reach the terrain while the visible root lacked a filled volume underneath.",
+  "environment": {
+    "assetPack": "ZytaleBuldingsAndFurnishment 1.5.0"
+  },
+  "error_signature": "Visible air under and beside root buttress in the user client screenshot",
+  "conditions": [
+    "Root body represented by thin diagonal beams",
+    "Only endpoints and model validity checked, without testing vertical support beneath the exposed root"
+  ],
+  "workaround": "Use intersecting filled root volumes that overlap the trunk and terrain; validate sampled exposed columns down to the ground plane and inspect terrain-clipped model views.",
+  "resolved_by": "SOL-000012:v005",
+  "date": "2026-10-18T15:28:10.428965Z",
+  "source_refs": [
+    {
+      "kind": "user_feedback",
+      "reference": "C:/Users/User/AppData/Local/Temp/codex-clipboard-944e8bb5-02ba-41fe-a201-cc552bde1c70.png",
+      "description": "User-provided root gap screenshot",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6\\ground-and-icons.json",
+      "description": "Filled root grounding checks",
+      "verified": true
+    }
+  ]
+}

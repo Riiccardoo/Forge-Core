@@ -1,0 +1,622 @@
+{
+  "id": "EXP-000012",
+  "title": "Concept-pixel vegetation with continuous bark mapping and separate native wind foliage",
+  "summary": "User-approved HD conifers and native grass copies with 64x64 inventory icons, compact item-only atlases and a fixed 22.5-degree grass-grid yaw. Native creation/reload verified; the 1.6.1 visual result was approved by the user.",
+  "status": "active",
+  "created_at": "2026-10-18T12:26:30.440253Z",
+  "updated_at": "2026-10-18T16:32:19.614784Z",
+  "domains": [
+    "game asset authoring",
+    "source image provenance",
+    "native foliage animation"
+  ],
+  "technologies": [
+    "Hytale 0.7.2",
+    "Blockbench 5.2.2",
+    "Hytale plugin 0.11.0"
+  ],
+  "engines": [
+    "Hytale"
+  ],
+  "languages": [
+    "Python",
+    "Java",
+    "JavaScript"
+  ],
+  "tools": [
+    "Blockbench MCP",
+    "native Hytale server"
+  ],
+  "problem_class": "reference-pixel texture mapping and branch-only native wind on custom trees",
+  "problem_description": "The user requested a separate trial using actual concept pixels, then rejected the vanilla Fir geometry but liked its wind effect. Applying a photographed bark panel to each short trunk segment repeated the photographed trunk silhouette/background and caused discontinuities. Applying block-wide Wind to a monolithic tree would not isolate the foliage.",
+  "context": "User reports invisible 1.6 icons and requests grass grid slightly skewed relative to the block. Reuse existing FAIL-000025 native 64px icon rule and FAIL-000021 item-texture isolation. Same EXP-000012 asset lineage; installed only in backed-up QA world. On 2026-10-18 the user approved the 1.6.1 appearance before requesting unified mod packaging.",
+  "capabilities_required": [
+    "source pixel provenance",
+    "alpha cutout",
+    "UV mapping",
+    "multi-block prefab authoring",
+    "native shader packet inspection",
+    "isolated create/reload"
+  ],
+  "inputs": [],
+  "outputs": [],
+  "constraints": [
+    "Do not invent detail while claiming original pixels",
+    "Use only native Wind effect on foliage",
+    "Preserve prior assets and production save",
+    "255 nodes per native model; combined prefab preview may contain more",
+    "Client rendering and FPS cannot be inferred from headless tests"
+  ],
+  "known_attempts": [],
+  "known_failures": [
+    "FAIL-000037",
+    "FAIL-000038",
+    "FAIL-000039",
+    "FAIL-000040",
+    "FAIL-000041"
+  ],
+  "current_solution": "SOL-000012:v006",
+  "solution_versions": [
+    {
+      "id": "SOL-000012",
+      "version": 1,
+      "description": "Copy source RGB into an atlas with alpha-only isolation, map a clean bark interior with continuous world-height phase, trace the woody spine beneath its matching photo pixels, and separate static wood from native Wind foliage in a two-block prefab.",
+      "changes": [
+        "Preserve first trial before refinement",
+        "Exclude photographed background from bark mapping; reuse only original central bark texels",
+        "Use 44 traced five-segment tapered branches",
+        "Use 240-node wood and 157-node foliage components; adjacent canopy root avoids tall trunk filler cells",
+        "Load texture bytes and await image load before editable source export",
+        "Check native effect and network packet independently; missing effect becomes packet None",
+        "Require fresh phase-specific success report after each server run"
+      ],
+      "advantages": [
+        "Exact source colour provenance",
+        "Static trunk with native foliage wind configuration",
+        "No helper required in shipped asset pack",
+        "Preserves old models and approved grass texture"
+      ],
+      "disadvantages": [
+        "Original concept crop blur is retained",
+        "Alpha cards still need client overdraw and wind review",
+        "Two-block prefab must be placed as a complete assembly",
+        "Fine branch structure increases total geometry compared with the earlier trial"
+      ],
+      "test_results": [
+        "Both native components pass Blockbench Hytale validation with no issues",
+        "Every atlas patch RGB matches its source coordinates",
+        "11 resolved assets and 36 placements persist after Hytale 0.7.2 restart",
+        "Wind present in canopy packet only; wood packet None",
+        "22 original tree-related files and grass texture preserved",
+        "Closed QA save backed up; installed asset archive and four chunk region files verified"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null,
+        "woodNodes": 240,
+        "foliageNodes": 157,
+        "assembledNodes": 397,
+        "atlasPixels": [
+          1024,
+          1024
+        ],
+        "clientFPS": "UNVERIFIED",
+        "clientAnimation": "UNVERIFIED; user handles visual review"
+      },
+      "created_at": "2026-10-18T12:28:54.457088Z",
+      "supersedes": null,
+      "status": "working"
+    },
+    {
+      "id": "SOL-000012",
+      "version": 2,
+      "description": "Refine the approved concept-pixel tree with interleaved upper boughs and four independent continuous bark strips while preserving source RGB, existing geometry, native wind separation and a full prior-version archive.",
+      "changes": [
+        "Archive approved 1.3.1 model, pack, textures and evidence before revision",
+        "Preserve all 157 previous canopy cards; add 72 cards to shorter, 45-degree interleaved upper boughs in opposite pairs",
+        "Keep approved front bark; map three other continuous source crops on the remaining faces",
+        "Verify distinct source hashes and exact source RGB for all four bark sides",
+        "Keep the 1024-square atlas and 240 wood nodes; canopy grows to 229 nodes within the native 255-node limit"
+      ],
+      "advantages": [
+        "Exact source colour provenance",
+        "Static trunk with native foliage wind configuration",
+        "No helper required in shipped asset pack",
+        "Preserves old models and approved grass texture"
+      ],
+      "disadvantages": [
+        "Original concept crop blur is retained",
+        "Alpha cards still need client overdraw and wind review",
+        "Two-block prefab must be placed as a complete assembly",
+        "Fine branch structure increases total geometry compared with the earlier trial"
+      ],
+      "test_results": [
+        "Both native components pass Hytale Blockbench validation",
+        "157 original canopy surfaces and all old trunk/branch positions unchanged",
+        "All four bark crops distinct; atlas RGB exactly matches source coordinates",
+        "11 assets and 36 placements pass native create/reload; Wind only on canopy",
+        "Only five intended runtime archive files change; all other entries remain identical",
+        "Installed QA archive matches checked package; complete prior QA backup; production map not written"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null,
+        "woodNodes": 240,
+        "foliageNodes": 229,
+        "newUpperCards": 72,
+        "originalCanopyCardsPreserved": 157,
+        "atlasPixels": [
+          1024,
+          1024
+        ],
+        "barkFaces": 4,
+        "clientFPS": "UNVERIFIED",
+        "userFeedback": "1.3.1 called an excellent result; 1.3.2 requested refinement pending user review"
+      },
+      "created_at": "2026-10-18T12:52:42.043412Z",
+      "supersedes": "SOL-000012:v001",
+      "status": "working"
+    },
+    {
+      "id": "SOL-000012",
+      "version": 3,
+      "description": "Use visually independent HD bark elaborations after overlapping crops were rejected, add attached needle sprays at every branch tier, and clone the corrected tree with a palette-only dark foliage grade preserving geometry and alpha.",
+      "changes": [
+        "Archive 1.3.2 before edits; retain normal and dark as separate IDs",
+        "Generate three independent bark panels and an HD front requested subsequently; preserve per-face continuous vertical UV phase",
+        "Add 208 small attached needle sprays across all 104 bough pairs",
+        "Split native tree into static Wood 240 nodes, Wind Canopy 229, Wind Needles 208",
+        "Explicitly set all shapes to standard shading, with no emitted light",
+        "Transfer the imagegen dark study palette while preserving original needle contours and shading; protect bark and warm woody pixels"
+      ],
+      "advantages": [
+        "All four bark faces have visibly independent motifs",
+        "Identical normal/dark geometry and alpha checked byte-for-byte",
+        "Native per-component node limit respected",
+        "Prior versions and original grass texture preserved"
+      ],
+      "disadvantages": [
+        "More foliage geometry and one extra prefab component increase rendering cost; FPS not benchmarked",
+        "Generated bark is an interpretation of the concept, not original RGB",
+        "User owns final client shadow and visual review"
+      ],
+      "test_results": [
+        "Six components pass Hytale Blockbench validation",
+        "677 nodes in each assembly; normal/dark native model files identical",
+        "Original leaf texture retained in normal; dark alpha and bark unchanged",
+        "15 assets and 44 placements verified at creation and after reload, with rotations, Wind packets and no emitted light",
+        "Only ConceptPixels resources and manifest changed; old trees/grass preserved",
+        "Backed-up closed QA world installed; production map not written"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null,
+        "woodNodes": 240,
+        "canopyNodes": 229,
+        "needleNodes": 208,
+        "assembledNodes": 677,
+        "newNeedleCards": 208,
+        "atlases": 2,
+        "atlasDimensions": [
+          2048,
+          1024
+        ],
+        "clientFPS": "UNVERIFIED"
+      },
+      "created_at": "2026-10-18T13:32:15.391915Z",
+      "supersedes": "SOL-000012:v002",
+      "status": "working"
+    },
+    {
+      "id": "SOL-000012",
+      "version": 4,
+      "description": "Retain the user-approved 1.4 conifer geometry and atlases, add four continuous side-mapped roots, supply six scaled/color tree items plus three center-dense folded grass items, and assemble native multipart trees through a guarded ordinary placement pipeline.",
+      "changes": [
+        "Replace four old root boxes with sixteen curved segments using their corresponding trunk-side bark strip",
+        "Retain approved tree textures and crown; scale three sizes and keep normal/dark geometry identical",
+        "Replace full grass clump planes with 54 individual folded curved blades and six seed stems; center-bias root distribution",
+        "Expose nine complete inventory items with whole-plant handheld miniatures; hide twelve internal foliage items",
+        "Integrate native whole-tree placement and owned-part removal in the existing pack identifier; no periodic world scan",
+        "Remove obsolete prototypes from active library and Blockbench; preserve separate recovery archives",
+        "Ship JAR including plugin; verify rebuilding from library source reproduces all packaged entry bytes"
+      ],
+      "advantages": [
+        "Approved visual baseline preserved",
+        "One native placement action consumes one item and checks obstacles and cancelled events",
+        "Four root textures follow the corresponding bark side",
+        "All exported native components stay below 256 nodes",
+        "Final editor library and inventory contain only requested vegetation variants"
+      ],
+      "disadvantages": [
+        "Three internal blocks per tree require the bundled plugin and free anchor cells",
+        "Individual grass leaves are folded thin surfaces, not closed solid geometry",
+        "HD grass blades are generated interpretations of the approved reference, not original pixels",
+        "Final 1.5 client visuals and FPS remain user-reviewed; native technical checks are not visual approval"
+      ],
+      "test_results": [
+        "User explicitly approved 1.4 as the best result; this feedback does not pre-approve 1.5",
+        "30 native model validations passed",
+        "180 create and 147 reload checks; 21 assets and 75 placed parts represent 27 whole objects",
+        "All six tree variants tested at four cardinal rotations; native positive 90 degrees maps +X to -Z",
+        "Ordinary placement consumes one, creative consumes none; obstruction and cancelled events prevent placement without consuming",
+        "Root removal clears matching owned foliage and preserves foreign edits",
+        "Full QA backup, five installed files verified; player/config hashes preserved, main map untouched",
+        "Rebuild content exactly matches distributed JAR: 176 entries"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null,
+        "completeInventoryItems": 9,
+        "treeVariants": 6,
+        "grassVariants": 3,
+        "treeNodes": 689,
+        "woodNodes": 252,
+        "canopyNodes": 229,
+        "needleNodes": 208,
+        "grassBlades": 54,
+        "grassSeedStems": 6,
+        "grassNodes": 252,
+        "nativeValidatedModels": 30,
+        "createChecks": 180,
+        "reloadChecks": 147,
+        "clientFPS": "UNVERIFIED"
+      },
+      "created_at": "2026-10-18T14:46:49.041024Z",
+      "supersedes": "SOL-000012:v003",
+      "status": "working"
+    },
+    {
+      "id": "SOL-000012",
+      "version": 5,
+      "description": "Fill widened trunk-side root volumes through the terrain plane; replace rejected custom grass geometry with the exact native eight-plane grids selected from the player hotbar, remapped to unchanged approved texture pixels; ship twelve branded English whole-item names and native-model icons.",
+      "changes": [
+        "Replace thin root segments with overlapping filled sloped prisms rooted through Y0; preserve crown geometry and trunk-side bark source",
+        "Read native Wet Overgrown and Wet Wild IDs from hotbar slots 8 and 9, then duplicate their physical plane transforms and hierarchy",
+        "Remap both halves of unchanged GrassAtlas to native surfaces; compensate UV-sized quads with inverse stretch to preserve actual geometry",
+        "Keep existing three grass IDs for Dense Grass, add three Wild Grass IDs, use three uniform sizes per family",
+        "Use short English names prefixed Zytale and new transparent icons derived from actual models",
+        "Hide internal tree components with native Template quality; install only the JAR, preserving all world chunks and inventory"
+      ],
+      "advantages": [
+        "Native grid verified at actual imported mesh vertices",
+        "Approved texture files remain byte-identical",
+        "Grounded roots fill the prior air gap on level ground",
+        "Existing placed items retain IDs and update through the resource pack",
+        "Twelve complete items are clearly distinguished from base-game items"
+      ],
+      "disadvantages": [
+        "Root grounding is geometric on a level terrain plane, not dynamic terrain fitting",
+        "Grass deliberately uses native crossed planes as explicitly requested by the user",
+        "Final client appearance remains user-reviewed; no FPS benchmark"
+      ],
+      "test_results": [
+        "36 native model validations passed",
+        "Both native grass grids match imported vertices within 2e-14 model units",
+        "2789 exposed sampled root columns have no unsupported bases or vertical gaps",
+        "186 create and 150 reload checks pass for 24 asset types and 78 placed parts",
+        "All twelve icon references resolve, names have English Zytale prefix, and internal components use HideFromSearch native quality",
+        "QA installation changes only JAR; all 107 other QA files remain identical"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null,
+        "wholeItems": 12,
+        "treeItems": 6,
+        "grassItems": 6,
+        "grassPlanesPerModel": 8,
+        "rootSampledColumns": 2789,
+        "unsupportedRootColumns": 0,
+        "nativeModels": 36,
+        "createChecks": 186,
+        "reloadChecks": 150,
+        "clientFPS": "UNVERIFIED"
+      },
+      "created_at": "2026-10-18T15:28:09.465227Z",
+      "supersedes": "SOL-000012:v004",
+      "status": "working"
+    },
+    {
+      "id": "SOL-000012",
+      "version": 6,
+      "description": "Correct native inventory texture contracts separately from placed models and apply an explicit 22.5-degree rigid yaw to native grass grids.",
+      "changes": [
+        "Export all twelve inventory icons at native 64x64, using fresh resource paths",
+        "Provide compact 128px item-specific atlases and matching UV models under Items/, preserving placed block textures",
+        "Rotate every grass model root transform by 22.5 degrees without changing relative plane spacing or shape",
+        "Keep all placed tree models byte-identical and install only the JAR"
+      ],
+      "advantages": [
+        "Matches all 4533 inspected native inventory PNG dimensions",
+        "Separates icon, handheld and placed-model consumers",
+        "Grass always visibly differs in yaw from block edges",
+        "Preserves world chunks, inventory and placed tree detail"
+      ],
+      "disadvantages": [
+        "Handheld miniatures use smaller atlases than placed models",
+        "Client rendering of the corrected icons still awaits user verification"
+      ],
+      "test_results": [
+        "12 transparent icons verified at 64x64 with visible silhouettes",
+        "All six grass meshes match an exact 22.5 degree rigid rotation of 1.6 vertex positions",
+        "36 native models validate; 186 create and 150 reload checks pass",
+        "Pack-only QA installation preserves 109 other files",
+        "Captured 12 previous client item-texture warnings; no claim that corrected client session has been observed"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null,
+        "icons": 12,
+        "iconWidth": 64,
+        "iconHeight": 64,
+        "nativeIconReferenceCount": 4533,
+        "grassYawDegrees": 22.5,
+        "nativeModels": 36,
+        "createChecks": 186,
+        "reloadChecks": 150
+      },
+      "created_at": "2026-10-18T15:44:02.918935Z",
+      "supersedes": "SOL-000012:v005",
+      "status": "working"
+    }
+  ],
+  "patterns": [],
+  "related_experiences": [
+    "EXP-000011",
+    "EXP-000002"
+  ],
+  "transferability": "Source-coordinate RGB checks and continuous UV phase generalize. Wind, Material Empty, node limits and filler-cell behavior are verified only for the installed Hytale 0.7.2 build; retest other releases.",
+  "confidence": 0.83,
+  "validation_status": "experimental",
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "tags": [
+    "hytale",
+    "wind",
+    "prefab",
+    "cutout",
+    "uv-continuity",
+    "concept-pixels",
+    "visual-acceptance"
+  ],
+  "project_refs": [
+    "zytale"
+  ],
+  "source_refs": [
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/concept-pixel-trial/trial-validation.json",
+      "description": "RGB checks, component validation and assembly consistency",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/concept-pixel-trial/native-reload.json",
+      "description": "11 assets and 36 placements persist; foliage network shader Wind, wood None",
+      "verified": true
+    },
+    {
+      "kind": "report",
+      "reference": "C:/Users/User/Desktop/Zytale/work/concept-pixel-trial/REPORT.md",
+      "description": "Scope, installation, source limitations and user review boundary",
+      "verified": true
+    },
+    {
+      "kind": "user_feedback",
+      "reference": "Current conversation 2026-10-18",
+      "description": "User: siamo molto più vicini al risultato che voglio; then requests detailed branch shapes and coherent trunk bark. Final refinement not yet approved.",
+      "verified": true
+    },
+    {
+      "kind": "conversation",
+      "reference": "User request 2026-10-18, upper crown and three additional bark faces",
+      "description": "User called the prior refined tree an excellent result and requested denser upper foliage and distinct bark on all four sides. This approves the preceding direction, not the unreviewed 1.3.2 revision.",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\concept-pixel-trial\\revision-scope-validation.json",
+      "description": "157 old cards preserved; 72 upper additions; old trunk and branch positions unchanged",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\concept-pixel-trial\\upgrade-1.4\\validation.json",
+      "description": "Six native components, identical variant geometry/alpha, standard shading and HD bark source mapping",
+      "verified": true
+    },
+    {
+      "kind": "user_feedback",
+      "reference": "Conversation 2026-10-18, latest three requests",
+      "description": "Requires independent bark faces, denser leaves everywhere, identical dark duplicate, then HD front and careful shading. Revision 1.4.0 awaits client visual review.",
+      "verified": true
+    },
+    {
+      "kind": "report",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-final\\REPORT.md",
+      "description": "Current 1.5 scope, model captures, constraints and provenance",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-final\\validation.json",
+      "description": "30 native models, approved texture and geometry checks",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-final\\native-create.json",
+      "description": "Native whole-item creation checks including consumption and obstruction",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-final\\native-reload.json",
+      "description": "Persistent native placements after server reload",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-final\\installation.json",
+      "description": "Backed-up QA installation, production map untouched",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-final\\cleanup.json",
+      "description": "Obsolete active resources and editor projects retired",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-final\\rebuild-validation.json",
+      "description": "All 176 rebuilt entry payloads identical to distributed package",
+      "verified": true
+    },
+    {
+      "kind": "user_feedback",
+      "reference": "Conversation 2026-10-18, final accepted trees and root/grass request",
+      "description": "User called 1.4 results i migliori in assoluto, asked to keep only them, add roots, three sizes and whole items, then denser grass slightly toward the center. This confirms 1.4 approval; 1.5 remains awaiting user visual review.",
+      "verified": true
+    },
+    {
+      "kind": "report",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6\\REPORT.md",
+      "description": "Revision 1.6 REPORT.md",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6\\native-grid-check.json",
+      "description": "Revision 1.6 native-grid-check.json",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6\\ground-and-icons.json",
+      "description": "Revision 1.6 ground-and-icons.json",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6\\validation.json",
+      "description": "Revision 1.6 validation.json",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6\\native-create.json",
+      "description": "Revision 1.6 native-create.json",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6\\native-reload.json",
+      "description": "Revision 1.6 native-reload.json",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6\\installation.json",
+      "description": "Revision 1.6 installation.json",
+      "verified": true
+    },
+    {
+      "kind": "user_feedback",
+      "reference": "Conversation 2026-10-18: root gap photo, grass hotbar selection, English item names and native grid screenshot",
+      "description": "User rejects 1.5 root gaps and individual-blade grass, requests native hotbar 8/9 geometry with approved texture, branded English short names, and exact native grass grid. 1.6 client review still pending.",
+      "verified": true
+    },
+    {
+      "kind": "report",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6.1\\REPORT.md",
+      "description": "Revision 1.6.1 REPORT.md",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6.1\\contracts.json",
+      "description": "Revision 1.6.1 contracts.json",
+      "verified": true
+    },
+    {
+      "kind": "report",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6.1\\client-warning-evidence.txt",
+      "description": "Revision 1.6.1 client-warning-evidence.txt",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6.1\\validation.json",
+      "description": "Revision 1.6.1 validation.json",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6.1\\native-create.json",
+      "description": "Revision 1.6.1 native-create.json",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6.1\\native-reload.json",
+      "description": "Revision 1.6.1 native-reload.json",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6.1\\installation.json",
+      "description": "Revision 1.6.1 installation.json",
+      "verified": true
+    },
+    {
+      "kind": "user_feedback",
+      "reference": "Conversation 2026-10-18, approval before mod consolidation",
+      "description": "User explicitly approved the 1.6.1 visual result: “Perfetto ci siamo, ottimo lavoro.” This is user visual acceptance, not a measured FPS or an instrumented client trace.",
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "SOL-000012",
+  "version": 2,
+  "description": "Refine the approved concept-pixel tree with interleaved upper boughs and four independent continuous bark strips while preserving source RGB, existing geometry, native wind separation and a full prior-version archive.",
+  "changes": [
+    "Archive approved 1.3.1 model, pack, textures and evidence before revision",
+    "Preserve all 157 previous canopy cards; add 72 cards to shorter, 45-degree interleaved upper boughs in opposite pairs",
+    "Keep approved front bark; map three other continuous source crops on the remaining faces",
+    "Verify distinct source hashes and exact source RGB for all four bark sides",
+    "Keep the 1024-square atlas and 240 wood nodes; canopy grows to 229 nodes within the native 255-node limit"
+  ],
+  "advantages": [
+    "Exact source colour provenance",
+    "Static trunk with native foliage wind configuration",
+    "No helper required in shipped asset pack",
+    "Preserves old models and approved grass texture"
+  ],
+  "disadvantages": [
+    "Original concept crop blur is retained",
+    "Alpha cards still need client overdraw and wind review",
+    "Two-block prefab must be placed as a complete assembly",
+    "Fine branch structure increases total geometry compared with the earlier trial"
+  ],
+  "test_results": [
+    "Both native components pass Hytale Blockbench validation",
+    "157 original canopy surfaces and all old trunk/branch positions unchanged",
+    "All four bark crops distinct; atlas RGB exactly matches source coordinates",
+    "11 assets and 36 placements pass native create/reload; Wind only on canopy",
+    "Only five intended runtime archive files change; all other entries remain identical",
+    "Installed QA archive matches checked package; complete prior QA backup; production map not written"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null,
+    "woodNodes": 240,
+    "foliageNodes": 229,
+    "newUpperCards": 72,
+    "originalCanopyCardsPreserved": 157,
+    "atlasPixels": [
+      1024,
+      1024
+    ],
+    "barkFaces": 4,
+    "clientFPS": "UNVERIFIED",
+    "userFeedback": "1.3.1 called an excellent result; 1.3.2 requested refinement pending user review"
+  },
+  "created_at": "2026-10-18T12:52:42.043412Z",
+  "supersedes": "SOL-000012:v001",
+  "status": "working"
+}

@@ -1,0 +1,145 @@
+{
+  "id": "EXP-000011",
+  "title": "Blockbench atlas freshness and isolated Hytale vegetation export validation",
+  "summary": "Reloading an overwritten atlas by the same file path left stale foliage in Blockbench 5.2.2. Loading current bytes through fromDataURL, awaiting image load and checking embedded PNG hashes produced matching editable sources and native exports for six Hytale 0.7.2 vegetation assets. Native loading and persistence passed; client visual acceptance remains with the user.",
+  "status": "active",
+  "created_at": "2026-10-18T02:34:51.457271Z",
+  "updated_at": "2026-10-18T02:35:51.130745Z",
+  "domains": [
+    "game asset authoring",
+    "editor texture lifecycle",
+    "isolated game validation"
+  ],
+  "technologies": [
+    "Blockbench 5.2.2",
+    "Hytale plugin 0.11.0",
+    "Blockbench MCP 1.7.0",
+    "Hytale 0.7.2"
+  ],
+  "engines": [
+    "Hytale"
+  ],
+  "languages": [
+    "JavaScript",
+    "Python",
+    "Java"
+  ],
+  "tools": [
+    "Blockbench MCP",
+    "native Hytale server",
+    "ImageGen"
+  ],
+  "problem_class": "stale editor texture after same-path asset replacement",
+  "problem_description": "The PNG on disk changed but the current and newly created Blockbench projects could still display the previous procedural foliage after fromPath. Exporting before asynchronous image loading also risked stale or incomplete embedded source textures.",
+  "context": "Six original vegetation assets in the existing Zytale asset pack. Production world must remain untouched. User rejected the first conifer's visual fidelity and later explicitly took ownership of client visual review.",
+  "capabilities_required": [
+    "editor-native modeling and export",
+    "fresh image loading",
+    "hash verification",
+    "isolated native world create/reload"
+  ],
+  "inputs": [],
+  "outputs": [],
+  "constraints": [
+    "Do not infer visual approval or player collision behavior from server tests",
+    "Preserve existing pack namespace and prior assets",
+    "Do not modify production world",
+    "Keep within native 255-node model limit"
+  ],
+  "known_attempts": [],
+  "known_failures": [
+    "FAIL-000036"
+  ],
+  "current_solution": "SOL-000011:v001",
+  "solution_versions": [
+    {
+      "id": "SOL-000011",
+      "version": 1,
+      "description": "Author through the installed native Blockbench codec with freshly loaded atlas bytes, preserve editable texture embeddings, and validate pack loading and persistence in a guarded isolated world.",
+      "changes": [
+        "Load PNG bytes as data URL and await image load before material update and export",
+        "Verify source embedded PNG SHA256 against the final atlas",
+        "Check UV bounds, native geometry and node budget",
+        "Run Hytale 0.7.2 create/reload in a UUID- and path-guarded test save",
+        "Keep client appearance, traversal and FPS explicitly unverified until reviewed"
+      ],
+      "advantages": [
+        "Editor source and runtime texture stay synchronized",
+        "Existing mod resources and production save are byte-checked",
+        "No GUI automation required for authoring or native validation"
+      ],
+      "disadvantages": [
+        "Editor and headless checks do not prove game-client visual quality",
+        "Branch cutout overdraw still needs client performance review"
+      ],
+      "test_results": [
+        "6/6 native models pass Hytale plugin validation",
+        "6/6 source embedded images match atlas SHA256",
+        "17/17 instances persist after native restart with matching rotation",
+        "80/80 pre-existing resources and 6169/6169 production files unchanged"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": "Texture storage and geometry counts measured; FPS UNVERIFIED",
+        "compatibility": "Blockbench 5.2.2, plugin 0.11.0, MCP 1.7.0, Hytale 0.7.2 only"
+      },
+      "created_at": "2026-10-18T02:35:50.598357Z",
+      "supersedes": null,
+      "status": "working"
+    }
+  ],
+  "patterns": [],
+  "related_experiences": [
+    "EXP-000002",
+    "EXP-000003"
+  ],
+  "transferability": "Applicable to editor pipelines that cache image paths and embed asynchronously loaded images. Exact fromDataURL and texture APIs are specific to inspected Blockbench 5.2.2; retest other versions.",
+  "confidence": 0.85,
+  "validation_status": "validated",
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "tags": [
+    "blockbench",
+    "texture-cache",
+    "alpha-cutout",
+    "vegetation",
+    "hytale",
+    "visual-acceptance"
+  ],
+  "project_refs": [
+    "zytale"
+  ],
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/work/dark-forest-vegetation/model.js",
+      "description": "Awaited fresh image bytes before source/native export",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/dark-forest-vegetation/asset-audit.json",
+      "description": "Six embedded texture hashes match runtime atlases; 80 prior resources and 6169 production files preserved",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/ZYTALE_DARK_FOREST_VEGETATION_VALIDATION.json",
+      "description": "Native create/reload 17 instances; client criteria explicitly unverified",
+      "verified": true
+    }
+  ]
+}

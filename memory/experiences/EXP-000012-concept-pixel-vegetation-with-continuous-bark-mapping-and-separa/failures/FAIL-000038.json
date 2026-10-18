@@ -1,0 +1,32 @@
+{
+  "id": "FAIL-000038",
+  "experience_id": "EXP-000012",
+  "attempt": "Use overlapping crops of one small bark panel for four trunk faces, then accept distinct hashes as evidence of visual independence.",
+  "reason_failed": "The user immediately recognized recurring knots and moss patches across faces. Distinct bytes and valid UVs did not establish sufficiently different visual motifs.",
+  "environment": {
+    "assetPack": "ZytaleBuldingsAndFurnishment 1.3.2",
+    "experience": "SOL-000012:v002"
+  },
+  "error_signature": "User says the four faces still look copied from nearly the same face",
+  "conditions": [
+    "Source crops overlap spatially and share distinctive motifs",
+    "Only pixel hashes, not semantic visual diversity, distinguish the sides"
+  ],
+  "workaround": "Preserve the old version, author independent material panels with coherent style, inspect all four sides together; the user subsequently requested the front at the same HD level.",
+  "resolved_by": "SOL-000012:v003",
+  "date": "2026-10-18T13:32:15.708276Z",
+  "source_refs": [
+    {
+      "kind": "user_feedback",
+      "reference": "Conversation 2026-10-18, request following version 1.3.2",
+      "description": "User rejected visibly similar bark crops and requested richer foliage and a dark duplicate.",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\concept-pixel-trial\\ConceptPixels-four-bark-faces.png",
+      "description": "Current four-side editor review after independent HD elaboration",
+      "verified": true
+    }
+  ]
+}

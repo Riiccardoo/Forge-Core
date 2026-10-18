@@ -1,0 +1,64 @@
+{
+  "id": "SOL-000012",
+  "version": 4,
+  "description": "Retain the user-approved 1.4 conifer geometry and atlases, add four continuous side-mapped roots, supply six scaled/color tree items plus three center-dense folded grass items, and assemble native multipart trees through a guarded ordinary placement pipeline.",
+  "changes": [
+    "Replace four old root boxes with sixteen curved segments using their corresponding trunk-side bark strip",
+    "Retain approved tree textures and crown; scale three sizes and keep normal/dark geometry identical",
+    "Replace full grass clump planes with 54 individual folded curved blades and six seed stems; center-bias root distribution",
+    "Expose nine complete inventory items with whole-plant handheld miniatures; hide twelve internal foliage items",
+    "Integrate native whole-tree placement and owned-part removal in the existing pack identifier; no periodic world scan",
+    "Remove obsolete prototypes from active library and Blockbench; preserve separate recovery archives",
+    "Ship JAR including plugin; verify rebuilding from library source reproduces all packaged entry bytes"
+  ],
+  "advantages": [
+    "Approved visual baseline preserved",
+    "One native placement action consumes one item and checks obstacles and cancelled events",
+    "Four root textures follow the corresponding bark side",
+    "All exported native components stay below 256 nodes",
+    "Final editor library and inventory contain only requested vegetation variants"
+  ],
+  "disadvantages": [
+    "Three internal blocks per tree require the bundled plugin and free anchor cells",
+    "Individual grass leaves are folded thin surfaces, not closed solid geometry",
+    "HD grass blades are generated interpretations of the approved reference, not original pixels",
+    "Final 1.5 client visuals and FPS remain user-reviewed; native technical checks are not visual approval"
+  ],
+  "test_results": [
+    "User explicitly approved 1.4 as the best result; this feedback does not pre-approve 1.5",
+    "30 native model validations passed",
+    "180 create and 147 reload checks; 21 assets and 75 placed parts represent 27 whole objects",
+    "All six tree variants tested at four cardinal rotations; native positive 90 degrees maps +X to -Z",
+    "Ordinary placement consumes one, creative consumes none; obstruction and cancelled events prevent placement without consuming",
+    "Root removal clears matching owned foliage and preserves foreign edits",
+    "Full QA backup, five installed files verified; player/config hashes preserved, main map untouched",
+    "Rebuild content exactly matches distributed JAR: 176 entries"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null,
+    "completeInventoryItems": 9,
+    "treeVariants": 6,
+    "grassVariants": 3,
+    "treeNodes": 689,
+    "woodNodes": 252,
+    "canopyNodes": 229,
+    "needleNodes": 208,
+    "grassBlades": 54,
+    "grassSeedStems": 6,
+    "grassNodes": 252,
+    "nativeValidatedModels": 30,
+    "createChecks": 180,
+    "reloadChecks": 147,
+    "clientFPS": "UNVERIFIED"
+  },
+  "created_at": "2026-10-18T14:46:49.041024Z",
+  "supersedes": "SOL-000012:v003",
+  "status": "working"
+}

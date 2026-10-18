@@ -1,7 +1,7 @@
 {
   "id": "zytale",
   "name": "zytale",
-  "summary": "Zytale: AdaptiveWindow and AdaptiveSurface history retained. AtmosphereTool 2.0.1 is installed with the Creative Fullbright slider and unchanged approved fog shaders. Automated checks and installation verification passed; the user confirmed its in-game brightness and fluidity as desired. Long-duration native stability and other client builds remain unverified. Manual native-component installation, exact Windows Hytale 0.7.2 and local singleplayer remain the supported scope.",
+  "summary": "Zytale: AdaptiveWindow and AdaptiveSurface history retained. AtmosphereTool 2.0.1 is installed with the Creative Fullbright slider and unchanged approved fog shaders. Automated checks and installation verification passed; the user confirmed its in-game brightness and fluidity as desired. Long-duration native stability and other client builds remain unverified. Manual native-component installation, exact Windows Hytale 0.7.2 and local singleplayer remain the supported scope. Zytale Buildings and Furnishment 1.7.0 now unifies the approved vegetation, Blackridge architecture and Tall Wheat; six world configs were migrated, with an in-game legacy-block recheck still open.",
   "technologies": [
     "Hytale 0.6.8 and 0.7.0",
     "Java 25",
@@ -48,9 +48,12 @@
     "EXP-000007",
     "EXP-000009",
     "EXP-000010",
-    "EXP-000008"
+    "EXP-000008",
+    "EXP-000011",
+    "EXP-000012",
+    "EXP-000013"
   ],
-  "updated_at": "2026-10-18T13:36:11.587366Z",
+  "updated_at": "2026-10-18T16:37:37.454422Z",
   "implementation": {
     "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
@@ -95,7 +98,9 @@
     "ZytaleAdaptiveWindow/outputs/architecture-0.4.2/REPORT.md",
     "ZytaleAdaptiveWindow/outputs/architecture-0.4.2/asset-validation.json",
     "https://hytale.com/news/2026/10/modder-facing-patch-notes-update-7",
-    "memory/projects/zytale/references/landscape-360-2026-10-16.md"
+    "memory/projects/zytale/references/landscape-360-2026-10-16.md",
+    "C:/Users/User/Desktop/Zytale/work/unified-mod-1.7.0/REPORT.md",
+    "C:/Users/User/Desktop/Zytale/work/unified-mod-1.7.0/migration.json"
   ],
   "monastic_complex": {
     "status": "reference-rebuild-deployed-awaiting-user-visual-feedback",
@@ -7468,5 +7473,52 @@
       "Saved blocks recompute after a local placement/break event",
       "Native blending client-renderer limits from 0.10.0 remain unchanged"
     ]
+  },
+  "dark_forest_vegetation": {
+    "date": "2026-10-18",
+    "pack": "Zytale Buildings and Furnishment 1.7.0",
+    "assetCount": 12,
+    "treeItems": 6,
+    "grassItems": 6,
+    "names": [
+      "Zytale Fir S/M/L",
+      "Zytale Blue Fir S/M/L",
+      "Zytale Dense Grass S/M/L",
+      "Zytale Wild Grass S/M/L"
+    ],
+    "nativeGrassSources": [
+      "Plant_Grass_Wet_Overgrown",
+      "Plant_Grass_Wet_Wild"
+    ],
+    "grid": "native 8 planes rotated rigidly 22.5 degrees relative to block",
+    "texture": "unchanged approved GrassAtlas.png",
+    "testWorld": "Zytale - Dark Forest Vegetation QA",
+    "installation": "unified global JAR; obsolete local pack removed from QA",
+    "clientVisualValidation": "USER APPROVED 1.6.1: “Perfetto ci siamo, ottimo lavoro.”",
+    "report": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6.1\\REPORT.md",
+    "validation": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6.1\\contracts.json",
+    "sourceDirectory": "C:\\Users\\User\\Desktop\\Zytale\\ZytaleBuldingsAndFurnishment\\models\\Vegetation",
+    "productionInstallation": true,
+    "technicalSolution": "SOL-000012:v006",
+    "inventoryIconSize": "64x64",
+    "itemTextures": "dedicated compact atlases under Items/; placed block atlases unchanged"
+  },
+  "unified_buildings_and_furnishment": {
+    "date": "2026-10-18",
+    "version": "1.7.0",
+    "visibleName": "Zytale Buildings and Furnishment",
+    "packIdentity": "ZytaleArchitecture:Zytale Buildings and Furnishment",
+    "globalJar": "UserData/Mods/Zytale-Buildings-and-Furnishment.jar",
+    "mainMap": "The Village - Zytale 306 Working Copy",
+    "oldBlackridgeResourcesPreservedByteIdentical": 80,
+    "oldQAVegetationResourcesPreservedByteIdentical": 188,
+    "tallWheatResourcesAddedByteIdentical": 7,
+    "oldModFilesRemoved": 4,
+    "savedWorldConfigsMigrated": 6,
+    "chunksModified": false,
+    "verification": "Isolated Hytale 0.7.2 server loaded and enabled the pack and reached Universe ready; subsequent quiche.dll native crash. In-game review of placed legacy objects is still pending.",
+    "rollbackArchive": "C:/Users/User/Desktop/Zytale/work/unified-mod-1.7.0/before-unified-migration.zip",
+    "report": "C:/Users/User/Desktop/Zytale/work/unified-mod-1.7.0/REPORT.md",
+    "technicalSolution": "SOL-000013:v001"
   }
 }

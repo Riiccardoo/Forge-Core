@@ -1,0 +1,28 @@
+{
+  "id": "FAIL-000036",
+  "experience_id": "EXP-000011",
+  "attempt": "Reload an overwritten foliage PNG at the same path through Texture.fromPath and immediately export the project.",
+  "reason_failed": "Blockbench displayed the prior procedural foliage while the file on disk contained the new generated bough; the editor preview could misrepresent the active texture and an early source export could embed stale pixels.",
+  "environment": {
+    "Blockbench": "5.2.2",
+    "HytalePlugin": "0.11.0",
+    "MCP": "1.7.0"
+  },
+  "error_signature": "Disk PNG and editor texture disagree after replacing same-path atlas",
+  "conditions": [
+    "Existing atlas PNG overwritten",
+    "Same texture path imported again",
+    "Texture loading is asynchronous"
+  ],
+  "workaround": "Read updated PNG bytes, load via fromDataURL, await image load, update material, then export. Verify embedded source-image SHA256 against the runtime PNG.",
+  "resolved_by": null,
+  "date": "2026-10-18T02:35:51.129155Z",
+  "source_refs": [
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/dark-forest-vegetation/asset-audit.json",
+      "description": "All six final source embeddings match the atlas bytes",
+      "verified": true
+    }
+  ]
+}

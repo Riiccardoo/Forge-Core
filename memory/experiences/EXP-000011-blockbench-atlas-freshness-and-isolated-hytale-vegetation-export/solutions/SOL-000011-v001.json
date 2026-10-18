@@ -1,0 +1,40 @@
+{
+  "id": "SOL-000011",
+  "version": 1,
+  "description": "Author through the installed native Blockbench codec with freshly loaded atlas bytes, preserve editable texture embeddings, and validate pack loading and persistence in a guarded isolated world.",
+  "changes": [
+    "Load PNG bytes as data URL and await image load before material update and export",
+    "Verify source embedded PNG SHA256 against the final atlas",
+    "Check UV bounds, native geometry and node budget",
+    "Run Hytale 0.7.2 create/reload in a UUID- and path-guarded test save",
+    "Keep client appearance, traversal and FPS explicitly unverified until reviewed"
+  ],
+  "advantages": [
+    "Editor source and runtime texture stay synchronized",
+    "Existing mod resources and production save are byte-checked",
+    "No GUI automation required for authoring or native validation"
+  ],
+  "disadvantages": [
+    "Editor and headless checks do not prove game-client visual quality",
+    "Branch cutout overdraw still needs client performance review"
+  ],
+  "test_results": [
+    "6/6 native models pass Hytale plugin validation",
+    "6/6 source embedded images match atlas SHA256",
+    "17/17 instances persist after native restart with matching rotation",
+    "80/80 pre-existing resources and 6169/6169 production files unchanged"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": "Texture storage and geometry counts measured; FPS UNVERIFIED",
+    "compatibility": "Blockbench 5.2.2, plugin 0.11.0, MCP 1.7.0, Hytale 0.7.2 only"
+  },
+  "created_at": "2026-10-18T02:35:50.598357Z",
+  "supersedes": null,
+  "status": "working"
+}

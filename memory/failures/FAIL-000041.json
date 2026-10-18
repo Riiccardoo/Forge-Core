@@ -1,0 +1,39 @@
+{
+  "id": "FAIL-000041",
+  "experience_id": "EXP-000012",
+  "attempt": "Accept 256px icon previews and shared block/item texture atlases after validating paths, alpha and native server loading.",
+  "reason_failed": "User client screenshot shows nearly empty dotted icons. The installed native inventory uses 64px images exclusively; client logs also reject the shared Blocks/ texture paths for twelve vegetation items. Previous tests did not cover either client-facing consumer contract.",
+  "environment": {
+    "pack": "ZytaleBuldingsAndFurnishment 1.6.0",
+    "game": "Hytale 0.7.2"
+  },
+  "error_signature": "Almost blank inventory slots and twelve Cannot use Blocks/... as texture for item warnings",
+  "conditions": [
+    "Preview size used as inventory size",
+    "Large block atlas reused as root item Texture",
+    "Server validation mistaken for sufficient client asset validation"
+  ],
+  "workaround": "Reuse FAIL-000025: export native 64px icons. Reuse FAIL-000021: isolate compact item textures/models under Items/. Preserve placed-model assets and ask user to assess the updated client outcome.",
+  "resolved_by": "SOL-000012:v006",
+  "date": "2026-10-18T15:44:03.515326Z",
+  "source_refs": [
+    {
+      "kind": "user_feedback",
+      "reference": "C:/Users/User/AppData/Local/Temp/codex-clipboard-e63a6e43-b001-423f-b1a7-729e13bb826e.png",
+      "description": "User screenshot of near-empty inventory icons",
+      "verified": true
+    },
+    {
+      "kind": "client-log",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6.1\\client-warning-evidence.txt",
+      "description": "Twelve rejected item-texture warnings from prior 1.6 client session",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-refinement-1.6.1\\contracts.json",
+      "description": "Native PNG dimensions and corrected consumers",
+      "verified": true
+    }
+  ]
+}

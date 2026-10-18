@@ -1,0 +1,38 @@
+{
+  "id": "FAIL-000039",
+  "experience_id": "EXP-000012",
+  "attempt": "Filter a runtime package by common filename stems after renaming complete tree item IDs but retaining component model filenames.",
+  "reason_failed": "The allowlist retained obsolete _Wood item definitions because corresponding _Wood blockymodel files remain required. Those stale item definitions referenced retired reconstruction hitboxes and native asset loading failed.",
+  "environment": {
+    "assetPack": "ZytaleBuldingsAndFurnishment 1.5.0 staging",
+    "server": "Hytale 0.7.2"
+  },
+  "error_signature": "Native validation rejects obsolete Wood item definitions with retired reconstruction HitboxType references",
+  "conditions": [
+    "An obsolete item and a required model share a stem",
+    "Packaging uses a stem-only allowlist across different asset directories"
+  ],
+  "workaround": "Make filtering path-aware: retain Wood blockymodel components while excluding obsolete _Wood item JSON; expose the complete tree root ID, then validate fresh native creation and reload reports.",
+  "resolved_by": "SOL-000012:v004",
+  "date": "2026-10-18T14:48:13.598027Z",
+  "source_refs": [
+    {
+      "kind": "conversation",
+      "reference": "2026-10-18 current task, initial 1.5 native asset validation output",
+      "description": "Observed stale Wood-item hitbox validation failure during staging; final successful reports do not reproduce that error.",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-final\\package.py",
+      "description": "Path-aware packaged item exclusion",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\vegetation-final\\native-create.json",
+      "description": "Fresh native creation succeeds after correcting the package inventory",
+      "verified": true
+    }
+  ]
+}

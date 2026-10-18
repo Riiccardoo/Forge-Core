@@ -1,0 +1,56 @@
+{
+  "id": "SOL-000012",
+  "version": 1,
+  "description": "Copy source RGB into an atlas with alpha-only isolation, map a clean bark interior with continuous world-height phase, trace the woody spine beneath its matching photo pixels, and separate static wood from native Wind foliage in a two-block prefab.",
+  "changes": [
+    "Preserve first trial before refinement",
+    "Exclude photographed background from bark mapping; reuse only original central bark texels",
+    "Use 44 traced five-segment tapered branches",
+    "Use 240-node wood and 157-node foliage components; adjacent canopy root avoids tall trunk filler cells",
+    "Load texture bytes and await image load before editable source export",
+    "Check native effect and network packet independently; missing effect becomes packet None",
+    "Require fresh phase-specific success report after each server run"
+  ],
+  "advantages": [
+    "Exact source colour provenance",
+    "Static trunk with native foliage wind configuration",
+    "No helper required in shipped asset pack",
+    "Preserves old models and approved grass texture"
+  ],
+  "disadvantages": [
+    "Original concept crop blur is retained",
+    "Alpha cards still need client overdraw and wind review",
+    "Two-block prefab must be placed as a complete assembly",
+    "Fine branch structure increases total geometry compared with the earlier trial"
+  ],
+  "test_results": [
+    "Both native components pass Blockbench Hytale validation with no issues",
+    "Every atlas patch RGB matches its source coordinates",
+    "11 resolved assets and 36 placements persist after Hytale 0.7.2 restart",
+    "Wind present in canopy packet only; wood packet None",
+    "22 original tree-related files and grass texture preserved",
+    "Closed QA save backed up; installed asset archive and four chunk region files verified"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null,
+    "woodNodes": 240,
+    "foliageNodes": 157,
+    "assembledNodes": 397,
+    "atlasPixels": [
+      1024,
+      1024
+    ],
+    "clientFPS": "UNVERIFIED",
+    "clientAnimation": "UNVERIFIED; user handles visual review"
+  },
+  "created_at": "2026-10-18T12:28:54.457088Z",
+  "supersedes": null,
+  "status": "working"
+}

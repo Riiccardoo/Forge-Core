@@ -1,0 +1,154 @@
+{
+  "id": "EXP-000013",
+  "title": "Consolidate Hytale asset packs across saved worlds while preserving placed block identifiers",
+  "summary": "A renamed unified Hytale 0.7.2 pack replaces a legacy world-local architecture pack and a globally installed Tall Wheat mod. Compare all legacy asset bytes, keep item/block IDs and paths, migrate saved-world plugin keys with verified rollback, and test isolated server loading before removing the old packages.",
+  "status": "active",
+  "created_at": "2026-10-18T16:30:37.433622Z",
+  "updated_at": "2026-10-18T16:31:07.898863Z",
+  "domains": [
+    "Hytale mod packaging",
+    "saved-world compatibility",
+    "asset migration"
+  ],
+  "technologies": [
+    "Hytale 0.7.2",
+    "Java 25",
+    "Hytale asset pack manifest"
+  ],
+  "engines": [
+    "Hytale"
+  ],
+  "languages": [
+    "Python",
+    "PowerShell",
+    "Java"
+  ],
+  "tools": [
+    "Hytale dedicated server",
+    "ZIP inspection",
+    "Forge CLI"
+  ],
+  "problem_class": "merge duplicate mod identities without losing placed world assets",
+  "problem_description": "The main map showed the obsolete BlackridgeMonasticDetails name, while Tall Wheat was a separate global mod. The user wanted a single correctly named Buildings and Furnishment mod, both legacy packages removed, and existing blocks kept compatible.",
+  "context": "The architecture 1.1.0 packs have 80 resources that are already byte-identical to the vegetation 1.6.1 library. Tall Wheat adds seven resources and an empty JavaPlugin entry point. Six saved worlds reference Tall Wheat, three have world-local Blackridge packs, and one test world has both disabled.",
+  "capabilities_required": [
+    "resource-level diff",
+    "stable item and block IDs",
+    "per-world config migration",
+    "transactional backup and rollback",
+    "isolated server smoke test"
+  ],
+  "inputs": [],
+  "outputs": [],
+  "constraints": [
+    "Preserve old item/block IDs and asset paths",
+    "Do not write chunks while worlds are open",
+    "Remove old global mod only after migrating every known dependent world",
+    "Do not infer client rendering from a headless server boot"
+  ],
+  "known_attempts": [],
+  "known_failures": [],
+  "current_solution": "SOL-000013:v001",
+  "solution_versions": [
+    {
+      "id": "SOL-000013",
+      "version": 1,
+      "description": "Build one Hytale pack under the desired manifest name, copy missing legacy assets without renaming any item/block IDs, migrate all affected world config keys with backup and rollback, and remove the retired packages only after verifying coverage.",
+      "changes": [
+        "Retain 80 byte-identical Blackridge resources and 188 byte-identical 1.6.1 QA resources",
+        "Copy seven original Tall Wheat resource files into the pack; omit only its empty plugin class",
+        "Rename manifest to Zytale Buildings and Furnishment and update six world mod configurations",
+        "Install one global 1.7.0 JAR and remove the global Wheat JAR plus three obsolete local Blackridge packs"
+      ],
+      "advantages": [
+        "One mod name in the list",
+        "Old placed item/block IDs and asset paths remain valid",
+        "Other dependent saves are migrated before global Wheat removal",
+        "Verified rollback archive"
+      ],
+      "disadvantages": [
+        "Manifest plugin identity changes and requires config migration",
+        "Headless smoke test cannot establish client rendering",
+        "A QUICHE native crash occurred after server startup"
+      ],
+      "test_results": [
+        "Byte-for-byte comparison covers all 80 old Blackridge resources and seven Tall Wheat resources",
+        "The 1.6.1 QA pack's 188 non-class resources are byte-identical in 1.7.0",
+        "Hytale 0.7.2 loaded and enabled the new pack and reached Universe ready in an isolated save",
+        "Post-install checks confirm one global JAR, old packages absent, six migrated configs and no stale lock files"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null,
+        "legacyArchitectureResources": 80,
+        "legacyVegetationResources": 188,
+        "tallWheatResources": 7,
+        "migratedWorlds": 6,
+        "unifiedVersion": "1.7.0"
+      },
+      "created_at": "2026-10-18T16:31:07.898863Z",
+      "supersedes": null,
+      "status": "working"
+    }
+  ],
+  "patterns": [],
+  "related_experiences": [
+    "EXP-000012",
+    "EXP-000004"
+  ],
+  "transferability": "Byte-level asset coverage and config-key migration are reusable; Hytale 0.7.2 pack loading was checked here. Existing placed-block rendering still needs a client check.",
+  "confidence": 0.82,
+  "validation_status": "experimental",
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "tags": [
+    "hytale",
+    "mod-migration",
+    "asset-pack",
+    "save-compatibility",
+    "rollback"
+  ],
+  "project_refs": [
+    "zytale"
+  ],
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "C:/Users/User/Desktop/Zytale/work/unified-mod-1.7.0/REPORT.md",
+      "description": "Resource comparison, installation scope and validation boundary",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/unified-mod-1.7.0/migration.json",
+      "description": "Six migrated worlds, retired packages, new pack SHA and rollback archive",
+      "verified": true
+    },
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/unified-mod-1.7.0/test-save/logs/2026-10-18_18-13-27_server.log",
+      "description": "Isolated server loaded and enabled the renamed pack and reached Universe ready",
+      "verified": true
+    },
+    {
+      "kind": "user_feedback",
+      "reference": "Conversation 2026-10-18",
+      "description": "User approved vegetation 1.6.1 and required one correctly named working mod replacing BlackridgeMonasticDetails and Tall Wheat.",
+      "verified": true
+    }
+  ]
+}

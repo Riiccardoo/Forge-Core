@@ -1,0 +1,56 @@
+{
+  "id": "SOL-000012",
+  "version": 5,
+  "description": "Fill widened trunk-side root volumes through the terrain plane; replace rejected custom grass geometry with the exact native eight-plane grids selected from the player hotbar, remapped to unchanged approved texture pixels; ship twelve branded English whole-item names and native-model icons.",
+  "changes": [
+    "Replace thin root segments with overlapping filled sloped prisms rooted through Y0; preserve crown geometry and trunk-side bark source",
+    "Read native Wet Overgrown and Wet Wild IDs from hotbar slots 8 and 9, then duplicate their physical plane transforms and hierarchy",
+    "Remap both halves of unchanged GrassAtlas to native surfaces; compensate UV-sized quads with inverse stretch to preserve actual geometry",
+    "Keep existing three grass IDs for Dense Grass, add three Wild Grass IDs, use three uniform sizes per family",
+    "Use short English names prefixed Zytale and new transparent icons derived from actual models",
+    "Hide internal tree components with native Template quality; install only the JAR, preserving all world chunks and inventory"
+  ],
+  "advantages": [
+    "Native grid verified at actual imported mesh vertices",
+    "Approved texture files remain byte-identical",
+    "Grounded roots fill the prior air gap on level ground",
+    "Existing placed items retain IDs and update through the resource pack",
+    "Twelve complete items are clearly distinguished from base-game items"
+  ],
+  "disadvantages": [
+    "Root grounding is geometric on a level terrain plane, not dynamic terrain fitting",
+    "Grass deliberately uses native crossed planes as explicitly requested by the user",
+    "Final client appearance remains user-reviewed; no FPS benchmark"
+  ],
+  "test_results": [
+    "36 native model validations passed",
+    "Both native grass grids match imported vertices within 2e-14 model units",
+    "2789 exposed sampled root columns have no unsupported bases or vertical gaps",
+    "186 create and 150 reload checks pass for 24 asset types and 78 placed parts",
+    "All twelve icon references resolve, names have English Zytale prefix, and internal components use HideFromSearch native quality",
+    "QA installation changes only JAR; all 107 other QA files remain identical"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null,
+    "wholeItems": 12,
+    "treeItems": 6,
+    "grassItems": 6,
+    "grassPlanesPerModel": 8,
+    "rootSampledColumns": 2789,
+    "unsupportedRootColumns": 0,
+    "nativeModels": 36,
+    "createChecks": 186,
+    "reloadChecks": 150,
+    "clientFPS": "UNVERIFIED"
+  },
+  "created_at": "2026-10-18T15:28:09.465227Z",
+  "supersedes": "SOL-000012:v004",
+  "status": "working"
+}

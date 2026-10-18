@@ -1,0 +1,33 @@
+{
+  "id": "FAIL-000037",
+  "experience_id": "EXP-000012",
+  "attempt": "Assign HitboxType Empty to non-solid foliage and compare absent server effects directly with protocol effects; treat a zero server exit code as QA success.",
+  "reason_failed": "Hytale 0.7.2 has no BlockBoundingBoxes asset named Empty. Material Empty is separate from the selection hitbox. An absent/empty effect becomes the protocol default [None], so direct empty-array equality fails. The helper shuts down the server normally after an exception, yielding exit code zero without a new success report.",
+  "environment": {
+    "Hytale": "0.7.2",
+    "helper": "isolated VegetationQA"
+  },
+  "error_signature": "Asset 'Empty' of type BlockBoundingBoxes doesn't exist; Network shader mismatch for an unchanged original tree; stale native-create.json after exit code 0",
+  "conditions": [
+    "Custom foliage block uses a nonexistent built-in hitbox name",
+    "Validation helper inspects optional Effect fields",
+    "Success report from a previous run still exists"
+  ],
+  "workaround": "Register an actual local selection hitbox and set Material Empty. Compare nonempty explicit effects with packets; assert static wood packet does not contain Wind. Require a phase-specific report timestamp after process start and inspect its contents.",
+  "resolved_by": null,
+  "date": "2026-10-18T12:28:54.768090Z",
+  "source_refs": [
+    {
+      "kind": "test",
+      "reference": "C:/Users/User/Desktop/Zytale/work/concept-pixel-trial/native-create.json",
+      "description": "Corrected native creation succeeds with explicit canopy hitbox and expected shader packets",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/work/dark-forest-vegetation/start-test.ps1",
+      "description": "Fresh success-report guard",
+      "verified": true
+    }
+  ]
+}

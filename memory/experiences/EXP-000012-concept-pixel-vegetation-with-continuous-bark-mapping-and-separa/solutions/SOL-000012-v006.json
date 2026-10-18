@@ -1,0 +1,49 @@
+{
+  "id": "SOL-000012",
+  "version": 6,
+  "description": "Correct native inventory texture contracts separately from placed models and apply an explicit 22.5-degree rigid yaw to native grass grids.",
+  "changes": [
+    "Export all twelve inventory icons at native 64x64, using fresh resource paths",
+    "Provide compact 128px item-specific atlases and matching UV models under Items/, preserving placed block textures",
+    "Rotate every grass model root transform by 22.5 degrees without changing relative plane spacing or shape",
+    "Keep all placed tree models byte-identical and install only the JAR"
+  ],
+  "advantages": [
+    "Matches all 4533 inspected native inventory PNG dimensions",
+    "Separates icon, handheld and placed-model consumers",
+    "Grass always visibly differs in yaw from block edges",
+    "Preserves world chunks, inventory and placed tree detail"
+  ],
+  "disadvantages": [
+    "Handheld miniatures use smaller atlases than placed models",
+    "Client rendering of the corrected icons still awaits user verification"
+  ],
+  "test_results": [
+    "12 transparent icons verified at 64x64 with visible silhouettes",
+    "All six grass meshes match an exact 22.5 degree rigid rotation of 1.6 vertex positions",
+    "36 native models validate; 186 create and 150 reload checks pass",
+    "Pack-only QA installation preserves 109 other files",
+    "Captured 12 previous client item-texture warnings; no claim that corrected client session has been observed"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null,
+    "icons": 12,
+    "iconWidth": 64,
+    "iconHeight": 64,
+    "nativeIconReferenceCount": 4533,
+    "grassYawDegrees": 22.5,
+    "nativeModels": 36,
+    "createChecks": 186,
+    "reloadChecks": 150
+  },
+  "created_at": "2026-10-18T15:44:02.918935Z",
+  "supersedes": "SOL-000012:v005",
+  "status": "working"
+}

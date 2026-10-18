@@ -1,0 +1,46 @@
+{
+  "id": "SOL-000013",
+  "version": 1,
+  "description": "Build one Hytale pack under the desired manifest name, copy missing legacy assets without renaming any item/block IDs, migrate all affected world config keys with backup and rollback, and remove the retired packages only after verifying coverage.",
+  "changes": [
+    "Retain 80 byte-identical Blackridge resources and 188 byte-identical 1.6.1 QA resources",
+    "Copy seven original Tall Wheat resource files into the pack; omit only its empty plugin class",
+    "Rename manifest to Zytale Buildings and Furnishment and update six world mod configurations",
+    "Install one global 1.7.0 JAR and remove the global Wheat JAR plus three obsolete local Blackridge packs"
+  ],
+  "advantages": [
+    "One mod name in the list",
+    "Old placed item/block IDs and asset paths remain valid",
+    "Other dependent saves are migrated before global Wheat removal",
+    "Verified rollback archive"
+  ],
+  "disadvantages": [
+    "Manifest plugin identity changes and requires config migration",
+    "Headless smoke test cannot establish client rendering",
+    "A QUICHE native crash occurred after server startup"
+  ],
+  "test_results": [
+    "Byte-for-byte comparison covers all 80 old Blackridge resources and seven Tall Wheat resources",
+    "The 1.6.1 QA pack's 188 non-class resources are byte-identical in 1.7.0",
+    "Hytale 0.7.2 loaded and enabled the new pack and reached Universe ready in an isolated save",
+    "Post-install checks confirm one global JAR, old packages absent, six migrated configs and no stale lock files"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null,
+    "legacyArchitectureResources": 80,
+    "legacyVegetationResources": 188,
+    "tallWheatResources": 7,
+    "migratedWorlds": 6,
+    "unifiedVersion": "1.7.0"
+  },
+  "created_at": "2026-10-18T16:31:07.898863Z",
+  "supersedes": null,
+  "status": "working"
+}
