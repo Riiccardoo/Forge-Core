@@ -50,7 +50,7 @@
     "EXP-000010",
     "EXP-000008"
   ],
-  "updated_at": "2026-10-17T03:17:08.624335Z",
+  "updated_at": "2026-10-18T13:36:11.587366Z",
   "implementation": {
     "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
@@ -7422,5 +7422,51 @@
     },
     "githubReference": "memory/projects/zytale/references/farm-hill-adaptive-2026-10-17.md",
     "technicalExperience": "SOL-000008:v003"
+  },
+  "adaptive_surface_0100": {
+    "version": "0.10.0",
+    "game_version_tested": "Hytale 0.7.2 d769dc3d57881261a62858e1394f0e4de9a21eca",
+    "solution": "SOL-000001:v005",
+    "status": "automated-tests-passed-client-visual-review-pending",
+    "changes": [
+      "Single-JAR constructor bootstrap",
+      "Voxel-bounded quad carriers",
+      "U1-U14 inverted shapes and stacked corner pairs",
+      "Native transition profiles without invented combinations",
+      "Old Q atlas migration with stable IDs"
+    ],
+    "validation": "ZytaleAdaptiveSurface/docs/VALIDATION-0.10.0.md",
+    "limitations": [
+      "Native blending visibility and tint on custom-model faces still need client review",
+      "Existing topology updates on local place/break events",
+      "No Computer Use or automated client renderer verification"
+    ]
+  },
+  "adaptive_surface_0102": {
+    "version": "0.10.2",
+    "status": "installed-and-native-tests-passed",
+    "game_version_tested": "Hytale 0.7.2",
+    "scope": "User withdrew the first-photo adaptation entirely and approved the second and third photo stacked corner pairs.",
+    "changes": [
+      "Solid terrain directly above no longer triggers underside inversion by itself; adaptive stacked pairs retain the approved M/U forms.",
+      "Uninstalled 0.10.1 pyramid candidate withdrawn; restored 0.10.0 atlas and all assets before the scoped resolver change.",
+      "Existing hanging states revert on normal local place/break refresh without changing their selected material; no bulk world edit."
+    ],
+    "do_not_reintroduce": "The first-photo inverted pyramid or standalone hanging-corner adaptation was explicitly cancelled by the user.",
+    "validation": "ZytaleAdaptiveSurface/docs/VALIDATION-0.10.2.md",
+    "evidence": [
+      "258187 assertions passed",
+      "1720 resource files byte-identical to 0.10.0, excluding release manifest",
+      "Two native boots verified twelve saved states, removed hanging behavior and retained stacked pairs",
+      "Installed SHA-256 6fbcb3c3aa7bcd8417b531e3b799c7dee31768fd97e519788c7a6b94d6c96da1"
+    ],
+    "previous_release": "0.10.0",
+    "withdrawn_never_installed": "0.10.1",
+    "related_experience": "EXP-000001",
+    "related_solution": "SOL-000001:v006",
+    "limits": [
+      "Saved blocks recompute after a local placement/break event",
+      "Native blending client-renderer limits from 0.10.0 remain unchanged"
+    ]
   }
 }

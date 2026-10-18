@@ -1,0 +1,46 @@
+{
+  "id": "SOL-000001",
+  "version": 6,
+  "description": "Adaptive Surface 0.10.2: retain approved stacked M/U corner pairs while removing the withdrawn solid-ceiling underside adaptation. Restore 0.10.0 assets and keep saved material IDs stable.",
+  "changes": [
+    "Only an Adaptive Surface anchor directly above enables underside inversion; a solid block above by itself does not.",
+    "Withdraw the uninstalled 0.10.1 pyramid candidate and restore the released 0.10.0 atlas, models, textures, hitboxes and helper IDs byte-for-byte.",
+    "Existing hanging states change through the normal local place/break refresh without changing the selected material; approved stacked pairs retain their M/U forms."
+  ],
+  "advantages": [
+    "Matches the user's final scope: second and third reference shapes retained, first reference adaptation removed",
+    "No asset-layout migration or increase in atlas size",
+    "Existing saved IDs remain loadable"
+  ],
+  "disadvantages": [
+    "Previously placed hanging shapes require a local refresh to change; no player-world-wide chunk rewrite was performed",
+    "Final client visual check remains with the user"
+  ],
+  "test_results": [
+    "Gradle check/build passed 258187 assertions, including 1024 neighbourhood/anchor ceiling regressions",
+    "All 1720 non-class resources matched released 0.10.0 JAR byte-for-byte except the version manifest",
+    "Two isolated native Hytale 0.7.2 boots verified withdrawal, preserved stacked pairs and 12 states after save/reopen",
+    "0.10.2 installed in UserData/Mods with matching SHA-256; previous 0.10.0 JAR backed up"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-18T13:34:43.572298Z",
+  "supersedes": "SOL-000001:v005",
+  "status": "experimental",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.10.2.md",
+      "description": "Scoped removal, native regression tests and installation evidence",
+      "verified": true
+    }
+  ]
+}

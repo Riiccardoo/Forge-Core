@@ -1,0 +1,23 @@
+{
+  "id": "FAIL-000035",
+  "experience_id": "EXP-000001",
+  "attempt": "Serialize a fully loaded Hytale BlockType using its CODEC to extract the native TransitionToTag value.",
+  "reason_failed": "The complete asset graph includes cyclic state references. Encoding recursed through contained assets and state definitions until StackOverflowError during plugin startup.",
+  "environment": "Hytale 0.7.2 d769dc3d, Java 25; isolated AdaptiveSurface 0.10.0 development test",
+  "error_signature": "java.lang.StackOverflowError; BuilderCodec.encode0 / ContainedAssetCodec.encode / MapCodec.encode",
+  "conditions": [
+    "Full BlockType serialization after asset loading",
+    "Native block state graph may contain cycles"
+  ],
+  "workaround": "Use the public group/transition getters. For the protected tag without a public getter, read it from a native shallow BlockType copy via a small subclass. Do not serialize the asset graph.",
+  "resolved_by": "SOL-000001:v005",
+  "date": "2026-10-18T00:34:22.980820Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/test-browser-v0100/fresh/first-start.log",
+      "description": "Isolated failing startup; later test-browser-v0100-b and final passed",
+      "verified": true
+    }
+  ]
+}

@@ -23,6 +23,7 @@ Transfer static-versus-active asset separation, validation of save-level pack en
 - FAIL-000003
 - FAIL-000004
 - FAIL-000019
+- FAIL-000035
 
 ## Transferable Patterns
 
