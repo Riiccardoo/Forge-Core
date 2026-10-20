@@ -1,0 +1,61 @@
+{
+  "id": "SOL-000001",
+  "version": 13,
+  "description": "Adaptive Surface 0.12.4 compensates the client body's yaw-minus-PI convention for BlockEntity transition overlays, while retaining 0.12.3 cube-transition isolation.",
+  "changes": [
+    "Send PI - side*PI/2; preserve 32-unit geometry, centre anchor, native relationships and matching-edge rules.",
+    "Reverify a prior AtmosphereTool 0.7.0 analogy by read-only disassembly of the installed 0.7.2 client. BlockEntity uses the same body quaternion, scale 2/64 and rotated half-block offset.",
+    "Test actual server fixture angles with independently read client constants and packaged geometry; require old-yaw negative controls to fail."
+  ],
+  "advantages": [
+    "Places the transition along the intended receiver edge under the verified client transform",
+    "No new texture, model, atlas registration, creative item or saved block changes",
+    "Placement, addon grass and F implementation byte-identical"
+  ],
+  "disadvantages": [
+    "In-game visual acceptance remains pending; no GPU/framebuffer capture",
+    "Client convention is version-specific and must be reverified after incompatible updates"
+  ],
+  "test_results": [
+    "Old-yaw unit negative control fails; corrected offline check/build passes 278979 core assertions",
+    "179328 packaged points across 42 shapes and four sides lie on intended receiver planes",
+    "Old-yaw negative control rejects all 168 edge directions and has 84480 off-plane points",
+    "Two native boots PASS: ten transition fixtures including actual Fir/Grass pair, rules, exclusions, stability and reopen",
+    "25 textures and 1050 hidden render types unchanged; login packets serialize",
+    "1766 packaged resources unchanged except manifest; placement, attachment, geometry and material implementation families byte-identical",
+    "Installed SHA 3744cb59d80ee42759954a4bac3d66e497ddee44f44a9d19e7c1505248f81d47; 0.12.3 backed up; no installation writes to world"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-20T16:14:16.510197Z",
+  "supersedes": "SOL-000001:v012",
+  "status": "experimental",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.4.md",
+      "verified": true,
+      "description": "Independent current-client pose contract, failing old-yaw control, actual server angles, packaged mesh checks and installation"
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/client-pose-contract-0.7.2.json",
+      "verified": true,
+      "description": "Read-only current 0.7.2 client disassembly: yaw minus PI, BlockEntity scale and anchor; binary SHA and addresses"
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/preservation-0.12.4.json",
+      "verified": true,
+      "description": "1766 unchanged resources, preserved implementation families and positive/negative pose checks"
+    }
+  ]
+}

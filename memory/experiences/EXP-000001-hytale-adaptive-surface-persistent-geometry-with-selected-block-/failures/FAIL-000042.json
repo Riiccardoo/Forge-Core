@@ -1,0 +1,38 @@
+{
+  "id": "FAIL-000042",
+  "experience_id": "EXP-000001",
+  "attempt": "Use a freely rotated native block-visual entity, or a transformed native chest model/hitbox in the voxel above an Adaptive Surface, as a generic slope-placement upgrade preserving all functional blocks.",
+  "reason_failed": "The native contract probe falsified both automatic substitutions. EntityStore BlockEntity plus Transform retains 45 degrees but does not inherit ChunkStore ItemContainerBlock or block-coordinate interactions. A transformed native chest hitbox placed on the slope claims the supporting Adaptive Surface cell through its filler footprint.",
+  "environment": "Windows, Java 25, Hytale 0.7.2 d769dc3d57881261a62858e1394f0e4de9a21eca, isolated attachment-contract probe, 2026-10-20",
+  "error_signature": "nativeBlockAnglesDegrees=[0,90,180,270]; freeEntityPitchDegreesAfterCodecRoundtrip=45.00000125223908; claimsAdaptiveSurfaceCell=true",
+  "conditions": [
+    "User explicitly requires all functions of chests, doors and workbenches, not merely tilted decoration.",
+    "Native block-visual entities are distinct from functional ChunkStore block components.",
+    "The probed chest is Furniture_Crude_Chest_Small, placed at the midpoint of a 45-degree slope with its logical block coordinate in the voxel above.",
+    "No feature was installed and no player saves were modified.",
+    "The result rejects these shortcuts only; other architectures remain unimplemented and unverified."
+  ],
+  "workaround": "No complete workaround validated. A future implementation needs attachment ownership and collision handling plus functional interaction/state integration. Validate a working chest and a plant first, including persistence and client rendering. Never label a visual clone as a fully functional block or infer that a client patch is necessarily required.",
+  "resolved_by": null,
+  "date": "2026-10-20T09:54:50.189182Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/tools/probes/AttachmentContractProbe.java",
+      "description": "Repeatable native contract probe, separate from production source.",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/test-attachment-contract/mods/ZytaleProbe_AttachmentContract/attachment-contract.json",
+      "description": "Observed rotations, component sets, codec roundtrip and native filler footprint.",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/attachment-upgrade-status.json",
+      "description": "Scope, unchanged installed release, limits and remaining acceptance checks.",
+      "verified": true
+    }
+  ]
+}

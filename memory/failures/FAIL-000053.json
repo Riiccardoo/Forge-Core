@@ -1,0 +1,36 @@
+{
+  "id": "FAIL-000053",
+  "experience_id": "EXP-000001",
+  "attempt": "Validate transition overlay orientation using server Euler yaw directly, without the client's body-to-render quaternion conversion (through SOL-000001:v012 / Adaptive Surface 0.12.3).",
+  "reason_failed": "User visually rejected 0.12.3. The installed 0.7.2 client subtracts PI from packet yaw even for native BlockEntity rendering. The previous tests shared the server-space assumption and passed while the displayed edge was rotated to the opposite side. Cube-descriptor isolation did not correct this separate pose error.",
+  "environment": "Hytale 0.7.2 Windows; client SHA 0406a4c3cfef099ef2dff318cb889726d9c9883a0c12007fdda0563e93a0f80e; Adaptive Surface 0.12.3",
+  "error_signature": "Protruding or intersecting transition fringe despite passing server-space mesh/plane audit",
+  "conditions": [
+    "Packet yaw is converted by the consumer before rendering",
+    "0.12.3 validation's server-yaw plane check is not client-pose evidence",
+    "The corrected convention is technically verified; final user visual acceptance is still pending"
+  ],
+  "workaround": "Read or independently verify the consumer's full transform, compensate yaw by PI, and require the earlier implementation to fail a negative-control check of both boundary direction and receiver plane.",
+  "resolved_by": null,
+  "date": "2026-10-20T16:14:17.040040Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.4.md",
+      "description": "Independent current-client pose contract, failing old-yaw control, actual server angles, packaged mesh checks and installation",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/client-pose-contract-0.7.2.json",
+      "description": "Read-only current 0.7.2 client disassembly: yaw minus PI, BlockEntity scale and anchor; binary SHA and addresses",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/preservation-0.12.4.json",
+      "description": "1766 unchanged resources, preserved implementation families and positive/negative pose checks",
+      "verified": true
+    }
+  ]
+}

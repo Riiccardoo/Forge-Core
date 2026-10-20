@@ -6,11 +6,11 @@ One smoothing block must form slopes/corners, retain its shape/material across w
 
 ## Context
 
-User-confirmed 0.9.4 on Hytale 0.6.8. Initial 0.9.3 creative search exposed internal helpers and new donor material Rock_Calcite_Brick was absent from the active pack. Runtime pack replacement was blocked by the Windows ZIP lock. 0.9.4 corrected both and retains clicked-target behavior.
+Adaptive Surface 0.12.4 is installed on Hytale 0.7.2, Windows, Java 25. The client yaw-minus-PI correction follows 0.12.3 transition isolation. The user reported on 2026-10-20 that the latest work succeeded and everything works. This is user acceptance of the installed result, separate from the existing technical tests; no instrumented framebuffer or long-duration performance measurement was supplied.
 
 ## Current Solution
 
-Adaptive Surface 0.9.4 keeps one searchable item, loads selected baked and newly learned HD materials through one enabled per-world ZIP, and publishes staged changes only after the Hytale server exits on Windows.
+Adaptive Surface 0.12.4 compensates the client body's yaw-minus-PI convention for BlockEntity transition overlays, while retaining 0.12.3 cube-transition isolation.
 
 ## Lessons
 
@@ -24,6 +24,18 @@ Transfer static-versus-active asset separation, validation of save-level pack en
 - FAIL-000004
 - FAIL-000019
 - FAIL-000035
+- FAIL-000042
+- FAIL-000043
+- FAIL-000044
+- FAIL-000045
+- FAIL-000046
+- FAIL-000047
+- FAIL-000048
+- FAIL-000049
+- FAIL-000050
+- FAIL-000051
+- FAIL-000052
+- FAIL-000053
 
 ## Transferable Patterns
 

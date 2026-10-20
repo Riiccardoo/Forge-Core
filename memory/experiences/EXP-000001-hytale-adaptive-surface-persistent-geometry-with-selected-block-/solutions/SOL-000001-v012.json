@@ -1,0 +1,48 @@
+{
+  "id": "SOL-000001",
+  "version": 12,
+  "description": "Adaptive Surface 0.12.3 isolates adaptive block packets from native cube-space transitions, leaving original source rules as data for the matching-slope overlay system.",
+  "changes": [
+    "Remove TransitionTexture/TransitionToGroups/TransitionToTag and isolate Group in P/Q world packs, legacy root/state JSON and defensive startup shallow copies.",
+    "Keep source catalogue/native block rules intact. Reproduce actual Soil_Grass versus Zytale_Soil_Grass_Fir boundary, including asymmetric Grass-group rules and world orientations.",
+    "Cover native packet isolation after all startup bindings; generator correction prevents old metadata returning."
+  ],
+  "advantages": [
+    "Eliminates two independent transition mechanisms on the same adaptive models",
+    "Preserves every image/model and saved ID; no additional atlas cost",
+    "No runtime reload or inventory helpers"
+  ],
+  "disadvantages": [
+    "Client visual acceptance remains pending; no actual framebuffer instrumentation"
+  ],
+  "test_results": [
+    "278963 core assertions passed",
+    "179328 packaged mesh/yaw/receiver-plane samples across 42 shapes and four sides passed",
+    "Five isolated boots with current-world asset-pack/cache copies PASS: nine addon placement inputs, ten transitions including actual Fir/Grass pair, reopen, attachment removal and reopen",
+    "All loaded adaptive client packets isolated; native source rules preserved; 25 textures and 1050 render helpers unchanged",
+    "1765 packaged resources unchanged; core JSON only transition metadata; attachment/placement/geometry/edge/topology classes byte-identical",
+    "Migrated active pack: same 201 entries, 89 item JSON changes only transition metadata, every image identical",
+    "Installed d5756f8fb656b100deb1d9fac47cbd560572b5a5c583d4c0898b3b0b3a13ed50 with old JAR backup; no save writes during install"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-20T15:50:17.247963Z",
+  "supersedes": "SOL-000001:v011",
+  "status": "experimental",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.3.md",
+      "verified": true,
+      "description": "Actual saved material pair and conflicting client descriptors, complete mesh pose audit, migrated pack preservation and five isolated native boots; visual acceptance pending"
+    }
+  ]
+}

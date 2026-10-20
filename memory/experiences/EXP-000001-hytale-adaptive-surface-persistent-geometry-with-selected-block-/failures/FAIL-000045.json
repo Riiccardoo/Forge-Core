@@ -1,0 +1,20 @@
+{
+  "id": "FAIL-000045",
+  "experience_id": "EXP-000001",
+  "attempt": "Reject decorative slope placement whenever the tilted visual AABB overlaps any neighboring solid cell.",
+  "reason_failed": "Rotation and an edge click enlarge or shift the enclosing AABB, so a decoration that fits on an ordinary block was often refused next to walls. This violated the user-requested equivalence of normal and inclined placement space.",
+  "environment": "Windows; Hytale 0.7.2 d769dc3d57881261a62858e1394f0e4de9a21eca; Java 25; Adaptive Surface 0.11.0 user test followed by 0.11.1 native fixtures",
+  "error_signature": "User repeatedly saw the no-space notice; the new native regression places a unit object next to a wall/ceiling with an edge contact and non-cardinal heading.",
+  "conditions": [],
+  "workaround": "For this product policy, test the normal upright, grid-aligned footprint while retaining the tilted contact pose. Do not use this workaround when exact geometric non-overlap is itself a requirement.",
+  "resolved_by": null,
+  "date": "2026-10-20T10:54:58.737341Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.11.1.md",
+      "description": "User-reported regressions, native contracts, six isolated boot checks and installation.",
+      "verified": true
+    }
+  ]
+}

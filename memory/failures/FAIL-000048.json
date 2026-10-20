@@ -1,0 +1,20 @@
+{
+  "id": "FAIL-000048",
+  "experience_id": "EXP-000001",
+  "attempt": "Reuse 32-unit block quad positions/stretch unchanged in generic ModelComponent transition entities without PropUpdate.",
+  "reason_failed": "0.12.0 passed server and procedural tests but user saw no transition. The generic entity consumer uses 64 units per metre; unchanged block coordinates yield half-size geometry below the slope. The old preview also divided by 32 and masked the mismatch. Exact client-frame rendering was not traced.",
+  "environment": "Hytale 0.7.2; Adaptive Surface 0.12.0",
+  "error_signature": "Hard slope boundary despite cached transition model and texture",
+  "conditions": [],
+  "workaround": "Scale only overlay positions/stretch by two; verify world dimensions using the 64-unit entity convention, preserve UVs, keep actual client acceptance separate.",
+  "resolved_by": null,
+  "date": "2026-10-20T12:43:28.498550Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.1.md",
+      "description": "Scale contract, native addon interaction execution, bounded section discovery and five passing native boots; client visual acceptance pending",
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "FAIL-000049",
+  "experience_id": "EXP-000001",
+  "attempt": "Intercept only Use and PlaceBlockEvent to place third-party grass on an Adaptive Surface.",
+  "reason_failed": "The installed Buildings and Furnishment grass has inline Secondary/PlaceBlock roots bypassing UseBlock; client support prediction can stop placement before an event. Service-level placement tests did not exercise this input path.",
+  "environment": "Hytale 0.7.2; Zytale Buildings and Furnishment; Adaptive Surface through 0.12.0",
+  "error_signature": "User cannot right-click tall addon grass onto slope",
+  "conditions": [],
+  "workaround": "Prepend a remotely synchronized server gate to placement roots at startup, preserving the original root as fallback. Exercise the real InteractionManager root with all nine addon vegetation assets, including simulation and single consumption.",
+  "resolved_by": null,
+  "date": "2026-10-20T12:43:29.580056Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.1.md",
+      "description": "Scale contract, native addon interaction execution, bounded section discovery and five passing native boots; client visual acceptance pending",
+      "verified": true
+    }
+  ]
+}

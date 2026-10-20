@@ -1,0 +1,26 @@
+{
+  "id": "FAIL-000047",
+  "experience_id": "EXP-000001",
+  "attempt": "Create an inline ModelAsset for a transition overlay whose model is stored under Blocks/ZytaleAdaptiveSurface/Transitions/.",
+  "reason_failed": "Native ModelAsset validation rejects model assets outside Characters/, NPC/, Items/ or VFX/. Block assets and entity model assets have different path contracts.",
+  "environment": "Hytale 0.7.2 d769dc3d, Java 25; isolated 0.12.0 development run",
+  "error_signature": "CodecValidationException: Common Asset 'Blocks/ZytaleAdaptiveSurface/Transitions/M9.blockymodel' must be within the root: [Characters/, NPC/, Items/, VFX/]",
+  "conditions": [],
+  "workaround": "Place only the new overlay models/textures under VFX/ZytaleAdaptiveSurface/Transitions. Preserve the existing block models. Four isolated boots then passed.",
+  "resolved_by": null,
+  "date": "2026-10-20T12:12:28.535686Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.0.md",
+      "description": "Native edge rules, UV sample, four isolated boots, preservation and installation; client visual acceptance pending",
+      "verified": true
+    },
+    {
+      "kind": "log",
+      "reference": "ZytaleAdaptiveSurface/test-transitions-v0120/transitions.log",
+      "description": "Initial rejected inline model path, before installation",
+      "verified": true
+    }
+  ]
+}

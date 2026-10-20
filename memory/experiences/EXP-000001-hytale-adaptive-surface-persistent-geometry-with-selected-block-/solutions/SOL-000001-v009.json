@@ -1,0 +1,51 @@
+{
+  "id": "SOL-000001",
+  "version": 9,
+  "description": "Adaptive Surface 0.12.0 projects native transition pixels onto matching upper surface boundaries using transient non-interactive model entities, independently for four sides.",
+  "changes": [
+    "Prepare shared 128x128 upper-face native-mask atlases and source tint before admission; 32 native pixels per axis preserved.",
+    "Require two Adaptive Surfaces, matching whole edge heights and local plane normals, plus an original donor group/tag relationship.",
+    "Rotate north-edge models/textures for N/E/S/W; permit continuous slopes across a cell height.",
+    "Reconcile active section surfaces every 0.5 seconds; retain unchanged visuals and reconstruct non-serialized overlays after loading.",
+    "Use native Intangible and no interaction/hit/collision components, preserving F and decorative attachments."
+  ],
+  "advantages": [
+    "No placement-time common asset registration, new block states or block atlas refresh",
+    "Existing selected materials and approved geometry remain byte-identical",
+    "Original native transition silhouettes instead of invented blend pairs"
+  ],
+  "disadvantages": [
+    "Live client visual/lighting acceptance pending",
+    "Active-surface scans and per-edge entities add work; no large-world performance benchmark",
+    "Decorative functional-block restrictions from 0.11.1 remain"
+  ],
+  "test_results": [
+    "Gradle check/build: 278819 assertions passed",
+    "42 overlay geometries bounded and unchanged; 4902 native tinted RGBA sample checks passed",
+    "Native transitions, transitions-verify, attachments, attachments-verify all passed in test-transitions-v0120-b",
+    "Nine fixture edges; forbidden/ordinary/mismatched cases excluded; periodic updates and reopening retain exactly one visual per edge",
+    "1722 existing resources unchanged; attachment classes byte-identical",
+    "Installed 0.12.0 SHA256 1df471863e09a2768d53696a5cfafe1909ef3e48ce1c74f6636c1ee9c96a739d; prior JAR backed up; user save files untouched"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-20T12:12:27.462902Z",
+  "supersedes": "SOL-000001:v008",
+  "status": "experimental",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.0.md",
+      "description": "Native edge rules, UV sample, four isolated boots, preservation and installation; client visual acceptance pending",
+      "verified": true
+    }
+  ]
+}

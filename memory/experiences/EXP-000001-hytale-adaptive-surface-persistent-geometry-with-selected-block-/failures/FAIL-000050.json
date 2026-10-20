@@ -1,0 +1,20 @@
+{
+  "id": "FAIL-000050",
+  "experience_id": "EXP-000001",
+  "attempt": "Index active chunk sections only through RefSystem entity-add/remove callbacks with a not-NonTicking query.",
+  "reason_failed": "The isolated native test activated saved sections by removing NonTicking; no matching entity-add callback populated the index. The saved-surface discovery assertion failed.",
+  "environment": "Hytale 0.7.2; rejected 0.12.1 candidate in test-transitions-v0121-b",
+  "error_signature": "Loaded section discovery lost saved surfaces",
+  "conditions": [],
+  "workaround": "Discover active references independently of entity addition, including component activation changes; scan palettes/cells incrementally. Final create/reopen tests passed.",
+  "resolved_by": null,
+  "date": "2026-10-20T12:43:30.083211Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.1.md",
+      "description": "Scale contract, native addon interaction execution, bounded section discovery and five passing native boots; client visual acceptance pending",
+      "verified": true
+    }
+  ]
+}

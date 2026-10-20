@@ -1,0 +1,29 @@
+{
+  "id": "FAIL-000043",
+  "experience_id": "EXP-000001",
+  "attempt": "Require a non-null live Ref from native Store.addEntity to conclude that a decorative attachment has been saved and that its support is occupied.",
+  "reason_failed": "Hytale 0.7.2 can move the new entity into the saved holders of a loaded non-ticking EntitySection during addEntity. The returned reference is null although the item-backed entity is persisted. A live-entity-only occupancy scan misses it.",
+  "environment": "Hytale 0.7.2 d769dc3d57881261a62858e1394f0e4de9a21eca, Java 25, Windows, headless isolated world with no player activating sections.",
+  "error_signature": "First probes: Occupied surface not detected / null Ref following addEntity; final native section activation and reopen tests pass.",
+  "conditions": [
+    "Native non-ticking section parks an entity during addEntity",
+    "Decorations persist support ownership independently of their transient live Ref"
+  ],
+  "workaround": "Scan both live attachment components and nearby loaded EntitySection saved holders. Do not refund on a null Ref alone. In a headless live-entity fixture activate the native entity sections explicitly, then verify a separate fresh-process restart.",
+  "resolved_by": null,
+  "date": "2026-10-20T10:29:57.610153Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.11.0.md",
+      "description": "Versioned implementation, repeatable native checks, preserved resources and limits.",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/src/main/java/com/zytale/adaptivesurface/SurfaceAttachments.java",
+      "description": "Occupancy handles live components and saved section holders.",
+      "verified": true
+    }
+  ]
+}

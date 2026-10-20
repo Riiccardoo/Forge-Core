@@ -1,0 +1,49 @@
+{
+  "id": "SOL-000001",
+  "version": 10,
+  "description": "Adaptive Surface 0.12.1 corrects generic-entity transition scale and intercepts addon placement before client soil/support prediction, with bounded active-section discovery.",
+  "changes": [
+    "Convert only 42 overlay models from 32 block units to 64 entity units, retaining UV and native pixel data.",
+    "Wrap placement roots with synchronized server gate and original-root fallback; preserve cooldown/settings, Adaptive item behavior and F.",
+    "Replace repeated whole-world palette scans with per-world cached positions, immediate local updates and at most eight scans/tick with a soft 1 ms budget."
+  ],
+  "advantages": [
+    "Native addon Secondary input is tested directly",
+    "Approved base geometry and material assets preserved",
+    "No client binary modification or placement-time atlas refresh"
+  ],
+  "disadvantages": [
+    "Client visual acceptance and real-world frame times remain unverified",
+    "Out-of-band terrain writes may wait a full background scan cycle",
+    "Decorative-only functional-object limitations remain"
+  ],
+  "test_results": [
+    "278819 core assertions passed",
+    "42 overlay geometry mappings and 4902 tinted native texels checked using entity units",
+    "Five isolated native boots PASS in test-transitions-v0121-e, including real Secondary-root execution for nine addon vegetation assets",
+    "Single decoration, single consumption, inclination and F recovery checked; transition and attachment save/reopen passed",
+    "1766 resources compared: only 42 overlay models changed; approved base assets and geometry/topology classes identical",
+    "Installed SHA256 c5e1792b3dbd789f80f557dc9628f416e006e349d59c3785f59a7a153edb0db8; previous JAR backed up; no user save writes"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-20T12:43:27.510939Z",
+  "supersedes": "SOL-000001:v009",
+  "status": "experimental",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.1.md",
+      "description": "Scale contract, native addon interaction execution, bounded section discovery and five passing native boots; client visual acceptance pending",
+      "verified": true
+    }
+  ]
+}

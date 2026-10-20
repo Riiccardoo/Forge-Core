@@ -1,0 +1,51 @@
+{
+  "id": "SOL-000001",
+  "version": 8,
+  "description": "Adaptive Surface 0.11.1 corrects the decorative-only 0.11.0: normal upright placement footprint, separately hittable entities, protected supports and no decorative prompts. Existing saved decorations migrate on load.",
+  "changes": [
+    "Separate the normal upright, grid-aligned placement footprint from the inclined visual extent and clicked point; remove the artificial eight-unit cap.",
+    "Add RespondToHit because native 0.7.2 combat selectors reject a visual entity with Interactable alone.",
+    "Handle positive direct Damage after filters; preserve cancelled hits and exactly-once item ownership. Redirect mining hits to the decoration when its oriented box is in front of the block.",
+    "Protect the support for 0.4 seconds from the parallel block-breaking tail of the same swing.",
+    "Remove decoration messages and hints; use empty BlockType hint because processConfig replaces null with the generic prompt.",
+    "Restore hit eligibility and quiet interactions for entities saved with the real 0.11.0 JAR."
+  ],
+  "advantages": [
+    "Normal-size objects no longer require additional empty cells merely because they are tilted",
+    "Decorations can be removed by hitting them separately from the surface",
+    "Uses native markers and events without adding health, NPC behavior, new texture assets or client patches"
+  ],
+  "disadvantages": [
+    "Still decorative only; functional chests, doors, benches and plant growth remain deferred",
+    "Live client input/visual acceptance is still pending",
+    "Tilted visible extent may overlap the normal logical placement envelope; no universal third-party compatibility guarantee"
+  ],
+  "test_results": [
+    "Offline Gradle check/build passed 278606 existing assertions",
+    "Four 0.11.1 native boots passed placement, combat eligibility, mining redirection, direct damage/refund, save/reopen and shape regressions",
+    "Two additional boots saved real 0.11.0 entities and reopened them with 0.11.1; RespondToHit and quiet hints verified",
+    "1720 compared existing resources unchanged; no new model/texture/catalogue assets",
+    "Installed 0.11.1 SHA-256 371de15689a0068564ddf6d11e64d8e188a2d680916242f47bdd9f4295f6ac96; prior JAR backed up; no player save edits"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-20T10:54:57.700871Z",
+  "supersedes": "SOL-000001:v007",
+  "status": "experimental",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.11.1.md",
+      "description": "User-reported regressions, native contracts, six isolated boot checks and installation.",
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "SOL-000001",
+  "version": 11,
+  "description": "Adaptive Surface 0.12.2 replaces generic entity transition overlays with native BlockEntity visuals using unchanged block-space upper meshes and cube-centre anchoring.",
+  "changes": [
+    "Preload render-only BlockTypes with Cutout opacity and shared native transition textures; no Item assets or voxel writes.",
+    "Replace ModelUpdate path with native BlockUpdate; restore original 32-unit block meshes and centre the entity on all three axes.",
+    "Remove the 42 obsolete generic-entity models; retain material rules, matching edges, bounded scanning and all attachment code."
+  ],
+  "advantages": [
+    "Uses the same asset consumer as native blocks and already supported block decorations",
+    "No generic-entity mesh scaling assumption",
+    "No live registrations, extra creative items or F interception"
+  ],
+  "disadvantages": [
+    "Client visual/lighting acceptance still pending",
+    "Adds render-only BlockTypes and a small shared texture cost to the block atlas at startup"
+  ],
+  "test_results": [
+    "278819 core assertions passed",
+    "M3 sample checked before expanding to 42 meshes; 4902 native texels and four yaw/centre transforms passed",
+    "Five native boots PASS in test-transitions-v0122-a: transition create/reopen, nine addon secondary inputs, attachment create/reopen",
+    "Native block login packets serialize; no Item assets for helpers, no generic ModelComponent, no Velocity, no runtime registration",
+    "1724 resources unchanged; attachment and placement classes byte-identical; 42 generic models replaced by native block meshes",
+    "Read-only current-world audit: 7274496 base pixels plus 409600 transition-cache pixels, combined 7684096 under project budget 10000000; not total GPU memory",
+    "Installed SHA256 6a44830da7d883f4ac9c8fd410907a2002d9c020cae58a7f005bb56e7eac20ac; old JAR backed up; no save writes"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-20T15:26:52.485822Z",
+  "supersedes": "SOL-000001:v010",
+  "status": "experimental",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.2.md",
+      "verified": true,
+      "description": "User rejection of generic entity overlays; native block consumer, anchor, asset preservation, five passing isolated boots; actual client acceptance pending"
+    }
+  ]
+}

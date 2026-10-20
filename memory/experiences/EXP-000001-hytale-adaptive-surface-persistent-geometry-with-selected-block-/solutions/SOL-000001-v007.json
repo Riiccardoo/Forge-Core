@@ -1,0 +1,53 @@
+{
+  "id": "SOL-000001",
+  "version": 7,
+  "description": "Adaptive Surface 0.11.0: persistent decorative objects aligned with the existing upper surface, using native entity visuals and original items. The user explicitly accepted decorative-only behavior after FAIL-000042; functional block support is still deferred.",
+  "changes": [
+    "Persist support, contact coordinates, heading, original ItemStack and consumption ownership in an entity component.",
+    "Match the released upper triangles, rotate native BlockEntity or inline native-item ModelComponent to the face normal, preserve the support block and texture catalogue.",
+    "Place via surface Use or redirected native placement; recover via entity Use or loss of support. Rehydrate transient rendering and interactions after loading.",
+    "Include saved EntitySection holders in occupancy: addEntity can return null after native parking without meaning placement failed.",
+    "Detect missing Item assets explicitly, since ItemStack.getItem falls back to Item.UNKNOWN and isValid does not identify absent addons.",
+    "Bind interaction metadata before players join without runtime texture/model registration."
+  ],
+  "advantages": [
+    "Reuses native textures/models without growing the surface atlas",
+    "Keeps the original item metadata through placement, persistence and refund",
+    "Preserves the approved shape/material behavior and existing world startup"
+  ],
+  "disadvantages": [
+    "Decorations have no chest, door, crafting, growth, bed or seat functionality",
+    "One decoration per surface; surrounding-cell bounds are conservative",
+    "Live-client appearance and input routing still need a visual sample check",
+    "Third-party model, animation and protection compatibility is not guaranteed"
+  ],
+  "test_results": [
+    "Final offline Gradle check/build passed 278606 assertions on Hytale 0.7.2 and Java 25",
+    "Four final isolated native boots passed: attachments, attachments-verify, shapes, shapes-verify",
+    "Chest, flower and sword persist pose and metadata; placement service verifies native look ray, stale-stack rejection, one-item consumption, duplicate prevention and recovery",
+    "Shape change and support loss verified; consumed item refunded exactly once",
+    "1718 existing compared resources byte-identical to the previously installed 0.10.2",
+    "Installed 0.11.0 SHA-256 9d7308950f3a31b2fc7436cce2f45c18ab0443d16a444bfe326e042cf61bdf3a; old JAR backed up; no player save edits"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-20T10:29:56.939031Z",
+  "supersedes": "SOL-000001:v006",
+  "status": "experimental",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.11.0.md",
+      "description": "Versioned implementation, repeatable native checks, preserved resources and limits.",
+      "verified": true
+    }
+  ]
+}

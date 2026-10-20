@@ -1,0 +1,20 @@
+{
+  "id": "FAIL-000046",
+  "experience_id": "EXP-000001",
+  "attempt": "Rely only on copied BlockType Group, TransitionTexture, TransitionToGroups and TransitionToTag to deliver native blending on custom Adaptive Surface meshes.",
+  "reason_failed": "Packet checks passed, but the user screenshot still showed a hard boundary on slopes. Metadata equality did not establish visible behavior; the exact client renderer cause was not traced.",
+  "environment": "Hytale 0.7.2; Adaptive Surface through 0.11.1",
+  "error_signature": "Native flat edge has a fringe while adjacent custom inclined terrain has a sharp boundary",
+  "conditions": [],
+  "workaround": "Explicitly project the original native transition pixels onto eligible matching surface edges; separately check geometry, native model integration and client visual acceptance.",
+  "resolved_by": null,
+  "date": "2026-10-20T12:12:28.009755Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.0.md",
+      "description": "Native edge rules, UV sample, four isolated boots, preservation and installation; client visual acceptance pending",
+      "verified": true
+    }
+  ]
+}

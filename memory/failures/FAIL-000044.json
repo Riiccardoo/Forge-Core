@@ -1,0 +1,20 @@
+{
+  "id": "FAIL-000044",
+  "experience_id": "EXP-000001",
+  "attempt": "Treat a persistent BlockEntity/ModelComponent with BoundingBox and Interactable as automatically hittable by native player attacks.",
+  "reason_failed": "The user could see/place an object but attacks appeared to hit empty space. The installed Hytale 0.7.2 Interaction.isTargetInvulnerable gate requires EntityStatMap OR RespondToHit; Interactable only makes Use available. The old decoration had neither attackability component.",
+  "environment": "Windows; Hytale 0.7.2 d769dc3d57881261a62858e1394f0e4de9a21eca; Java 25; Adaptive Surface 0.11.0 user test followed by 0.11.1 native fixtures",
+  "error_signature": "Native attackable = archetype.contains(EntityStatMap) || archetype.contains(RespondToHit); otherwise target rejected.",
+  "conditions": [],
+  "workaround": "Add and restore RespondToHit and handle native Damage events after filters. Do not add fake health or conflate an entity visual with a functional block. Test native selector eligibility plus removal/refund and block-break protection, then request client acceptance.",
+  "resolved_by": null,
+  "date": "2026-10-20T10:54:58.222829Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.11.1.md",
+      "description": "User-reported regressions, native contracts, six isolated boot checks and installation.",
+      "verified": true
+    }
+  ]
+}

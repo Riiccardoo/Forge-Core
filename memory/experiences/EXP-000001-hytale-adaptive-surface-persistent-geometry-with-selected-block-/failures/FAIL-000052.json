@@ -1,0 +1,23 @@
+{
+  "id": "FAIL-000052",
+  "experience_id": "EXP-000001",
+  "attempt": "Fix protruding transition strip only by switching to BlockEntity overlays, while preserving native transition descriptors on Adaptive Surface root/state assets (SOL-000001:v011).",
+  "reason_failed": "User rejected 0.12.2. Read-only active pack audit found 1088 root/state descriptors still enabling native cube-space transitions independently of the custom matching-edge overlays. The earlier tests verified the custom path but failed to reject the parallel cube path. A first isolation test also caught asset inheritance recreating old legacy states until the core JSON was corrected.",
+  "environment": "Hytale 0.7.2; Adaptive Surface 0.12.2; 2026-10-20_17-27-50_client.log",
+  "error_signature": "Dark protruding strip and absent expected transition; later regression assertion Native cube receiver group still enabled on a legacy state",
+  "conditions": [
+    "Actual materials Soil_Grass and Zytale_Soil_Grass_Fir both have Grass group; only Fir's source rules permit transition onto the other",
+    "Exact client pixel contribution not instrumented; conflicting packet contract is confirmed, visual resolution still pending"
+  ],
+  "workaround": "Separate source material rules from renderer instructions. Remove native cube transition commands and receiver groups from adaptive P/Q and legacy definitions; retain source rules for the custom overlays and assert final client packets after all bindings.",
+  "resolved_by": null,
+  "date": "2026-10-20T15:50:17.778950Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.3.md",
+      "description": "Actual saved material pair and conflicting client descriptors, complete mesh pose audit, migrated pack preservation and five isolated native boots; visual acceptance pending",
+      "verified": true
+    }
+  ]
+}

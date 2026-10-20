@@ -1,0 +1,23 @@
+{
+  "id": "FAIL-000051",
+  "experience_id": "EXP-000001",
+  "attempt": "Treat model/block density correction alone as sufficient for generic ModelComponent overlays on native block slopes (SOL-000001:v010).",
+  "reason_failed": "User's 0.12.1 screenshot still shows no transition and a protruding dark strip through grass. Server and procedural tests did not validate the real renderer's transformation. The scale-only explanation recorded in FAIL-000048 was not a confirmed complete root cause.",
+  "environment": "Hytale 0.7.2; Adaptive Surface 0.12.1; client 2026-10-20_17-04-03_client.log",
+  "error_signature": "Dark thin strip crosses terrain while the intended material boundary remains sharp",
+  "conditions": [
+    "Latest user screenshot codex-clipboard-4e6a67fc-42e2-4cc7-b7d8-21592bf1591c.png",
+    "Exact client-frame matrix/shader behavior was not instrumented"
+  ],
+  "workaround": "Use native BlockEntity/BlockUpdate with original block meshes and explicit cube-centre origin. Verify the asset consumer separately; 0.12.2 technical checks pass but client acceptance remains pending.",
+  "resolved_by": null,
+  "date": "2026-10-20T15:26:53.368652Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.2.md",
+      "description": "User rejection of generic entity overlays; native block consumer, anchor, asset preservation, five passing isolated boots; actual client acceptance pending",
+      "verified": true
+    }
+  ]
+}
