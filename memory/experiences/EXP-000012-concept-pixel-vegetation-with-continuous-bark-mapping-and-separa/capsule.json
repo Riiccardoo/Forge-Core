@@ -1,10 +1,10 @@
 {
   "id": "EXP-000012",
   "title": "Concept-pixel vegetation with continuous bark mapping and separate native wind foliage",
-  "summary": "User-approved HD conifers and native grass copies with 64x64 inventory icons, compact item-only atlases and a fixed 22.5-degree grass-grid yaw. Native creation/reload verified; the 1.6.1 visual result was approved by the user. The installed 1.12.2 autumn maple S/M/L resolved cutout-alpha fringe defects after earlier branch and foliage revisions; the user approved the final visual result on 2026-10-21. In 1.13.0 the user confirmed that bark preview, single-decoration placement and pre-placement R rotation work after prediction reconciliation and the private preview implementation (SOL-000014:v003). New leaf pile geometry remains pending visual acceptance.",
+  "summary": "User-approved HD conifers and native grass copies with 64x64 inventory icons, compact item-only atlases and a fixed 22.5-degree grass-grid yaw. Native creation/reload verified; the 1.6.1 visual result was approved by the user. The installed 1.12.2 autumn maple S/M/L resolved cutout-alpha fringe defects after earlier branch and foliage revisions; the user approved the final visual result on 2026-10-21. In 1.13.0 the user confirmed that bark preview, single-decoration placement and pre-placement R rotation work after prediction reconciliation and the private preview implementation (SOL-000014:v003). New leaf pile geometry remains pending visual acceptance. Leaf pile feedback in 1.13.1 distinguishes dimensional validity from density, texel detail and the ground transition. Filled sloping geometry plus detailed cutouts, a circular carpet and lower-half overlays passed native asset checks; final client visual acceptance remains pending.",
   "status": "active",
   "created_at": "2026-10-18T12:26:30.440253Z",
-  "updated_at": "2026-10-21T13:22:37.104860Z",
+  "updated_at": "2026-10-21T14:16:07.254029Z",
   "domains": [
     "game asset authoring",
     "source image provenance",
@@ -62,7 +62,8 @@
     "FAIL-000059",
     "FAIL-000060",
     "FAIL-000061",
-    "FAIL-000062"
+    "FAIL-000062",
+    "FAIL-000063"
   ],
   "current_solution": "SOL-000012:v006",
   "solution_versions": [
@@ -569,6 +570,47 @@
       "created_at": "2026-10-21T13:20:48.223694Z",
       "supersedes": "SOL-000014:v002",
       "status": "experimental"
+    },
+    {
+      "id": "SOL-000014",
+      "version": 4,
+      "description": "Fill autumn leaf heaps with a continuous sloping material, detailed exterior leaf cards and a gradual circular ground transition while preserving native placement.",
+      "changes": [
+        "Replace open horizontal interior sheets with an opaque sloping surface and filled centre",
+        "Use a detailed pile-only atlas with binary alpha and five exterior leaf colours",
+        "Flare the lower surface and add a circular ground carpet plus ten lower-half leaf overlays",
+        "Keep approved 1/2/3 widths and depths, 0.6/1.2/1.8 heights, item IDs, hitboxes and all Java classes unchanged"
+      ],
+      "advantages": [
+        "No open horizontal tiers in inspected native views",
+        "Leaf silhouettes remain readable and the lower surface joins a dedicated ground layer",
+        "Compatibility with user-approved 1.13.0 placement code is preserved byte-for-byte"
+      ],
+      "disadvantages": [
+        "Final Hytale client visual acceptance remains pending",
+        "Generated carpet colour counts approximate the palette rather than proving an exact per-leaf ratio",
+        "L uses 250 native nodes out of the verified 255-node limit; additions require budgeting"
+      ],
+      "test_results": [
+        "Native Blockbench S/M/L imports and oblique/low/side views inspected",
+        "Asset bounds, UVs, binary alpha, ground height, central-body opacity and node budgets passed",
+        "24 Java classes byte-identical to 1.13.0; only pile visuals/reference and manifest changed",
+        "Installed and distribution JAR hashes match; Hytale closed; no production world edits",
+        "C:\\Users\\User\\Desktop\\Zytale\\work\\leaf-piles-compact-2026-10-21\\REPORT.md"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null
+      },
+      "created_at": "2026-10-21T14:16:01.229173Z",
+      "supersedes": "SOL-000014:v003",
+      "status": "experimental"
     }
   ],
   "patterns": [],
@@ -804,6 +846,12 @@
       "kind": "report",
       "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\leaves-preview-piles-2026-10-21\\REPORT.md",
       "description": "1.13.0 implementation, native tests, user acceptance scope and final pile dimensions.",
+      "verified": true
+    },
+    {
+      "kind": "report",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\leaf-piles-compact-2026-10-21\\REPORT.md",
+      "description": "Installed 1.13.1 pile visual revision; native asset checks, feedback scope, unchanged Java proof and final client acceptance limitation.",
       "verified": true
     }
   ]

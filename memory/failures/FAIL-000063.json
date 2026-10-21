@@ -1,0 +1,25 @@
+{
+  "id": "FAIL-000063",
+  "experience_id": "EXP-000012",
+  "attempt": "Represent a leaf heap using overlapping horizontal cutout sheets, then close it with a coarse opaque filler without matching visible texture detail or a gradual base.",
+  "reason_failed": "The user observed see-through gaps between layers. The first opaque pilot removed holes but exposed shelves/coarse pixels and hid individual leaf identity. Later feedback identified an abrupt mound-to-ground junction. Bounds and asset validity alone did not establish acceptable appearance.",
+  "environment": "Windows, Hytale 0.7.2, Blockbench native hytale_prop; installed pile baseline 1.13.0 and discarded 1.13.1 pilots.",
+  "error_signature": "Floating horizontal tiers; chunky surface pixels; abrupt base despite correct overall dimensions.",
+  "conditions": [
+    "Thin alpha-cutout carriers used as a volumetric pile",
+    "Low-angle appearance not captured by a single oblique preview",
+    "Low-resolution texture exposed directly on a filled surface"
+  ],
+  "workaround": "Continuous filled sloping surface, finer pile-only leaf texture, exterior leaf cards, flared lower profile, circular ground carpet and lower-half overlays. Native views pass; final client visual acceptance pending.",
+  "resolved_by": null,
+  "date": "2026-10-21T14:16:03.160529Z",
+  "source_refs": [],
+  "sources": [
+    {
+      "kind": "report",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\leaf-piles-compact-2026-10-21\\REPORT.md",
+      "description": "Installed 1.13.1 pile visual revision; native asset checks, feedback scope, unchanged Java proof and final client acceptance limitation.",
+      "verified": true
+    }
+  ]
+}

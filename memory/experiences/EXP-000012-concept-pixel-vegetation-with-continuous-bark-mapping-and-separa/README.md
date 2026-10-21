@@ -32,6 +32,7 @@ Source-coordinate RGB checks and continuous UV phase generalize. Wind, Material 
 - FAIL-000060
 - FAIL-000061
 - FAIL-000062
+- FAIL-000063
 
 ## Transferable Patterns
 

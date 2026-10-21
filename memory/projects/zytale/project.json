@@ -1,7 +1,7 @@
 {
   "id": "zytale",
   "name": "zytale",
-  "summary": "Zytale: AdaptiveWindow and AdaptiveSurface history retained. AtmosphereTool 2.0.1 is installed with the Creative Fullbright slider and unchanged approved fog shaders. Automated checks and installation verification passed; the user confirmed its in-game brightness and fluidity as desired. Long-duration native stability and other client builds remain unverified. Manual native-component installation, exact Windows Hytale 0.7.2 and local singleplayer remain the supported scope. Zytale Buildings and Furnishment 1.13.0 unifies the approved vegetation, Blackridge architecture and Tall Wheat; six world configs were migrated, with an in-game legacy-block recheck still open. Latest Working Copy: original L grass in nonplayable scenery tripled from 16,842 to 50,526 (25,263 Dense and 25,263 Wild), retaining existing terrain, trees and Adaptive Surface. Native checks passed; client visual review pending. Autumn leaves retain the approved counts, palette and one-cell footprints. Previous leaf revisions passed native checks but had user-reported client placement defects, addressed by the current 1.13.0 revision. Autumn Maple 1.12.0 client appearance was rejected. User described maple 1.12.1 as practically desired but rejected black specks/red fringes. The approved 1.12.2 maple fix corrects cutout alpha while preserving shape, branches and retained RGB; pixel/package checks pass and the user approved the final visual result on 2026-10-21. Installed 1.13.0 adds predicted-cell reconciliation and private trunk preview, plus S/M/L leaf heaps. Latest user-approved target dimensions are bases 1/2/3 squared with heights 0.6/1.2/1.8 after the photo reference. Native create/reload pass; the user confirmed bark preview, single placement and live R rotation in 1.13.0. Final pile visual acceptance remains pending.",
+  "summary": "Zytale: AdaptiveWindow and AdaptiveSurface history retained. AtmosphereTool 2.0.1 is installed with the Creative Fullbright slider and unchanged approved fog shaders. Automated checks and installation verification passed; the user confirmed its in-game brightness and fluidity as desired. Long-duration native stability and other client builds remain unverified. Manual native-component installation, exact Windows Hytale 0.7.2 and local singleplayer remain the supported scope. Zytale Buildings and Furnishment 1.13.0 unifies the approved vegetation, Blackridge architecture and Tall Wheat; six world configs were migrated, with an in-game legacy-block recheck still open. Latest Working Copy: original L grass in nonplayable scenery tripled from 16,842 to 50,526 (25,263 Dense and 25,263 Wild), retaining existing terrain, trees and Adaptive Surface. Native checks passed; client visual review pending. Autumn leaves retain the approved counts, palette and one-cell footprints. Previous leaf revisions passed native checks but had user-reported client placement defects, addressed by the current 1.13.0 revision. Autumn Maple 1.12.0 client appearance was rejected. User described maple 1.12.1 as practically desired but rejected black specks/red fringes. The approved 1.12.2 maple fix corrects cutout alpha while preserving shape, branches and retained RGB; pixel/package checks pass and the user approved the final visual result on 2026-10-21. Installed 1.13.0 adds predicted-cell reconciliation and private trunk preview, plus S/M/L leaf heaps. Latest user-approved target dimensions are bases 1/2/3 squared with heights 0.6/1.2/1.8 after the photo reference. Native create/reload pass; the user confirmed bark preview, single placement and live R rotation in 1.13.0. Final pile visual acceptance remains pending. Buildings and Furnishment 1.13.1 now installs detailed compact leaf piles with a circular ground transition; approved dimensions and bark/R implementation are unchanged. Final pile client visual acceptance is pending.",
   "technologies": [
     "Hytale 0.6.8 and 0.7.0",
     "Java 25",
@@ -53,7 +53,7 @@
     "EXP-000012",
     "EXP-000013"
   ],
-  "updated_at": "2026-10-21T13:23:37.806615Z",
+  "updated_at": "2026-10-21T14:16:06.137990Z",
   "implementation": {
     "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
@@ -7520,9 +7520,9 @@
     "rollbackArchive": "C:/Users/User/Desktop/Zytale/work/unified-mod-1.7.0/before-unified-migration.zip",
     "report": "C:/Users/User/Desktop/Zytale/work/unified-mod-1.7.0/REPORT.md",
     "technicalSolution": "SOL-000013:v001",
-    "current_version": "1.13.0",
-    "current_release_report": "C:\\Users\\User\\Desktop\\Zytale\\work\\leaves-preview-piles-2026-10-21\\REPORT.md",
-    "sha256": "d01e21080fa078391261a681a1583386c4cc07b0761b183ff652f7479577a830"
+    "current_version": "1.13.1",
+    "current_release_report": "C:\\Users\\User\\Desktop\\Zytale\\work\\leaf-piles-compact-2026-10-21\\REPORT.md",
+    "sha256": "b36095d10fbea725457c504012bfb753a6743e6a3ce985fea373db8d7637c2e2"
   },
   "grass_density_20261020": {
     "save": "C:\\Users\\User\\AppData\\Roaming\\Hytale\\UserData\\Saves\\The Village - Zytale 306 Working Copy",
@@ -7684,8 +7684,8 @@
     "approval_source": "User message in this chat, 2026-10-21"
   },
   "autumn_leaf_piles_2026_10_21": {
-    "status": "installed-native-tested-client-visual-pending",
-    "version": "1.13.0",
+    "status": "installed-asset-verified-final-client-visual-pending",
+    "version": "1.13.1",
     "items": [
       "Zytale_Autumn_LeafPile_S",
       "Zytale_Autumn_LeafPile_M",
@@ -7709,16 +7709,31 @@
       ]
     },
     "dimension_decision": "User explicitly replaced cubic heights after supplying a photograph and accepting broad low heaps. Keep 1/2/3 widths and depths.",
-    "shape": "Broad compact base, sloping sides, rounded top; loose layered leaves.",
-    "palette": "2 brown / 2 orange / 1 gold; approved texture bytes unchanged",
+    "shape": "Filled rounded heap with continuous sloping surface, flared base, circular ground carpet and extra lower-half leaf patches",
+    "palette": "Detailed pile-only atlas; exact 2:2:1 for individual exterior cards, approximate same palette for generated carpets; standalone approved leaf textures untouched",
     "placement": "Native cell placement, R rotations, single root cell, no bark attachment",
-    "report": "C:\\Users\\User\\Desktop\\Zytale\\work\\leaves-preview-piles-2026-10-21\\REPORT.md",
-    "blockbench_family": "C:\\Users\\User\\Desktop\\Zytale\\work\\leaves-preview-piles-2026-10-21\\models\\family.bbmodel",
+    "report": "C:\\Users\\User\\Desktop\\Zytale\\work\\leaf-piles-compact-2026-10-21\\REPORT.md",
     "installed": {
-      "version": "1.13.0",
-      "sha256": "D01E21080FA078391261A681A1583386C4CC07B0761B183FF652F7479577A830",
-      "installed": "C:\\Users\\User\\AppData\\Roaming\\Hytale\\UserData\\Mods\\Zytale-Buildings-and-Furnishment.jar",
-      "backup": "C:\\Users\\User\\Desktop\\Zytale\\work\\leaves-preview-piles-2026-10-21\\before\\installed-1.12.2.jar"
-    }
+      "version": "1.13.1",
+      "installedAt": "2026-10-21T14:12:58.9946486Z",
+      "live": "C:\\Users\\User\\AppData\\Roaming\\Hytale\\UserData\\Mods\\Zytale-Buildings-and-Furnishment.jar",
+      "dist": "C:\\Users\\User\\Desktop\\Zytale\\ZytaleBuldingsAndFurnishment\\dist\\Zytale-Buildings-and-Furnishment.jar",
+      "backup": "C:\\Users\\User\\Desktop\\Zytale\\work\\leaf-piles-compact-2026-10-21\\backup\\installed-1.13.0.jar",
+      "previousSha256": "d01e21080fa078391261a681a1583386c4cc07b0761b183ff652f7479577a830",
+      "sha256": "b36095d10fbea725457c504012bfb753a6743e6a3ce985fea373db8d7637c2e2",
+      "hytaleClosed": true,
+      "clientVisualAcceptance": false
+    },
+    "native_nodes": {
+      "S": 160,
+      "M": 215,
+      "L": 250
+    },
+    "prior_feedback": "User accepted original envelope but rejected gaps, then coarse texture and abrupt base. Latest revision addresses those points; no final user acceptance yet.",
+    "blockbench_models": [
+      "C:\\Users\\User\\Desktop\\Zytale\\work\\leaf-piles-compact-2026-10-21\\models\\Zytale_Autumn_LeafPile_S.bbmodel",
+      "C:\\Users\\User\\Desktop\\Zytale\\work\\leaf-piles-compact-2026-10-21\\models\\Zytale_Autumn_LeafPile_M.bbmodel",
+      "C:\\Users\\User\\Desktop\\Zytale\\work\\leaf-piles-compact-2026-10-21\\models\\Zytale_Autumn_LeafPile_L.bbmodel"
+    ]
   }
 }
