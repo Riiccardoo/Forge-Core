@@ -1,0 +1,24 @@
+{
+  "id": "FAIL-000062",
+  "experience_id": "EXP-000012",
+  "attempt": "Autumn leaf bark placement through a native client PlaceBlockInteraction with only server entity creation and no authoritative cell acknowledgement.",
+  "reason_failed": "User reported a second tilted visual and missing bark preview. Production read-only scan found two persisted attachments and zero ordinary leaf cells; therefore saved-entity counts alone cannot validate the client frame. An unacknowledged client-predicted block is a supported hypothesis, not a proven client-render cause.",
+  "environment": "Windows Hytale 0.7.2; Zytale Buildings and Furnishment 1.12.2 carrying the previous 1.11.1 leaf implementation.",
+  "error_signature": "User-visible extra tilted copy during trunk placement, absent in persisted block-cell scan.",
+  "conditions": [
+    "Native client placement prediction combined with a custom server prop route",
+    "Previous integration tests checked saved entities and outgoing packets but did not observe client frames"
+  ],
+  "workaround": "1.13.0 reconciles the native predicted cell, sends an authoritative cell packet and introduces a private bark preview. Native checks pass; real client confirmation remains pending.",
+  "resolved_by": null,
+  "date": "2026-10-21T13:20:25.672655Z",
+  "source_refs": [],
+  "sources": [
+    {
+      "kind": "report",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\leaves-preview-piles-2026-10-21\\REPORT.md",
+      "description": "Native test results, production read-only scan, final dimensions, installation and explicit client-validation limits.",
+      "verified": true
+    }
+  ]
+}

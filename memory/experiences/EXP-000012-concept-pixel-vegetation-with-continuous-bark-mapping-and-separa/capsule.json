@@ -1,10 +1,10 @@
 {
   "id": "EXP-000012",
   "title": "Concept-pixel vegetation with continuous bark mapping and separate native wind foliage",
-  "summary": "User-approved HD conifers and native grass copies with 64x64 inventory icons, compact item-only atlases and a fixed 22.5-degree grass-grid yaw. Native creation/reload verified; the 1.6.1 visual result was approved by the user. The installed 1.12.2 autumn maple S/M/L resolved cutout-alpha fringe defects after earlier branch and foliage revisions; the user approved the final visual result on 2026-10-21.",
+  "summary": "User-approved HD conifers and native grass copies with 64x64 inventory icons, compact item-only atlases and a fixed 22.5-degree grass-grid yaw. Native creation/reload verified; the 1.6.1 visual result was approved by the user. The installed 1.12.2 autumn maple S/M/L resolved cutout-alpha fringe defects after earlier branch and foliage revisions; the user approved the final visual result on 2026-10-21. In 1.13.0 the user confirmed that bark preview, single-decoration placement and pre-placement R rotation work after prediction reconciliation and the private preview implementation (SOL-000014:v003). New leaf pile geometry remains pending visual acceptance.",
   "status": "active",
   "created_at": "2026-10-18T12:26:30.440253Z",
-  "updated_at": "2026-10-21T02:01:02.760366Z",
+  "updated_at": "2026-10-21T13:22:37.104860Z",
   "domains": [
     "game asset authoring",
     "source image provenance",
@@ -61,7 +61,8 @@
     "FAIL-000058",
     "FAIL-000059",
     "FAIL-000060",
-    "FAIL-000061"
+    "FAIL-000061",
+    "FAIL-000062"
   ],
   "current_solution": "SOL-000012:v006",
   "solution_versions": [
@@ -526,6 +527,48 @@
       "created_at": "2026-10-21T02:01:01.703985Z",
       "supersedes": null,
       "status": "working"
+    },
+    {
+      "id": "SOL-000014",
+      "version": 3,
+      "description": "Reconcile predicted leaf placement with the authoritative grid and supply a viewer-local bark preview; preserve native cell placement for leaves and new piles.",
+      "changes": [
+        "Acknowledge actual blockPosition, placedBlockId and blockRotation and resend ServerSetBlock after custom bark placement; no world-block deletion",
+        "Use the same bark ray for placement and preview; compensate the prefab corner origin with the placement quaternion",
+        "Send one private PrefabPreviewUpdate, hide only that viewer's three leaf grid previews on bark, remove the ghost on occupied surface and restore native previews on exit",
+        "Preserve selected click twist and consume mouse-world rotation data when supplied; live R events need client verification",
+        "Keep piles outside the attachment registry and use the standard Block_Secondary interaction"
+      ],
+      "advantages": [
+        "Removes the missing native prediction acknowledgement",
+        "Preview creates no saved entity or inventory transaction",
+        "Preserves 265 existing approved assets"
+      ],
+      "disadvantages": [
+        "Exact client-frame removal of the extra copy and native prefab preview appearance remain unverified",
+        "Live physical R-key preview requires client confirmation; mouse-world rotations are consumed only when supplied by the client",
+        "Exact compatibility scope remains installed Hytale 0.7.2"
+      ],
+      "test_results": [
+        "Final candidate: 182 native create assertions and 18 reload assertions passed",
+        "Native packet serialization, private preview removal/restoration, selected click rotation and shared surface anchor checked",
+        "Production read-only scan: 2 attached entities, 0 ordinary leaf cells",
+        "Native Blockbench M pilot and S/M/L renders inspected; final user visual acceptance pending",
+        "C:\\Users\\User\\Desktop\\Zytale\\work\\leaves-preview-piles-2026-10-21\\REPORT.md"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null
+      },
+      "created_at": "2026-10-21T13:20:48.223694Z",
+      "supersedes": "SOL-000014:v002",
+      "status": "experimental"
     }
   ],
   "patterns": [],
@@ -749,6 +792,18 @@
       "kind": "user_feedback",
       "reference": "Conversation 2026-10-18, approval before mod consolidation",
       "description": "User explicitly approved the 1.6.1 visual result: “Perfetto ci siamo, ottimo lavoro.” This is user visual acceptance, not a measured FPS or an instrumented client trace.",
+      "verified": true
+    },
+    {
+      "kind": "user_feedback",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\leaves-preview-piles-2026-10-21\\user-acceptance.json",
+      "description": "After installing 1.13.0, user confirmed bark preview, single placement and R rotation before placement. This supersedes the client-pending assessment recorded when SOL-000014:v003 was created; pile shape remains pending.",
+      "verified": true
+    },
+    {
+      "kind": "report",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\leaves-preview-piles-2026-10-21\\REPORT.md",
+      "description": "1.13.0 implementation, native tests, user acceptance scope and final pile dimensions.",
       "verified": true
     }
   ]

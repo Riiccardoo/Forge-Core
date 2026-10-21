@@ -1,0 +1,42 @@
+{
+  "id": "SOL-000014",
+  "version": 3,
+  "description": "Reconcile predicted leaf placement with the authoritative grid and supply a viewer-local bark preview; preserve native cell placement for leaves and new piles.",
+  "changes": [
+    "Acknowledge actual blockPosition, placedBlockId and blockRotation and resend ServerSetBlock after custom bark placement; no world-block deletion",
+    "Use the same bark ray for placement and preview; compensate the prefab corner origin with the placement quaternion",
+    "Send one private PrefabPreviewUpdate, hide only that viewer's three leaf grid previews on bark, remove the ghost on occupied surface and restore native previews on exit",
+    "Preserve selected click twist and consume mouse-world rotation data when supplied; live R events need client verification",
+    "Keep piles outside the attachment registry and use the standard Block_Secondary interaction"
+  ],
+  "advantages": [
+    "Removes the missing native prediction acknowledgement",
+    "Preview creates no saved entity or inventory transaction",
+    "Preserves 265 existing approved assets"
+  ],
+  "disadvantages": [
+    "Exact client-frame removal of the extra copy and native prefab preview appearance remain unverified",
+    "Live physical R-key preview requires client confirmation; mouse-world rotations are consumed only when supplied by the client",
+    "Exact compatibility scope remains installed Hytale 0.7.2"
+  ],
+  "test_results": [
+    "Final candidate: 182 native create assertions and 18 reload assertions passed",
+    "Native packet serialization, private preview removal/restoration, selected click rotation and shared surface anchor checked",
+    "Production read-only scan: 2 attached entities, 0 ordinary leaf cells",
+    "Native Blockbench M pilot and S/M/L renders inspected; final user visual acceptance pending",
+    "C:\\Users\\User\\Desktop\\Zytale\\work\\leaves-preview-piles-2026-10-21\\REPORT.md"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-21T13:20:48.223694Z",
+  "supersedes": "SOL-000014:v002",
+  "status": "experimental"
+}
