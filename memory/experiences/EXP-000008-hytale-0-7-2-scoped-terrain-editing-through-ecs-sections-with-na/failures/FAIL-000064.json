@@ -1,0 +1,40 @@
+{
+  "id": "FAIL-000064",
+  "experience_id": "EXP-000008",
+  "attempt": "Treat compressed NumPy NpzFile subscripts as cached arrays inside per-tree and per-cell placement loops.",
+  "reason_failed": "Repeated A[key] accesses re-read and decompress the same full terrain grids. The local planner made slow progress; a diagnostic stack showed zipfile reads through numpy NpzFile.__getitem__ from the candidate loop.",
+  "environment": {
+    "project": "Zytale map vegetation authoring",
+    "runtime": "Windows, Python and NumPy, compressed NPZ terrain grids"
+  },
+  "error_signature": "Slow planning loop; diagnostic stack in zipfile read -> numpy read_array -> NpzFile.__getitem__.",
+  "conditions": [
+    "Compressed NPZ accessed from a hot loop",
+    "Same large grid selected repeatedly by key"
+  ],
+  "workaround": "Materialize only the required arrays once before the hot loop, or store arrays in local variables. Reuse them for placements and verification; distinguish the archive object from the array data.",
+  "resolved_by": null,
+  "date": "2026-10-21T16:27:19.742994Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-landscape-2026-10-21\\planning-profile.txt",
+      "description": "Observed diagnostic stack and local workaround, without benchmark claims.",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-landscape-2026-10-21\\plan.py",
+      "description": "Planner materializes the analysis archive before all placement loops.",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-landscape-2026-10-21\\completion-proof.json",
+      "description": "Final output installed after native and preservation checks.",
+      "verified": true
+    }
+  ],
+  "confidence": 0.95,
+  "validation_status": "validated"
+}

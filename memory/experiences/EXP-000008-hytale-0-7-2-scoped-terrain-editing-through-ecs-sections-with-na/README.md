@@ -25,6 +25,7 @@ Loading lifecycle, explicit removal allowlists and exact-record preservation are
 - FAIL-000031
 - FAIL-000032
 - FAIL-000033
+- FAIL-000064
 
 ## Transferable Patterns
 
