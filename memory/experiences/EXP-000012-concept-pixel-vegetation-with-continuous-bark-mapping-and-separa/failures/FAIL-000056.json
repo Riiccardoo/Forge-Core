@@ -1,0 +1,23 @@
+{
+  "id": "FAIL-000056",
+  "experience_id": "EXP-000012",
+  "attempt": "Treat AllowRotationKey and a generic entity quaternion adapter as sufficient for rotatable native block decorations (SOL-000014:v001).",
+  "reason_failed": "User rejected 1.11.0: R showed no rotation and bark leaves rendered as shelves. Native item packets defaulted to VariantRotation None; saved data confirmed actual bark attachments, not ground fallbacks. Old holders omitted the static prop marker and bottom-centred their block visual. The prior quaternion test inverted its own assumed conversion rather than checking an independent native consumer. Exact client pixel contribution of each pose change is not instrumented.",
+  "environment": "Hytale 0.7.2 d769dc3d57881261a62858e1394f0e4de9a21eca; Windows; Buildings and Furnishment 1.11.0",
+  "error_signature": "No visible R preview rotation; horizontal shelf on bark despite near-horizontal saved surface normal",
+  "conditions": [
+    "Actual three saved attachments replayed read-only",
+    "Native test against archived 1.11.0 fails the strengthened tangent-transform check"
+  ],
+  "workaround": "1.11.1 declares NESW, uses native static block props and cube-centre anchoring, and checks Block/Prop/Transform update emission. Combined-angle selection boxes avoid the 0.7.2 generic AABB helper X-Y-Z/Y-X-Z mismatch. Client acceptance remains pending.",
+  "resolved_by": null,
+  "date": "2026-10-20T23:10:19.461549Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-leaves-client-fix-2026-10-21\\REPORT.md",
+      "description": "User rejection, saved state, installed native APIs, passing isolated tests and remaining client limit",
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "FAIL-000059",
+  "experience_id": "EXP-000012",
+  "attempt": "Sample arbitrary rectangles from the approved tapered trunk atlas on newly authored branch boxes, while relying on connected centerlines and in-bounds UV validation.",
+  "reason_failed": "The trunk atlas includes tapered alpha masks for quad silhouettes. Some rectangular branch side/cap crops contained transparency, so geometrically connected wooden segments appeared severed. The native node/UV validator did not detect the material coverage defect.",
+  "environment": "Windows; Blockbench Hytale prop format; Hytale 0.7.2; Zytale autumn maple refinement 1.12.1",
+  "error_signature": "Wood-only preview showed separated-looking branch segments despite connected geometry; no native schema error.",
+  "conditions": [
+    "Reusing alpha-masked trunk art for solid branch boxes",
+    "Foliage can hide structural defects during a full-tree preview"
+  ],
+  "workaround": "Select fully opaque bark rectangles for every branch side and end cap, retain overlap between segments and solid junction collars, and inspect a wood-only native preview. Final tests passed 441 connection checks across S/M/L and opaque alpha coverage for every tested branch face. Client visual acceptance remains pending.",
+  "resolved_by": null,
+  "date": "2026-10-21T01:41:41.384574Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-refinement-2026-10-21\\REPORT.md",
+      "description": "Scope, native tests and visual acceptance limits",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-refinement-2026-10-21\\connections-and-detail.json",
+      "description": "Opaque branch faces, joint overlap and density measurements",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-refinement-2026-10-21\\Branch-unions-M.png",
+      "description": "Native wood-only preview inspected after correcting bark alpha crops",
+      "verified": true
+    }
+  ]
+}

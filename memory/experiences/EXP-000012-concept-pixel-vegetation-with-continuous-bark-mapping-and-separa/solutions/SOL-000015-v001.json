@@ -1,0 +1,46 @@
+{
+  "id": "SOL-000015",
+  "version": 1,
+  "description": "Autumn Maple S/M/L in the unified Zytale mod: approved bark and roots, seven staggered primary boughs with attached forks, irregular detailed foliage and binary-alpha Cutout textures. The user approved installed 1.12.2 on 2026-10-21.",
+  "changes": [
+    "1.12.0 delivered the three whole-tree IDs with static wood and native Wind foliage; user rejected texture definition, excessive exposed branches and unnatural crown.",
+    "1.12.1 reused the approved tree bark, reduced each tree to seven primary boughs and fourteen secondary forks, added overlapping solid collars at joins, and replaced broad crossed cards with smaller maple sprays. User said the result was practically desired but identified black specks and red edges.",
+    "1.12.2 normalized the existing foliage atlas to binary Cutout alpha (0 below 128, 255 otherwise), keeping all retained RGB pixels and all geometry, item definitions, UVs, wind settings and Java classes unchanged.",
+    "The same S/M/L item IDs and existing-world placement contract were retained; no production-world rewrite was performed."
+  ],
+  "advantages": [
+    "Matches the approved vegetation bark texture and has visibly joined, less crowded branches.",
+    "Removes low-alpha specks and red border residues without recoloring retained leaf pixels.",
+    "Preserves established whole-tree placement, NESW rotation, removal and static-wood/native-Wind behavior.",
+    "User explicitly approved the installed 1.12.2 result."
+  ],
+  "disadvantages": [
+    "Specific to the installed Hytale 0.7.2 Cutout renderer; other client versions need separate checks.",
+    "Long-duration stability and performance were not measured; user acceptance does not establish either."
+  ],
+  "test_results": [
+    "1.12.1: twelve Blockbench Hytale runtime/held models validated and 441 structural connection checks passed; isolated native create/reload reports passed 97/78 placement and rotation assertions plus asset and bark-ray checks.",
+    "1.12.2: 662741 source partial-alpha texels became binary alpha; 126632 low-alpha texels were discarded. All 536175 retained texels have identical RGB bytes.",
+    "1.12.2 package diff changed only manifest, foliage atlas, held atlas and three item icons; all models, definitions and compiled Java classes are byte-identical to 1.12.1.",
+    "Installed 1.12.2 SHA-256 342efab4cdab1d746b52791f5c403aa618d1d151b74fad5ade81ed2524498642; transactional rollback backup recorded.",
+    "User message dated 2026-10-21: \"Sono perfetti, ottimo lavoro.\" This establishes visual acceptance of the delivered result; no new screenshot or FPS measurement was supplied.",
+    "Evidence: C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\REPORT.md; C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\texture-validation.json; C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\package-validation.json; C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\installation.json"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": "Hytale 0.7.2 Windows only",
+    "primaryBoughsPerSize": 7,
+    "secondaryForksPerSize": 14,
+    "structuralConnectionChecks": 441,
+    "retainedFoliageTexels": 536175
+  },
+  "created_at": "2026-10-21T02:01:01.703985Z",
+  "supersedes": null,
+  "status": "working"
+}

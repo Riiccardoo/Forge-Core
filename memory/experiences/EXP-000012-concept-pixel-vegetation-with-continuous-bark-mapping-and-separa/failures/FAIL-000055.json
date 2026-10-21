@@ -1,0 +1,34 @@
+{
+  "id": "FAIL-000055",
+  "experience_id": "EXP-000012",
+  "attempt": "Use the full decorative leaf mesh bounds as the block hitbox and validate only isolated floor placement.",
+  "reason_failed": "User reported M/L occupying neighbouring cells. In Hytale, visual overhang in the placement hitbox reserves filler voxels; existing saved fillers remain after an asset-only change. 1.10.0 floor-placement tests did not cover adjacent cells or this migration.",
+  "environment": {
+    "game": "Hytale 0.7.2 d769dc3d57881261a62858e1394f0e4de9a21eca",
+    "runtime": "Java 25 / Windows",
+    "affected": "Zytale Buildings and Furnishment 1.10.0",
+    "corrected": "1.11.0"
+  },
+  "error_signature": "Cannot place leaf items in adjacent cells; legacy nonzero leaf filler survives asset replacement",
+  "conditions": [
+    "Decorative model extends beyond the one-cell ownership required by the user",
+    "World already contains items placed with the previous larger hitbox"
+  ],
+  "workaround": "Use an independent one-cell hitbox; retain full geometry bounds for entity rendering and ray targeting; clear only nonzero fillers for affected leaf IDs at section load. Native adjacent placements and save/reload migration pass.",
+  "resolved_by": "SOL-000014:v001",
+  "date": "2026-10-20T22:44:41.842356Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-leaves-revision-2026-10-21\\REPORT.md",
+      "description": "User correction, native test evidence and version boundaries",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-leaves-revision-2026-10-21\\native-reload.json",
+      "description": "Actual restart migration preserves roots and unrelated filler",
+      "verified": true
+    }
+  ]
+}

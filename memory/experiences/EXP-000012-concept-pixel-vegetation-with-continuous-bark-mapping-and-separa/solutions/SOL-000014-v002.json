@@ -1,0 +1,40 @@
+{
+  "id": "SOL-000014",
+  "version": 2,
+  "description": "Native static block prop contract for bark leaf decorations, explicit R rotation variants and independent replication/anchor verification.",
+  "changes": [
+    "Keep approved 5/10/15 constant-size leaves, palette and one-cell floor hitboxes",
+    "Declare NESW in final block packets, with base plus three alternative yaw rotations",
+    "Use PropComponent, native block transform and cube-centre offset; rebuild derived components from persisted leaf data on load",
+    "Preserve a precomputed Y-X-Z selection box instead of allowing the X-Y-Z generic AABB helper to overwrite it"
+  ],
+  "advantages": [
+    "Repairs existing attachments on load without offline world writes",
+    "Native trackers emit full transform with block and prop descriptors",
+    "All previous models, textures and icons remain byte-identical"
+  ],
+  "disadvantages": [
+    "Real client appearance and physical R-key preview await user acceptance",
+    "Exact client frame matrix and separate prop-marker pixel contribution were not instrumented"
+  ],
+  "test_results": [
+    "M sample checked in editor before all variants",
+    "Native create/reload pass: three sizes, four floor rotations, 24 surface poses, three actual saved components, item recovery and unchanged trunks",
+    "Native 1.11.0 countercheck fails the strengthened tangent transform assertion as expected",
+    "226 existing assets byte-identical; installation hash and backup verified",
+    "Evidence: C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-leaves-client-fix-2026-10-21\\REPORT.md"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-20T23:10:43.991370Z",
+  "supersedes": "SOL-000014:v001",
+  "status": "experimental"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "FAIL-000057",
+  "experience_id": "EXP-000012",
+  "attempt": "Use the imagegen output dimensions directly for a new Hytale tree atlas after requesting 2048x1024 in the prompt.",
+  "reason_failed": "The generated file was actually 1774x887. Blockbench's Hytale validator rejected the first runtime model for invalid texture dimensions, even though the editor preview rendered. Exact pixel dimensions in a generation prompt are not a native asset contract.",
+  "environment": "Blockbench MCP 1.7.0, hytale_prop; installed Hytale 0.7.2; built-in image_gen.imagegen; Windows",
+  "error_signature": "Texture atlas has invalid dimensions (1774x887). Expected width 32 and height multiple of 32.",
+  "conditions": [
+    "Single generated RGBA bark and maple cutout atlas",
+    "Editor rendering alone did not reject the image dimensions"
+  ],
+  "workaround": "Archive generated source; use native canvas nearest-neighbor normalization to 2048x1024 with alpha preserved, then regenerate UVs from actual dimensions. Keep separate 128x64 held-item texture and 64x64 icons. Twelve individual native models passed validation afterward. Perform the native dimension gate before multiplying variants.",
+  "resolved_by": null,
+  "date": "2026-10-20T23:45:59.996206Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/work/autumn-maple-2026-10-21/REPORT.md",
+      "description": "Generated source dimensions, validator rejection, conversion and final validation evidence",
+      "verified": true
+    }
+  ]
+}

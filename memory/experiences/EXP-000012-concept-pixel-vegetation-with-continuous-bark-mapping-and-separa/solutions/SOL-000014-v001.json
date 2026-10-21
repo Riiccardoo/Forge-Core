@@ -1,0 +1,39 @@
+{
+  "id": "SOL-000014",
+  "version": 1,
+  "description": "One-cell foliage with independently colored constant-size leaf sprites, native preview rotation and persistent surface attachment twist. Hytale 0.7.2.",
+  "changes": [
+    "Separate visible bounds from one-voxel block hitboxes",
+    "Increase leaf count rather than per-leaf scale; repeat a 2 brown : 2 orange : 1 gold group",
+    "Expose native PlaceBlock packet and client-selected rotation through the custom server interaction; delegate floor placement to native code",
+    "Remove obsolete filler voxels only for these leaf IDs when sections load; preserve root cells and unrelated blocks"
+  ],
+  "advantages": [
+    "Adjacent placement despite visual overhang",
+    "Rotation survives native server restart",
+    "Preserves old item IDs and approved tree assets"
+  ],
+  "disadvantages": [
+    "Client appearance and interactive rotation preview still await user acceptance",
+    "Generated silhouettes are not pixel-identical to native source"
+  ],
+  "test_results": [
+    "168 native create assertions and 24 restart assertions passed; actual client-sync interaction data, three sizes and four yaw rotations",
+    "Three editor models valid; same individual physical dimensions, exact 2:2:1 counts and native icons",
+    "Saved legacy filler removed on reload; root and unrelated filler preserved",
+    "Evidence: C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-leaves-revision-2026-10-21\\REPORT.md"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-20T22:44:34.774466Z",
+  "supersedes": null,
+  "status": "working"
+}

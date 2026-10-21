@@ -1,0 +1,35 @@
+{
+  "id": "FAIL-000060",
+  "experience_id": "EXP-000012",
+  "attempt": "Use the initial 1.12.0 autumn maple with a separate generated bark atlas, many radial boughs and broad crossed foliage cards after technical model/server checks passed.",
+  "reason_failed": "The user rejected the client appearance: texture definition did not match existing approved trees, too many branches formed a visible fan, and the result appeared artificial. Technical success was not evidence of visual acceptance.",
+  "environment": "Zytale Buildings and Furnishment 1.12.0 on Hytale 0.7.2; user client screenshots",
+  "error_signature": "User requested matched texture definition, fewer better-defined branches, a more natural tree and properly joined boughs.",
+  "conditions": [
+    "New decorative tree art must match an already approved vegetation set",
+    "Client screenshot feedback supersedes editor-only visual judgment"
+  ],
+  "workaround": "Prepared and installed 1.12.1 with approved bark pixels, seven staggered primary boughs, fourteen secondary forks, smaller detailed maple sprays and joined structure. Inspect M before extending to S/L and record client acceptance separately. New technical checks passed; revised client appearance is still awaiting user review.",
+  "resolved_by": null,
+  "date": "2026-10-21T01:41:42.006343Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-refinement-2026-10-21\\REPORT.md",
+      "description": "User feedback and revised implementation",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\AppData\\Local\\Temp\\codex-clipboard-78672306-ad12-4b36-8c30-591c0f7be461.png",
+      "description": "User screenshot of excessive visible branching",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\AppData\\Local\\Temp\\codex-clipboard-9a365ad3-c87c-4de0-9eff-09378c9da9af.png",
+      "description": "User screenshot of the rejected crown",
+      "verified": true
+    }
+  ]
+}

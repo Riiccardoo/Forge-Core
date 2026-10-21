@@ -1,0 +1,48 @@
+{
+  "id": "FAIL-000061",
+  "experience_id": "EXP-000012",
+  "attempt": "Ship generated maple foliage with smoothed partial alpha in a Hytale 0.7.2 Cutout model, accepting its blended Blockbench preview as edge-quality evidence.",
+  "reason_failed": "The user reported black specks and red contours around all leaf colors in Hytale, absent from the desired editor appearance. The atlas had 662741 partial-alpha texels and only 66 opaque texels; the approved foliage atlas was binary alpha. Read-only installed client shader inspection shows ALPHA_TEST discards only alpha equal to zero and albedo uses sampled RGB, allowing faint nonzero-alpha residues to survive cutout rendering.",
+  "environment": "Hytale release 0.7.2 on Windows; Zytale Buildings and Furnishment 1.12.1; native Blockbench Hytale prop previews",
+  "error_signature": "Near-invisible alpha residues become black specks and bright red fringes in placed foliage; editor blended preview differs.",
+  "conditions": [
+    "Generated RGBA foliage includes antialiasing and low-alpha contamination",
+    "Placed models use the client cutout path",
+    "Editor blending conceals faint residual texels"
+  ],
+  "workaround": "Normalize export alpha to 0 below 128 and 255 otherwise, using the established approved binary-alpha contract. Preserve RGB byte-for-byte for all retained pixels. Revision 1.12.2 removes 126632 low-alpha texels; 536175 retained RGB pixels are unchanged; models, UVs, definitions and Java classes are byte-identical. M preview and package checks pass and candidate is installed. Final Hytale client visual acceptance is pending.",
+  "resolved_by": null,
+  "date": "2026-10-21T01:55:17.487884Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\REPORT.md",
+      "description": "Diagnosis, protected appearance, fix and validation limits",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\texture-validation.json",
+      "description": "Alpha and RGB assertions",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\installed-shader-0.glsl",
+      "description": "Read-only installed client shader; see alpha test and albedo sampling",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\shader-provenance.json",
+      "description": "Installed client hash",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\package-validation.json",
+      "description": "Only textures/icons and manifest changed",
+      "verified": true
+    }
+  ]
+}

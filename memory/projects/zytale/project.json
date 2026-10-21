@@ -1,7 +1,7 @@
 {
   "id": "zytale",
   "name": "zytale",
-  "summary": "Zytale: AdaptiveWindow and AdaptiveSurface history retained. AtmosphereTool 2.0.1 is installed with the Creative Fullbright slider and unchanged approved fog shaders. Automated checks and installation verification passed; the user confirmed its in-game brightness and fluidity as desired. Long-duration native stability and other client builds remain unverified. Manual native-component installation, exact Windows Hytale 0.7.2 and local singleplayer remain the supported scope. Zytale Buildings and Furnishment 1.7.0 now unifies the approved vegetation, Blackridge architecture and Tall Wheat; six world configs were migrated, with an in-game legacy-block recheck still open.",
+  "summary": "Zytale: AdaptiveWindow and AdaptiveSurface history retained. AtmosphereTool 2.0.1 is installed with the Creative Fullbright slider and unchanged approved fog shaders. Automated checks and installation verification passed; the user confirmed its in-game brightness and fluidity as desired. Long-duration native stability and other client builds remain unverified. Manual native-component installation, exact Windows Hytale 0.7.2 and local singleplayer remain the supported scope. Zytale Buildings and Furnishment 1.12.2 unifies the approved vegetation, Blackridge architecture and Tall Wheat; six world configs were migrated, with an in-game legacy-block recheck still open. Latest Working Copy: original L grass in nonplayable scenery tripled from 16,842 to 50,526 (25,263 Dense and 25,263 Wild), retaining existing terrain, trees and Adaptive Surface. Native checks passed; client visual review pending. Autumn leaves 1.11.1 is installed with NESW preview rotations and the native static block prop pose/centre contract. Approved leaf counts, palette and one-cell footprints are unchanged. 1.11.0 client behavior was rejected; 1.11.1 native tests pass and client acceptance is pending. Autumn Maple 1.12.0 client appearance was rejected. User described maple 1.12.1 as practically desired but rejected black specks/red fringes. Installed 1.12.2 corrects cutout alpha while preserving shape, branches and retained RGB; pixel/package checks pass and the user approved the final visual result on 2026-10-21.",
   "technologies": [
     "Hytale 0.6.8 and 0.7.0",
     "Java 25",
@@ -53,7 +53,7 @@
     "EXP-000012",
     "EXP-000013"
   ],
-  "updated_at": "2026-10-18T16:37:37.454422Z",
+  "updated_at": "2026-10-21T02:01:02.247460Z",
   "implementation": {
     "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
@@ -4326,31 +4326,31 @@
     }
   },
   "current_landscape_state": {
-    "revision": "R10: native Adaptive Surface smoothing on reconstructed farm hill; existing trees and base terrain preserved",
-    "status": "installed-verified-checkpointed",
+    "revision": "Original L grass density tripled in approved nonplayable scenery, 2026-10-20",
+    "status": "Installed and technically verified. Existing grass, trees, buildings, terrain and Adaptive Surface retained. Client visual review pending.",
     "save": "C:/Users/User/AppData/Roaming/Hytale/UserData/Saves/The Village - Zytale 306 Working Copy",
-    "sourceOfTruth": "C:\\Users\\User\\Desktop\\Zytale\\work\\farm-hill-adaptive-2026-10-17",
-    "checkpoint": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-adaptive-2026-10-17\\COLLINA_ADAPTIVE_SURFACE_DELTA.zip",
-    "checkpointIsDifferential": true,
-    "checkpointSha256": "c2d8272fc5b48ee0e3754d3d0ffd6a6c2f47b2e786e263a16402be0e18227b2f",
-    "requiredBaseArchive": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-rebuilt-2026-10-17\\ZYTALE_BLACKRIDGE_COLLINA_CAMPO.zip",
-    "backupBeforeTask": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-adaptive-2026-10-17\\BACKUP_PRIMA_ADAPTIVE_SURFACE_DELTA.zip",
-    "verification": "C:\\Users\\User\\Desktop\\Zytale\\outputs\\zytale-hill-adaptive-2026-10-17\\VERIFICA_ADAPTIVE_SURFACE.json",
+    "sourceOfTruth": "C:/Users/User/Desktop/Zytale/work/grass-density-2026-10-20",
+    "backupBeforeTask": "C:/Users/User/Desktop/Zytale/work/grass-density-2026-10-20/backup-before",
+    "backupIsDifferential": false,
+    "verification": "C:/Users/User/Desktop/Zytale/work/grass-density-2026-10-20/verification-after.json",
     "temporaryBridgeRemoved": true,
-    "effectiveMapViewDistanceBlocks": 608,
     "nativeRestartVerified": true,
     "allExistingNonTerrainFilesPreserved": true,
     "newClientScreenshotsTaken": false,
-    "priorHillRevision": "farm_hill_rebuild_20261017",
-    "priorBroaderLandscapeRevision": "landscape_terrain_repair_20261016",
-    "userFeedback": {
-      "quotes": [
-        "Il risultato ottenuto davvero buono",
-        "Ottimo lavoro"
-      ],
-      "context": "Dopo la passata Adaptive Surface sulla collina; apprezzamento visivo espresso dall’utente, senza benchmark del client.",
-      "source": "Conversazione con l’utente del 17 ottobre 2026"
-    }
+    "priorRevision": "C:/Users/User/Desktop/Zytale/work/landscape-reset-2026-10-20",
+    "sourceMod": "C:\\Users\\User\\AppData\\Roaming\\Hytale\\UserData\\Mods\\Zytale-Buildings-and-Furnishment.jar",
+    "sourceModSha256": "385fb9e5d26fecd0bb8171e62f7e4fabb90e7bbf4c933a463b92a717b1023d6c",
+    "report": "C:/Users/User/Desktop/Zytale/work/grass-density-2026-10-20/REPORT.txt",
+    "nativeRestartScope": {
+      "chunks": 9,
+      "cells": 2949120
+    },
+    "grassOriginalL": 50526,
+    "grassVariants": {
+      "Zytale_DarkForest_Grass_Large_Wild": 25263,
+      "Zytale_DarkForest_Grass_Large": 25263
+    },
+    "densityFactorAgainstPreviousPass": 3.0
   },
   "landscape_scalable_20261016": {
     "status": "installed-and-packaged",
@@ -7519,6 +7519,147 @@
     "verification": "Isolated Hytale 0.7.2 server loaded and enabled the pack and reached Universe ready; subsequent quiche.dll native crash. In-game review of placed legacy objects is still pending.",
     "rollbackArchive": "C:/Users/User/Desktop/Zytale/work/unified-mod-1.7.0/before-unified-migration.zip",
     "report": "C:/Users/User/Desktop/Zytale/work/unified-mod-1.7.0/REPORT.md",
-    "technicalSolution": "SOL-000013:v001"
+    "technicalSolution": "SOL-000013:v001",
+    "current_version": "1.12.2",
+    "current_release_report": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\REPORT.md"
+  },
+  "grass_density_20261020": {
+    "save": "C:\\Users\\User\\AppData\\Roaming\\Hytale\\UserData\\Saves\\The Village - Zytale 306 Working Copy",
+    "before": 16842,
+    "added": 33684,
+    "after": 50526,
+    "variants": {
+      "Zytale_DarkForest_Grass_Large_Wild": 25263,
+      "Zytale_DarkForest_Grass_Large": 25263
+    },
+    "scope": "Additive placement only in existing approved nonplayable scenery, around existing trees.",
+    "preserved": "Existing grass, Adaptive Surface, terrain, tree and building geometry, original foreign components and non-region files.",
+    "source": "C:/Users/User/Desktop/Zytale/work/grass-density-2026-10-20",
+    "priorPass": "C:/Users/User/Desktop/Zytale/work/landscape-reset-2026-10-20",
+    "validation": "Three-chunk native pilot, full 301-chunk saved-state comparison, nine-chunk native restart; all passed. Client visual acceptance pending."
+  },
+  "autumn_leaves_2026_10_20": {
+    "version": "1.11.1",
+    "items": [
+      "Zytale_Autumn_Leaves_S",
+      "Zytale_Autumn_Leaves_M",
+      "Zytale_Autumn_Leaves_L"
+    ],
+    "leaf_counts": {
+      "S": 5,
+      "M": 10,
+      "L": 15
+    },
+    "palette_ratio": "2 brown : 2 orange : 1 gold; repeated without individual leaf scaling",
+    "placement": "One cell per size; NESW native R variants; static native block props at clicked bark points, tangent twist and cube-centre anchoring rebuilt on load",
+    "installation_status": "installed globally, no game processes, exclusive JAR access and hash verified",
+    "installed_at": "2026-10-21T01:09:48.8659966+02:00",
+    "installed_destination": "C:\\Users\\User\\AppData\\Roaming\\Hytale\\UserData\\Mods\\Zytale-Buildings-and-Furnishment.jar",
+    "sha256": "82a0c7535a22f7692436fdee5ac9ba966cbe9a0e1daa6d992d547b40b67635e7",
+    "backup": "C:/Users/User/Desktop/Zytale/work/autumn-leaves-client-fix-2026-10-21/before-atomic-install.jar",
+    "validation": "Isolated native create/reload pass: three sizes, twelve adjacent ground placements, 24 surface poses, three actual saved decoration components, native Block/Prop/Transform updates, inventory and trunk protection; 226 assets byte-identical",
+    "visual_acceptance": "1.11.0 rejected by user: shelves on trunks and no visible R rotation. 1.11.1 editor sample reviewed and technical checks passed; actual client acceptance pending",
+    "reuse": "Direct native placement and prior bark geometry; analogies EXP-000001, EXP-000012; new quantity-based palette, footprint migration and preview rotation bridge",
+    "technical_solution": "SOL-000014:v002",
+    "failure_ref": "FAIL-000056",
+    "world_writes_offline": false,
+    "runtime_migration_scope": "Reconstruct derived native prop/transform/bounds on old decoration load; retain prior obsolete leaf filler cleanup; no offline world edits",
+    "report": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-leaves-client-fix-2026-10-21\\REPORT.md",
+    "installation_evidence": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-leaves-client-fix-2026-10-21\\installation.json",
+    "superseded_version": {
+      "version": "1.11.0",
+      "reason": "User rejected bark orientation and R preview behavior",
+      "report": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-leaves-revision-2026-10-21\\REPORT.md"
+    }
+  },
+  "autumn_maple_2026_10_21": {
+    "version": "1.12.2",
+    "items": [
+      "Zytale_Autumn_Maple_S",
+      "Zytale_Autumn_Maple_M",
+      "Zytale_Autumn_Maple_L"
+    ],
+    "approximate_heights_blocks": [
+      7,
+      14,
+      23
+    ],
+    "status": "installed; technical checks passed; user approved visual result on 2026-10-21",
+    "native_validation": "New pixel checks pass: 0/255 alpha, all 536175 retained RGB texels unchanged. Only six JAR entries changed. Prior 1.12.1 native create/reload evidence retained for byte-identical models, definitions and Java classes; not repeated.",
+    "preserved": "Every model, UV, hitbox, item definition, wind setting and Java class byte-identical; approved bark unchanged.",
+    "source": "Approved existing bark plus new generated maple branchlets; provenance and limits in report.",
+    "reuse": "Direct approved bark/trunk/root assets and whole-tree behavior; analogy EXP-000012 static wood/Wind split; new branching, opaque bark UV selection, joints and foliage.",
+    "installed_sha256": "342efab4cdab1d746b52791f5c403aa618d1d151b74fad5ade81ed2524498642",
+    "backup": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\before-atomic-install.jar",
+    "report": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\REPORT.md",
+    "editable_sources": "C:\\Users\\User\\Desktop\\Zytale\\ZytaleBuldingsAndFurnishment\\models\\Vegetation\\Trees",
+    "production_world_writes": false,
+    "reference_image": "C:/Users/User/AppData/Local/Temp/codex-clipboard-f8f38d1f-6632-4924-aa7c-bfb44f2f0dc0.png",
+    "changes": "Binary-alpha foliage export removes low-alpha black specks/red fringe residues. Same geometry, branches and retained leaf colors as near-approved 1.12.1. Held texture/icons/editable sources refreshed.",
+    "preview": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\Autumn-Maple-S-M-L.png",
+    "branch_junction_evidence": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-refinement-2026-10-21\\Branch-unions-M.png",
+    "cancelled_request": "Earlier 3:4 aspect ratio request explicitly cancelled by user; no 3:4 requirement applied.",
+    "history": [
+      {
+        "version": "1.12.0",
+        "items": [
+          "Zytale_Autumn_Maple_S",
+          "Zytale_Autumn_Maple_M",
+          "Zytale_Autumn_Maple_L"
+        ],
+        "approximate_heights_blocks": [
+          7,
+          14,
+          23
+        ],
+        "status": "superseded by 1.12.1; client appearance rejected for texture definition, branch density and naturalness",
+        "native_validation": "12 Blockbench models; isolated create 97 and reload 78 placement assertions, plus 9 asset and 12 bark-ray checks per phase",
+        "preserved": "All pre-existing item/model/texture assets and bark geometry entries; leaf behavior source unchanged",
+        "source": "User autumn maple concept sheet; new imagegen texture and new authored geometry, not literal pixel extraction",
+        "reuse": "Direct 3-part tree plugin and bark mesh extraction; analogy EXP-000012 static wood / native Wind foliage; new maple assets",
+        "installed_sha256": "be5a286a062f1b41e2e905ae3f9f42d37c3cadb7c1e12ce553431cc560fae3b2",
+        "backup": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-2026-10-21\\before-atomic-install.jar",
+        "report": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-2026-10-21\\REPORT.md",
+        "editable_sources": "C:\\Users\\User\\Desktop\\Zytale\\ZytaleBuldingsAndFurnishment\\models\\Vegetation\\Trees",
+        "production_world_writes": false,
+        "reference_image": "C:/Users/User/AppData/Local/Temp/codex-clipboard-f8f38d1f-6632-4924-aa7c-bfb44f2f0dc0.png"
+      },
+      {
+        "version": "1.12.1",
+        "items": [
+          "Zytale_Autumn_Maple_S",
+          "Zytale_Autumn_Maple_M",
+          "Zytale_Autumn_Maple_L"
+        ],
+        "approximate_heights_blocks": [
+          7,
+          14,
+          23
+        ],
+        "status": "User: practically desired appearance; black specks and red fringes need correction. Shape/branch revision retained.",
+        "native_validation": "12 native models; 441 structural connection checks; all tested branch faces opaque; isolated create 97 and reload 78 assertions, plus 9 asset contracts and 12 bark-ray checks per phase.",
+        "preserved": "Same maple IDs; all Java classes and non-maple assets unchanged; existing approved bark pixels retained.",
+        "source": "Approved existing bark plus new generated maple branchlets; provenance and limits in report.",
+        "reuse": "Direct approved bark/trunk/root assets and whole-tree behavior; analogy EXP-000012 static wood/Wind split; new branching, opaque bark UV selection, joints and foliage.",
+        "installed_sha256": "ae4718e13f5f0c179fa73c0bb4f01fa824eec504410dc2162f142f27c5d90db4",
+        "backup": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-refinement-2026-10-21\\before-atomic-install.jar",
+        "report": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-refinement-2026-10-21\\REPORT.md",
+        "editable_sources": "C:\\Users\\User\\Desktop\\Zytale\\ZytaleBuldingsAndFurnishment\\models\\Vegetation\\Trees",
+        "production_world_writes": false,
+        "reference_image": "C:/Users/User/AppData/Local/Temp/codex-clipboard-f8f38d1f-6632-4924-aa7c-bfb44f2f0dc0.png",
+        "changes": "Approved conifer bark; seven staggered primary branches and fourteen forks; 77 solid joint collars per tree; fully opaque bark crops; smaller maple sprays with detailed veins and irregular crown lobes.",
+        "preview": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-refinement-2026-10-21\\Autumn-Maple-S-M-L.png",
+        "branch_junction_evidence": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-refinement-2026-10-21\\Branch-unions-M.png",
+        "cancelled_request": "Earlier 3:4 aspect ratio request explicitly cancelled by user; no 3:4 requirement applied.",
+        "user_feedback_sources": [
+          "C:/Users/User/AppData/Local/Temp/codex-clipboard-b0900f48-fd30-4ad6-9be9-a1b111823bb7.png",
+          "C:/Users/User/AppData/Local/Temp/codex-clipboard-e374a936-5d64-4175-b374-7e0de4d377fa.png"
+        ]
+      }
+    ],
+    "user_acceptance": "User explicitly approved the delivered 1.12.2 result on 2026-10-21: \"Sono perfetti, ottimo lavoro.\" No fresh screenshot or performance measurement was supplied.",
+    "approved_version": "1.12.2",
+    "approved_solution": "SOL-000015:v001",
+    "approval_source": "User message in this chat, 2026-10-21"
   }
 }

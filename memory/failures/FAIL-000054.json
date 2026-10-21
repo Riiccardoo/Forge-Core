@@ -1,0 +1,45 @@
+{
+  "id": "FAIL-000054",
+  "experience_id": "EXP-000012",
+  "attempt": "Use exact visible native leaf bounds as the selection hitbox for scaled floor leaf copies.",
+  "reason_failed": "The native model dips below y=0. A selection minimum of -0.007731266 at scale M made native floor placement fail against the supporting soil through filler-cell collision.",
+  "environment": {
+    "game": "Hytale 0.7.2 d769dc3d57881261a62858e1394f0e4de9a21eca",
+    "mod": "Zytale Buildings and Furnishment 1.10.0",
+    "runtime": "Java 25 / Windows"
+  },
+  "error_signature": "AssertionError: native ground placement and consume Zytale_Autumn_Leaves_M",
+  "conditions": [
+    "Visual mesh extends slightly below its ground plane",
+    "Block hitbox bounds reused directly from render bounds"
+  ],
+  "workaround": "Clamp only the floor block selection minimum Y to zero. Keep original geometry and full raw entity bounds; use a stand-off offset for decorations attached to another mesh. Ground placement and exact native M geometry pass afterward.",
+  "resolved_by": null,
+  "date": "2026-10-20T20:01:15.712224Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-leaves-2026-10-20\\REPORT.md",
+      "description": "Observed failing approach and subsequent fix",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-leaves-2026-10-20\\create_assets.py",
+      "description": "Separate floor selection bounds from raw entity bounds",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-leaves-2026-10-20\\native-create.json",
+      "description": "Native ground placement passed for S/M/L",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-leaves-2026-10-20\\package-validation.json",
+      "description": "Original geometry and scaling validated",
+      "verified": true
+    }
+  ]
+}

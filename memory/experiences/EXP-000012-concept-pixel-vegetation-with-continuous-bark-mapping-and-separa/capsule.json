@@ -1,10 +1,10 @@
 {
   "id": "EXP-000012",
   "title": "Concept-pixel vegetation with continuous bark mapping and separate native wind foliage",
-  "summary": "User-approved HD conifers and native grass copies with 64x64 inventory icons, compact item-only atlases and a fixed 22.5-degree grass-grid yaw. Native creation/reload verified; the 1.6.1 visual result was approved by the user.",
+  "summary": "User-approved HD conifers and native grass copies with 64x64 inventory icons, compact item-only atlases and a fixed 22.5-degree grass-grid yaw. Native creation/reload verified; the 1.6.1 visual result was approved by the user. The installed 1.12.2 autumn maple S/M/L resolved cutout-alpha fringe defects after earlier branch and foliage revisions; the user approved the final visual result on 2026-10-21.",
   "status": "active",
   "created_at": "2026-10-18T12:26:30.440253Z",
-  "updated_at": "2026-10-18T16:32:19.614784Z",
+  "updated_at": "2026-10-21T02:01:02.760366Z",
   "domains": [
     "game asset authoring",
     "source image provenance",
@@ -53,7 +53,15 @@
     "FAIL-000038",
     "FAIL-000039",
     "FAIL-000040",
-    "FAIL-000041"
+    "FAIL-000041",
+    "FAIL-000054",
+    "FAIL-000055",
+    "FAIL-000056",
+    "FAIL-000057",
+    "FAIL-000058",
+    "FAIL-000059",
+    "FAIL-000060",
+    "FAIL-000061"
   ],
   "current_solution": "SOL-000012:v006",
   "solution_versions": [
@@ -392,6 +400,131 @@
       },
       "created_at": "2026-10-18T15:44:02.918935Z",
       "supersedes": "SOL-000012:v005",
+      "status": "working"
+    },
+    {
+      "id": "SOL-000014",
+      "version": 1,
+      "description": "One-cell foliage with independently colored constant-size leaf sprites, native preview rotation and persistent surface attachment twist. Hytale 0.7.2.",
+      "changes": [
+        "Separate visible bounds from one-voxel block hitboxes",
+        "Increase leaf count rather than per-leaf scale; repeat a 2 brown : 2 orange : 1 gold group",
+        "Expose native PlaceBlock packet and client-selected rotation through the custom server interaction; delegate floor placement to native code",
+        "Remove obsolete filler voxels only for these leaf IDs when sections load; preserve root cells and unrelated blocks"
+      ],
+      "advantages": [
+        "Adjacent placement despite visual overhang",
+        "Rotation survives native server restart",
+        "Preserves old item IDs and approved tree assets"
+      ],
+      "disadvantages": [
+        "Client appearance and interactive rotation preview still await user acceptance",
+        "Generated silhouettes are not pixel-identical to native source"
+      ],
+      "test_results": [
+        "168 native create assertions and 24 restart assertions passed; actual client-sync interaction data, three sizes and four yaw rotations",
+        "Three editor models valid; same individual physical dimensions, exact 2:2:1 counts and native icons",
+        "Saved legacy filler removed on reload; root and unrelated filler preserved",
+        "Evidence: C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-leaves-revision-2026-10-21\\REPORT.md"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null
+      },
+      "created_at": "2026-10-20T22:44:34.774466Z",
+      "supersedes": null,
+      "status": "working"
+    },
+    {
+      "id": "SOL-000014",
+      "version": 2,
+      "description": "Native static block prop contract for bark leaf decorations, explicit R rotation variants and independent replication/anchor verification.",
+      "changes": [
+        "Keep approved 5/10/15 constant-size leaves, palette and one-cell floor hitboxes",
+        "Declare NESW in final block packets, with base plus three alternative yaw rotations",
+        "Use PropComponent, native block transform and cube-centre offset; rebuild derived components from persisted leaf data on load",
+        "Preserve a precomputed Y-X-Z selection box instead of allowing the X-Y-Z generic AABB helper to overwrite it"
+      ],
+      "advantages": [
+        "Repairs existing attachments on load without offline world writes",
+        "Native trackers emit full transform with block and prop descriptors",
+        "All previous models, textures and icons remain byte-identical"
+      ],
+      "disadvantages": [
+        "Real client appearance and physical R-key preview await user acceptance",
+        "Exact client frame matrix and separate prop-marker pixel contribution were not instrumented"
+      ],
+      "test_results": [
+        "M sample checked in editor before all variants",
+        "Native create/reload pass: three sizes, four floor rotations, 24 surface poses, three actual saved components, item recovery and unchanged trunks",
+        "Native 1.11.0 countercheck fails the strengthened tangent transform assertion as expected",
+        "226 existing assets byte-identical; installation hash and backup verified",
+        "Evidence: C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-leaves-client-fix-2026-10-21\\REPORT.md"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null
+      },
+      "created_at": "2026-10-20T23:10:43.991370Z",
+      "supersedes": "SOL-000014:v001",
+      "status": "experimental"
+    },
+    {
+      "id": "SOL-000015",
+      "version": 1,
+      "description": "Autumn Maple S/M/L in the unified Zytale mod: approved bark and roots, seven staggered primary boughs with attached forks, irregular detailed foliage and binary-alpha Cutout textures. The user approved installed 1.12.2 on 2026-10-21.",
+      "changes": [
+        "1.12.0 delivered the three whole-tree IDs with static wood and native Wind foliage; user rejected texture definition, excessive exposed branches and unnatural crown.",
+        "1.12.1 reused the approved tree bark, reduced each tree to seven primary boughs and fourteen secondary forks, added overlapping solid collars at joins, and replaced broad crossed cards with smaller maple sprays. User said the result was practically desired but identified black specks and red edges.",
+        "1.12.2 normalized the existing foliage atlas to binary Cutout alpha (0 below 128, 255 otherwise), keeping all retained RGB pixels and all geometry, item definitions, UVs, wind settings and Java classes unchanged.",
+        "The same S/M/L item IDs and existing-world placement contract were retained; no production-world rewrite was performed."
+      ],
+      "advantages": [
+        "Matches the approved vegetation bark texture and has visibly joined, less crowded branches.",
+        "Removes low-alpha specks and red border residues without recoloring retained leaf pixels.",
+        "Preserves established whole-tree placement, NESW rotation, removal and static-wood/native-Wind behavior.",
+        "User explicitly approved the installed 1.12.2 result."
+      ],
+      "disadvantages": [
+        "Specific to the installed Hytale 0.7.2 Cutout renderer; other client versions need separate checks.",
+        "Long-duration stability and performance were not measured; user acceptance does not establish either."
+      ],
+      "test_results": [
+        "1.12.1: twelve Blockbench Hytale runtime/held models validated and 441 structural connection checks passed; isolated native create/reload reports passed 97/78 placement and rotation assertions plus asset and bark-ray checks.",
+        "1.12.2: 662741 source partial-alpha texels became binary alpha; 126632 low-alpha texels were discarded. All 536175 retained texels have identical RGB bytes.",
+        "1.12.2 package diff changed only manifest, foliage atlas, held atlas and three item icons; all models, definitions and compiled Java classes are byte-identical to 1.12.1.",
+        "Installed 1.12.2 SHA-256 342efab4cdab1d746b52791f5c403aa618d1d151b74fad5ade81ed2524498642; transactional rollback backup recorded.",
+        "User message dated 2026-10-21: \"Sono perfetti, ottimo lavoro.\" This establishes visual acceptance of the delivered result; no new screenshot or FPS measurement was supplied.",
+        "Evidence: C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\REPORT.md; C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\texture-validation.json; C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\package-validation.json; C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-maple-edge-fix-2026-10-21\\installation.json"
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": "Hytale 0.7.2 Windows only",
+        "primaryBoughsPerSize": 7,
+        "secondaryForksPerSize": 14,
+        "structuralConnectionChecks": 441,
+        "retainedFoliageTexels": 536175
+      },
+      "created_at": "2026-10-21T02:01:01.703985Z",
+      "supersedes": null,
       "status": "working"
     }
   ],

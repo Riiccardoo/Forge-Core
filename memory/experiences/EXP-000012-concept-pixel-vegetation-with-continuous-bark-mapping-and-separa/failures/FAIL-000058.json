@@ -1,0 +1,29 @@
+{
+  "id": "FAIL-000058",
+  "experience_id": "EXP-000012",
+  "attempt": "Reuse an older tree QA plugin that starts an asynchronous daemon and waits for an automatically loaded default world, with the current bare offline runner.",
+  "reason_failed": "The QA startup callback returned while the default world had not been explicitly loaded. The bare server continued into ServerManager and reported no listeners; the run produced no success report. An editor/model success cannot substitute for this missing integration result.",
+  "environment": "Hytale 0.7.2 Windows; Java 25; --bare --auth-mode offline; isolated test universe with no players",
+  "error_signature": "IllegalArgumentException: Listeners is empty after starting ServerManager!!; no native-create success report",
+  "conditions": [
+    "Older asynchronous VegetationQA lifecycle combined with a newer bare runner",
+    "No production game/world was involved"
+  ],
+  "workaround": "Reuse the synchronous lifecycle already proven by the leaf QA harness: wait for Universe readiness, explicitly load the isolated default world when absent, dispatch checks to its thread, write a fresh outcome, then shut down. Final create and reload passed. Guard the isolated universe and validate fresh reports independently of exit status.",
+  "resolved_by": null,
+  "date": "2026-10-20T23:46:00.531138Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/work/autumn-maple-2026-10-21/REPORT.md",
+      "description": "Initial failed lifecycle and final native create/reload evidence",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "C:/Users/User/Desktop/Zytale/work/autumn-maple-2026-10-21/prepare_qa.py",
+      "description": "Explicit world loading and synchronous QA callback adaptation",
+      "verified": true
+    }
+  ]
+}
