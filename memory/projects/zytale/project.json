@@ -53,7 +53,7 @@
     "EXP-000012",
     "EXP-000013"
   ],
-  "updated_at": "2026-10-21T16:27:35.072714Z",
+  "updated_at": "2026-10-22T01:08:17.872729Z",
   "implementation": {
     "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
@@ -7754,5 +7754,18 @@
     "fullNativeComparedCells": 124190720,
     "clientVisualAcceptance": "pending",
     "performanceBenchmark": "not performed"
+  },
+  "playable_area_definition": {
+    "updated": "2026-10-22",
+    "authority": "Explicit user instruction in this conversation",
+    "save": "The Village - Zytale 306 Working Copy",
+    "boundary_block_id": "Rock_Marble_Brick_Smooth",
+    "definition": "The playable area is the entire horizontal interior of the perimeter explicitly marked by the user with Rock_Marble_Brick_Smooth blocks, extended vertically without a height limit, both below and above the marker blocks. Membership depends on X/Z, never on the marker Y coordinate.",
+    "boundary_treatment": "Treat the perimeter itself as part of the playable boundary and preserve its marker blocks unless the user requests otherwise.",
+    "priority": "Supersedes every previous inferred playable hull, polygon, screenshot estimate and cached playable/scenic mask for future work. Historical reports remain evidence of their original scope, not the current boundary.",
+    "precision_requirement": "Before the next spatial edit, extract the actual marked perimeter coordinates from a consistent current save snapshot and derive the horizontal interior mask. Identify the deliberate perimeter against the user reference; do not treat unrelated construction blocks sharing this material ID as boundary markers. Check closure and ambiguous segments before using the mask. The screenshot is a visual reference, not coordinate precision evidence.",
+    "validation_status": "User-defined rule confirmed; actual perimeter coordinates and derived mask have not yet been extracted or validated.",
+    "source_reference": "C:/Users/User/AppData/Local/Temp/codex-clipboard-5db2c064-9634-478a-a992-d9ce54bd6808.png",
+    "world_changes_requested": false
   }
 }
