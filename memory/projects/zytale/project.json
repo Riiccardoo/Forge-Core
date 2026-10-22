@@ -53,7 +53,7 @@
     "EXP-000012",
     "EXP-000013"
   ],
-  "updated_at": "2026-10-22T01:08:17.872729Z",
+  "updated_at": "2026-10-22T01:31:53.538249Z",
   "implementation": {
     "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
@@ -7757,15 +7757,47 @@
   },
   "playable_area_definition": {
     "updated": "2026-10-22",
-    "authority": "Explicit user instruction in this conversation",
+    "authority": "User-defined Rock_Marble_Brick_Smooth contour; user explicitly directed that small gaps are part of the perimeter.",
     "save": "The Village - Zytale 306 Working Copy",
     "boundary_block_id": "Rock_Marble_Brick_Smooth",
-    "definition": "The playable area is the entire horizontal interior of the perimeter explicitly marked by the user with Rock_Marble_Brick_Smooth blocks, extended vertically without a height limit, both below and above the marker blocks. Membership depends on X/Z, never on the marker Y coordinate.",
-    "boundary_treatment": "Treat the perimeter itself as part of the playable boundary and preserve its marker blocks unless the user requests otherwise.",
-    "priority": "Supersedes every previous inferred playable hull, polygon, screenshot estimate and cached playable/scenic mask for future work. Historical reports remain evidence of their original scope, not the current boundary.",
-    "precision_requirement": "Before the next spatial edit, extract the actual marked perimeter coordinates from a consistent current save snapshot and derive the horizontal interior mask. Identify the deliberate perimeter against the user reference; do not treat unrelated construction blocks sharing this material ID as boundary markers. Check closure and ambiguous segments before using the mask. The screenshot is a visual reference, not coordinate precision evidence.",
-    "validation_status": "User-defined rule confirmed; actual perimeter coordinates and derived mask have not yet been extracted or validated.",
-    "source_reference": "C:/Users/User/AppData/Local/Temp/codex-clipboard-5db2c064-9634-478a-a992-d9ce54bd6808.png",
+    "definition": "Use the inclusive playableRowSpans mask in the referenced JSON for X/Z membership. Every listed X/Z column is playable at all Y, above and below, without limits. Membership never depends on the marker block Y.",
+    "boundary_treatment": "The actual saved marker coordinates and the four inferred one-cell connections are separate. The connecting cells count as boundary; they are not claims that blocks exist there.",
+    "priority": "Supersedes earlier inferred playable hulls, screenshot estimates and cached playable/scenic masks for future world edits.",
+    "bounds_xz": [
+      -166,
+      -72,
+      278,
+      275
+    ],
+    "marker_blocks_scanned": 2291,
+    "perimeter_actual_xz_columns": 1633,
+    "perimeter_actual_xyz_blocks": 2210,
+    "virtual_bridge_xz": [
+      [
+        -77,
+        270
+      ],
+      [
+        -75,
+        270
+      ],
+      [
+        -35,
+        270
+      ],
+      [
+        -33,
+        270
+      ]
+    ],
+    "strict_interior_xz_columns": 117162,
+    "playable_xz_columns_including_boundary": 118799,
+    "source_reference": "User screenshot codex-clipboard-5db2c064-9634-478a-a992-d9ce54bd6808.png; consistent 16-region save snapshot in local work/playable-boundary-survey-2026-10-22/snapshot-proof.json.",
+    "coordinate_dataset": "memory/projects/zytale/references/playable-boundary-2026-10-22.json",
+    "report": "memory/projects/zytale/references/playable-boundary-2026-10-22.md",
+    "coordinate_dataset_sha256": "72e9ab60bdc8d751f8858433458b3e621d8222c9c5365dca2ed978b2489165ce",
+    "binary_mask_sha256": "9dfcfb022957803fdb38445155c62380ecd1d37578e47f019baba0581b249c84",
+    "validation_status": "Validated from closed-game consistent save snapshot: all 9,118 stored chunks scanned; row spans expanded to 118,799 columns and byte-matched to binary mask; village, farm and monastery anchors inside. Client visual acceptance of derived outline not separately performed.",
     "world_changes_requested": false
   }
 }
