@@ -1,0 +1,56 @@
+{
+  "id": "SOL-000001",
+  "version": 15,
+  "description": "Adaptive Surface 0.12.6: generated world pack becomes an internal startup cache, eliminating the persisted mandatory-mod dependency for new JAR-only installations.",
+  "changes": [
+    "Store the generated pack under mods/Zytale_AdaptiveSurface/generated; register it during setup before the initial LoadAssetEvent, without runtime asset reload.",
+    "Persist a disabled legacy pack entry; synchronously save an old enabled entry before moving its ZIP so a crash cannot leave a missing mandatory pack.",
+    "Move old pack bytes intact and preserve the existing fail-closed rebuild/fallback mechanism. Retain both legacy and internal inventories in next-start builds.",
+    "Update the backup/rollback installer for worlds already blocked by client preflight. Target the installed 0.7.4 server and keep all asset bytes unchanged."
+  ],
+  "advantages": [
+    "Fresh single-JAR installation and deleted-cache restart no longer require a separately downloaded generated mod",
+    "Old working material bytes survive missing-index migration"
+  ],
+  "disadvantages": [
+    "A Java plugin cannot repair an old world before client preflight; already blocked saves require one-time local metadata migration",
+    "No actual client join or hosted-browser download was automated; no publication",
+    "Adaptive Window cold-cache material learning may reject a first placement until restart; no Window package changed",
+    "Public asset licensing limits from 0.12.5 remain open"
+  ],
+  "test_results": [
+    "279130 core assertions pass. Nine final native runs pass on installed Hytale 0.7.4 (three ordinary-JAR asset-validation boots and six separate integration boots).",
+    "Client prerequisite model detects the exact missing identifier in the affected original save and none after the repair. It is explicitly a model, not a client-UI test.",
+    "Copied affected world: 9173 saved chunks scanned, 67 startup materials/2211 states validated; original offline repair includes its 65 required materials.",
+    "Missing-index legacy migration and reopen preserve the 89-material pack byte-for-byte; window placement/reopen checks pass for 21 variants after their material cache is prepared.",
+    "1753 asset files byte-identical to 0.12.5; no integration/test classes or synthetic catalogue entries in ordinary JAR.",
+    "Installed locally with backups; all 58 universe files and other four mod JARs unchanged. Only original config change is the generated Surface pack Enabled=false."
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-23T10:32:51.192289Z",
+  "supersedes": "SOL-000001:v014",
+  "status": "experimental",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.6.md",
+      "description": "Observed missing-mod failure, local repair and startup validation on installed Hytale 0.7.4",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/outputs/startup-0.12.6/validation-summary.json",
+      "description": "Final artifact hashes, nine native passes, preliminary failure retained, preservation audit",
+      "verified": true
+    }
+  ]
+}

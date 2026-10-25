@@ -1,0 +1,35 @@
+{
+  "id": "FAIL-000066",
+  "experience_id": "EXP-000001",
+  "attempt": "Use one placement permission predicate for decoration placement and all removal paths, relying on entity-hit filtering for recovery.",
+  "reason_failed": "The older removal path consulted placement permissions and did not expose a cancellable block-region pre-check for Use recovery. Permission semantics and support/occupied-cell coverage differed by entry path.",
+  "environment": "Hytale 0.7.3 Windows; Surface baseline 0.12.4, corrected local candidate 0.12.5; Window 0.4.5",
+  "error_signature": "",
+  "conditions": [
+    "World placement and breaking permissions differ",
+    "A protection denies the supporting cell or part of the occupied footprint"
+  ],
+  "workaround": "Separate native placement/breaking predicates, check environment/footprint, dispatch cancellable pre-events before mutation, and keep the support protected on denied mining redirects. Verify third-party plugins with side effects separately.",
+  "resolved_by": "SOL-000001:v014",
+  "date": "2026-10-23T02:23:41.598420Z",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.5.md",
+      "description": "2026-10-23 local implementation, native tests, asset provenance, residual limits; no publication or installation",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/outputs/safety-0.12.5/production-validation.json",
+      "description": "Four native 0.7.3 boots of actual distribution jars, new/copied worlds, asset validation enabled",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/outputs/safety-0.12.5/test-matrix.json",
+      "description": "Per-scenario results with actual artifact hashes; historical failed attempts retained separately",
+      "verified": true
+    }
+  ]
+}

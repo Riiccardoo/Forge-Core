@@ -1,0 +1,26 @@
+{
+  "id": "FAIL-000069",
+  "experience_id": "EXP-000010",
+  "attempt": "Check the previously approved 0.7.2 Creative Fullbright adapter against installed Hytale0.7.4",
+  "reason_failed": "Both old native direct-call contracts at RVAs0x4bb263 and0x4bb485 no longer match the expected updater at0x539080. The old LUT function address now belongs to different code.",
+  "environment": {
+    "hytale": "0.7.4",
+    "clientSha256": "90da4101d8cdc7f2563efc74240d251a574ed6e8dc075d9050fed11af179a2b3"
+  },
+  "error_signature": "legacyCreativeCallSiteContract074: both false",
+  "conditions": [
+    "Hytale updated from the fingerprinted0.7.2 client",
+    "Fog camera shader ABI remains compatible; that does not imply Creative native ABI compatibility"
+  ],
+  "workaround": "Leave Creative adapter disabled; report availability separately from fog; do not whitelist the new fingerprint for old native offsets. New native adapter requires its own validation.",
+  "resolved_by": null,
+  "date": "2026-10-23T11:22:27.614590Z",
+  "source_refs": [
+    {
+      "kind": "local_test_report",
+      "reference": "C:/Users/User/Desktop/Zytale/Porject-Zytale/tools/AtmosphereTool/docs/AUDIT-2.0.3-20261023.md",
+      "description": "Isolated migration/latency/installer/current-release audit; no publication or live installation",
+      "verified": true
+    }
+  ]
+}

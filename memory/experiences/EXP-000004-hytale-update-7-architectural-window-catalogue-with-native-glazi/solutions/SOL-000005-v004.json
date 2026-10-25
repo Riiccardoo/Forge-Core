@@ -1,0 +1,56 @@
+{
+  "id": "SOL-000005",
+  "version": 4,
+  "description": "Adaptive Window 0.4.5 compatibility candidate for Hytale 0.7.3 and Adaptive Surface 0.12.5.",
+  "changes": [
+    "Consume the active versioned Surface donor map for learned Q materials, with the older static P map as fallback",
+    "Target 0.7.3 in plugin and regenerated packs",
+    "Remove test hooks/classes and synthetic donor mappings from the ordinary jar; add explicit provenance notice"
+  ],
+  "advantages": [
+    "All 21 window variants keep their native placement and donor selection",
+    "Existing images, models and generated builtin content unchanged except manifest"
+  ],
+  "disadvantages": [
+    "No client-input or visual acceptance in this session",
+    "Unknown donor metadata in older fallback packs remains unavailable",
+    "Artwork/template redistribution rights remain unresolved"
+  ],
+  "test_results": [
+    "21 native placements on mixed P/Q Surface donors plus reopen pass with both mods",
+    "Four boots of actual ordinary jars pass 0.7.3 asset validation; no test components bundled"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-23T02:23:40.200266Z",
+  "supersedes": "SOL-000005:v003",
+  "status": "experimental",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.5.md",
+      "verified": true,
+      "description": "2026-10-23 local implementation, native tests, asset provenance, residual limits; no publication or installation"
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/outputs/safety-0.12.5/production-validation.json",
+      "verified": true,
+      "description": "Four native 0.7.3 boots of actual distribution jars, new/copied worlds, asset validation enabled"
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/outputs/safety-0.12.5/test-matrix.json",
+      "verified": true,
+      "description": "Per-scenario results with actual artifact hashes; historical failed attempts retained separately"
+    }
+  ]
+}

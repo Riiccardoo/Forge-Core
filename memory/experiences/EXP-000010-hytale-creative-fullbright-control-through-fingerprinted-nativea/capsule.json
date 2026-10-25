@@ -4,7 +4,7 @@
   "summary": "AtmosphereTool 2.0.1 adds only a Creative Fullbright slider, 0..100, using the native minimum-light setter. Isolated tests and installation checks passed. After in-game use, the user confirmed that brightness and fluidity meet the desired result. Longer-term NativeAOT/GC stability and other client builds remain unmeasured; the native dispatch technique remains experimental.",
   "status": "experimental",
   "created_at": "2026-10-17T02:46:20.032346Z",
-  "updated_at": "2026-10-17T02:57:07.490340Z",
+  "updated_at": "2026-10-23T11:22:27.616590Z",
   "domains": [
     "game modding",
     "native interoperability",
@@ -61,7 +61,8 @@
     "The initial C fixture failed because an essential VirtualProtect call was inside an assertion disabled by compiler configuration. Explicitly enabling assertions made the complete fixture execute and pass."
   ],
   "known_failures": [
-    "FAIL-000034"
+    "FAIL-000034",
+    "FAIL-000069"
   ],
   "current_solution": "SOL-000010:v001",
   "solution_versions": [

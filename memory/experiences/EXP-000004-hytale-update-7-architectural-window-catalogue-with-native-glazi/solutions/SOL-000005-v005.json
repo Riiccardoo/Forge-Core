@@ -1,0 +1,67 @@
+{
+  "id": "SOL-000005",
+  "version": 5,
+  "description": "Adaptive Window 0.4.7-rc.2 on Hytale 0.7.4: client-compatible, single-direction architectural transitions for 21 saved-compatible windows, with frame-supported extension where surrounding masonry is too narrow.",
+  "changes": [
+    "Serialize model UV offsets and quad dimensions as integers; preserve precise geometry with stretch",
+    "Bake fringe face orientation into the mesh and leave only yaw on the block entity so pivot order cannot displace the vertical anchor",
+    "Choose one transition direction per contact: surrounding cube to window first, stable material order for window pairs",
+    "Allow transition overlap onto actual opaque frame boxes when wall space is insufficient; exclude glazing, empty space and unsupported oblique faces",
+    "Preserve all 21 window IDs, saved material states, original frame and glass geometries; source donor samples locally rather than embedding donor pixels in the public JAR"
+  ],
+  "advantages": [
+    "User reports the installed rc.2 transition appearance works perfectly in the real client on 2026-10-25",
+    "Client model parser contract and serialized pose are checked over the actual generated assets",
+    "Existing worlds retain their window IDs, geometry and saved materials"
+  ],
+  "disadvantages": [
+    "35,665 render-only helper block types increase metadata and parsing cost, not captured by image pixel budget",
+    "No measured FPS or low-power second-PC result; unsupported oblique frame faces are omitted",
+    "Visual approval does not establish asset redistribution rights or public-release readiness"
+  ],
+  "test_results": [
+    "Six native runs pass, including 21 windows x four orientations, reopen/upgrade, reciprocal-contact uniqueness and coexistence with Adaptive Surface 0.12.6 final",
+    "6,981 generated models / 31,668 quads checked against the client integer UV/dimension contract",
+    "459,050 serialized mesh and pose checks, 193,668 frame-support points and 36 core regressions pass",
+    "Installed 0.4.7-rc.2 JAR SHA-256 7edd82c0a10cdd4aac357420ff37225fb18356054920ea4df8235f438e3c58fa; user then confirmed it works perfectly"
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-25T00:59:10.148841Z",
+  "supersedes": "SOL-000005:v004",
+  "status": "working",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveWindow/docs/TRANSITION-FIX-0.4.7-rc.2.md",
+      "description": "Implementation, client defect, validation and limits",
+      "verified": true
+    },
+    {
+      "kind": "test_report",
+      "reference": "ZytaleAdaptiveWindow/outputs/transitions-0.4.7-rc.2/validation-summary.json",
+      "description": "Native runs and generated-asset checks",
+      "verified": true
+    },
+    {
+      "kind": "installation_receipt",
+      "reference": "ZytaleAdaptiveWindow/outputs/transitions-0.4.7-rc.2/installation.json",
+      "description": "Installed artifact and recoverable previous-JAR backup",
+      "verified": true
+    },
+    {
+      "kind": "user_feedback",
+      "reference": "Codex conversation, 2026-10-25: 'Funziona perfettamente, annota tutto su forge e sincronizza/Aggiorna Github'",
+      "description": "Explicit real-client visual acceptance of installed rc.2; no FPS assertion",
+      "verified": true
+    }
+  ]
+}

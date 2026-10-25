@@ -1,0 +1,30 @@
+{
+  "id": "FAIL-000068",
+  "experience_id": "EXP-000001",
+  "attempt": "Persist ZytaleGenerated:AdaptiveSurfaceWorld as Enabled=true and rely on the plugin constructor to regenerate its missing ZIP.",
+  "reason_failed": "The Hytale client checks enabled mod manifests before launching the Java server. In the reported world the enabled generated identifier remained but ZAS_ActivePack.zip was absent, so the constructor could never run. Dedicated-server bootstrap tests did not exercise this prerequisite barrier.",
+  "environment": "Windows; reported with installed Surface 0.12.4 and Hytale client/server 0.7.4; prior proposed 0.12.5 shared the same enabled-pack design",
+  "error_signature": "MISSING MOD DETECTED: ZytaleGenerated:AdaptiveSurfaceWorld",
+  "conditions": [
+    "Generated pack is absent",
+    "World config lists its identifier as enabled",
+    "Client checks prerequisites before executing the mod"
+  ],
+  "workaround": "Keep the derived cache out of mod discovery, load it during initial plugin setup, never persist it enabled, and migrate already-blocked saves once with backups.",
+  "resolved_by": "SOL-000001:v015",
+  "date": "2026-10-23T10:32:52.067906Z",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.6.md",
+      "description": "Observed missing-mod failure, local repair and startup validation on installed Hytale 0.7.4",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/outputs/startup-0.12.6/validation-summary.json",
+      "description": "Final artifact hashes, nine native passes, preliminary failure retained, preservation audit",
+      "verified": true
+    }
+  ]
+}

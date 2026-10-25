@@ -21,6 +21,7 @@ The isolation of donor-textured wall UVs from fixed frame/glazing UVs applies to
 - FAIL-000020
 - FAIL-000021
 - FAIL-000025
+- FAIL-000070
 
 ## Transferable Patterns
 

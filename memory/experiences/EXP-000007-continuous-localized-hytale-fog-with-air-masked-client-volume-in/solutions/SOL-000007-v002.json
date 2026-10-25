@@ -1,0 +1,48 @@
+{
+  "id": "SOL-000007",
+  "version": 2,
+  "description": "Atmosphere Tool 2.0.3 local audit candidate: preserve over-limit definitions through runtime admission and reduce publication latency without changing approved shaders.",
+  "changes": [
+    "Keep storage validity separate from 16-area / 1024-axis / 4M-voxel render admission; stable UUID order, per-area reasons and byte-preserving migration backups.",
+    "Decouple 20ms volume scheduling from 500ms previews, cap scan slices around 1ms, keep disk writes outside state lock and recheck epoch before rename; throttle lease writes.",
+    "Verify per-path installer ownership and backups, journal before writes, atomically stage payloads, rollback restore failures, and remove recognized client files safely after game updates.",
+    "Exclude fixture DLL/test classes/research/game assets; include runtime notices and English instructions."
+  ],
+  "advantages": [
+    "Four existing saves / 19 definitions preserved; source save hashes unchanged.",
+    "Measured initial publication 5184.56 to 672.87 ms; metadata median 544.80 to 67.29 ms for a 191268-cell copied-world fixture."
+  ],
+  "disadvantages": [
+    "Fullbright 0.7.2 call sites changed in 0.7.4; adapter remains disabled. No current-client visual or long-duration acceptance.",
+    "Full packet still written for metadata; extreme 16-volume overlap remains expensive.",
+    "No explicit project redistribution license found; reference provenance and platform acceptance need owner review before publication."
+  ],
+  "test_results": [
+    "Migration regression including synthetic over-limit worlds, schema1/2, future schema and unknown metadata passed.",
+    "Hytale0.7.4 production JAR boot/reboot on copied QA world with saved definitions; byte-identical definitions after two boots.",
+    "Native world occupancy/admission/lifecycle probe passed; 122 general regression checks.",
+    "Six current native shader variants and isolated WGL integration passed; production DLL forwards unknown host unchanged.",
+    "25 Windows PowerShell5 installer cases, including copied actual0.7.4 executable and restore failure rollback, passed."
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": "No live updates or publishing; prior visual approval preserved, candidate experimental.",
+    "maintainability": null,
+    "performance": "Single initial timing per version; 12 metadata samples each: p50 544.8034->67.287ms, p95 550.0674->69.545ms. Excludes client presentation. WGL ingestion p50 37.9753ms, p95 58.7618ms in separate small-mask fixture.",
+    "compatibility": "Windows x64 Hytale0.7.4: server/shader contracts verified in isolation; Creative Fullbright unavailable; local singleplayer only."
+  },
+  "created_at": "2026-10-23T11:21:59.790810Z",
+  "supersedes": "SOL-000007:v001",
+  "status": "experimental",
+  "source_refs": [
+    {
+      "kind": "local_test_report",
+      "reference": "C:/Users/User/Desktop/Zytale/Porject-Zytale/tools/AtmosphereTool/docs/AUDIT-2.0.3-20261023.md",
+      "description": "Isolated migration/latency/installer/current-release audit; no publication or live installation",
+      "verified": true
+    }
+  ]
+}

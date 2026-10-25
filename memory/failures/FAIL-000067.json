@@ -1,0 +1,35 @@
+{
+  "id": "FAIL-000067",
+  "experience_id": "EXP-000001",
+  "attempt": "Wrap all PlaceBlock roots for Surface decoration placement without reserving Adaptive Window items for their owner.",
+  "reason_failed": "Window items can share wrapped native roots and be consumed as decorations. The old static donor map also omitted learned Q identifiers. Verified coexistence requires both routing ownership and donor metadata.",
+  "environment": "Hytale 0.7.3 Windows; Surface baseline 0.12.4, corrected local candidate 0.12.5; Window 0.4.5",
+  "error_signature": "",
+  "conditions": [
+    "Both mods installed and a window targets an Adaptive Surface",
+    "The Surface donor is learned rather than in the older static map"
+  ],
+  "workaround": "Reject the Window item family in every Surface decoration entry point, retain native fallback, and exchange a versioned donor map in the generated pack.",
+  "resolved_by": "SOL-000001:v014",
+  "date": "2026-10-23T02:23:42.151546Z",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.5.md",
+      "description": "2026-10-23 local implementation, native tests, asset provenance, residual limits; no publication or installation",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/outputs/safety-0.12.5/production-validation.json",
+      "description": "Four native 0.7.3 boots of actual distribution jars, new/copied worlds, asset validation enabled",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/outputs/safety-0.12.5/test-matrix.json",
+      "description": "Per-scenario results with actual artifact hashes; historical failed attempts retained separately",
+      "verified": true
+    }
+  ]
+}

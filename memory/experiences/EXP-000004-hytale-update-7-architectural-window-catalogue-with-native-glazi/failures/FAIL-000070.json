@@ -1,0 +1,34 @@
+{
+  "id": "FAIL-000070",
+  "experience_id": "EXP-000004",
+  "attempt": "Ship Adaptive Window 0.4.7-rc.1 transition meshes after server-side geometry and reload checks",
+  "reason_failed": "The Hytale 0.7.4 client rejected the generated transition models because textureLayout offsets were serialized as decimals where its model parser requires Int32. The user also observed floating fringes and duplicate transitions in the installed rc.1.",
+  "environment": {
+    "hytale": "0.7.4",
+    "window": "0.4.7-rc.1",
+    "surface": "0.12.6 final"
+  },
+  "error_signature": "System.Text.Json.JsonException at shape.textureLayout.front.offset.x; 12,217 client warnings across 2,568 transition model paths",
+  "conditions": [
+    "Server asset registration did not exercise the client's blockymodel JSON parser",
+    "Independent reciprocal contact generation could draw both directions",
+    "Previous pose used entity pitch/roll with an unverified renderer pivot assumption"
+  ],
+  "workaround": "Use 0.4.7-rc.2: integer UV offsets and quad dimensions with geometric stretch, baked mesh face orientation and yaw-only entity pose, one ordered direction per contact, and frame-supported extension limited to opaque geometry.",
+  "resolved_by": "SOL-000005:v005",
+  "date": "2026-10-25T00:59:09.855261Z",
+  "source_refs": [
+    {
+      "kind": "client_log_audit",
+      "reference": "ZytaleAdaptiveWindow/outputs/transitions-0.4.7-rc.2/evidence/client-defect.json",
+      "description": "Bounded private log and image evidence for rc.1; hashes and error count",
+      "verified": true
+    },
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveWindow/docs/TRANSITION-FIX-0.4.7-rc.2.md",
+      "description": "Root cause, implementation and regression account",
+      "verified": true
+    }
+  ]
+}

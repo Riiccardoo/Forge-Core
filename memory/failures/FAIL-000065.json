@@ -1,0 +1,35 @@
+{
+  "id": "FAIL-000065",
+  "experience_id": "EXP-000001",
+  "attempt": "Filter required material tokens to those present in the current catalogue during world-pack regeneration (through 0.12.4).",
+  "reason_failed": "Code inspection found tokens.removeIf for absent entries: required saved or active materials could disappear from a successfully written replacement. No production-world loss is claimed. Current missing-data regressions establish the required non-destructive contract.",
+  "environment": "Hytale 0.7.3 Windows; Surface baseline 0.12.4, corrected local candidate 0.12.5; Window 0.4.5",
+  "error_signature": "",
+  "conditions": [
+    "A saved/active token is absent from the catalogue or learned index",
+    "Background preparation is another entry point and must retain the active inventory too"
+  ],
+  "workaround": "Treat coverage as a mandatory precondition; report missing token/source data; snapshot inputs and atomically replace only after full validation; stop discovery writes in recovery mode.",
+  "resolved_by": "SOL-000001:v014",
+  "date": "2026-10-23T02:23:41.027492Z",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.5.md",
+      "description": "2026-10-23 local implementation, native tests, asset provenance, residual limits; no publication or installation",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/outputs/safety-0.12.5/production-validation.json",
+      "description": "Four native 0.7.3 boots of actual distribution jars, new/copied worlds, asset validation enabled",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/outputs/safety-0.12.5/test-matrix.json",
+      "description": "Per-scenario results with actual artifact hashes; historical failed attempts retained separately",
+      "verified": true
+    }
+  ]
+}

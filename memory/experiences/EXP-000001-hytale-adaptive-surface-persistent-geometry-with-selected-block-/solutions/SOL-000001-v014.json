@@ -1,0 +1,63 @@
+{
+  "id": "SOL-000001",
+  "version": 14,
+  "description": "Adaptive Surface 0.12.5 on Hytale 0.7.3: fail-closed world-pack regeneration, retained-pack recovery, unified decoration permissions and Adaptive Window placement ownership.",
+  "changes": [
+    "Retain the union of saved/helper IDs, active-pack inventory and prior staged inventory at every builder entry point. Never filter away required materials missing from the catalogue.",
+    "Snapshot and preflight all material metadata, shape/model bindings and PNGs before atomic replacement. Produce actionable per-material diagnostics and suspend cache/discovery writes during fallback recovery.",
+    "Check placement versus breaking rules separately, including environment and support/occupied cells. Use cancellable native pre-events for all removal paths and reject redirected placement checks.",
+    "Keep ZMA_Window items in their native placement path and share a versioned token-to-donor index for P and Q materials.",
+    "Separate integration sources/jar, remove two synthetic catalogue materials from ordinary packaging, and audit resource preservation and provenance."
+  ],
+  "advantages": [
+    "Missing/incomplete cache data cannot silently reduce a functioning pack",
+    "Previously accepted visual resources remain byte-identical",
+    "Native Window placement retains its material-selection behavior"
+  ],
+  "disadvantages": [
+    "No real-client visual/input acceptance or third-party region plugin certification",
+    "Legacy retained packs without donor metadata cannot restore unknown source mappings",
+    "Public release not cleared: sampled game textures, Window template provenance and project redistribution license require resolution"
+  ],
+  "test_results": [
+    "279125 core assertions and distribution-exclusion checks pass against installed Hytale 0.7.3; Java 25 compilation, bundled Temurin 26.0.2 native runtime.",
+    "Actual copied cache has shared-atlas-3 and shared-atlas-4 entries; active pack has 89 materials and 2937 checked states. Missing/broken index, texture/helper loss, removed catalogue entry and legacy 0.7.2 pack fallback all retain pack bytes and load saved states.",
+    "Native ECS tests pass world/environment restrictions, support/occupied-cell cancellation, redirect rejection, Use/direct-hit/mining removal checks; no external region-protection plugin installed.",
+    "21 Window variants place through native server logic on P/Q Surface donors and persist on reopen; nine addon Secondary roots place exactly one decoration and consume once.",
+    "Four final distribution-jar boots pass native asset validation (new/copied worlds, first/reopen); plugin server SHA and package hashes recorded.",
+    "2143 resource inventory entries, 700 ordinary catalogue materials; existing models/images preserved, test components/server libraries excluded. No publishing or user-save installation."
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-23T02:23:39.383956Z",
+  "supersedes": "SOL-000001:v013",
+  "status": "experimental",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/docs/VALIDATION-0.12.5.md",
+      "verified": true,
+      "description": "2026-10-23 local implementation, native tests, asset provenance, residual limits; no publication or installation"
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/outputs/safety-0.12.5/production-validation.json",
+      "verified": true,
+      "description": "Four native 0.7.3 boots of actual distribution jars, new/copied worlds, asset validation enabled"
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/outputs/safety-0.12.5/test-matrix.json",
+      "verified": true,
+      "description": "Per-scenario results with actual artifact hashes; historical failed attempts retained separately"
+    }
+  ]
+}

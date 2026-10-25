@@ -1,7 +1,7 @@
 {
   "id": "zytale",
   "name": "zytale",
-  "summary": "Zytale: AdaptiveWindow and AdaptiveSurface history retained. AtmosphereTool 2.0.1 is installed with the Creative Fullbright slider and unchanged approved fog shaders. Automated checks and installation verification passed; the user confirmed its in-game brightness and fluidity as desired. Long-duration native stability and other client builds remain unverified. Manual native-component installation, exact Windows Hytale 0.7.2 and local singleplayer remain the supported scope. Zytale Buildings and Furnishment 1.13.0 unifies the approved vegetation, Blackridge architecture and Tall Wheat; six world configs were migrated, with an in-game legacy-block recheck still open. Latest Working Copy: all 1430 trees retained and redistributed including playable areas; 476 replaced with Autumn Maple L (477 total with the existing maple). Added 30663 Leaves L, 1271 piles M, 611 piles L and 67279 Trim L grass around the other 954 trees. Terrain, Adaptive Surface, architecture, paths and crops retained. Native pilot, full 379-chunk comparison and 11-chunk restart passed; client visual acceptance pending. Autumn leaves retain the approved counts, palette and one-cell footprints. Previous leaf revisions passed native checks but had user-reported client placement defects, addressed by the current 1.13.0 revision. Autumn Maple 1.12.0 client appearance was rejected. User described maple 1.12.1 as practically desired but rejected black specks/red fringes. The approved 1.12.2 maple fix corrects cutout alpha while preserving shape, branches and retained RGB; pixel/package checks pass and the user approved the final visual result on 2026-10-21. Installed 1.13.0 adds predicted-cell reconciliation and private trunk preview, plus S/M/L leaf heaps. Latest user-approved target dimensions are bases 1/2/3 squared with heights 0.6/1.2/1.8 after the photo reference. Native create/reload pass; the user confirmed bark preview, single placement and live R rotation in 1.13.0. Final pile visual acceptance remains pending. Buildings and Furnishment 1.13.1 now installs detailed compact leaf piles with a circular ground transition; approved dimensions and bark/R implementation are unchanged. Final pile client visual acceptance is pending.",
+  "summary": "Zytale: AdaptiveWindow and AdaptiveSurface history retained. AtmosphereTool 2.0.1 is installed with the Creative Fullbright slider and unchanged approved fog shaders. Automated checks and installation verification passed; the user confirmed its in-game brightness and fluidity as desired. Long-duration native stability and other client builds remain unverified. Manual native-component installation, exact Windows Hytale 0.7.2 and local singleplayer remain the supported scope. Zytale Buildings and Furnishment 1.13.0 unifies the approved vegetation, Blackridge architecture and Tall Wheat; six world configs were migrated, with an in-game legacy-block recheck still open. Latest Working Copy: 1591 trees after adding 161 to uncovered non-playable map areas, including the eastern hamlet foreground explicitly authorized by the user. All 1430 prior trees and three actual hamlets retained. Added 1587 Leaves L, 36 piles M, 9 piles L and 10110 Trim L grass. Exact marble playable mask, terrain, structures and original vegetation preserved. Native comparisons and restarts pass; client visual acceptance pending. Autumn leaves retain the approved counts, palette and one-cell footprints. Previous leaf revisions passed native checks but had user-reported client placement defects, addressed by the current 1.13.0 revision. Autumn Maple 1.12.0 client appearance was rejected. User described maple 1.12.1 as practically desired but rejected black specks/red fringes. The approved 1.12.2 maple fix corrects cutout alpha while preserving shape, branches and retained RGB; pixel/package checks pass and the user approved the final visual result on 2026-10-21. Installed 1.13.0 adds predicted-cell reconciliation and private trunk preview, plus S/M/L leaf heaps. Latest user-approved target dimensions are bases 1/2/3 squared with heights 0.6/1.2/1.8 after the photo reference. Native create/reload pass; the user confirmed bark preview, single placement and live R rotation in 1.13.0. Final pile visual acceptance remains pending. Buildings and Furnishment 1.13.1 now installs detailed compact leaf piles with a circular ground transition; approved dimensions and bark/R implementation are unchanged. Final pile client visual acceptance is pending.",
   "technologies": [
     "Hytale 0.6.8 and 0.7.0",
     "Java 25",
@@ -23,13 +23,13 @@
   ],
   "decisions": [
     "Keep full material catalogue dormant inside JAR; WorldMaterialScanner selects saved-world block IDs, WorldPatch writes ZAS_ActivePack.zip",
-    "Installer enables generated pack ID ZytaleGenerated:AdaptiveSurfaceWorld in save config and backs up prior config/JAR/ZIP",
+    "Surface 0.12.6 supersedes the old enabled-generated-pack policy: keep ZytaleGenerated:AdaptiveSurfaceWorld disabled, register the internal generated cache before initial asset loading, and migrate already-blocked worlds once with backups.",
     "Use native-density atlas for fallback legacy block IDs; preserve their save compatibility",
     "Resolve clicked donor from matching placement interaction sync data before falling back to current-view raycast",
     "Persist material while topology refresh changes only shape",
     "Retain failure and solution-version lineage in EXP-000001",
     "Hide internal material helpers with ItemQuality.HideFromSearch; no Categories alone does not hide creative search results",
-    "Persist newly requested materials and combine baked P plus learned Q textures in the enabled world ZIP",
+    "Persist newly requested materials and combine baked P plus learned Q textures in the internal generated world ZIP; preserve working bytes if required data is missing.",
     "Publish prepared next-start ZIP via bundled javaw helper after server process exit releases Windows file lock",
     "Cancel placement on a copyable but not-yet-preloaded donor and show a reopen-world message",
     "For AdaptiveWindow 0.4.2 on released Hytale 0.7.0, keep glazing inside each model as native transparent quads rather than separately transformed particles",
@@ -53,7 +53,7 @@
     "EXP-000012",
     "EXP-000013"
   ],
-  "updated_at": "2026-10-22T01:31:53.538249Z",
+  "updated_at": "2026-10-25T00:59:10.413969Z",
   "implementation": {
     "plugin": "ZytaleAdaptiveSurface-0.9.4.jar",
     "source_root": "ZytaleAdaptiveSurface/",
@@ -4326,41 +4326,56 @@
     }
   },
   "current_landscape_state": {
-    "revision": "2026-10-21: 476 autumn maples, redistribution of all 1430 trees, leaf/pile and Trim L understory, including playable areas",
-    "status": "Installed; native pilot, full saved-state comparison and restart passed. Client visual acceptance pending.",
+    "revision": "2026-10-22: additive forest completion outside the exact marble playable boundary, including the user-authorized eastern hamlet foreground",
+    "status": "Installed; native pilot, full saved-state comparison and restart passed in both passes. Client visual acceptance pending.",
     "save": "C:/Users/User/AppData/Roaming/Hytale/UserData/Saves/The Village - Zytale 306 Working Copy",
-    "sourceOfTruth": "C:/Users/User/Desktop/Zytale/work/autumn-landscape-2026-10-21",
-    "backupBeforeTask": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-landscape-2026-10-21\\backup-before",
+    "sourceOfTruth": "C:\\Users\\User\\Desktop\\Zytale\\work\\forest-east-foreground-2026-10-22",
+    "backupBeforeTask": "C:\\Users\\User\\Desktop\\Zytale\\work\\forest-completion-2026-10-22\\backup-before",
     "backupIsDifferential": false,
-    "verification": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-landscape-2026-10-21\\verification-after.json",
+    "verification": "C:\\Users\\User\\Desktop\\Zytale\\work\\forest-east-foreground-2026-10-22\\verification-after.json",
     "temporaryBridgeRemoved": true,
     "nativeRestartVerified": true,
     "newClientScreenshotsTaken": false,
-    "priorRevision": "C:\\Users\\User\\Desktop\\Zytale\\work\\grass-density-2026-10-20",
+    "priorRevision": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-landscape-2026-10-21",
     "sourceMod": "C:\\Users\\User\\AppData\\Roaming\\Hytale\\UserData\\Mods\\Zytale-Buildings-and-Furnishment.jar",
     "sourceModSha256": "b36095d10fbea725457c504012bfb753a6743e6a3ce985fea373db8d7637c2e2",
-    "report": "C:\\Users\\User\\Desktop\\Zytale\\work\\autumn-landscape-2026-10-21\\REPORT.txt",
-    "nativeRestartScope": {
-      "chunks": 11,
-      "cells": 3604480
-    },
-    "grassOriginalL": 4731,
-    "treeCount": 1430,
-    "maplesL": 477,
-    "treesReplaced": 476,
-    "grassTrimL": 67279,
-    "grassTotal": 72010,
-    "newLeafItemsL": 30663,
-    "newLeafPilesM": 1271,
-    "newLeafPilesL": 611,
-    "scope": "Entire authored map, including playable areas; buildings, paths, crops, terrain, Adaptive Surface retained.",
+    "report": "C:\\Users\\User\\Desktop\\Zytale\\work\\forest-east-foreground-2026-10-22\\REPORT.txt",
+    "nativeRestartScope": [
+      {
+        "pass": "forest-completion-2026-10-22",
+        "fullComparisonChunks": 80,
+        "fullComparisonCells": 26214400,
+        "nativeRestartChunks": 10,
+        "unexpectedChanges": 0,
+        "completionProof": "C:\\Users\\User\\Desktop\\Zytale\\work\\forest-completion-2026-10-22\\completion-proof.json"
+      },
+      {
+        "pass": "forest-east-foreground-2026-10-22",
+        "fullComparisonChunks": 9,
+        "fullComparisonCells": 2949120,
+        "nativeRestartChunks": 1,
+        "unexpectedChanges": 0,
+        "completionProof": "C:\\Users\\User\\Desktop\\Zytale\\work\\forest-east-foreground-2026-10-22\\completion-proof.json"
+      }
+    ],
+    "grassOriginalL": 4730,
+    "treeCount": 1591,
+    "maplesL": 499,
+    "grassTrimL": 77353,
+    "grassTotal": 82083,
+    "scope": "Existing authored map outside the exact marble playable mask, including the eastern foreground after user correction. Three actual hamlets protected. No generated-world expansion.",
     "sourceModVersion": "1.13.1",
     "latestUserConstraints": [
-      "All trees counted once using roots; keep total 1430.",
-      "Replace 476 with Autumn Maple L and decorate with Leaves L plus both pile sizes M/L.",
-      "Use Dense and Wild Trim L up to the first free supported cells beside every unreplaced trunk.",
-      "Preserve terrain, paths, buildings, crops, existing manually placed leaf decorations and original maple."
-    ]
+      "Finish forest in uncovered areas of the existing authored map outside the playable area.",
+      "Do not build in or modify the small non-playable hamlets.",
+      "The empty foreground in front of the eastern hamlet is not part of the hamlet and may be planted.",
+      "The previously fixed 1430 tree count applied to the earlier redistribution; this completion adds 161 trees and retains all 1430 originals."
+    ],
+    "firstPassEvidence": "C:\\Users\\User\\Desktop\\Zytale\\work\\forest-completion-2026-10-22",
+    "backupBeforeEasternAddition": "C:\\Users\\User\\Desktop\\Zytale\\work\\forest-east-foreground-2026-10-22\\backup-before",
+    "totalLooseLeavesL": 32266,
+    "totalLeafPilesM": 1304,
+    "totalLeafPilesL": 621
   },
   "landscape_scalable_20261016": {
     "status": "installed-and-packaged",
@@ -7757,7 +7772,7 @@
   },
   "playable_area_definition": {
     "updated": "2026-10-22",
-    "authority": "User-defined Rock_Marble_Brick_Smooth contour; user explicitly directed that small gaps are part of the perimeter.",
+    "authority": "User-defined stored playableRowSpans contour. Physical Rock_Marble_Brick_Smooth markers intentionally removed at user request on 2026-10-22; stored perimeter remains authoritative.",
     "save": "The Village - Zytale 306 Working Copy",
     "boundary_block_id": "Rock_Marble_Brick_Smooth",
     "definition": "Use the inclusive playableRowSpans mask in the referenced JSON for X/Z membership. Every listed X/Z column is playable at all Y, above and below, without limits. Membership never depends on the marker block Y.",
@@ -7798,6 +7813,192 @@
     "coordinate_dataset_sha256": "72e9ab60bdc8d751f8858433458b3e621d8222c9c5365dca2ed978b2489165ce",
     "binary_mask_sha256": "9dfcfb022957803fdb38445155c62380ecd1d37578e47f019baba0581b249c84",
     "validation_status": "Validated from closed-game consistent save snapshot: all 9,118 stored chunks scanned; row spans expanded to 118,799 columns and byte-matched to binary mask; village, farm and monastery anchors inside. Client visual acceptance of derived outline not separately performed.",
-    "world_changes_requested": false
+    "world_changes_requested": true,
+    "physical_marker_status": "All 2291 instances removed from the saved map, including 2210 outer contour blocks and 81 other same-ID blocks. Final full scan: zero remaining.",
+    "future_edit_rule": "Use the unchanged referenced coordinate dataset and binary mask at all Y. Missing physical markers are intentional and do not invalidate or redefine the stored perimeter. Change the playable boundary only when the user explicitly requests a new boundary.",
+    "marker_blocks_scanned_historical": 2291,
+    "current_marker_blocks": 0,
+    "marker_removal_evidence": "C:\\Users\\User\\Desktop\\Zytale\\work\\marble-marker-removal-2026-10-22\\completion-proof.json"
+  },
+  "forest_completion_2026_10_22": {
+    "date": "2026-10-22",
+    "installed": true,
+    "treesBefore": 1430,
+    "treesAfter": 1591,
+    "newTrees": 161,
+    "newTreeTypes": {
+      "Zytale_Autumn_Maple_L": 22,
+      "Zytale_DarkForest_Conifer_Medium_ConceptPixelsDark": 56,
+      "Zytale_DarkForest_Conifer_Medium_ConceptPixels": 46,
+      "Zytale_DarkForest_Conifer_Small_ConceptPixels": 20,
+      "Zytale_DarkForest_Conifer_Small_ConceptPixelsDark": 15,
+      "Zytale_DarkForest_Conifer_Large_ConceptPixels": 1,
+      "Zytale_DarkForest_Conifer_Large_ConceptPixelsDark": 1
+    },
+    "newPlants": {
+      "Zytale_Autumn_LeafPile_M": 36,
+      "Zytale_Autumn_Leaves_L": 1587,
+      "Zytale_DarkForest_Grass_Large_Wild_Trim": 5056,
+      "Zytale_DarkForest_Grass_Large_Trim": 5054,
+      "Zytale_Autumn_LeafPile_L": 9
+    },
+    "currentRootCounts": {
+      "Zytale_Autumn_LeafPile_L": 621,
+      "Zytale_Autumn_LeafPile_M": 1304,
+      "Zytale_Autumn_Leaves_L": 32266,
+      "Zytale_Autumn_Maple_L": 499,
+      "Zytale_DarkForest_Conifer_Large_ConceptPixels": 392,
+      "Zytale_DarkForest_Conifer_Large_ConceptPixelsDark": 563,
+      "Zytale_DarkForest_Conifer_Medium_ConceptPixels": 46,
+      "Zytale_DarkForest_Conifer_Medium_ConceptPixelsDark": 56,
+      "Zytale_DarkForest_Conifer_Small_ConceptPixels": 20,
+      "Zytale_DarkForest_Conifer_Small_ConceptPixelsDark": 15,
+      "Zytale_DarkForest_Grass_Large": 2378,
+      "Zytale_DarkForest_Grass_Large_Trim": 38673,
+      "Zytale_DarkForest_Grass_Large_Wild": 2352,
+      "Zytale_DarkForest_Grass_Large_Wild_Trim": 38680
+    },
+    "passes": [
+      {
+        "pass": "forest-completion-2026-10-22",
+        "fullComparisonChunks": 80,
+        "fullComparisonCells": 26214400,
+        "nativeRestartChunks": 10,
+        "unexpectedChanges": 0,
+        "completionProof": "C:\\Users\\User\\Desktop\\Zytale\\work\\forest-completion-2026-10-22\\completion-proof.json"
+      },
+      {
+        "pass": "forest-east-foreground-2026-10-22",
+        "fullComparisonChunks": 9,
+        "fullComparisonCells": 2949120,
+        "nativeRestartChunks": 1,
+        "unexpectedChanges": 0,
+        "completionProof": "C:\\Users\\User\\Desktop\\Zytale\\work\\forest-east-foreground-2026-10-22\\completion-proof.json"
+      }
+    ],
+    "sourceModVersion": "1.13.1",
+    "sourceModSha256": "b36095d10fbea725457c504012bfb753a6743e6a3ce985fea373db8d7637c2e2",
+    "preservation": "Every changed cell was previously Empty; all prior occupied blocks, playable columns, marble markers, hamlets and unrelated saved components were preserved.",
+    "easternForegroundUserCorrection": "The user explicitly stated that the space in front of the eastern hamlet is not part of the hamlet and authorized filling it. Protect actual settlement buildings/courtyards, not the historical landscape-hamlet-forest work-zone polygon.",
+    "easternForegroundSelectionUsed": {
+      "historicalPolygonXZ": [
+        [
+          278,
+          18
+        ],
+        [
+          290,
+          20
+        ],
+        [
+          307,
+          22
+        ],
+        [
+          326,
+          24
+        ],
+        [
+          343,
+          26
+        ],
+        [
+          349,
+          32
+        ],
+        [
+          349,
+          60
+        ],
+        [
+          343,
+          68
+        ],
+        [
+          325,
+          70
+        ],
+        [
+          311,
+          76
+        ],
+        [
+          301,
+          84
+        ],
+        [
+          291,
+          82
+        ],
+        [
+          282,
+          72
+        ],
+        [
+          275,
+          58
+        ],
+        [
+          273,
+          42
+        ],
+        [
+          275,
+          28
+        ]
+      ],
+      "marginBlocks": 7,
+      "filteredAgainst": "Exact playable mask, three actual settlement envelopes, current built cells, paths, water, supported soil and native empty footprints."
+    },
+    "reuse": "Direct reuse of EXP-000008 native save editing; PAT-000003 protection by deterministic allowed cells. Project-only change; no new transferable experience claimed.",
+    "visualAcceptance": "Pending user client review; diagnostic top views inspected; no FPS benchmark."
+  },
+  "marble_marker_removal_2026_10_22": {
+    "date": "2026-10-22",
+    "block_id": "Rock_Marble_Brick_Smooth",
+    "removed": 2291,
+    "remaining": 0,
+    "scope": "All exact-ID blocks across all saved regions; user explicitly requested removal of all instances.",
+    "backup": "C:\\Users\\User\\Desktop\\Zytale\\work\\marble-marker-removal-2026-10-22\\backup-before",
+    "completion_proof": "C:\\Users\\User\\Desktop\\Zytale\\work\\marble-marker-removal-2026-10-22\\completion-proof.json",
+    "final_scan": "C:\\Users\\User\\Desktop\\Zytale\\work\\marble-marker-removal-2026-10-22\\markers-after-live.json",
+    "validation": "Native pilot, all-cell comparison of 54 changed chunks (17,694,720 cells, zero errors), foreign components and untouched records preserved, native restart sample clean, final live scan of all 16 regions found zero instances.",
+    "perimeter": "Stored playable mask and coordinate dataset hashes unchanged; 118799 X/Z columns at all Y remain authoritative.",
+    "reuse": "Direct reuse of the established native saved-map editing workflow; project fact only, no new transferable experience."
+  },
+  "adaptive_surface_0126_local": {
+    "date": "2026-10-23",
+    "version": "0.12.6",
+    "server": "0.7.4",
+    "world": "The Village - Zytale 306 Working Copy",
+    "installed": true,
+    "requiredMaterials": 65,
+    "reference": "memory/projects/zytale/references/adaptive-surface-0.12.6-startup-2026-10-23.md",
+    "backup": "ZytaleAdaptiveSurface/backups/mod-20261023-122746",
+    "validation": "Nine final native runs pass; original 58 universe files and four unrelated mod JARs unchanged; real client join and hosted browser download not automated.",
+    "publication": "None. Local memory only; no GitHub commit/push."
+  },
+  "atmosphere_tool_audit_20261023": {
+    "candidate": "2.0.3",
+    "installedIntoLiveGame": false,
+    "published": false,
+    "release": "0.7.4",
+    "report": "C:/Users/User/Desktop/Zytale/Porject-Zytale/tools/AtmosphereTool/docs/AUDIT-2.0.3-20261023.md",
+    "compatibility": "Fog/server/installer isolated tests pass. Creative Fullbright adapter disabled on0.7.4 pending port; no new visual acceptance.",
+    "areas": "4 saves,19 definitions preserved; deterministic runtime deferral replaces all-or-nothing render failure.",
+    "publicationGate": "Project license and reference provenance review outstanding; not a public-ready release."
+  },
+  "adaptive_window_047_rc2": {
+    "date": "2026-10-25",
+    "version": "0.4.7-rc.2",
+    "hytale": "0.7.4",
+    "surface_coexistence": "0.12.6 final, native test passed",
+    "artifact": "ZytaleAdaptiveWindow/dist/ZytaleAdaptiveWindow-0.4.7-rc.2.jar",
+    "sha256": "7edd82c0a10cdd4aac357420ff37225fb18356054920ea4df8235f438e3c58fa",
+    "installation": "Installed into local UserData/Mods with previous rc.1 backed up; receipt at ZytaleAdaptiveWindow/outputs/transitions-0.4.7-rc.2/installation.json",
+    "user_feedback": "User explicitly reported 'Funziona perfettamente' after installation, confirming the real-client appearance of transitions.",
+    "technical_evidence": "ZytaleAdaptiveWindow/docs/TRANSITION-FIX-0.4.7-rc.2.md and outputs/transitions-0.4.7-rc.2/validation-summary.json",
+    "failure": "Prior rc.1 client JSON parse failure and visual double/floating transitions recorded in EXP-000004",
+    "publication": "No publication. Public asset rights and lower-power hardware performance remain separate gates; no Window GitHub repository configured in this workspace."
   }
 }

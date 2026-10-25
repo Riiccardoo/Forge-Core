@@ -19,6 +19,7 @@ The separation of native feature semantics, exact build checks, coalesced expens
 ## Failures
 
 - FAIL-000034
+- FAIL-000069
 
 ## Transferable Patterns
 
