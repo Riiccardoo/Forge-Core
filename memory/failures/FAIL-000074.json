@@ -1,0 +1,31 @@
+{
+  "id": "FAIL-000074",
+  "experience_id": "EXP-000015",
+  "attempt": "Acknowledge a new material as saved while its request exists only in memory or in delayed background pack work; rely on a two-second shutdown wait to make it durable.",
+  "reason_failed": "With the private worker delayed six seconds, unchanged Adaptive Surface 1.0.0 exited normally before writing either the native donor or biome-tint request. Neither material was available after restarting. In separate recovery mode, learning was suspended but the same saved/reopen message could still be selected.",
+  "environment": "Adaptive Surface 1.0.0, Hytale 0.7.4, Windows, private native server copies; unchanged production bytecode probe",
+  "error_signature": "materialPending response despite missing new-blocks-seen.json entries; same donors remain unavailable after restart",
+  "conditions": [
+    "Asset registration happens only at startup",
+    "Request persistence is deferred behind a background worker",
+    "Orderly shutdown waits less than the controlled worker delay",
+    "Recovery may skip next-start preparation without changing the placement message"
+  ],
+  "workaround": "In 1.0.1 write the journal synchronously during request, complete required tint inputs at orderly shutdown, and show preparing/blocked state until a next-start pack has actually been prepared. Verify request->shutdown->first restart in a real native startup fixture; retain old packs on failures.",
+  "resolved_by": "SOL-000017:v001",
+  "date": "2026-10-25T19:05:26.055909Z",
+  "source_refs": [
+    {
+      "kind": "test_evidence",
+      "reference": "ZytaleAdaptiveSurface/outputs/learning-restart-investigation/probe/runs/baseline-slow-shutdown/summary.json",
+      "description": "Reproduced loss and unavailable donors after restart",
+      "verified": true
+    },
+    {
+      "kind": "test_evidence",
+      "reference": "ZytaleAdaptiveSurface/outputs/learning-restart-investigation/probe/runs/final-slow-and-recovery/summary.json",
+      "description": "Corrected final candidate including recovery message and pack retention",
+      "verified": true
+    }
+  ]
+}

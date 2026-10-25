@@ -1,0 +1,54 @@
+{
+  "id": "SOL-000017",
+  "version": 1,
+  "description": "Adaptive Surface 1.0.1 writes the material request journal during selection, processes required tint inputs before an orderly shutdown, reconstructs the pack from persisted data at startup, and distinguishes preparing, prepared and blocked states. Unresolvable fresh donors remain visible in pendingInputs while saved P/Q identities still fail closed.",
+  "changes": [
+    "Persist each new request before showing it as recorded; a delayed optional ZIP worker cannot be the only durable store.",
+    "Flush tint inputs while donor assets are still loaded at orderly shutdown, then rebuild before asset registration on the next start.",
+    "Use a read-only RocksDb saved-palette scan on Hytale 0.7.4 and require only Surface IDs, explicit requests and retained material tokens.",
+    "Report unresolved fresh donors separately so one obsolete tint request does not starve valid discoveries; preserve the existing pack on missing saved assets."
+  ],
+  "advantages": [
+    "First orderly restart activates reproduced native and tinted materials",
+    "Saved Surface materials and working packs remain protected",
+    "Failure messages and reports identify whether an input is still pending or blocked"
+  ],
+  "disadvantages": [
+    "Abrupt power loss during an in-progress file write is outside the reproduced orderly-shutdown test",
+    "Eight historical appearances still require surviving approved inputs",
+    "The actual second-PC client session did not supply logs identifying its exact trigger"
+  ],
+  "test_results": [
+    "Unchanged 1.0.0 production-byte-identical probe loses two requests with a six-second worker delay; 1.0.1 persists both immediately and loads both at first restart under the same delay.",
+    "Persistent scan fault preserves working pack SHA-256 over two boots and selects blocked message; RocksDb world copy learns and loads on restart.",
+    "A stale donor request remains pending while valid discoveries activate; 32 native placements including learned material persist across reload with zero geometry mismatches.",
+    "Final 1.0.1 JAR SHA-256 55e316255eb5a4dcca131065c03214d413fc8eb7120fec450f0af03e0c694c8f starts and restarts alone; user reports the delivered version works."
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-25T19:05:17.015680Z",
+  "supersedes": null,
+  "status": "working",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/outputs/learning-restart-investigation/REPORT-1.0.1.txt",
+      "description": "Detailed gate report and publication scope",
+      "verified": true
+    },
+    {
+      "kind": "test_evidence",
+      "reference": "ZytaleAdaptiveSurface/outputs/learning-restart-investigation/release-smoke.json",
+      "description": "Exact public JAR start/restart",
+      "verified": true
+    }
+  ]
+}

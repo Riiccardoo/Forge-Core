@@ -1,0 +1,175 @@
+{
+  "id": "EXP-000015",
+  "title": "Durable Hytale material learning across world restarts and pack recovery",
+  "summary": "Adaptive Surface 1.0.1 on Hytale 0.7.4 persists newly requested material IDs immediately, prepares required local tint inputs before orderly shutdown, and reports pending or blocked materials honestly. Controlled native-server tests pass; the user reports the delivered 1.0.1 now works, without a detailed client trace.",
+  "status": "experimental",
+  "created_at": "2026-10-25T19:05:10.640491Z",
+  "updated_at": "2026-10-25T19:05:26.057910Z",
+  "domains": [
+    "game modding",
+    "asset lifecycle",
+    "release engineering"
+  ],
+  "technologies": [
+    "Hytale 0.7.4",
+    "Java 25",
+    "RocksDb",
+    "native asset packs"
+  ],
+  "engines": [
+    "Hytale"
+  ],
+  "languages": [
+    "Java",
+    "Python"
+  ],
+  "tools": [],
+  "problem_class": "durable asset discovery before pre-start registration",
+  "problem_description": "A mod acknowledges a material discovery during gameplay, but its generated asset pack is registered only at the next world start. A delayed or failed background build can lose the request or leave the player in a false reopen loop.",
+  "context": "Adaptive Surface 1.0.0 on Hytale 0.7.4 lost both native and biome-tinted requests when the background worker was delayed six seconds and the server shut down normally. Pack recovery also emitted the saved/reopen message while learning was suspended. 1.0.1 was delivered with source and publication files separate; the user then reported it works. The specific original second-PC failure mechanism was not isolated from its logs.",
+  "capabilities_required": [
+    "durable request journal",
+    "pre-start pack rebuild",
+    "retention of saved material IDs",
+    "read-only saved-world palette scan",
+    "truthful preparing/ready/blocked state"
+  ],
+  "inputs": [
+    "runtime material selection",
+    "native donor assets",
+    "saved Surface IDs",
+    "local learned atlas cache"
+  ],
+  "outputs": [
+    "requests persisted before acknowledgement",
+    "locally generated pack on next start",
+    "pending-input report",
+    "previous working pack preserved on fatal input error"
+  ],
+  "constraints": [
+    "Preserve approved material/state IDs and geometry",
+    "No native or third-party texture pixels in public JAR",
+    "Hytale assets registered only before clients join",
+    "Do not treat a single user report as cross-version stability"
+  ],
+  "known_attempts": [
+    "deferred background-only request save with two-second shutdown wait",
+    "handwritten discovery file and synchronous prepare() release fixtures",
+    "world-wide native terrain palette preloading"
+  ],
+  "known_failures": [
+    "FAIL-000074"
+  ],
+  "current_solution": "SOL-000017:v001",
+  "solution_versions": [
+    {
+      "id": "SOL-000017",
+      "version": 1,
+      "description": "Adaptive Surface 1.0.1 writes the material request journal during selection, processes required tint inputs before an orderly shutdown, reconstructs the pack from persisted data at startup, and distinguishes preparing, prepared and blocked states. Unresolvable fresh donors remain visible in pendingInputs while saved P/Q identities still fail closed.",
+      "changes": [
+        "Persist each new request before showing it as recorded; a delayed optional ZIP worker cannot be the only durable store.",
+        "Flush tint inputs while donor assets are still loaded at orderly shutdown, then rebuild before asset registration on the next start.",
+        "Use a read-only RocksDb saved-palette scan on Hytale 0.7.4 and require only Surface IDs, explicit requests and retained material tokens.",
+        "Report unresolved fresh donors separately so one obsolete tint request does not starve valid discoveries; preserve the existing pack on missing saved assets."
+      ],
+      "advantages": [
+        "First orderly restart activates reproduced native and tinted materials",
+        "Saved Surface materials and working packs remain protected",
+        "Failure messages and reports identify whether an input is still pending or blocked"
+      ],
+      "disadvantages": [
+        "Abrupt power loss during an in-progress file write is outside the reproduced orderly-shutdown test",
+        "Eight historical appearances still require surviving approved inputs",
+        "The actual second-PC client session did not supply logs identifying its exact trigger"
+      ],
+      "test_results": [
+        "Unchanged 1.0.0 production-byte-identical probe loses two requests with a six-second worker delay; 1.0.1 persists both immediately and loads both at first restart under the same delay.",
+        "Persistent scan fault preserves working pack SHA-256 over two boots and selects blocked message; RocksDb world copy learns and loads on restart.",
+        "A stale donor request remains pending while valid discoveries activate; 32 native placements including learned material persist across reload with zero geometry mismatches.",
+        "Final 1.0.1 JAR SHA-256 55e316255eb5a4dcca131065c03214d413fc8eb7120fec450f0af03e0c694c8f starts and restarts alone; user reports the delivered version works."
+      ],
+      "metrics": {
+        "tool_calls": null,
+        "implementation_complexity": null,
+        "execution_cost": null,
+        "execution_time": null,
+        "reliability": null,
+        "maintainability": null,
+        "performance": null,
+        "compatibility": null
+      },
+      "created_at": "2026-10-25T19:05:17.015680Z",
+      "supersedes": null,
+      "status": "working",
+      "source_refs": [
+        {
+          "kind": "report",
+          "reference": "ZytaleAdaptiveSurface/outputs/learning-restart-investigation/REPORT-1.0.1.txt",
+          "description": "Detailed gate report and publication scope",
+          "verified": true
+        },
+        {
+          "kind": "test_evidence",
+          "reference": "ZytaleAdaptiveSurface/outputs/learning-restart-investigation/release-smoke.json",
+          "description": "Exact public JAR start/restart",
+          "verified": true
+        }
+      ]
+    }
+  ],
+  "patterns": [],
+  "related_experiences": [
+    "EXP-000001",
+    "EXP-000014",
+    "EXP-000004"
+  ],
+  "transferability": "For any game mod that activates discovered assets only at next startup, persist the request at the moment of acknowledgement and test real selection, orderly shutdown and first restart under a delayed worker. Treat missing inputs as pending and preserve already saved asset IDs. RocksDb reader details and pixel budgets are Hytale-version-specific.",
+  "confidence": 0.78,
+  "validation_status": "validated",
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "tags": [
+    "material-learning",
+    "restart",
+    "Hytale",
+    "fail-closed",
+    "local-assets"
+  ],
+  "project_refs": [
+    "adaptive-surface"
+  ],
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/outputs/learning-restart-investigation/REPORT-1.0.1.txt",
+      "description": "Reproduced 1.0.0 failures, corrected 1.0.1 checks and limits",
+      "verified": true
+    },
+    {
+      "kind": "test_evidence",
+      "reference": "ZytaleAdaptiveSurface/outputs/learning-restart-investigation/probe/runs/baseline-slow-shutdown/summary.json",
+      "description": "Unchanged 1.0.0 production classes lose two requests after delayed worker and orderly shutdown",
+      "verified": true
+    },
+    {
+      "kind": "test_evidence",
+      "reference": "ZytaleAdaptiveSurface/outputs/learning-restart-investigation/probe/runs/final-slow-and-recovery/summary.json",
+      "description": "1.0.1 delayed restart and persistent-error retention cases pass",
+      "verified": true
+    },
+    {
+      "kind": "conversation",
+      "reference": "Codex conversation, 2026-10-25, user: Perfetto adesso funziona",
+      "description": "Direct positive feedback after delivery of Adaptive Surface 1.0.1; no per-material client log supplied",
+      "verified": true
+    }
+  ]
+}

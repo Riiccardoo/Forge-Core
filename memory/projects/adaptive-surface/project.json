@@ -1,7 +1,7 @@
 {
   "id": "adaptive-surface",
   "name": "Adaptive Surface",
-  "summary": "Adaptive Surface 1.0.0 prepared for Hytale 0.7.4 from user-accepted rc.19. The technical release gate and clean public JAR are complete; final 1.0 visual review belongs to the author. Eight historical appearances still need surviving local inputs and a real old-world migrated client entry is unverified. No mod publication or browser delivery has occurred.",
+  "summary": "Adaptive Surface 1.0.1 for Hytale 0.7.4 replaces the 1.0.0 material-learning release after reproduced request-loss and false saved/reopen failures. Isolated native tests pass for immediate durable discovery, first restart, RocksDb scanning and learned-material placement. The user reported that the delivered 1.0.1 now works; no per-material client log was supplied. Eight historical appearances still need surviving input, and real historical-world migrated client entry remains unverified. No mod browser publication has been performed by Codex.",
   "technologies": [
     "Hytale 0.7.4",
     "Java 25",
@@ -24,9 +24,10 @@
   ],
   "experience_refs": [
     "EXP-000001",
-    "EXP-000014"
+    "EXP-000014",
+    "EXP-000015"
   ],
-  "updated_at": "2026-10-25T17:40:30.382423Z",
+  "updated_at": "2026-10-25T19:05:43.339170Z",
   "release_1_0": {
     "version": "1.0.0",
     "hytale": "0.7.4",
@@ -38,6 +39,17 @@
     "distribution": "prepared locally, not published",
     "releaseReport": "ZytaleAdaptiveSurface/outputs/release-1.0/VALIDATION-1.0.txt",
     "reusableChecklist": "docs/HYTALE_MOD_RELEASE_CHECKLIST.md"
+  },
+  "release_1_0_1": {
+    "version": "1.0.1",
+    "hytale": "0.7.4",
+    "artifactSha256": "55e316255eb5a4dcca131065c03214d413fc8eb7120fec450f0af03e0c694c8f",
+    "technicalValidation": "passed for native request, orderly shutdown, first restart, RocksDb copy, retained-pack failure and 32 learned-material placements",
+    "clientFeedback": "User reported 'Perfetto adesso funziona' after receiving 1.0.1; no client log or screenshot accompanied it",
+    "originalSecondPcCause": "not isolated without original session logs",
+    "distribution": "publication handoff prepared locally; no Codex publication online",
+    "historicalInputsMissingLimit": 8,
+    "realHistoricalClientMigration": "not verified",
+    "releaseReport": "ZytaleAdaptiveSurface/outputs/learning-restart-investigation/REPORT-1.0.1.txt"
   }
 }
-
