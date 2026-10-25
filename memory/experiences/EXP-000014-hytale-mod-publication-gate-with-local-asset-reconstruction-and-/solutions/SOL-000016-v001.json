@@ -1,0 +1,57 @@
+{
+  "id": "SOL-000016",
+  "version": 1,
+  "description": "For Adaptive Surface 1.0.0, treat the public JAR, migration utility and author handoff as separate artifacts. Reconstruct material pixels locally from the installed Hytale assets and verified old inputs. Fail closed and retain an existing pack if required data is missing. Audit every distributed file and material, then stage only original/authorized content with a checksum manifest and explicit evidence gates.",
+  "changes": [
+    "Inventory 700 recipes and 2,742 aliases plus every JAR entry; keep native/historical texture pixels and learned packs out of the public JAR.",
+    "Compare production classes and saved state definitions against the accepted rc.19 candidate; document the four exact changed JAR entries.",
+    "Check clean JAR-only startup, restart, absent cache, 40 selector choices, protection/ordinary placement/reload, historical missing-data retention and cubic heights on isolated copies.",
+    "Provide an optional copy-based migration with verified backup/rollback; distinguish its synthetic server success from real client entry.",
+    "Put only the primary mod JAR in DA_CARICARE; keep listing media, license/NOTICE and source project separate. Preserve screenshot version in captions."
+  ],
+  "advantages": [
+    "One clear file for the mod browser and no packaged native/third-party texture pixels.",
+    "Saved IDs and prior working packs remain protected when a local input is unavailable.",
+    "The next release can start from a short, falsifiable gate list rather than repeating a full investigation."
+  ],
+  "disadvantages": [
+    "Eight exact historical appearances still require a surviving verified local input.",
+    "A real historical save has not been observed entering the 1.0 client; the migration evidence is synthetic and native-server only.",
+    "Final visual acceptance, CurseForge moderation and real browser delivery remain untested; no unconditional publication PASS."
+  ],
+  "test_results": [
+    "1.0 build: 838,429 assertions and 1,024 neighbourhood/anchor combinations passed.",
+    "Ten native isolated starts passed, plus a migrated synthetic copy started; one initial PNG write failure and one incomplete cubic fixture attempt are retained separately.",
+    "Production JAR alone passed startup, restart and absent-cache regeneration; all production classes match the integration harness.",
+    "Historical fault matrix: nine cases; 692 current materials/776 variants reproduce from installed assets, 700/786 with eight verified local historical inputs.",
+    "Synthetic migration: 1,091 source/backup and rollback files have matching hashes; no real historical-world client entry claimed.",
+    "Final production SHA-256: 57466464984777c48b392b905baa6326110415afcdbcab022331cb0a50b602ca."
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-25T17:37:27.844052Z",
+  "supersedes": null,
+  "status": "experimental",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/outputs/release-1.0/VALIDATION-1.0.txt",
+      "description": "Release assessment with current, prior and unverified evidence separated",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/outputs/release-1.0/artifacts-1.0.json",
+      "description": "Release JAR, handoff and migration archive hashes",
+      "verified": true
+    }
+  ]
+}

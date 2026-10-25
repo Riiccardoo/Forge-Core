@@ -1,0 +1,29 @@
+{
+  "id": "FAIL-000071",
+  "experience_id": "EXP-000014",
+  "attempt": "Compare source and backup files in a Windows migration using a relative Python recursive traversal only.",
+  "reason_failed": "The first audit omitted four long prefab-cache paths and undercounted files. The files were present; the omission was in verification, not migration or deletion.",
+  "environment": "Windows, Python bundled runtime, Adaptive Surface 1.0 synthetic historical-world migration",
+  "error_signature": "Relative traversal count below extended-path count; four prefab-cache paths absent from first hash list",
+  "conditions": [
+    "Long Windows paths in prefab cache",
+    "Relative-path audit of a copied world and rollback"
+  ],
+  "workaround": "Audit with an extended absolute Windows path, compare source/backup/rollback by path and SHA-256, and stop if counts or hashes differ. In this fixture all 1,091 files matched after correction.",
+  "resolved_by": null,
+  "date": "2026-10-25T17:37:28.143492Z",
+  "source_refs": [
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/outputs/release-1.0/migration-proof.json",
+      "description": "Corrected 1,091-file comparison and exact release hash",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/tools/verify_release_migration_100.py",
+      "description": "Extended Windows path audit implementation",
+      "verified": true
+    }
+  ]
+}

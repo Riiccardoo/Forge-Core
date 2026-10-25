@@ -1,0 +1,42 @@
+{
+  "id": "adaptive-surface",
+  "name": "Adaptive Surface",
+  "summary": "Adaptive Surface 1.0.0 prepared for Hytale 0.7.4 from user-accepted rc.19. The technical release gate and clean public JAR are complete; final 1.0 visual review belongs to the author. Eight historical appearances still need surviving local inputs and a real old-world migrated client entry is unverified. No mod publication or browser delivery has occurred.",
+  "technologies": [
+    "Hytale 0.7.4",
+    "Java 25",
+    "Gradle 9.4",
+    "PowerShell migration",
+    "local asset recipes"
+  ],
+  "constraints": [
+    "All Rights Reserved for original Zytale work; do not distribute native or third-party pixels without documented rights.",
+    "Preserve 804 saved state definitions and formerly approved geometry/material appearance.",
+    "Do not claim universal old-save recovery or real migrated-client entry from synthetic/server tests.",
+    "Source projects and publication files are separate; test harnesses, worlds and learned caches stay private."
+  ],
+  "decisions": [
+    "1.0 production JAR SHA-256 57466464984777c48b392b905baa6326110415afcdbcab022331cb0a50b602ca; target game =0.7.4.",
+    "Public JAR contains original code/geometry/icon and recipes; material pixels are generated locally from installed assets and optional verified historical input.",
+    "Automatic and Normal ramp are separate /surface modes, four rotations each; prior rc.19 behavior was user accepted.",
+    "Use a copied world, verified backup and rollback for historical migration; exact old save client entry remains a release boundary.",
+    "Final visual check and bounded release decision are the author's responsibility; do not publish test evidence as gameplay screenshots."
+  ],
+  "experience_refs": [
+    "EXP-000001",
+    "EXP-000014"
+  ],
+  "updated_at": "2026-10-25T17:37:32.944549Z",
+  "release_1_0": {
+    "version": "1.0.0",
+    "hytale": "0.7.4",
+    "artifactSha256": "57466464984777c48b392b905baa6326110415afcdbcab022331cb0a50b602ca",
+    "technicalValidation": "passed within documented scope",
+    "clientVisual": "delegated to author, no new 1.0 PASS",
+    "realHistoricalClientMigration": "not verified",
+    "historicalInputsMissingLimit": 8,
+    "distribution": "prepared locally, not published",
+    "releaseReport": "ZytaleAdaptiveSurface/outputs/release-1.0/VALIDATION-1.0.txt",
+    "reusableChecklist": "01_SORGENTI_MOD/CHECKLIST_RILASCIO_MOD.md"
+  }
+}

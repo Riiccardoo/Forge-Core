@@ -1,0 +1,54 @@
+{
+  "id": "SOL-000001",
+  "version": 16,
+  "description": "Adaptive Surface 1.0.0 on Hytale 0.7.4 extends the internal pre-start pack cache with local material recipes, verified historical-input recovery, explicit two-family shape selection and an audited original-only public JAR while retaining saved IDs and prior working packs.",
+  "changes": [
+    "Store source asset identifiers, face variants and expected pixel hashes as recipes; generate from the installed game rather than ship native texture pixels.",
+    "Require a verified old local input for eight appearances no longer present in current assets; report missing material IDs and retain a prior working pack on failure.",
+    "Expose Automatic and Normal ramp through /surface, with four native rotations per family; keep the accepted geometry and 804 saved state definitions.",
+    "Package 1.0 metadata and English authored UI without changing placement/protection code from user-accepted rc.19."
+  ],
+  "advantages": [
+    "JAR-only installation on a fresh world without a separate generated download",
+    "No redistribution of native or historical texture pixels",
+    "Stable saved IDs and explicit recovery limits"
+  ],
+  "disadvantages": [
+    "Eight old appearances cannot be recovered when every historical input is lost",
+    "A real historical save has not been verified entering the 1.0 client",
+    "Other mods, gamepad and actual browser download are not certified by this release work"
+  ],
+  "test_results": [
+    "Exact 1.0 JAR SHA-256 57466464984777c48b392b905baa6326110415afcdbcab022331cb0a50b602ca; only four entries differ from accepted rc.19, and the only class change is Core manifest version metadata.",
+    "Ten native isolated runs pass after a separately preserved initial PNG I/O failure; 40 selectors, 240 Surface poses, protected refusals, 1,440 ordinary placements and reload tests pass in the harness with byte-identical production classes.",
+    "All 700 materials and 786 variants reproduce with local historical inputs; current-only run reports eight exact gaps rather than silently discarding them.",
+    "One synthetic migration passed backup/rollback hashes and native server start; exact 1.0 visual/client outcome remains with author."
+  ],
+  "metrics": {
+    "tool_calls": null,
+    "implementation_complexity": null,
+    "execution_cost": null,
+    "execution_time": null,
+    "reliability": null,
+    "maintainability": null,
+    "performance": null,
+    "compatibility": null
+  },
+  "created_at": "2026-10-25T17:37:28.413173Z",
+  "supersedes": "SOL-000001:v015",
+  "status": "experimental",
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "ZytaleAdaptiveSurface/outputs/release-1.0/VALIDATION-1.0.txt",
+      "description": "1.0 implementation and bounded technical validation",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "ZytaleAdaptiveSurface/outputs/release-1.0/validation-evidence-1.0.json",
+      "description": "Automated native, historical and pack checks",
+      "verified": true
+    }
+  ]
+}
