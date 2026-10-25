@@ -26,7 +26,7 @@
     "EXP-000001",
     "EXP-000014"
   ],
-  "updated_at": "2026-10-25T17:37:32.944549Z",
+  "updated_at": "2026-10-25T17:40:30.382423Z",
   "release_1_0": {
     "version": "1.0.0",
     "hytale": "0.7.4",
@@ -37,6 +37,7 @@
     "historicalInputsMissingLimit": 8,
     "distribution": "prepared locally, not published",
     "releaseReport": "ZytaleAdaptiveSurface/outputs/release-1.0/VALIDATION-1.0.txt",
-    "reusableChecklist": "01_SORGENTI_MOD/CHECKLIST_RILASCIO_MOD.md"
+    "reusableChecklist": "docs/HYTALE_MOD_RELEASE_CHECKLIST.md"
   }
 }
+
