@@ -1,0 +1,15 @@
+$LegendCommon = "ToolsLegendsCommon.ui";
+
+$LegendCommon.@Legend {
+  #Pages {
+    $LegendCommon.@Page #Page1 {
+      @Title = "Atmosphere Tool";
+      $LegendCommon.@RowLabel { Text: "Tune global fog, sky and moon."; }
+      $LegendCommon.@Separator {}
+      $LegendCommon.@HotkeyRow {
+        @InputBindingKey = "SecondaryItemAction";
+        @Description = "Open settings; Observe releases the camera";
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+ATMOSPHERE TOOL NATIVE 2.4.0 - INSTALLATION AND USER GUIDE
+
+REQUIREMENTS
+Hytale 0.7.4; Creative mode to edit. This is a server plugin with a UI/item
+asset pack. No DLL, client component, shader replacement or client installer
+is included or required. Do not run two Atmosphere Tool editions together.
+
+INSTALL OR UPDATE
+1. Save and close the game, or stop the server. Back up the previous JAR and
+   the AtmosphereTool_AtmosphereTool data directory, including all JSON files.
+2. Move the old Atmosphere Tool JAR out of Mods/mods, keeping it as a backup.
+3. Place Atmosphere-Tool-Native-2.4.0.jar in the local game's Mods directory
+   or the dedicated server's mods directory. Do not extract the JAR. Enable
+   its asset pack if requested by the game.
+4. Keep the existing data directory. Start the game with an unmodified client.
+5. In Creative mode, right-click with Atmosphere Tool or use /atmo menu.
+If an old client component is present, follow that component's verified
+restore procedure first. Never delete an unidentified opengl32.dll.
+
+MENU
+- Saves: named combinations of global atmosphere settings.
+- Fog: global ON/OFF, preset, density, transparency, brightness and color.
+- Sky & Moon: moon size, sky angle/height and night lighting.
+Observe frees the camera. Close dismisses the tool. Every slider has an exact
+number field: click, type a whole number, then press Enter or click away.
+Each tab scrolls independently. Global Fullbright has been removed, including
+its light-processing backend. It is archived with the original volume edition
+for possible future work. Native Hytale Creative Fullbright is not modified.
+
+CUSTOM ATMOSPHERE SAVES
+Set up the environment, open Saves, enter a name and click Save current as new.
+Choose an entry in the dropdown and click Apply to restore that combination.
+Choosing an entry alone does not apply it. Names must be unique (ignoring case),
+1-64 characters long; up to 256 entries are supported per plugin data directory.
+To rename, select an entry, edit Save name, then click Rename. To delete, select
+an entry, click Delete and Confirm delete. Cancel keeps it. Renaming/deleting a
+save does not change the currently applied atmosphere. Saving never overwrites
+an existing entry: use a different name for a new combination.
+
+Included: source weather, fog preset/ON-OFF/density/transparency/brightness/color,
+moon size/intensity/color/transparency, night settings, sky angle and height. The current
+sky path is captured as explicit values. Source weather curves continue to
+follow world time: time, date and day/night simulation are not frozen or saved.
+Excluded: weather zones, their geometry or enabled states, world restoration
+identities, Fullbright, and original client-volume fog definitions. Applying a
+save updates only the current world's global atmosphere. Archived zones no longer override it. Restore original atmosphere restores that
+world's original weather/sky; it does not delete saves or zones.
+
+The library is shared within the plugin data directory (normally within the
+current local world, or across worlds in one dedicated server). It is not an
+account cloud library. It is stored in custom-atmosphere-saves.json and written
+before a save/rename/delete is acknowledged. Its previous revision is kept as
+custom-atmosphere-saves.json.bak. Back up both files. If a library is damaged or
+uses an unknown format, the tool reports it and preserves it without overwriting
+it; the other atmosphere controls remain usable. Restore a verified backup only
+while the game/server is stopped. Missing source-weather assets prevent applying
+that entry; its definition is retained so it can be used when the asset returns.
+All Creative editors use the same library; the original tool's access model is
+unchanged.
+
+PRESERVED CONTROLS AND LIMITS
+Fog ON/OFF is global, covering map fog and its fog-colored backdrop. OFF retains
+editable values. ON restores them. Transparency 100 or native density 0 also
+clears global fog. Fog brightness is 0-200 (100 = original): it scales RGB together
+to preserve hue/saturation within byte rounding, rather than whitening the color.
+Black remains black; already-maximal colors cannot brighten further. Bright fog
+is color blending, not emitted light or Fullbright. Native time curves remain.
+Moon transparency is independent of fog: open Sky & Moon, then set the slider
+or type an exact percentage. 0 preserves native visibility; 100 hides the disk
+and halo. Intermediate values scale their authored opacity together. Density 10
+with fog transparency 0 does NOT automatically hide the moon. Fog ON/OFF, native
+fog reset, fog brightness/color do not change this value.
+The old density-driven lunar attenuation is removed. Restore original atmosphere
+returns to zero extra transparency. The value is included in named atmosphere
+saves and the active world's settings. This is opacity control, not blur or
+physical fog occlusion. Authored RGB/time curves are retained; where weather
+omits moon colors, nonzero transparency uses the existing fallback moon tint.
+Existing night intensity/color controls retain their usual effect on the moon.
+
+Moon size is 10-400%. Sky angle is 0-359 degrees and height is 0-1000%. The approved
+native sky path moves the sun as well as the distant moon and leaves world time
+unchanged. Restore original sky path restores the world's native settings.
+Other mods may supersede native sky settings; this tool does not intercept or
+continually resend packets to fight their overrides.
+
+ARCHIVED FEATURES
+Zones, anti-fog zones, global Fullbright and the original client-volume fog
+edition are archived. This release does not activate or edit their definitions,
+register their selection listeners or run their polling tasks. Existing zone
+files remain on disk for a future compatible version or a matched rollback.
+Native weather exposes no custom volume-texture slot; no original volume
+textures or client renderer are included in this edition.
+
+DATA, REMOVAL AND UPDATES
+Existing native-global-atmosphere.json and native-weather-zones.json are retained.
+Older global-atmosphere.json can be migrated once without modifying its source.
+The retired Fullbright/background flags remain compatibility data only. Original
+localized-mist.json is preserved and never reinterpreted as weather zones.
+To uninstall, close the game/server and move the JAR outside Mods/mods. Keep the
+data files. To roll back, restore the matching backed-up JAR and settings while
+stopped. The named library remains available for a later reinstall of 2.4.0.
+This build pins server version =0.7.4. Do not bypass this check after an update;
+use a build verified against the new release.
+
+SAVE COMPATIBILITY
+2.3.0 named libraries (format 1) load with moon transparency 0, preserving names,
+IDs and all other settings without rewriting the file. The first library edit
+writes format 2 with the new field and backs up the previous file. 2.3.0 cannot
+read format 2: before rolling back, restore the matching pre-update library backup.
+Old world settings also default to 0. Do not keep a value inferred from fog density:
+this release intentionally replaces automatic attenuation with manual control.
+
+VALIDATION STATUS
+The user accepted the complete 2.3.1 visual result, including independent moon
+transparency. This release removes Zones and their backend, keeping those
+global controls. Automated checks and isolated-server installation, migration,
+restart and removal are performed on the final JAR. The final three-tab layout
+still needs a brief in-client check; see VISUAL_TEST_EN.txt. Tests are not a
+marketplace approval.
+
+DISTRIBUTION
+For a Hytale plugin listing, upload the JAR itself (category: Mods/plugins),
+not the documentation ZIP or source ZIP. Installation from a listing/app must
+produce the same single JAR in Mods/mods. No external installer is needed.
+Actual CurseForge moderation and in-game delivery have not been exercised.
+License: All Rights Reserved. See LICENSE.txt and NOTICE.txt.

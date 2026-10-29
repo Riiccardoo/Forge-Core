@@ -1,0 +1,44 @@
+ATMOSPHERE TOOL NATIVE 2.4.0 - PROVENANCE
+Audit date: 2026-10-29
+
+The project owner selected All Rights Reserved. LICENSE.txt applies to original
+project work; it does not relicense Hytale or third-party material.
+
+This Java/UI project derives from the user's local Atmosphere Tool 2.1.0 and
+the subsequent native editions. The historical baseline is preserved privately.
+All active runtime source and the file-level provenance inventory are supplied
+with the source package. Owner-provided historical source has not undergone an
+independent contributor/chain-of-title audit; ownership is recorded as project
+supplied, not inferred from successful tests.
+
+Runtime materials:
+- Original/project-supplied Java, native UI definitions and JSON configuration.
+- Hytale Brush model/texture and TriggerVolume icon: references by ID only.
+  Zero game image/model bytes are included.
+- HytaleServer.jar-provided APIs, Gson and annotations: external runtime/build
+  dependencies. Their implementations are not shaded or redistributed.
+- No bitmap fog textures, shader source, DLL, client installer, extracted
+  Hytale source, test component, world, private log or compiler is bundled.
+- The original client/shader research and third-party native dependencies are
+  excluded. Zones, Fullbright and original client-volume fog are archived
+  separately; their archives are not public runtime or source-package payloads.
+
+Platform scope:
+This edition is a Java server plugin plus a normal UI/item asset pack. It does
+not patch the client or bypass a client check. The Hytale EULA permits mods
+subject to its conditions, including rights and no game-file redistribution.
+CurseForge documents Java plugins installed as JARs. These are a documented
+basis for this native format, not individual approval of this release.
+Marketplace moderation, actual in-game-browser delivery and future Hytale
+compatibility remain outside the completed technical tests.
+
+Official references reviewed 2026-10-29:
+https://hytale.com/eula
+https://hytale.com/news/2025/11/2025-11-20-hytale-modding-strategy-and-status
+https://support.curseforge.com/support/solutions/articles/9000273178-hytale-modding
+https://support.curseforge.com/support/solutions/articles/9000273186-getting-started-with-plugins
+https://support.curseforge.com/support/solutions/articles/9000197241-creating-and-submitting-a-project
+
+The Hytale creator-policy page concerns the Support-a-Creator program; it is
+not used here as permission to distribute client modifications.
+No legal guarantee or platform approval is claimed.

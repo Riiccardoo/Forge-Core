@@ -1,0 +1,1 @@
+PASS create/select snapshot/rename/apply/delete/missing-source/restore; client UI acceptance still pending

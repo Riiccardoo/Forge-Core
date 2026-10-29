@@ -1,0 +1,117 @@
+$C = "../Common.ui";
+$C.@Container { Anchor: (Left: 28, Top: 55, Bottom: 40, Width: 580);
+#Title { $C.@Title { @Text = "ZYTALE - ATMOSPHERE"; } }
+#Content { LayoutMode: Top; Padding: (Full: 18);
+Group { LayoutMode: Left; Anchor: (Height: 48, Top: 4);
+$C.@TextButton #Look { @Anchor = (Width: 240, Right: 6); @Text = "Observe"; }
+$C.@TextButton #Close { @Anchor = (Width: 240, Right: 6); @Text = "Close"; }
+}
+Label { Text: "Click a number, type a value, then press Enter."; Anchor: (Height: 26); Style: (FontSize: 14, TextColor: #b8cce0); }
+Group { LayoutMode: Left; Anchor: (Height: 46, Top: 8);
+$C.@TextButton #TabSaves { @Anchor = (Width: 160, Right: 6); @Text = "Saves"; }
+$C.@TextButton #TabFog { @Anchor = (Width: 160, Right: 6); @Text = "Fog"; }
+$C.@TextButton #TabSky { @Anchor = (Width: 180, Right: 6); @Text = "Sky & Moon"; }
+}
+Group #PanelSaves { FlexWeight: 1; LayoutMode: TopScrolling; ScrollbarStyle: $C.@DefaultScrollbarStyle; Visible: false;
+Label { Text: "Custom Atmosphere saves"; Anchor: (Height: 32, Top: 6); Style: $C.@DefaultLabelStyle; }
+Label { Text: "Save global fog, sky, moon and night settings."; Anchor: (Height: 26); Style: (FontSize: 14, TextColor: #b8cce0); }
+DropdownBox #SavedAtmospheres { Anchor: (Width: 510, Height: 36, Top: 10); Style: $C.@DefaultDropdownBoxStyle; }
+Label #SavedStatus { Text: "No saved atmospheres yet"; Anchor: (Height: 30, Top: 6); Style: (FontSize: 14, TextColor: #b8cce0); }
+Label { Text: "Save name"; Anchor: (Height: 28, Top: 8); Style: $C.@DefaultLabelStyle; }
+$C.@TextField #SaveName { @Anchor = (Width: 510, Height: 36, Top: 4); }
+$C.@TextButton #SaveNew { @Anchor = (Width: 510, Height: 42, Top: 10); @Text = "Save current as new"; }
+Group #SavedActions { LayoutMode: Left; Anchor: (Height: 48, Top: 8); Visible: false;
+$C.@TextButton #SaveApply { @Anchor = (Width: 160, Right: 6); @Text = "Apply"; }
+$C.@TextButton #SaveRename { @Anchor = (Width: 160, Right: 6); @Text = "Rename"; }
+$C.@TextButton #SaveDelete { @Anchor = (Width: 160, Right: 6); @Text = "Delete"; }
+}
+Group #SaveDeletePrompt { LayoutMode: Top; Visible: false;
+Label { Text: "Delete the selected save?"; Anchor: (Height: 30, Top: 6); Style: (FontSize: 15, TextColor: #f0c080); }
+Group { LayoutMode: Left; Anchor: (Height: 48, Top: 4);
+$C.@TextButton #SaveDeleteConfirm { @Anchor = (Width: 240, Right: 6); @Text = "Confirm delete"; }
+$C.@TextButton #SaveDeleteCancel { @Anchor = (Width: 240, Right: 6); @Text = "Cancel"; }
+}
+}
+Label { Text: "Choose a save, then Apply to use it."; Anchor: (Height: 26, Top: 10); Style: (FontSize: 14, TextColor: #b8cce0); }
+Label { Text: "Rename uses the name above. Delete keeps the current view."; Anchor: (Height: 26); Style: (FontSize: 14, TextColor: #b8cce0); }
+}
+Group #PanelFog { FlexWeight: 1; LayoutMode: TopScrolling; ScrollbarStyle: $C.@DefaultScrollbarStyle; Visible: true;
+Label #GlobalStatus { Text: "Global fog"; Anchor: (Height: 30, Top: 6); Style: $C.@DefaultLabelStyle; }
+Group { LayoutMode: Left; Anchor: (Height: 48, Top: 4);
+$C.@TextButton #GlobalOn { @Anchor = (Width: 120, Right: 6); @Text = "Fog ON"; }
+$C.@TextButton #GlobalOff { @Anchor = (Width: 120, Right: 6); @Text = "Fog OFF"; }
+$C.@TextButton #NativeFogReset { @Anchor = (Width: 240, Right: 6); @Text = "Use native fog preset"; }
+}
+DropdownBox #GlobalPreset { Anchor: (Width: 510, Height: 36, Top: 6); Style: $C.@DefaultDropdownBoxStyle; }
+Label { Text: "Density (native preset: 5/10)"; Anchor: (Height: 28, Top: 6); Style: $C.@DefaultLabelStyle; }
+Group { LayoutMode: Left; Anchor: (Width: 520, Height: 38, Top: 4);
+$C.@Slider #GlobalDensity { @Anchor = (Width: 428, Height: 32, Right: 12); Value: 4; Min: 0; Max: 10; Step: 1; }
+$C.@TextField #GlobalDensityInput { @Anchor = (Width: 80, Height: 34); Value: "4"; }
+}
+Label { Text: "Transparency % (100 = no global fog)"; Anchor: (Height: 28, Top: 6); Style: $C.@DefaultLabelStyle; }
+Group { LayoutMode: Left; Anchor: (Width: 520, Height: 38, Top: 4);
+$C.@Slider #GlobalTransparency { @Anchor = (Width: 428, Height: 32, Right: 12); Value: 0; Min: 0; Max: 100; Step: 1; }
+$C.@TextField #GlobalTransparencyInput { @Anchor = (Width: 80, Height: 34); Value: "0"; }
+}
+Label { Text: "Transparency attenuates the native fog density."; Anchor: (Height: 26); Style: (FontSize: 14, TextColor: #b8cce0); }
+Label { Text: "Fog brightness % (100 = original)"; Anchor: (Height: 28, Top: 6); Style: $C.@DefaultLabelStyle; }
+Group { LayoutMode: Left; Anchor: (Width: 520, Height: 38, Top: 4);
+$C.@Slider #GlobalBrightness { @Anchor = (Width: 428, Height: 32, Right: 12); Value: 100; Min: 0; Max: 200; Step: 1; }
+$C.@TextField #GlobalBrightnessInput { @Anchor = (Width: 80, Height: 34); Value: "100"; }
+}
+Label { Text: "Keeps the color. Already-bright colors change less."; Anchor: (Height: 26); Style: (FontSize: 14, TextColor: #b8cce0); }
+Label #GlobalColorMode { Text: "Color: native day/night cycle"; Anchor: (Height: 28, Top: 6); Style: $C.@DefaultLabelStyle; }
+ColorPickerDropdownBox #GlobalColor { Anchor: (Width: 350, Height: 34, Top: 6); Format: Rgb; Style: $C.@DefaultColorPickerDropdownBoxStyle; DisplayTextField: true; }
+}
+Group #PanelSky { FlexWeight: 1; LayoutMode: TopScrolling; ScrollbarStyle: $C.@DefaultScrollbarStyle; Visible: false;
+Label { Text: "Moon size % (100 = original appearance)"; Anchor: (Height: 30, Top: 6); Style: $C.@DefaultLabelStyle; }
+Group { LayoutMode: Left; Anchor: (Width: 520, Height: 38, Top: 4);
+$C.@Slider #MoonSize { @Anchor = (Width: 428, Height: 32, Right: 12); Value: 100; Min: 10; Max: 400; Step: 1; }
+$C.@TextField #MoonSizeInput { @Anchor = (Width: 80, Height: 34); Value: "100"; }
+}
+Label { Text: "Moon transparency % (0 = native, 100 = hidden)"; Anchor: (Height: 30, Top: 6); Style: $C.@DefaultLabelStyle; }
+Group { LayoutMode: Left; Anchor: (Width: 520, Height: 38, Top: 4);
+$C.@Slider #MoonTransparency { @Anchor = (Width: 428, Height: 32, Right: 12); Value: 0; Min: 0; Max: 100; Step: 1; }
+$C.@TextField #MoonTransparencyInput { @Anchor = (Width: 80, Height: 34); Value: "0"; }
+}
+Label { Text: "Independent of fog density. Also controls the moon halo."; Anchor: (Height: 26); Style: (FontSize: 14, TextColor: #b8cce0); }
+Label { Text: "Sky path (also moves the sun)"; Anchor: (Height: 30, Top: 8); Style: $C.@DefaultLabelStyle; }
+Label { Text: "Sky angle: 0-359 degrees"; Anchor: (Height: 28); Style: $C.@DefaultLabelStyle; }
+Group { LayoutMode: Left; Anchor: (Width: 520, Height: 38, Top: 4);
+$C.@Slider #SkyAngle { @Anchor = (Width: 428, Height: 32, Right: 12); Value: 0; Min: 0; Max: 359; Step: 1; }
+$C.@TextField #SkyAngleInput { @Anchor = (Width: 80, Height: 34); Value: "0"; }
+}
+Label { Text: "Sky path height % (0-1000; 100 = standard)"; Anchor: (Height: 28); Style: $C.@DefaultLabelStyle; }
+Group { LayoutMode: Left; Anchor: (Width: 520, Height: 38, Top: 4);
+$C.@Slider #SkyHeight { @Anchor = (Width: 428, Height: 32, Right: 12); Value: 100; Min: 0; Max: 1000; Step: 1; }
+$C.@TextField #SkyHeightInput { @Anchor = (Width: 80, Height: 34); Value: "100"; }
+}
+$C.@TextButton #SkyReset { @Anchor = (Width: 510, Height: 40, Top: 6); @Text = "Restore original sky path"; }
+Label  { Text: "Night lighting"; Anchor: (Height: 30, Top: 6); Style: $C.@DefaultLabelStyle; }
+Group { LayoutMode: Left; Anchor: (Height: 48, Top: 4);
+$C.@TextButton #NightVanilla { @Anchor = (Width: 160, Right: 6); @Text = "Vanilla"; }
+$C.@TextButton #NightMoonlit { @Anchor = (Width: 160, Right: 6); @Text = "Moonlit"; }
+$C.@TextButton #NightBright { @Anchor = (Width: 160, Right: 6); @Text = "Bright"; }
+}
+Group { LayoutMode: Left; Anchor: (Width: 520, Height: 38, Top: 4);
+$C.@Slider #Moon { @Anchor = (Width: 428, Height: 32, Right: 12); Value: 4; Min: 1; Max: 10; Step: 1; }
+$C.@TextField #MoonInput { @Anchor = (Width: 80, Height: 34); Value: "4"; }
+}
+Group { LayoutMode: Left; Anchor: (Height: 48, Top: 4);
+$C.@TextButton #MoonSlate { @Anchor = (Width: 122, Right: 6); @Text = "Slate"; }
+$C.@TextButton #MoonSilver { @Anchor = (Width: 122, Right: 6); @Text = "Silver"; }
+$C.@TextButton #MoonPearl { @Anchor = (Width: 122, Right: 6); @Text = "Pearl"; }
+$C.@TextButton #MoonWarmGray { @Anchor = (Width: 122, Right: 6); @Text = "Gray"; }
+}
+Group { LayoutMode: Left; Anchor: (Height: 48, Top: 4);
+$C.@TextButton #MoonPaleGold { @Anchor = (Width: 122, Right: 6); @Text = "Pale gold"; }
+$C.@TextButton #MoonGold { @Anchor = (Width: 122, Right: 6); @Text = "Gold"; }
+$C.@TextButton #MoonAmber { @Anchor = (Width: 122, Right: 6); @Text = "Amber"; }
+}
+}
+
+Label #Feedback { Text: ""; Anchor: (Height: 30, Top: 6); Style: (FontSize: 14, TextColor: #b8cce0); }
+$C.@TextButton #Reset { @Anchor = (Width: 510, Height: 40, Top: 4); @Text = "Restore original atmosphere"; }
+}
+}
+$C.@BackButton {}

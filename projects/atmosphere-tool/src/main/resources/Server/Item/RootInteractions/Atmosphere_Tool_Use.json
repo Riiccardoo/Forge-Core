@@ -1,0 +1,11 @@
+{
+  "Interactions": [
+    {
+      "Type": "AtmosphereCycle"
+    }
+  ],
+  "Cooldown": {
+    "Id": "Atmosphere_Tool_Use",
+    "Cooldown": 0.25
+  }
+}

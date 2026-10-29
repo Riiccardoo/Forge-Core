@@ -1,0 +1,19 @@
+ATMOSPHERE TOOL NATIVE 2.4.0 - FINAL CLIENT CHECK
+Status: NOT RUN for the final 2.4.0 menu. Full 2.3.1 visual result was accepted
+by the user on 2026-10-29, including independent lunar opacity. Server tests
+of 2.4.0 are separate evidence, not a substitute for this client check.
+
+On an isolated Hytale 0.7.4 test profile:
+1. Right-click the tool and use /atmo menu. Verify only Saves, Fog and Sky &
+   Moon tabs, scrolling, exact number entry, Observe and Close.
+2. Load an existing custom atmosphere, rename and create/delete a disposable
+   save. Reopen/restart and check the library and global settings.
+3. Check global Fog OFF/ON against the backdrop. Set density 10, transparency 0,
+   then vary Moon transparency 0/50/100/0. Fog changes must not change its value.
+4. Confirm approved fog color/brightness, moon size, sky angle/height and night
+   lighting. World time must remain unchanged by sky controls.
+5. In an old test world, check that archived Zones no longer affect the view
+   and their data files are unchanged.
+
+Record JAR SHA-256, resolution and PASS/FAIL/NOT RUN. Use authentic screenshots
+only. No new screenshots are represented as evidence in this release package.

@@ -1,0 +1,33 @@
+{
+  "TranslationProperties": {
+    "Name": "atmosphere.items.Atmosphere_Tool.name",
+    "Description": "atmosphere.items.Atmosphere_Tool.description"
+  },
+  "Icon": "Icons/Items/EditorTools/TriggerVolume.png",
+  "Categories": [
+    "Tool.BuilderToolSecondPage"
+  ],
+  "SubCategory": "MiscTools",
+  "Model": "Items/Tools/Brush/Brush.blockymodel",
+  "Texture": "Items/Tools/Brush/Brush_Texture.png",
+  "Scale": 0.8,
+  "MaxStack": 1,
+  "PlayerAnimationsId": "Item",
+  "HudUI": [
+    {
+      "Path": "Hud/ToolsLegends/AtmosphereToolLegend.ui",
+      "Type": "Legend"
+    }
+  ],
+  "Interactions": {
+    "Secondary": "Atmosphere_Tool_Use"
+  },
+  "InteractionConfig": {
+    "DebugOutlines": false,
+    "UseDistance": {
+      "Creative": 128
+    },
+    "AllEntities": false
+  },
+  "Quality": "Tool"
+}

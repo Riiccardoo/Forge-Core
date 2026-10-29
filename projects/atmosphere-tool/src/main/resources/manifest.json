@@ -1,0 +1,17 @@
+{
+  "Group": "AtmosphereTool",
+  "Name": "AtmosphereTool",
+  "Version": "2.4.0",
+  "Description": "Global fog, sky, moon and custom atmosphere saves. No client component required.",
+  "Authors": [
+    {
+      "Name": "Atmosphere Tool"
+    }
+  ],
+  "Main": "atmospheretool.AtmospherePlugin",
+  "ServerVersion": "=0.7.4",
+  "Dependencies": {
+    "Hytale:Weather": "*"
+  },
+  "IncludesAssetPack": true
+}

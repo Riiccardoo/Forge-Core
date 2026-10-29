@@ -1,0 +1,15 @@
+ATMOSPHERE TOOL
+Copyright (c) 2026 Zytale contributors. All Rights Reserved.
+
+This notice covers the original Atmosphere Tool code, UI, configuration,
+documentation and original project branding. No general license to modify,
+redistribute, sublicense or use this work commercially is granted.
+You may install and use an unmodified copy obtained from the project owner or
+an authorized distribution channel. Additional permissions require permission
+from the relevant copyright holder.
+
+Hytale and third-party names, APIs and assets remain the property of their
+respective owners. This notice does not grant rights to their content or
+override their terms. No Hytale game binaries or game asset bytes are bundled.
+
+Provided without warranty of any kind, to the extent permitted by law.

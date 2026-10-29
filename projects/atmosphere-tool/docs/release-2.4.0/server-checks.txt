@@ -1,0 +1,111 @@
+isolated native world loaded
+loaded tool Secondary points at Atmosphere_Tool_Use
+right-click root compiles into native operations
+loaded right-click interaction resolves to plugin codec
+loaded interaction retains active plugin services
+menu builds with native controls in real server
+organized menu binds saved atmospheres and excludes retired Fullbright
+manual lunar slider and exact input are bound
+brightness slider and exact input both bind on the server
+menu binds only global fog switches with no retired background actions
+saving a combination does not apply it or activate fog
+renaming a save leaves applied weather untouched
+apply restores all selected global values including OFF and exact sky controls
+custom library excludes target restore IDs retired lighting and runtime assets
+deleting the applied save preserves current atmosphere
+missing source rejected before modifying active environment or deleting the saved definition
+even an unedited source save has an explicit restart restore intent
+custom saves leave original world sky settings intact
+original atmosphere restores pre-apply weather and clears snapshot restore intent
+unedited save forces its own source without enabling additional edits
+different saved source cannot replace target world restoration identity
+unedited custom atmosphere restores after reload; Reset returns target original weather rather than the saved source
+editing only lunar transparency leaves fog and night controls untouched
+lunar-only setting restores after reload and original reset clears it
+legacy 2.2.5 settings obey global fog false with retired background false
+legacy 2.2.5 settings obey global fog false with retired background true
+retired background flag cannot change global weather false
+legacy 2.2.5 settings obey global fog true with retired background false
+legacy 2.2.5 settings obey global fog true with retired background true
+retired background flag cannot change global weather true
+neutral brightness does not activate a new weather override
+first ON preserves native weather including original moon opacity
+maximum native fog at zero manual transparency preserves original lunar opacity
+fog settings never change manual disk/halo opacity mode 0
+fog settings never change manual disk/halo opacity mode 1
+fog settings never change manual disk/halo opacity mode 2
+fog settings never change manual disk/halo opacity mode 3
+fog settings never change manual disk/halo opacity mode 4
+fog settings never change manual disk/halo opacity mode 5
+lunar control changes only moon and halo alpha, preserving sky weather and approved size
+100 percent explicitly hides both disk and halo
+registered Weather restores controllable lunar opacity 0..100..0 at maximum fog density
+native fog reset preserves manual lunar setting
+manual lunar control never mutates authored assets
+brightness changes only fog RGB; density transparency sky moon sunlight water and effects stay identical
+brightness leaves shared native source immutable
+native palette mode and independent controls survive brightness edits
+hidden global weather is unaffected by brightness 0 mode 0
+hidden global weather is unaffected by brightness 150 mode 0
+hidden global weather is unaffected by brightness 200 mode 0
+hidden global weather is unaffected by brightness 0 mode 1
+hidden global weather is unaffected by brightness 150 mode 1
+hidden global weather is unaffected by brightness 200 mode 1
+hidden global weather is unaffected by brightness 0 mode 2
+hidden global weather is unaffected by brightness 150 mode 2
+hidden global weather is unaffected by brightness 200 mode 2
+legacy preset luminance composes with the new independent brightness
+editing brightness while OFF preserves OFF and saved density/transparency
+picker changes preserve brightness
+ON restores brightened custom color after OFF
+neutral brightness restores exact stored picker color
+native reset returns brightness to neutral
+rapid brightness edits converge on the last revision
+transparency attenuates daytime native density by 50 percent
+transparency leaves density selection intact
+RGB override reaches actual Weather asset
+OFF suppresses distance and height fog
+OFF supplies authored day-night keyframes to the horizon and fog backdrop
+OFF neutral horizon palette at native hour 3.0
+OFF neutral horizon palette at native hour 5.0
+OFF neutral horizon palette at native hour 7.0
+OFF neutral horizon palette at native hour 17.0
+OFF neutral horizon palette at native hour 19.0
+OFF neutral horizon palette at native hour 21.0
+OFF leaves moon sunlight upper-sky sunset clouds stars water and effects unchanged
+OFF never mutates source weather arrays
+explicit OFF is idempotent and preserves density transparency and color
+editing density while OFF does not reactivate fog
+ON restores stored density transparency and color
+ON restores original horizon and stored custom fog color after OFF
+100 transparency is fully hidden without changing enabled state
+native reset restores weather curves without automatic lunar attenuation
+rapid slider edits converge to the newest revision
+reset cancels pending application without reviving weather
+native source asset remains unchanged
+zero-density legacy profiles display zero without losing native control support
+sky orbit controls store exact angle and height
+sky edits leave fog and original world configuration untouched
+sky reset preserves native world settings
+moon scale reaches native asset
+isolated native world loaded
+loaded tool Secondary points at Atmosphere_Tool_Use
+right-click root compiles into native operations
+loaded right-click interaction resolves to plugin codec
+loaded interaction retains active plugin services
+menu builds with native controls in real server
+organized menu binds saved atmospheres and excludes retired Fullbright
+manual lunar slider and exact input are bound
+brightness slider and exact input both bind on the server
+menu binds only global fog switches with no retired background actions
+native settings survive an actual server restart
+moon size persists across actual restart
+custom save apply intent survives actual server restart
+fog brightness persists across actual server restart
+named custom saves survive an actual server restart
+sky orbit persists across actual restart
+player-ready restoration path publishes saved native settings
+restart publishes the saved adjusted color as well as density
+restart reapplies saved independent lunar transparency
+restore original atmosphere returns the prior forced weather
+original atmosphere restores native sky path mode

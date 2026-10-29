@@ -1,0 +1,20 @@
+{
+  "jarSHA256": "5cd332cb054ae2832c3b4eb41dc3bf629ed0110f50c47ff903defffaa4b9d255",
+  "zipSHA256": "62ae0aee739876d25d25210614136792f46aafbff5e0f3a6f29c95fec815651c",
+  "jarBytes": 93247,
+  "zipBytes": 93063,
+  "jarEntries": 57,
+  "regressionChecks": 93,
+  "serverChecks": 111,
+  "productionBoots": 3,
+  "visualClient": "NOT RUN",
+  "packageContents": [
+    "Atmosphere-Tool-Native-2.4.0.jar",
+    "LICENSE.txt",
+    "NOTICE.txt",
+    "INSTALLATION_EN.txt",
+    "PROVENANCE_EN.txt",
+    "VISUAL_TEST_EN.txt",
+    "SHA256SUMS.txt"
+  ]
+}

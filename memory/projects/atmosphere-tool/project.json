@@ -1,0 +1,83 @@
+{
+  "id": "atmosphere-tool",
+  "name": "atmosphere-tool",
+  "summary": "Atmosphere Tool Native 2.4.0 for Hytale 0.7.4: global fog, brightness, independent moon transparency/size, native sky path, night lighting and global custom saves. Zones, global Fullbright and client-volume fog are archived. 2.3.1 visuals accepted by user; 2.4.0 runtime/rollback tests pass, final three-tab client check pending. Submission package prepared; no marketplace upload.",
+  "technologies": [
+    "Hytale 0.7.4 native Java server plugin",
+    "Java 25",
+    "Hytale Weather and UI/item asset APIs",
+    "Windows PowerShell",
+    "Python standard-library packaging"
+  ],
+  "constraints": [
+    "Canonical workspace G:/Zytale; never create project files under the old Desktop/Zytale location.",
+    "Do not use computer-use/GUI automation for this project.",
+    "No client DLL, renderer patch, shaders or game bytes in the native release.",
+    "English UI and documentation. All Rights Reserved, selected by owner 2026-10-29.",
+    "Global-only Custom Atmosphere saves; preserve library v2, old IDs and archived data.",
+    "No marketplace upload or GitHub Release authorized; source/docs updates to Riiccardoo/Forge-Core are authorized.",
+    "Do not infer platform authorization, current-version compatibility, FPS or final UI acceptance from server tests."
+  ],
+  "decisions": [
+    "The independent Moon transparency control supersedes density-driven lunar fading; it must work with maximum fog.",
+    "Sky angle/height moves the whole sky without modifying world simulation time; user accepted this behavior.",
+    "One Fog ON/OFF pair affects map fog and backdrop. Separate background controls were rejected.",
+    "Fog brightness uses common RGB gain within channel headroom, not whitening or emitted light.",
+    "Archive Zones code/UI/backend and retain files unread; never delete saved area definitions when retiring this feature.",
+    "Preserve the original client-volume renderer privately as technical history, not a publishable supported client component.",
+    "Native graduated Fullbright attempts failed to satisfy the global requirement; keep the implementation archived.",
+    "Prepare a single JAR for Mods/plugin upload; documentation/source ZIPs are separate handoff artifacts.",
+    "Direct reuse: approved native weather/sky/save implementation. Analogy: EXP-000014 release allowlist and evidence gates. New work: Zones backend removal, timer measurement, package audit and source sync."
+  ],
+  "experience_refs": [
+    "EXP-000007",
+    "EXP-000014"
+  ],
+  "updated_at": "2026-10-29T18:55:45.034294Z",
+  "current_version": "2.4.0",
+  "accepted_visual_baseline": "2.3.1",
+  "canonical_source_relative": "Porject-Zytale/tools/AtmosphereTool-Native",
+  "github_source_path": "projects/atmosphere-tool",
+  "artifacts": {
+    "jar_sha256": "5cd332cb054ae2832c3b4eb41dc3bf629ed0110f50c47ff903defffaa4b9d255",
+    "bundle_sha256": "62ae0aee739876d25d25210614136792f46aafbff5e0f3a6f29c95fec815651c",
+    "source_zip_sha256": "3e611e86a492178e28f23926f2c323ab37bd57850f348f00ece38e7d565f8db0",
+    "publication_folder_relative": "02_FILE_PER_PUBBLICAZIONE/AtmosphereTool/2.4.0"
+  },
+  "validation": {
+    "regression_checks": 93,
+    "integration_assertions": 111,
+    "probe_boots": 2,
+    "production_install_restart_remove_boots": 3,
+    "upgrade_rollback_boots": 3,
+    "source_recompiled_classes_match": 47,
+    "client_2_4_0": "NOT RUN",
+    "client_2_3_1": "User reported fully working",
+    "marketplace": "NOT SUBMITTED",
+    "setup_median_ms": {
+      "2.3.1": 25.537,
+      "2.4.0": 21.093
+    },
+    "benchmark_limit": "Three samples each, same host, empty v1 zone fixture, warm cache; baseline includes normal v1 backup; no total-load or FPS gain demonstrated."
+  },
+  "source_refs": [
+    {
+      "kind": "report",
+      "reference": "projects/atmosphere-tool/docs/RELEASE_ASSESSMENT_2.4.0.txt",
+      "description": "Test matrix, policies, metrics, limits and final JAR hash",
+      "verified": true
+    },
+    {
+      "kind": "file",
+      "reference": "projects/atmosphere-tool/SOURCE_SHA256.json",
+      "description": "Exact public source allowlist and SHA-256 values",
+      "verified": true
+    },
+    {
+      "kind": "history",
+      "reference": "projects/atmosphere-tool/docs/HISTORY_EN.txt",
+      "description": "Preserved accepted/rejected requirements and archive decisions",
+      "verified": true
+    }
+  ]
+}

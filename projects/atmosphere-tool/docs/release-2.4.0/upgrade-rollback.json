@@ -1,0 +1,29 @@
+{
+  "scope": "Existing isolated test world, no graphical client/player. Exact original baseline JAR, candidate, original baseline rollback. All plugin data files hash-identical after each boot.",
+  "stages": [
+    {
+      "version": "2.3.1",
+      "jarSHA256": "fe02db217b7e8c78faa3ddb7004a67d572d595bfa0bb0a371981041f889cbfa0",
+      "dataUnchanged": true
+    },
+    {
+      "version": "2.4.0",
+      "jarSHA256": "5cd332cb054ae2832c3b4eb41dc3bf629ed0110f50c47ff903defffaa4b9d255",
+      "dataUnchanged": true
+    },
+    {
+      "version": "2.3.1 rollback",
+      "jarSHA256": "fe02db217b7e8c78faa3ddb7004a67d572d595bfa0bb0a371981041f889cbfa0",
+      "dataUnchanged": true
+    }
+  ],
+  "dataFileCount": 6,
+  "files": {
+    "atmosphere-presets.json": "55d32825a1c6fe28d25fa953a6af55a0e16216d52c3bfc15f5b589f14c76bc18",
+    "custom-atmosphere-saves.json": "2e179f55d4f28aab7d3291341f5a225cc249517a5208999c1a6a4fb56b9e89ee",
+    "global-atmosphere.json": "7c65a86000b12a20b9a6e072f1aa687249ecec8e643eef800b83ec3028787c50",
+    "localized-mist.json": "ca9ca3e1b17b6a79d434e2cc137823a2267a32ea290ab04a5d602dc3ca9a4f67",
+    "native-global-atmosphere.json": "e86ae26158e9313da27c47ee4cfb4f0e767108bde07bbba31084cc7f1e146181",
+    "native-weather-zones.json": "53e71526315da3557fad2a552601ba29561a70c44327cd4e091a6ce5a6d066fa"
+  }
+}

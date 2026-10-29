@@ -1,0 +1,549 @@
+{
+  "version": "2.4.0",
+  "jarSHA256": "5cd332cb054ae2832c3b4eb41dc3bf629ed0110f50c47ff903defffaa4b9d255",
+  "jarBytes": 93247,
+  "entries": [
+    {
+      "path": "META-INF/MANIFEST.MF",
+      "bytes": 66,
+      "sha256": "2cda4bed41f79db7150d7413ae12e364b54c2ce019729414c299e96b37efffc5",
+      "material": "metadata",
+      "source": "JDK jar tool generated metadata",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$Action.class",
+      "bytes": 2408,
+      "sha256": "75d711460e8913862778c7e0881127deed4019d9cedf46012d473fc1d9500302",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$ColorCommand.class",
+      "bytes": 2633,
+      "sha256": "d864075c2a6c35ddf466b940f6fc9826a5a233e630919105355e941ea36e7c14",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$Fog.class",
+      "bytes": 1583,
+      "sha256": "2df00b9debb6520793c9b86938bd19b940b00d9433876b63b482c390ae33bd11",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$FogLevel.class",
+      "bytes": 2458,
+      "sha256": "12ac6e8a4aac81ed1e91e7d66c0da8f032cd76046f46d47ecfe7839ffaf51a2f",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$FogPreset.class",
+      "bytes": 2432,
+      "sha256": "bb8c79334d10d0c8ec1dee00494a90921825a08c71534f493e104c14b06d70c3",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$FogValue.class",
+      "bytes": 3376,
+      "sha256": "1e64c20afd687e7aa995a27e02d4f39e298a49b62a0df9432d7b9c31cc2acee0",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$FogValueKind.class",
+      "bytes": 1371,
+      "sha256": "36f906822524a3d3c7ca40da6cb98040d2be0bfc9fb4fcb48cabc80ed8b66f12",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$Menu.class",
+      "bytes": 1504,
+      "sha256": "8fe5ba4bc22279000abcfc68ae6e568a30873b851c97bb6b2531f11eab43e549",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$MoonColor.class",
+      "bytes": 2454,
+      "sha256": "bdac8f6f3a07440dc8f75a0d5e36b1d3651a701a313f5be6688fd213f49c0a3a",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$NamesType.class",
+      "bytes": 4409,
+      "sha256": "74e3b6c78312dfdbd7a75f80cf486e6684c171df7cf09b5c965db03630279866",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$Night.class",
+      "bytes": 2435,
+      "sha256": "f2b62c6cb6ea9ea31f363aaa933d98f34f221a441a93ea492ee050171ae16e38",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$Reset.class",
+      "bytes": 1496,
+      "sha256": "44742310b7f5283c3e88143392f00b103e809b52d36f2473a13d4ecab49403fc",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$RgbColor.class",
+      "bytes": 2800,
+      "sha256": "138543623b9f3155bf1ab38547d83c75e165b322145e83cb62b892fa0ce69ca4",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$Scalar.class",
+      "bytes": 3166,
+      "sha256": "6cd60d3e846e7710f3aa2757312a97da33ef87460064e62f34ffa032309c25e1",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$ScalarKind.class",
+      "bytes": 1197,
+      "sha256": "9de9249ac080e0d0d9a4a2db32fe767d0be3401089ab104cd9d7aef1996e16a0",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$Status.class",
+      "bytes": 1519,
+      "sha256": "1b43e14ced2cc084a84989123aea28cd62219126ba77a520534889a220b305da",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand$Toggle.class",
+      "bytes": 2133,
+      "sha256": "d918c0f2d6dba9fbff04ad8743b2dc95eb0eeefd5fe7826b09ac035a74b66cd7",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereCommand.class",
+      "bytes": 2269,
+      "sha256": "630a627bc245f014a9ef68a9083551435ac8969a267c78a1123f492c9327154e",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereCommand.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereConfig$Controls.class",
+      "bytes": 1415,
+      "sha256": "88e5cb7afd9fcb0e2a35899c3526a6f61a3e9436d77333b4c2f467489e03c85f",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereConfig.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereConfig$FogPreset.class",
+      "bytes": 691,
+      "sha256": "5adac752ffa3ddc0fb4fed097f792cbb97f6c54945b1fd2bfa293d32b851dff6",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereConfig.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereConfig$Limits.class",
+      "bytes": 997,
+      "sha256": "6f468c2a9b0cd39d316737932f9954bea7e33e4affbf0a8d827f0d5e4a4ecf33",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereConfig.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereConfig$NightPreset.class",
+      "bytes": 491,
+      "sha256": "a63356ad94960f70d64891caf6303c6871a016acca59f7ddd8af7b6597891f38",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereConfig.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereConfig.class",
+      "bytes": 3151,
+      "sha256": "2b052924689a00c0911f3db2f070d292ecbabc75872b4f1fde27cd1c6e2bf4fc",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereConfig.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereInteraction.class",
+      "bytes": 5291,
+      "sha256": "f2ff83abdd99cc51bf83293bc2527cb3fafa9b5bdb7105e5a5b1a0e86a1ccb94",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereInteraction.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereMenuPage$Data.class",
+      "bytes": 4866,
+      "sha256": "a74ab8e3c1af28f3edf244e64ddc0279e9dc8afa5dadfe37329e9f010a8f6867",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereMenuPage.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereMenuPage.class",
+      "bytes": 22137,
+      "sha256": "b1847c66bcfaa7b71c897408870aea0e7428a9df93c0cb1bdaac2370619b10c7",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereMenuPage.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmospherePlugin.class",
+      "bytes": 6478,
+      "sha256": "c3c16f8d05e8831e2bd9abbea707e7b9e6faecfc3a1087cdb460d0a7f002ac41",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmospherePlugin.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereService$State.class",
+      "bytes": 1600,
+      "sha256": "43bd206c5492836b5b82149fd58ac569b521d794feb9dd88c6101824ca63641f",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereService.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereService.class",
+      "bytes": 45260,
+      "sha256": "808aacf36b2c08b1d5e3987e1700e7df8ef96f8205cffb9880434cccd08dda32",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereService.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereSettings.class",
+      "bytes": 3829,
+      "sha256": "e2fcb5c69b5ed7b25a79528bab0c98a3b1b35e2d31c0dfcbb3b9193d534155ee",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereSettings.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereSettingsStore.class",
+      "bytes": 4239,
+      "sha256": "8c20974942784d599d29072fe91a35b72fc883bead40844cea2e1b185b34beaa",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereSettingsStore.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtmosphereSnapshot.class",
+      "bytes": 3415,
+      "sha256": "b9b742c66a6051509d5e4ba92909d95b53d21e6dfdeae698a5e147f48aab4611",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtmosphereSnapshot.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/AtomicJsonFile.class",
+      "bytes": 4658,
+      "sha256": "0213b274fb8be2f530bdb9edfd90d618b1cd360c3f9c61fbb751c2c3993ceaa1",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/AtomicJsonFile.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/CustomAtmospheres$Entry.class",
+      "bytes": 1632,
+      "sha256": "904a536128817933f399e3625506e64afa8693fa887e838774c54dcfe4131ac7",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/CustomAtmospheres.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/CustomAtmospheres.class",
+      "bytes": 11596,
+      "sha256": "08efdf72e846c4da3b2072099b11509de09550b01e7eaf7457ca9b655b69bfb9",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/CustomAtmospheres.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/ExactValue$Range.class",
+      "bytes": 1324,
+      "sha256": "d90905dcb1b198eb1e17c5b73786c3d71e5eb518eba67a4dca38038b0ee73eea",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/ExactValue.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/ExactValue.class",
+      "bytes": 2377,
+      "sha256": "0fa0ed9eba9d697f0bbaeea5168a5371694ee82da3d257f4d7556a4e4389012e",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/ExactValue.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/FogBrightness.class",
+      "bytes": 1345,
+      "sha256": "67c5e33998a5334f0adef4c56e3a7e68cfeadadf8fe5d5680da439eb040047dd",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/FogBrightness.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/MoonTransparency$Palette.class",
+      "bytes": 1672,
+      "sha256": "404e8db21d185a5fde78e3a17b48de694b93c878ee9d03b4dd76bf1d6bc9c6d1",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/MoonTransparency.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/MoonTransparency.class",
+      "bytes": 1733,
+      "sha256": "a4565b0d694f197b6d7e6c84d606badf955c523c5ec268da449a3369bc9a2cbe",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/MoonTransparency.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/NativeSettingsMigration.class",
+      "bytes": 3091,
+      "sha256": "ca05cdf6759e9cb7a55e45e66f880457ce8afbb939041f501a5bd9a77711b07a",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/NativeSettingsMigration.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/NativeWeatherFog$ClearBackdrop.class",
+      "bytes": 1845,
+      "sha256": "91cde3a8d7a8dbf38f5ad62b92613a47ce3df364f15494d0c6af1ee9eae5edb1",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/NativeWeatherFog.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/NativeWeatherFog.class",
+      "bytes": 4548,
+      "sha256": "1e1c0de71d320b6415093e7bd1e546852da2a1f69af7aea64c5da4b382031312",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/NativeWeatherFog.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/PluginExecutors.class",
+      "bytes": 1098,
+      "sha256": "d60048e942231b4694d4da861a0a34ff84c085ae01be675d402782ee734b653d",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/PluginExecutors.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/RgbValue.class",
+      "bytes": 1458,
+      "sha256": "e2f200f555d8c0d29e3cc45e651734894701dabf74868b030181307fe9321e8b",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/RgbValue.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/SkyOrbit.class",
+      "bytes": 3105,
+      "sha256": "052ea6862a03fffcffc18a0f2e1092e5b351ddd2f26a6926dd600326d5c0c39e",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/SkyOrbit.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmospheretool/WorldIdentity.class",
+      "bytes": 662,
+      "sha256": "7b395af8f9af57c6176289621face5c7447c98642cdc8c3568cea29bdef5bbb7",
+      "material": "compiled Java",
+      "source": "src/main/java/atmospheretool/WorldIdentity.java",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "Common/UI/Custom/Hud/ToolsLegends/AtmosphereToolLegend.ui",
+      "bytes": 439,
+      "sha256": "466b9f8a678aafd4dceada48b3a1a0dc8e32244a109bb05f069e92649ceb8444",
+      "material": "UI or JSON/text",
+      "source": "src/main/resources/Common/UI/Custom/Hud/ToolsLegends/AtmosphereToolLegend.ui",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "Common/UI/Custom/Pages/AtmosphereToolPage.ui",
+      "bytes": 8814,
+      "sha256": "6a2eb4d65a7cc8fa5373c2e88924fb9436537b8dfec0d4b14d6d03d200ca6d44",
+      "material": "UI or JSON/text",
+      "source": "src/main/resources/Common/UI/Custom/Pages/AtmosphereToolPage.ui",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "LICENSE.txt",
+      "bytes": 800,
+      "sha256": "58ac0625c8fa14be7c4a2278a170458566ddef942d91ffea297889b223bed824",
+      "material": "rights notice",
+      "source": "LICENSE.txt",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "NOTICE.txt",
+      "bytes": 902,
+      "sha256": "81e2ac7ec7d0565d434555d399c83aed07de4801c5c1aae893104e73b68ded5d",
+      "material": "rights notice",
+      "source": "NOTICE.txt",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "Server/Item/Items/EditorTool/Atmosphere_Tool.json",
+      "bytes": 824,
+      "sha256": "0d078fe158475b22942e9d8d7dfdfd2ec79da793018e500fd884b45b62f0d307",
+      "material": "UI or JSON/text",
+      "source": "src/main/resources/Server/Item/Items/EditorTool/Atmosphere_Tool.json",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "Server/Item/RootInteractions/Atmosphere_Tool_Use.json",
+      "bytes": 147,
+      "sha256": "d01747f34bd2c449c9608debebc131dd3d67cf3b0098686b872b46249076f05b",
+      "material": "UI or JSON/text",
+      "source": "src/main/resources/Server/Item/RootInteractions/Atmosphere_Tool_Use.json",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "Server/Languages/en-US/atmosphere.lang",
+      "bytes": 218,
+      "sha256": "1a3df545a66766222324567889106d787cbda1eaf537da0d96ca95ed23856b05",
+      "material": "UI or JSON/text",
+      "source": "src/main/resources/Server/Languages/en-US/atmosphere.lang",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "atmosphere-presets.json",
+      "bytes": 4453,
+      "sha256": "55d32825a1c6fe28d25fa953a6af55a0e16216d52c3bfc15f5b589f14c76bc18",
+      "material": "UI or JSON/text",
+      "source": "src/main/resources/atmosphere-presets.json",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 418,
+      "sha256": "90cb70f27658b871f76cbc287479b77baf0adc7fbe081feb981fe096ee506ec9",
+      "material": "UI or JSON/text",
+      "source": "src/main/resources/manifest.json",
+      "origin": "Original/project-supplied Atmosphere Tool",
+      "license": "All Rights Reserved (project content)"
+    }
+  ],
+  "externalAssetReferences": [
+    {
+      "field": "Model",
+      "reference": "Items/Tools/Brush/Brush.blockymodel",
+      "bundledBytes": 0,
+      "rights": "Hytale native asset; referenced only"
+    },
+    {
+      "field": "Texture",
+      "reference": "Items/Tools/Brush/Brush_Texture.png",
+      "bundledBytes": 0,
+      "rights": "Hytale native asset; referenced only"
+    },
+    {
+      "field": "Icon",
+      "reference": "Icons/Items/EditorTools/TriggerVolume.png",
+      "bundledBytes": 0,
+      "rights": "Hytale native asset; referenced only"
+    }
+  ],
+  "externalDependencies": "JDK 25 and Hytale 0.7.4 server-provided APIs, Gson and annotations; no implementation bundled",
+  "archivedFeaturesExcluded": [
+    "Zones",
+    "global Fullbright",
+    "client-volume renderer"
+  ],
+  "qaAndPrivatePayloadExcluded": true,
+  "classAndResourcePayloadMatch": true,
+  "rightsLimit": "Project owner chose All Rights Reserved. Historical contributor ownership is not independently certified; no third-party runtime bytes identified in this allowlisted package."
+}

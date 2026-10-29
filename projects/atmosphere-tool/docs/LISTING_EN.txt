@@ -1,0 +1,43 @@
+TITLE
+Atmosphere Tool
+
+SUMMARY
+Shape your world's global fog, moon and sky, and save custom atmosphere presets.
+
+DESCRIPTION
+A Creative atmosphere editor for Hytale 0.7.4. Open Atmosphere Tool with a
+right-click or /atmo menu.
+
+- Global fog ON/OFF, including the fog-colored backdrop.
+- Fog presets, density, transparency, color and color-preserving brightness.
+- Independent moon transparency, even with maximum fog density.
+- Moon size, sky angle and sky-path height.
+- Night lighting and exact numeric values beside every slider.
+- Custom Atmosphere saves: create, apply, rename and delete named global setups.
+- Three tabs: Saves, Fog and Sky & Moon.
+
+Works as a Java server plugin with a normal UI/item asset pack. No client DLL
+or installer is required. Use an unmodified Hytale client.
+
+Install the JAR into Mods (local game) or mods (dedicated server), with the
+game/server stopped. Back up existing settings before updating and keep only
+one Atmosphere Tool edition installed. Do not extract the JAR.
+
+LIMITS
+Hytale 0.7.4 only; requires the native server/plugin environment and Java 25.
+Editing requires Creative mode. Settings are global to the current world.
+Saves belong to the plugin's data directory, not an account cloud library.
+Sky controls move both sun and moon; they do not change simulation time.
+Fog brightness is not a true light source. Native fog has no custom 3D texture
+slot. Localized-volume fog, Zones and global Fullbright are archived and absent.
+Other weather/sky plugins may override these settings.
+See the bundled guide for backup and save-format compatibility.
+
+License: All Rights Reserved.
+Independent community mod; not an official Hytale/Hypixel Studios product.
+
+SUBMISSION NOTES (REMOVE FROM PUBLIC DESCRIPTION)
+Class: Mods / Java plugin. Upload only Atmosphere-Tool-Native-2.4.0.jar.
+The PNG logo is original project branding, not an in-game screenshot.
+Final 2.4.0 menu review and platform moderation are pending. No marketplace
+upload has been made. Do not claim verified in-game-browser delivery.

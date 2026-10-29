@@ -1,0 +1,20 @@
+{
+  "freshRecompiledClassCount": 47,
+  "everyClassMatchesJAR": true,
+  "unchangedApprovedClasses": [
+    "atmospheretool/FogBrightness.class",
+    "atmospheretool/MoonTransparency$Palette.class",
+    "atmospheretool/MoonTransparency.class",
+    "atmospheretool/SkyOrbit.class",
+    "atmospheretool/CustomAtmospheres$Entry.class",
+    "atmospheretool/CustomAtmospheres.class",
+    "atmospheretool/AtmosphereSnapshot.class",
+    "atmospheretool/AtomicJsonFile.class",
+    "atmospheretool/AtmosphereSettingsStore.class",
+    "atmospheretool/NativeWeatherFog$ClearBackdrop.class",
+    "atmospheretool/NativeWeatherFog.class",
+    "atmospheretool/NativeSettingsMigration.class"
+  ],
+  "jarSHA256": "5cd332cb054ae2832c3b4eb41dc3bf629ed0110f50c47ff903defffaa4b9d255",
+  "approvedBaselineJarSHA256": "fe02db217b7e8c78faa3ddb7004a67d572d595bfa0bb0a371981041f889cbfa0"
+}

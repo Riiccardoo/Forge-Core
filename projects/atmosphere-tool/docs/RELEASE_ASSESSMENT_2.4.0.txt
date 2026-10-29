@@ -1,0 +1,96 @@
+ATMOSPHERE TOOL NATIVE 2.4.0 - RELEASE ASSESSMENT
+Date: 2026-10-29
+Target: Windows, Java 25, Hytale server 0.7.4
+Prepared for submission; no marketplace upload or GitHub Release performed.
+
+DECISION
+Manual native installation: technically verified. No client patch/installer.
+CurseForge: correct native plugin JAR format; submission and moderation NOT RUN.
+In-game browser: native format, but actual availability and delivery NOT VERIFIED.
+Final 2.4.0 three-tab client layout: NOT RUN. The complete 2.3.1 visual result
+was accepted by the user; that is historical feedback, not a new 2.4.0 test.
+This is a release package with explicit remaining checks, not unconditional
+platform/legal approval. Do not describe an untested future Hytale release as
+compatible or remove the =0.7.4 guard without validation.
+
+CHANGES AND PRESERVATION
+Zones UI, area commands, selection listeners, polling, zone repositories and
+per-player overrides are removed. All zone files remain dormant and unchanged.
+Global Fullbright and the original client-volume edition remain archived.
+No DLL, client installer, shaders or old archives are included in runtime.
+Global fog, presets, brightness, manual lunar transparency, sky controls, exact
+numeric input and global-only custom saves remain. No change to save format 2.
+47 freshly recompiled production class payloads match the final JAR byte for
+byte. Twelve class payloads for approved fog brightness, lunar transparency,
+sky orbit, snapshots, custom library, persistence, native fog and migration
+also match 2.3.1 exactly. Main service wiring changes only remove zone handling.
+
+PERFORMANCE (MEASURED, NOT AN FPS CLAIM)
+Runtime JAR: 141,733 -> 93,247 bytes (34.2% smaller).
+Plugin setup median: 25.537 -> 21.093 ms (17.4% lower in this sample).
+Three separate JVM samples per version, alternating order, same isolated
+existing world and settings, warm OS filesystem cache. Baseline only adds
+the same setup timer/logger; its other JAR entries are unchanged. Empty v1 zone
+fixture exercises the old version's normal backup. Candidate leaves it unread.
+Baseline range 24.826-31.271 ms; candidate range 20.764-24.406 ms.
+End-to-end server process time including shutdown ranges 8.174-8.614 seconds;
+no demonstrated improvement in whole-server load time. Small sample, one PC.
+Removed 100 ms zone polling and 500 ms selection polling; no active zone
+selection packet listeners. The remaining weather writer is edit-driven.
+Server edit-to-registered-weather: 20 samples, p50 100.509 ms, p95 104.570 ms.
+Brightness: 20 samples p50 101.519 ms, p95 137.372 ms.
+Moon transparency: 7 samples p50 101.176 ms, p95 134.363 ms, includes a no-op.
+These exclude client display/GPU/network and are not low-end-hardware results.
+No new renderer, texture upload or generated volume is present.
+
+REPRODUCIBLE CHECK MATRIX
+P0 / PASS - JAR alone on Hytale 0.7.4: install, restart and removal, 3 boots.
+  tools/smoke-native.ps1. Original legacy settings, library and zones unchanged.
+P0 / PASS - Update and rollback: exact 2.3.1 -> 2.4.0 -> exact 2.3.1, 3 boots.
+  tools/smoke-upgrade.py. All six plugin data files hash-identical after each.
+P0 / PASS - Current source/JAR, runtime allowlist, license/NOTICE, no test/native
+  client/private payload. tools/release-audit.py and source-equivalence.json.
+P0 / PASS - 93 regression checks and 111 integration assertions over two probe
+  boots: right-click root/codec, menu bindings, fog/sky/moon, restart, save CRUD,
+  malformed/future data protection and removal of archived controls.
+  build.ps1 -RunProbe. Synthetic server checks, not an actual player click.
+P0 / REVIEWED SCOPE - Official EULA section 3 and CurseForge plugin instructions
+  document native plugins. No native-client exception is relied upon.
+P1 / NOT RUN - Brief final 2.4.0 in-client UI check and long client session.
+  docs/VISUAL_TEST_EN.txt. User acceptance of 2.3.1 retained separately.
+P1 / NOT RUN - Real marketplace moderation and browser delivery; compatibility
+  with future Hytale versions and arbitrary third-party weather mods.
+P1 / LIMITED - Rights inventory is complete for the allowlisted runtime;
+  original project owner chose All Rights Reserved. Historical contributor
+  chain of title is not independently certified. No unresolved external
+  code/image/shader payload was identified in this native JAR.
+P2 / NOT RUN - New low-end GPU/FPS and multiplayer load measurements; this
+  release removes work and does not justify a minimum hardware performance claim.
+
+TEST-HARNESS CORRECTION
+The first rollback test stopped on the baseline before running 2.4.0 because
+2.3.1 legitimately created a v1 zone backup. Original data was unchanged.
+The no-migration rollback fixture was corrected to schema 2 and all stages
+passed. The initial evidence is retained privately; it is not a hidden mod bug.
+
+RIGHTS AND PACKAGING
+All Rights Reserved. 57 runtime entries: Java classes, UI/config/metadata and
+license notices. Hytale Brush and TriggerVolume resources are external asset
+references only. No third-party library implementation or game bytes bundled.
+Source ZIP includes test source for reproduction, never a compiled test plugin.
+No private logs/worlds, legacy client archives, account data or absolute personal
+paths enter the source ZIP or prepared submission folder. The optional project
+logo is original branding, explicitly not a gameplay screenshot.
+
+OFFICIAL SOURCES REVIEWED
+https://hytale.com/eula
+https://hytale.com/news/2025/11/2025-11-20-hytale-modding-strategy-and-status
+https://support.curseforge.com/support/solutions/articles/9000273178-hytale-modding
+https://support.curseforge.com/support/solutions/articles/9000273186-getting-started-with-plugins
+https://support.curseforge.com/support/solutions/articles/9000197241-creating-and-submitting-a-project
+The creator-policy page is an affiliate policy, not a client-modding license.
+
+HASHES
+JAR SHA-256: 5cd332cb054ae2832c3b4eb41dc3bf629ed0110f50c47ff903defffaa4b9d255
+HytaleServer.jar SHA-256: 23fad4c8d42b73b4139540bbae26ca0b8a43388f1e07e7b423d616e81834fa79
+Final handoff/source ZIP and folder checksums are recorded in SHA256SUMS.txt.

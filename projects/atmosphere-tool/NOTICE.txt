@@ -1,0 +1,14 @@
+Atmosphere Tool Native 2.4.0
+Independent community project; not an official Hytale or Hypixel Studios product.
+
+License: All Rights Reserved (chosen by the project owner on 2026-10-29).
+Runtime: original/inherited project Java code, English UI and JSON configuration.
+Hytale Brush model/texture and TriggerVolume icon are referenced by asset ID only.
+Their files are supplied by the user's Hytale installation and are not bundled.
+Java libraries including Gson, annotations and Hytale APIs are supplied by
+HytaleServer.jar at runtime; no dependency implementation is shaded in this JAR.
+
+Original client renderer, shaders, native DLLs, research, QA plugins, logs and
+worlds are excluded. The retired Zones and Fullbright implementations are kept
+in private development archives, not in this distribution.
+See docs/PROVENANCE_EN.txt in the source tree, or PROVENANCE_EN.txt in the bundle.

@@ -1,0 +1,45 @@
+ATMOSPHERE TOOL - RETAINED DECISIONS
+As of 2026-10-29. This history is project evidence, not a general graphics guide.
+
+Original localized-volume edition: continuous animated air-masked fog became
+visually acceptable with an extra native client renderer. Platform support was
+not established. Preserve it privately; do not include it in the native release.
+Particle/geometry approaches had previously shown fragments/cubes and clipping.
+
+Native edition: use supported global Weather assets and server-side sky settings.
+It does not reproduce a spatially bounded volume or accept the old fog textures.
+Native Zones changed the view of players inside an area, not a volume viewed
+from outside. Archived by request in 2.4.0, preserving all data and sources.
+
+Creative/global graduated Fullbright: server attempts did not produce the
+requested full-world client lighting result. Keep it archived; do not advertise
+a failed slider or reintroduce a client patch. Native fog brightness is a
+separate color-blending control, not emitted light or true global Fullbright.
+
+Sky angle and extended sky-path height achieved the user's requested placement.
+They move the whole sky, including the sun; world simulation time is unchanged.
+Preserve the accepted implementation rather than adding a new time override.
+
+Separate backdrop Fog OFF failed user acceptance; one global Fog ON/OFF pair
+was restored and accepted. No separate background control remains.
+
+Fog brightness originally whitened the chosen color. Common RGB gain replaced
+that behavior; 0=black, 100=original and 200=maximum within available channel
+headroom. Saturated colors have limited headroom. The user accepted the result.
+
+Density-driven moon attenuation hid the moon at maximum fog. The user later
+rejected that coupling. Version 2.3.1 added independent Moon transparency 0-100,
+affecting disk and halo and included in world settings and custom saves.
+The user confirmed the complete 2.3.1 result working perfectly.
+
+Custom Atmosphere saves contain only global atmosphere, not zones or time.
+Names can be selected/applied, created, renamed and deleted with confirmation.
+v1 library loads at zero extra moon transparency without rewrite. First edit
+creates v2 plus backup. Unknown/future or malformed libraries are preserved
+read-only; rollback to 2.3.0 needs its matching pre-v2 backup.
+
+2.4.0: archive Zones, retain Saves/Fog/Sky & Moon and remove unused backends.
+Keep original IDs, save schemas and approved global rendering. Final three-tab
+client layout is not yet visually accepted; automated results are documented.
+The user selected All Rights Reserved and authorized source/docs and memory in
+Riiccardoo/Forge-Core. Prepare marketplace files; do not submit or create a Release.

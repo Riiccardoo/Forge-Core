@@ -1,0 +1,14 @@
+{
+  "p95Ms": 134.363,
+  "p50Ms": 101.1755,
+  "samplesMs": [
+    33.9332,
+    134.363,
+    101.1755,
+    99.5717,
+    102.2435,
+    100.0849,
+    101.5427
+  ],
+  "scope": "isolated server edit to registered Weather at maximum fog density; excludes client display"
+}

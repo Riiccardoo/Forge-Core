@@ -1,0 +1,69 @@
+{
+  "method": "Alternating separate JVM starts; identical existing isolated world and data seed; empty archived zone set; warm OS cache, not a cold-disk benchmark. Baseline differs only by setup timer/logger. No graphical client or connected player.",
+  "baselineJarSHA256": "fe02db217b7e8c78faa3ddb7004a67d572d595bfa0bb0a371981041f889cbfa0",
+  "instrumentedBaselineSHA256": "d41aa5b34238e548b5f0b9854213e9d1866420fa2c41a4b49ecc9a6032810023",
+  "candidateJarSHA256": "5cd332cb054ae2832c3b4eb41dc3bf629ed0110f50c47ff903defffaa4b9d255",
+  "serverSHA256": "23fad4c8d42b73b4139540bbae26ca0b8a43388f1e07e7b423d616e81834fa79",
+  "samples": [
+    {
+      "version": "2.3.1",
+      "round": 1,
+      "setupMs": 31.271,
+      "processThroughShutdownSeconds": 8.174,
+      "serverBootReported": "7sec 179ms 761us 900ns\u001b[m"
+    },
+    {
+      "version": "2.4.0",
+      "round": 1,
+      "setupMs": 20.764,
+      "processThroughShutdownSeconds": 8.614,
+      "serverBootReported": "7sec 602ms 875us 800ns\u001b[m"
+    },
+    {
+      "version": "2.4.0",
+      "round": 2,
+      "setupMs": 21.093,
+      "processThroughShutdownSeconds": 8.254,
+      "serverBootReported": "7sec 246ms 555us\u001b[m"
+    },
+    {
+      "version": "2.3.1",
+      "round": 2,
+      "setupMs": 25.537,
+      "processThroughShutdownSeconds": 8.363,
+      "serverBootReported": "7sec 303ms 454us 200ns\u001b[m"
+    },
+    {
+      "version": "2.3.1",
+      "round": 3,
+      "setupMs": 24.826,
+      "processThroughShutdownSeconds": 8.333,
+      "serverBootReported": "7sec 312ms 697us\u001b[m"
+    },
+    {
+      "version": "2.4.0",
+      "round": 3,
+      "setupMs": 24.406,
+      "processThroughShutdownSeconds": 8.477,
+      "serverBootReported": "7sec 442ms 110us 600ns\u001b[m"
+    }
+  ],
+  "summary": {
+    "2.3.1": {
+      "n": 3,
+      "medianSetupMs": 25.537,
+      "minSetupMs": 24.826,
+      "maxSetupMs": 31.271
+    },
+    "2.4.0": {
+      "n": 3,
+      "medianSetupMs": 21.093,
+      "minSetupMs": 20.764,
+      "maxSetupMs": 24.406
+    }
+  },
+  "baselineChangedEntries": [
+    "atmospheretool/AtmospherePlugin.class"
+  ],
+  "fixtureNote": "Empty version-1 zone repository; baseline creates its normal v1 backup, candidate does not read archived zones. Measurements include this legacy-data handling."
+}
