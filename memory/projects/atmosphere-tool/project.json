@@ -33,7 +33,7 @@
     "EXP-000007",
     "EXP-000014"
   ],
-  "updated_at": "2026-10-29T18:55:45.034294Z",
+  "updated_at": "2026-10-29T19:09:53.664124Z",
   "current_version": "2.4.0",
   "accepted_visual_baseline": "2.3.1",
   "canonical_source_relative": "Porject-Zytale/tools/AtmosphereTool-Native",
@@ -79,5 +79,15 @@
       "description": "Preserved accepted/rejected requirements and archive decisions",
       "verified": true
     }
-  ]
+  ],
+  "installation": {
+    "version": "2.4.0",
+    "date": "2026-10-29",
+    "status": "Installed with Hytale closed; previous JAR and 18 settings files backed up and verified",
+    "jar_sha256": "5cd332cb054ae2832c3b4eb41dc3bf629ed0110f50c47ff903defffaa4b9d255",
+    "settings_changed": false,
+    "client_files_changed": false,
+    "final_client_visual_check": "NOT RUN"
+  },
+  "github_update_scope": "Only sanitized projects/atmosphere-tool source/docs and dedicated project memory. Existing shared Forge history was excluded after automatic review rejected its broad upload."
 }
